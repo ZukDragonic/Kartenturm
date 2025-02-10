@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
+  m_Name: Test2
+  m_EditorClassIdentifier: 
+  ID: 0
+  gold: 0
+  archetype: 
+  cardName: smol boi
+  description: Teensy Little Man. He's got potential
+  image: {fileID: 21300000, guid: ff00345da0563d641903c5bd5bb748a4, type: 3}
+  isAreaAttack: 0
+  isScatter: 0
+  shotsPerAttack: 1
+  spreadOfAttack: 0
+  attackValue: 5
+  secondsPerAttack: 0.5
+  range: 5
+  multiplier: 2
+  projectileSpeed: 1
+  projectileDuration: 0.5
+  isProjectileBounce: 0
+  projectileBounceNum: 0
+  projectilePierce: 0
+  projectileObject: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
+  slotNum: 0
+  targetEnemy: 0
+  targetAlly: 0
+  targetNone: 1
+  tower: {fileID: 4121160897819890467, guid: 2cb95471668476043be29c76f8b81f39, type: 3}

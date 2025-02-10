@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8177393799260208743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8177393799260208736}
+  - component: {fileID: 8177393799260208737}
+  m_Layer: 0
+  m_Name: waveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8177393799260208736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177393799260208743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8177393799260208737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177393799260208743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673073648c786141bb25f25b7219626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
+  allEnemies:
+  - {fileID: 11400000, guid: f2b761052c5292f4ca6ab0256a6593c1, type: 2}
+  - {fileID: 11400000, guid: 67ab82d6e2840e84db6ee064da8511c8, type: 2}
+  - {fileID: 11400000, guid: 18d0a51c1b57efc4dbcf1109c5c17b45, type: 2}
+  - {fileID: 11400000, guid: 8f3bfff8d60aa824aad4ca7ce1125237, type: 2}
+  - {fileID: 11400000, guid: 52e77db8409281449b495faf75c5c559, type: 2}
+  waveList:
+  - ID: 11000
+    spawnOrder:
+    - enemyID: 404
+      delay: 1
+      repeat: 404
+  - ID: 11001
+    spawnOrder:
+    - enemyID: 12001
+      delay: 1
+      repeat: 10
+  - ID: 11002
+    spawnOrder:
+    - enemyID: 12001
+      delay: 0.5
+      repeat: 30
+  - ID: 11003
+    spawnOrder:
+    - enemyID: 12001
+      delay: 0.5
+      repeat: 15
+    - enemyID: 12002
+      delay: 2
+      repeat: 3
+  - ID: 11004
+    spawnOrder:
+    - enemyID: 12001
+      delay: 0.1
+      repeat: 30
+    - enemyID: 12002
+      delay: 0.2
+      repeat: 20
+  - ID: 11005
+    spawnOrder:
+    - enemyID: 12002
+      delay: 1
+      repeat: 10
+    - enemyID: 12003
+      delay: 0.5
+      repeat: 5
+  - ID: 11006
+    spawnOrder:
+    - enemyID: 12002
+      delay: 0.5
+      repeat: 30
+  - ID: 11007
+    spawnOrder:
+    - enemyID: 12001
+      delay: 0.5
+      repeat: 15
+    - enemyID: 12002
+      delay: 0.5
+      repeat: 15
+    - enemyID: 12003
+      delay: 0.5
+      repeat: 15
+  - ID: 11008
+    spawnOrder:
+    - enemyID: 12002
+      delay: 1
+      repeat: 25
+    - enemyID: 12001
+      delay: 0.5
+      repeat: 10
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 5
+  - ID: 11009
+    spawnOrder:
+    - enemyID: 12003
+      delay: 0.5
+      repeat: 30
+  - ID: 11010
+    spawnOrder:
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+  enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
+  checkpointList: []

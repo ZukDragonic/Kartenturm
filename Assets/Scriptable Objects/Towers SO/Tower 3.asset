@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
+  m_Name: Tower 3
+  m_EditorClassIdentifier: 
+  ID: 1003
+  gold: 10
+  archetype: 
+  cardName: Cannoner
+  description: A soldier arming a cannon. He sure can wreck but he might be slow.
+  image: {fileID: 21300000, guid: 92f503be78327f64fa43603915548240, type: 3}
+  isAreaAttack: 1
+  isScatter: 0
+  shotsPerAttack: 1
+  spreadOfAttack: 0
+  attackValue: 40
+  secondsPerAttack: 2
+  range: 30
+  multiplier: 1
+  projectileSpeed: 0.5
+  projectileDuration: 1
+  isProjectileBounce: 0
+  projectileBounceNum: 0
+  projectilePierce: 1
+  projectileObject: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
+  slotNum: 3
+  targetEnemy: 1
+  targetAlly: 0
+  targetNone: 0
+  tower: {fileID: 4121160897819890467, guid: 2cb95471668476043be29c76f8b81f39, type: 3}
