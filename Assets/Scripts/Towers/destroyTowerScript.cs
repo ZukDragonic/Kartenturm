@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class destroyTowerScript : MonoBehaviour
@@ -14,6 +15,7 @@ public class destroyTowerScript : MonoBehaviour
         }
 
         parentTower.transform.parent.GetComponent<placeableAreaScript>().isPlaceable = true;
+        parentTower.transform.parent.GetComponent<CircleCollider2D>().enabled = true;
         gameControllerScript.instance.resourceManager.removeTower(parentTower.gameObject);
         Destroy(parentTower.gameObject);
     }

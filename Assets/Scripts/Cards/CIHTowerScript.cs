@@ -48,10 +48,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
         if (gameController.stateReference == "Wave")
         {
-            if (Physics2D.Raycast(wPRay.origin, Vector3.forward, 1000f, placeableArea))
+            if (gameController.mainInput_Ray.hit.tag == "Tower Placeable")
             {
                 //first checks if raycast hits a placeable area
-                hit = Physics2D.Raycast(wPRay.origin, Vector3.forward, 1000f, placeableArea).transform.gameObject;
+                hit = gameController.mainInput_Ray.hit;
 
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
@@ -114,11 +114,13 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             if (gameController.stateReference == "Wave")
             {
                 //when it is  over a placeable area
-                GameObject placedCard = Instantiate(card.tower,
-                    Physics2D.Raycast(wPRay.origin, Vector3.forward * 100, 1000f, placeableArea).transform.position,
+                GameObject placedCard = Instantiate(card.tower, hit.transform.position,
                     Quaternion.identity, hit.transform);
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
+
+                //place anywhere change
                 hit.GetComponent<placeableAreaScript>().isPlaceable = false;
+                hit.GetComponent<CircleCollider2D>().enabled = false;
                 Destroy(gameObject);
             }
             if (gameController.stateReference == "GameMenu")
