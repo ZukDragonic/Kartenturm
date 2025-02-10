@@ -98,7 +98,6 @@ public class baseTowerScript : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(currentTargetting.TargettingCheck());
         //hover highlight, click hightlight, and gui open/close
         //if mouse is over the tower
         if (gameController.mainInput_Ray.hit == gameObject)
