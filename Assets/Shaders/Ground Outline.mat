@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Click Outline
-  m_Shader: {fileID: -6465566751694194690, guid: 503a5c9e5f587d146a9c1b663177350d, type: 3}
+  m_Name: Ground Outline
+  m_Shader: {fileID: -6465566751694194690, guid: 64f71ccb019b5c14ea0d521029c0d037, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -38,9 +38,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_9ea122d7b24348be817900ed80784cbb: 0.05
+    - Vector1_9ea122d7b24348be817900ed80784cbb: 0.003
     m_Colors:
-    - Color_7b0f029db97f49e5ab8efe4580c342dc: {r: 1, g: 1, b: 1, a: 1}
+    - Color_7b0f029db97f49e5ab8efe4580c342dc: {r: 0.23584908, g: 0.16900665, b: 0.12126203, a: 1}
     - Vector2_7b946c0dbc82464eb9409c9447927f43: {r: 0.01, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5734426001670528408

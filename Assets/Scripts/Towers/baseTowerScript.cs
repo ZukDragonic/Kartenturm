@@ -81,7 +81,7 @@ public class baseTowerScript : MonoBehaviour
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
         projectileDuration = baseCard.projectileDuration;
-        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x;
+        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
 
         hasAttacked = false;
 
@@ -205,7 +205,7 @@ public class baseTowerScript : MonoBehaviour
         {
             range += slot.range / 2 * baseCard.multiplier;
         }
-        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x;
+        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         rIObject.GetComponent<Transform>().localScale = Vector3.one * range / 5;
 
         //makes duration scale in respect to range

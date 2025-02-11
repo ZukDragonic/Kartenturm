@@ -33,7 +33,5 @@ MonoBehaviour:
   projectilePierce: 1
   projectileObject: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
   slotNum: 3
-  targetEnemy: 0
-  targetAlly: 1
-  targetNone: 0
+  targetting: 1
   tower: {fileID: 4121160897819890467, guid: 2cb95471668476043be29c76f8b81f39, type: 3}

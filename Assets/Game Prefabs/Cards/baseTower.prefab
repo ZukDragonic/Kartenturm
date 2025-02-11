@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 4121160897819890467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8330712, y: 0.64455616, z: 0}
-  m_LocalScale: {x: 6.25, y: 6.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6244140687943665818}
@@ -205,8 +205,13 @@ MonoBehaviour:
   isSelected: 0
   towerMenuPrefabL: {fileID: 4901132420117035387, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
   towerMenuPrefabR: {fileID: 2712563400052095682, guid: b1ff6e97dcdf0ef499429ecfd420f142, type: 3}
+  currentTarget: {fileID: 0}
+  enemyInRange: []
+  targetChange: 0
+  range: 0
   attackValue: 0
   projectilePierce: 0
+  projectileDuration: 0
 --- !u!50 &-7640220698146748470
 Rigidbody2D:
   serializedVersion: 4
