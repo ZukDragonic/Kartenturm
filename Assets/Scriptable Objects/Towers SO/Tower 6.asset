@@ -13,27 +13,26 @@ MonoBehaviour:
   m_Name: Tower 6
   m_EditorClassIdentifier: 
   ID: 1006
-  gold: 10
+  gold: 0
   archetype: 
-  cardName: Knight
-  description: A man of honor. Sadly, he lost his sword and is using a dagger.
+  cardName: Priest
+  description: A holy priest, or so she thinks. She's just a mage cosplaying as a
+    priest.
   image: {fileID: 21300000, guid: 1b99d6c9abd694a4f83f962d1b73cbf7, type: 3}
   isAreaAttack: 0
   isScatter: 0
   shotsPerAttack: 0
   spreadOfAttack: 0
-  attackValue: 20
-  secondsPerAttack: 0.6
-  range: 5
+  attackValue: 0
+  secondsPerAttack: 1.5
+  range: 40
   multiplier: 1
-  projectileSpeed: 0.3
-  projectileDuration: 0.5
+  projectileSpeed: 1.5
+  projectileDuration: 1
   isProjectileBounce: 0
   projectileBounceNum: 0
-  projectilePierce: 999
+  projectilePierce: 1
   projectileObject: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
-  slotNum: 3
-  targetEnemy: 1
-  targetAlly: 0
-  targetNone: 0
+  slotNum: 0
+  targetting: 1
   tower: {fileID: 4121160897819890467, guid: 2cb95471668476043be29c76f8b81f39, type: 3}

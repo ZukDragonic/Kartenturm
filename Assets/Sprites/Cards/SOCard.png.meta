@@ -1,16 +1,7 @@
 fileFormatVersion: 2
 guid: b18a53bd2b0e179469f279b8dea36bc5
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4599907256691689687
-    second: SOCard_0
-  - first:
-      213: -5577228477600088067
-    second: SOCard_1
-  - first:
-      213: -265728492423217565
-    second: SOCard_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -72,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -91,19 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +94,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,18 +121,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 300
+        y: 600
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d889d2574726df30800000000000000
-      internalID: 4599907256691689687
+      spriteID: 2f26198b71f0ed643a569b3bea0b2516
+      internalID: -1501801092
       vertices: []
       indices: 
       edges: []
@@ -150,19 +141,19 @@ TextureImporter:
       name: SOCard_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 200
+        y: 600
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dff3471cf34b992b0800000000000000
-      internalID: -5577228477600088067
+      spriteID: 541fa191fcda751418553b53b694d422
+      internalID: 1243978080
       vertices: []
       indices: 
       edges: []
@@ -171,19 +162,82 @@ TextureImporter:
       name: SOCard_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
+        x: 0
+        y: 300
         width: 200
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ef9621851ff4cf0800000000000000
-      internalID: -265728492423217565
+      spriteID: 7fa7ff815d21a3d4387a1d0b59105714
+      internalID: -532707308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa5b080536a1f84b8179801e5239841
+      internalID: -1457891613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddb892ae6594114ab04f76492bdc7c5
+      internalID: -952252961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ba2f7ad9d801946bb6b14426825ed9
+      internalID: 391059745
       vertices: []
       indices: 
       edges: []
@@ -199,9 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SOCard_0: 4599907256691689687
-      SOCard_1: -5577228477600088067
-      SOCard_2: -265728492423217565
+      SOCard_0: -1501801092
+      SOCard_1: 1243978080
+      SOCard_2: -532707308
+      SOCard_3: -1457891613
+      SOCard_4: -952252961
+      SOCard_5: 391059745
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

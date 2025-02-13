@@ -6,8 +6,9 @@ using TMPro;
 public class CCosmeticScript : MonoBehaviour
 {
     private Sprite ogSprite;
+    public GameObject rangeIndicator;
 
-    void Start()
+    public void initiateOgSprite()
     {
         ogSprite = GetComponent<Image>().sprite;
     }

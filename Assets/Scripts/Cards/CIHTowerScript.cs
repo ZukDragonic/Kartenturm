@@ -20,6 +20,11 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     private GameObject hit;
 
+    public GameObject baseTower;
+    public GameObject showTowerPrefab;
+    private GameObject showTower;
+    private bool isTowerShown;
+
     void Start()
     {
         placeableArea = LayerMask.GetMask("Placeable");
@@ -63,12 +68,17 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                     }
                     foreach (Image image in transform.GetComponentsInChildren<Image>())
                     {
-                        if (image.gameObject.name != "Image")
-                        {
-                            image.enabled = false;
-                        }
+                        image.enabled = false;
                     }
-                    cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                    if (!isTowerShown)
+                    {
+                        showTower = Instantiate(showTowerPrefab, hit.transform.position, Quaternion.identity, hit.transform);
+                        showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
+                        showTower.GetComponent<tCosmeticScript>().showTower(card);
+                        showTower.GetComponent<tCosmeticScript>().rangeActivity(true, card.range);
+                        transform.position = Camera.main.WorldToScreenPoint(hit.transform.position);
+                        isTowerShown = true;
+                    }
                 }
             }
             else
@@ -76,6 +86,9 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit = null;
                 cosmetic.resetCard();
                 isOverPlaceable = false;
+                isTowerShown = false;
+                Destroy(showTower);
+                showTower = null;
                 return;
             }
         }
@@ -99,6 +112,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit = null;
                 cosmetic.resetCard();
                 isOverPlaceable = false;
+                Destroy(showTower);
+                showTower = null;
                 return;
             }
         }
@@ -108,13 +123,20 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         gameObject.GetComponent<Image>().raycastTarget = true;
 
+        if (showTower != null)
+        {
+            isTowerShown = false;
+            Destroy(showTower);
+            showTower = null;
+        }
+
         if (isOverPlaceable)
         {
             //create a spot that this checks for when dropped. if the spot is there, it stay
             if (gameController.stateReference == "Wave")
             {
                 //when it is  over a placeable area
-                GameObject placedCard = Instantiate(card.tower, hit.transform.position,
+                GameObject placedCard = Instantiate(baseTower, hit.transform.position,
                     Quaternion.identity, hit.transform);
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
 

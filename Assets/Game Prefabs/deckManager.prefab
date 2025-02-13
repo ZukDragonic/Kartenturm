@@ -49,11 +49,11 @@ MonoBehaviour:
   allCards:
   - {fileID: 11400000, guid: 9fa1243fc8d2ecd4c8af626d8ff5d882, type: 2}
   - {fileID: 11400000, guid: 493913d8d0404f14bb9da3ba29ea1aca, type: 2}
+  - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
   - {fileID: 11400000, guid: 686bda0f03838db45aaae3ca328036f0, type: 2}
   - {fileID: 11400000, guid: 83e96927d67f36e49bb71132bc982391, type: 2}
-  - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
-  - {fileID: 11400000, guid: 3554138abc3a51c46a46a01bd4d316d9, type: 2}
   - {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
+  - {fileID: 11400000, guid: 4ec4a66fa15717b4e8b12c7d1e510937, type: 2}
   drawDeck: []
   shop: {fileID: 4570742780391169123, guid: f4e8d62a6d961cb4c9045d4c73d4e9a1, type: 3}
 --- !u!114 &4084954658066574650

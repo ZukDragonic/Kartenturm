@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.Mathematics;
+using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.EventSystems;
 public class baseTowerScript : MonoBehaviour
 {
     public SOCTower baseCard;
@@ -11,11 +12,7 @@ public class baseTowerScript : MonoBehaviour
 
     private bool hasAttacked;
 
-    public Material hoverMat;
-    public Material clickMat;
-    public GameObject rangeIndicatorPrefab;
-    private GameObject rIObject;
-    private Material defaultMat;
+    private tCosmeticScript cosmetic;
     public bool isSelected;
 
     public GameObject towerMenuPrefabL;
@@ -41,16 +38,20 @@ public class baseTowerScript : MonoBehaviour
     private bool targetNone;
     public int targetChange;
 
-
     public float range;
     public float attackValue;
     public int projectilePierce;
     private int shotsPerAttack;
     private float secondsPerAttack;
     public float projectileDuration;
-    
+
+    public GameObject baseProjectile;
+   
     void Start()
     {
+        cosmetic = GetComponent<tCosmeticScript>();
+        cosmetic.showTower(baseCard);
+
         targetAlly = false;
         targetEnemy = false;
         targetNone = false;
@@ -69,11 +70,6 @@ public class baseTowerScript : MonoBehaviour
         {
             targetNone = true;
         }
-
-
-        GetComponent<SpriteRenderer>().sprite = baseCard.image;
-        defaultMat = GetComponent<SpriteRenderer>().material;
-
 
         range = baseCard.range;
         attackValue = baseCard.attackValue;
@@ -106,14 +102,14 @@ public class baseTowerScript : MonoBehaviour
             {
                 if (gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
                 {
-                    spriteRenderer.material = hoverMat;
+                    cosmetic.HoverMat();
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (openedTowerMenu != null)
                         {
                             closeTowerMenu();
                         }
-                        spriteRenderer.material = clickMat;
+                        cosmetic.ClickMat();
 
                         openTowerMenu();
                         isSelected = true;
@@ -126,7 +122,7 @@ public class baseTowerScript : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))         
                     {
-                        spriteRenderer.material = defaultMat;
+                        cosmetic.ResetMat();
                         closeTowerMenu();
                         isSelected = false;
                     }
@@ -139,7 +135,7 @@ public class baseTowerScript : MonoBehaviour
             {
                 if (!isSelected)
                 {
-                    spriteRenderer.material = defaultMat;
+                    cosmetic.ResetMat();
                 }
             }
         }
@@ -178,14 +174,14 @@ public class baseTowerScript : MonoBehaviour
         openedTowerMenu.GetComponentInChildren<slotParentScriptUGUI>().parentTower = this;
         openedTowerMenu.GetComponentInChildren<destroyTowerScript>().parentTower = this;
 
-        rIObject = Instantiate(rangeIndicatorPrefab, transform.position, Quaternion.identity, openedTowerMenu.transform);
-        rIObject.GetComponent<Transform>().localScale = Vector3.one * range / 5;
+        cosmetic.rangeActivity(true, range);
     }
     public void closeTowerMenu()
     {
         gameController.UpdateGameState(gameControllerScript.GameState.Wave);
         Destroy(openedTowerMenu);
         openedTowerMenu = null;
+        cosmetic.rangeActivity(false, range);
     }
 
     public void changeStats()
@@ -206,7 +202,6 @@ public class baseTowerScript : MonoBehaviour
             range += slot.range / 2 * baseCard.multiplier;
         }
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
-        rIObject.GetComponent<Transform>().localScale = Vector3.one * range / 5;
 
         //makes duration scale in respect to range
         projectileDuration = baseCard.projectileDuration * (range / baseCard.range);
@@ -228,28 +223,39 @@ public class baseTowerScript : MonoBehaviour
 
                 if (currentTarget != null)
                 {
-                    //points at target
                     Vector3 target = Vector3.zero;
+                    //face target
                     if (targetEnemy || targetAlly)
                     {
-                        target = currentTarget.transform.position - transform.position;
+                        target = currentTarget.transform.position;
                     }
                     else if (targetNone)
                     {
-                        int ran = Random.Range(0, 360);
+                        int ran = UnityEngine.Random.Range(0, 360);
                         float ranRadian = ran / 180 * 3.14f;
                         float xPos = Mathf.Cos(ranRadian);
                         float yPos = Mathf.Sin(ranRadian);
                         target = new Vector3(xPos, yPos, 0);
+                        target += transform.position;
                     }
+                    target.z = transform.position.z;
+                    target = transform.position - target;
+                    Quaternion rotation = Quaternion.FromToRotation(Vector3.left,target);
+                   // Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, target.z));
 
-                    float rotZ = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0, 0, rotZ);
+                    if (currentTarget.transform.position.x < transform.position.x)
+                    {
+                        cosmetic.flipSprite(true);
+                    }
+                    else
+                    {
+                        cosmetic.flipSprite(false);
+                    }
 
                     //spawns attack
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
-                        GameObject projectile = Instantiate(baseCard.projectileObject, transform.position, transform.rotation);
+                        GameObject projectile = Instantiate(baseProjectile, transform.position, rotation);
                         projectile.GetComponent<projectileScript>().parentTower = this;
                     }
                     hasAttacked = true;

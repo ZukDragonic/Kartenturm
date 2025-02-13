@@ -115,3 +115,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  baseTower: {fileID: 2721076032841075567, guid: e9d4e27b92ac10e4ca581cedb648070e, type: 3}
+  showTowerPrefab: {fileID: 4121160897819890467, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}

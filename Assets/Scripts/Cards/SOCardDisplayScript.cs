@@ -14,7 +14,9 @@ public class SOCardDisplayScript : MonoBehaviour
     private SOCSpell spellCard;
 
     public TextMeshProUGUI cardName;
-    public Image artwork;
+    public Image cardImage;
+    public Image displayedImage;
+    private Vector2 artworkProportions;
 
     public GameObject towerDP;
     public TextMeshProUGUI attackValueDisplay;
@@ -25,9 +27,8 @@ public class SOCardDisplayScript : MonoBehaviour
     public GameObject spellDP;
     public TextMeshProUGUI descriptionSpell;
 
-    public Sprite areaAttackSprite;
-    public Sprite towerCardSprite;
-    public Sprite spellCardSprite;
+    public Sprite[] allCardSprite;
+    //0 is back, 1 is empty, 2 is normal tower, 3 is aoe tower, 4 is spell, 5 is artifact
 
     void Start()
     {
@@ -40,12 +41,16 @@ public class SOCardDisplayScript : MonoBehaviour
         if (checkNull())
         {
             cardName.text = "";
-            artwork.gameObject.SetActive(false);
+            cardImage.sprite = allCardSprite[1];
+            displayedImage.gameObject.SetActive(false);
             return;
         }
         cardName.text = card.cardName;
-        artwork.gameObject.SetActive(true);
-        artwork.sprite = card.image;
+        displayedImage.gameObject.SetActive(true);
+        displayedImage.sprite = card.image;
+        artworkProportions = card.image.rect.size;
+        artworkProportions = artworkProportions.normalized;
+        displayedImage.rectTransform.sizeDelta = artworkProportions * new Vector2(140, 120);
 
         if (card as SOCTower != null)
         {
@@ -58,10 +63,12 @@ public class SOCardDisplayScript : MonoBehaviour
             descriptionTower.text = card.description;
             if (towerCard.isAreaAttack)
             {
-                GetComponent<Image>().sprite = areaAttackSprite;
+                cardImage.sprite = allCardSprite[3];
             }
-
-            GetComponent<Image>().sprite = towerCardSprite;
+            else
+            {
+                cardImage.sprite = allCardSprite[2];
+            }
         }
         else
         {
@@ -70,7 +77,11 @@ public class SOCardDisplayScript : MonoBehaviour
             spellCard = card as SOCSpell;
             descriptionSpell.text = spellCard.description;
 
-            GetComponent<Image>().sprite = spellCardSprite;
+            cardImage.sprite = allCardSprite[4];
+        }
+        if(TryGetComponent<CCosmeticScript>(out CCosmeticScript script))
+        {
+            script.initiateOgSprite();
         }
     }
 

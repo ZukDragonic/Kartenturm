@@ -243,7 +243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5577228477600088067, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  m_Sprite: {fileID: 1243978080, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -267,7 +267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: d6f8fbe09d1abfb4baeb35735e02b0e7, type: 2}
   cardName: {fileID: 3569387046770975693}
-  artwork: {fileID: 3569387047836629868}
+  cardImage: {fileID: 3569387046735463457}
+  displayedImage: {fileID: 3569387047836629868}
   towerDP: {fileID: 5945379012143462179}
   attackValueDisplay: {fileID: 3569387046866743735}
   spaValueDisplay: {fileID: 3569387046746345103}
@@ -275,9 +276,13 @@ MonoBehaviour:
   descriptionTower: {fileID: 3569387046970010231}
   spellDP: {fileID: 3734430609355544286}
   descriptionSpell: {fileID: 5773463160623533466}
-  areaAttackSprite: {fileID: -265728492423217565, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  towerCardSprite: {fileID: -5577228477600088067, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  spellCardSprite: {fileID: -5577228477600088067, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  allCardSprite:
+  - {fileID: -1501801092, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 1243978080, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: -532707308, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: -1457891613, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: -952252961, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 391059745, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
 --- !u!1 &3569387046746345105
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +859,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 21}
-  m_SizeDelta: {x: 141, y: 119}
+  m_SizeDelta: {x: 140, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3569387047836629867
 CanvasRenderer:

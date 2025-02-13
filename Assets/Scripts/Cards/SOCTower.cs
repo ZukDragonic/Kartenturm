@@ -21,10 +21,7 @@ public class SOCTower : SOCard
     public bool isProjectileBounce;
     public int projectileBounceNum;
     public int projectilePierce;
-    public GameObject projectileObject;
 
     public int slotNum;
     public targettingOption targetting;
-
-    public GameObject tower;
 }
