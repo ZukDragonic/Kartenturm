@@ -22,7 +22,7 @@ public class shopScript : MonoBehaviour
 
     void createShop(float multiplier)
     {
-        gameController.UpdateGameState(gameControllerScript.GameState.GameMenu);
+        gameController.UpdateGameState(GameState.GameMenu);
         if (multiplier == -1)
         {
             multiplier = Random.Range(5, 16) / 10f;
@@ -55,6 +55,6 @@ public class shopScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        gameController.UpdateGameState(gameControllerScript.GameState.Wave);
+        gameController.UpdateGameState(GameState.Wave);
     }
 }

@@ -160,7 +160,7 @@ public class baseTowerScript : MonoBehaviour
     public void openTowerMenu()
     {
         openedTowerMenu = null;
-        gameController.UpdateGameState(gameControllerScript.GameState.GameMenu);
+        gameController.UpdateGameState(GameState.GameMenu);
 
         if (Camera.main.WorldToViewportPoint(gameObject.transform.position).x < 0.5f)
         {
@@ -178,7 +178,7 @@ public class baseTowerScript : MonoBehaviour
     }
     public void closeTowerMenu()
     {
-        gameController.UpdateGameState(gameControllerScript.GameState.Wave);
+        gameController.UpdateGameState(GameState.Wave);
         Destroy(openedTowerMenu);
         openedTowerMenu = null;
         cosmetic.rangeActivity(false, range);

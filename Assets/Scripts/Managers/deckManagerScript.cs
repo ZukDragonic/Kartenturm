@@ -16,7 +16,21 @@ public class deckManagerScript : MonoBehaviour
         draw = GetComponent<drawScript>();
         gameController = gameControllerScript.instance;
     }
+    public void shuffleDeck()
+    {
+        int drawCount = drawDeck.Count;
+        for (int i = drawCount - 1; i > 0; i--)
+        {
+            //randomly grabs an item from list 0 to 1
+            int j = Random.Range(0, i);
 
+            //swaps the item j and i
+            SOCard temp = drawDeck[j];
+            drawDeck[j] = drawDeck[i];
+            drawDeck[i] = temp;
+        }
+        //play animation here
+    }
     public void shuffleCardInDeck(SOCard card)
     {
         drawDeck.Insert(Random.Range(0, drawDeck.Count), card);

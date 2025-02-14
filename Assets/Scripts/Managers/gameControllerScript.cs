@@ -12,6 +12,13 @@ public enum targettingOption
     None,
 }
 [System.Serializable]
+public enum GameState
+{
+    Wave,
+    GameMenu,
+    PauseMenu
+}
+[System.Serializable]
 public class Flag
 {
     public int ID;
@@ -82,7 +89,7 @@ public class gameControllerScript : MonoBehaviour
     Dictionary<int, bool> flagDict;
 
     public GameState state;
-    public string stateReference;
+    public bool isCardDragged;
 
     void Start()
     {
@@ -118,7 +125,6 @@ public class gameControllerScript : MonoBehaviour
         {
             mainInput_Ray.hit = gameObject;
         }
-        stateReference = state.ToString();
     }
 
     void findManagers()
@@ -152,12 +158,7 @@ public class gameControllerScript : MonoBehaviour
                 break;
         }
     }
-    public enum GameState
-    {
-        Wave,
-        GameMenu,
-        PauseMenu
-    }
+
     public void UpdateGameState(GameState newState)
     {
         state = newState;
@@ -170,6 +171,8 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();
+                break;
+            default:
                 break;
         }
     }

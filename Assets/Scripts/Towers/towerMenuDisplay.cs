@@ -72,6 +72,6 @@ public class towerMenuDisplay : MonoBehaviour
     {
         parentTower.closeTowerMenu();
         parentTower.GetComponent<baseTowerScript>().isSelected = false;
-        gameControllerScript.instance.UpdateGameState(gameControllerScript.GameState.Wave);
+        gameControllerScript.instance.UpdateGameState(GameState.Wave);
     }
 }

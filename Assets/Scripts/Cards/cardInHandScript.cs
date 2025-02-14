@@ -18,6 +18,7 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
+        gameControllerScript.instance.isCardDragged = true;
         transform.position = new Vector3(ogPos.x, ogPos.y + 100, 0);
     }
 
@@ -29,6 +30,7 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
+        gameControllerScript.instance.isCardDragged = false;
         transform.rotation = ogRotation;
         transform.position = ogPos;
     }

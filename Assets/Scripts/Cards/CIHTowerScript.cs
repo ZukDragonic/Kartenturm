@@ -51,7 +51,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             isOverPlaceable = false;
             return;
         }
-        if (gameController.stateReference == "Wave")
+        if (gameController.state == GameState.Wave)
         {
             if (gameController.mainInput_Ray.hit.tag == "Tower Placeable")
             {
@@ -92,7 +92,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 return;
             }
         }
-        else if (gameController.stateReference == "GameMenu")
+        else if (gameController.state == GameState.GameMenu)
         {
 
             if (eventData.pointerCurrentRaycast.gameObject.tag == "Slot")
@@ -133,7 +133,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (isOverPlaceable)
         {
             //create a spot that this checks for when dropped. if the spot is there, it stay
-            if (gameController.stateReference == "Wave")
+            if (gameController.state == GameState.Wave)
             {
                 //when it is  over a placeable area
                 GameObject placedCard = Instantiate(baseTower, hit.transform.position,
@@ -145,7 +145,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit.GetComponent<CircleCollider2D>().enabled = false;
                 Destroy(gameObject);
             }
-            if (gameController.stateReference == "GameMenu")
+            if (gameController.state == GameState.GameMenu)
             {
                 //when it is  over a card slot
                 Destroy(gameObject);
