@@ -28,7 +28,7 @@ public class CCosmeticScript : MonoBehaviour
     {
         foreach (RectTransform transform in transform.GetComponentsInChildren<RectTransform>())
         {
-            transform.localScale *= size;
+            transform.localScale = new Vector3(size,size,size);
         }
     }
 
@@ -52,6 +52,6 @@ public class CCosmeticScript : MonoBehaviour
         }
 
         transform.GetComponent<Image>().sprite = ogSprite;
-        GetComponent<RectTransform>().localScale = Vector3.one;
+        cosmeticSize(1);
     }
 }

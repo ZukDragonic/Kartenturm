@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class slotUGUI : MonoBehaviour, IDropHandler
+public class slotUGUI : MonoBehaviour
 {
     private SOCard droppedCard;
     
@@ -11,18 +11,18 @@ public class slotUGUI : MonoBehaviour, IDropHandler
     {
         droppedCard = GetComponent<SOCardDisplayScript>().card;
     }
-    void IDropHandler.OnDrop(PointerEventData eventData)
+    public void cardHasDropped(SOCard card)
     {
-        GameObject dropped = eventData.pointerDrag;
-        
-        if (dropped.TryGetComponent<CIHTowerScript>(out CIHTowerScript towerScript))
+        droppedCard = card;
+
+        /*if (dropped.TryGetComponent<CIHTowerScript>(out CIHTowerScript towerScript))
         {
             droppedCard = towerScript.card;
         }
         if (dropped.TryGetComponent<CIHSpellScript>(out CIHSpellScript spellScript))
         {
             droppedCard = spellScript.card;
-        }
+        }*/
         GetComponent<SOCardDisplayScript>().displayCard(droppedCard);
         transform.parent.GetComponent<slotChildDisplayScript>().stackedCards[transform.GetSiblingIndex()] = droppedCard;
         GetComponent<placeableAreaScript>().isPlaceable = false;

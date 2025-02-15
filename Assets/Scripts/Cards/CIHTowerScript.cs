@@ -94,7 +94,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 return;
             }
         }
-        else if (gameController.state == GameState.GameMenu)
+        else if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)
         {
 
             if (eventData.pointerCurrentRaycast.gameObject.tag == "Slot")
@@ -147,9 +147,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit.GetComponent<CircleCollider2D>().enabled = false;
                 Destroy(gameObject);
             }
-            if (gameController.state == GameState.GameMenu)
+            if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)
             {
                 //when it is  over a card slot
+                hit.GetComponent<slotUGUI>().cardHasDropped(card);
                 Destroy(gameObject);
             }
         }

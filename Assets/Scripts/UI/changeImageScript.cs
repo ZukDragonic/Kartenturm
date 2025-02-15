@@ -24,6 +24,15 @@ public class changeImageScript : MonoBehaviour
         }
         imageComp.sprite = images[currentImage];
     }
+    public void previousImage()
+    {
+        currentImage--;
+        if (currentImage < 0)
+        {
+            currentImage += images.Length;
+        }
+        imageComp.sprite = images[currentImage];
+    }
     public void selectImage(int index)
     {
         currentImage = index;

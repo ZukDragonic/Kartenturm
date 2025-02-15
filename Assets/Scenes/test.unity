@@ -14745,9 +14745,9 @@ PrefabInstance:
       value: timeManager
       objectReference: {fileID: 0}
     - target: {fileID: 5498893863559824936, guid: 1fdcaf568c9b50c4c86bc875760bf650, type: 3}
-      propertyPath: currentTime
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: timeButton
+      value: 
+      objectReference: {fileID: 2003396536}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fdcaf568c9b50c4c86bc875760bf650, type: 3}
 --- !u!1001 &7403111425720553098

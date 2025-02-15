@@ -17,7 +17,8 @@ public enum targettingOption
 public enum GameState
 {
     Wave,
-    GameMenu,
+    TowerMenu,
+    ShopMenu,
     PauseMenu
 }
 [System.Serializable]
@@ -178,7 +179,9 @@ public class gameControllerScript : MonoBehaviour
             case GameState.Wave:
                 timeManager.resetTime();
                 break;
-            case GameState.GameMenu:
+            case GameState.TowerMenu:
+                break;
+            case GameState.ShopMenu:
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();

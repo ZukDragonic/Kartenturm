@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAutoStart: 0
   timeChanges: 00000000010000000200000003000000
-  currentTime: 1
+  currentTime: 0
+  timeButton: {fileID: 0}

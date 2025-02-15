@@ -160,7 +160,7 @@ public class baseTowerScript : MonoBehaviour
     public void openTowerMenu()
     {
         openedTowerMenu = null;
-        gameController.UpdateGameState(GameState.GameMenu);
+        gameController.UpdateGameState(GameState.TowerMenu);
 
         if (Camera.main.WorldToViewportPoint(gameObject.transform.position).x < 0.5f)
         {

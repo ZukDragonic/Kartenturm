@@ -9,10 +9,13 @@ public class timeManagerScript : MonoBehaviour
     public int[] timeChanges;
     public int currentTime;
 
+    public changeImageScript timeButton;
+
     public void changeTime()
     {
         if (Time.timeScale == 0 && currentTime != 0 && !isAutoStart)
         {
+            timeButton.previousImage();
             resetTime();
             return;
         }
