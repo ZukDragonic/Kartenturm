@@ -17,18 +17,9 @@ public class timeManagerScript : MonoBehaviour
             return;
         }
         currentTime++;
-        if (!isAutoStart)
-        {
-            if (currentTime > timeChanges.Length - 1)
-            {
-                currentTime--;
-                isAutoStart = true;
-            }
-        }
-        else
+        if (currentTime > timeChanges.Length - 1)
         {
             currentTime -= timeChanges.Length;
-            isAutoStart = false;
         }
 
         Time.timeScale = timeChanges[currentTime];
@@ -41,5 +32,16 @@ public class timeManagerScript : MonoBehaviour
     public void pauseTime()
     {
         Time.timeScale = 0;
+    }
+    public void autoStart()
+    {
+        if (isAutoStart)
+        {
+            isAutoStart = false;
+        }
+        else
+        {
+            isAutoStart = true;
+        }
     }
 }

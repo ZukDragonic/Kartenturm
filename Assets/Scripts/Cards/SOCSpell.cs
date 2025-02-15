@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardSpellBase", menuName = "Card/Spell/Base")]
+[CreateAssetMenu(fileName = "CardSpellSpellCard", menuName = "Card/Spell/SpellCard")]
 public class SOCSpell : SOCard
 {
     public List<SOCSEffect> allEffects = new List<SOCSEffect>();

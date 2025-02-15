@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 [System.Serializable]
 public enum targettingOption
@@ -60,6 +62,12 @@ public class Wave
     public int ID;
     public EnemyAndDelay[] spawnOrder;
 }
+[System.Serializable]
+public class TimelineAnimation
+{
+    public int ID;
+    public TimelineAsset timelineAnim;
+}
 
 [System.Serializable]
 public class EnemyAndDelay
@@ -76,6 +84,7 @@ public class gameControllerScript : MonoBehaviour
     public deckManagerScript deckManager;
     public waveManagerScript waveManager;
     public timeManagerScript timeManager;
+    public timelineManagerScript timelineManager;
 
     public MainInput_Ray mainInput_Ray;
     private LayerMask MouseArea;
@@ -107,6 +116,7 @@ public class gameControllerScript : MonoBehaviour
 
         state = GameState.Wave;
 
+        timeManager.resetTime();
         waveManager.spawnWave(11001);
     }
     void Update()
@@ -133,6 +143,7 @@ public class gameControllerScript : MonoBehaviour
         deckManager = GameObject.Find("deckManager").GetComponent<deckManagerScript>();
         waveManager = GameObject.Find("waveManager").GetComponent<waveManagerScript>();
         timeManager = GameObject.Find("timeManager").GetComponent<timeManagerScript>();
+        timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
     }
 
     public void checkFlag(int ID)

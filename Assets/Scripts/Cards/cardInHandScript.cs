@@ -9,17 +9,19 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private Vector3 ogPos;
     private Quaternion ogRotation;
+    private Transform ogParent;
 
     void Start()
     {
-        ogPos = transform.position;
-        ogRotation = transform.rotation;
+        ogPos = transform.localPosition;
+        ogRotation = transform.localRotation;
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         gameControllerScript.instance.isCardDragged = true;
         transform.position = new Vector3(ogPos.x, ogPos.y + 100, 0);
+        transform.SetParent(transform.parent.parent);
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
@@ -31,21 +33,31 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         gameControllerScript.instance.isCardDragged = false;
-        transform.rotation = ogRotation;
-        transform.position = ogPos;
+        transform.SetParent(ogParent);
+        transform.localRotation = ogRotation;
+        transform.localPosition = ogPos;
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        transform.position = ogPos;
-        transform.rotation = ogRotation;
+        if (gameControllerScript.instance.isCardDragged)
+        {
+            return;
+        }
+        transform.localPosition = ogPos;
+        transform.localRotation = ogRotation;
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
-        ogPos = transform.position;
-        ogRotation = transform.rotation;
-        transform.position = new Vector3(ogPos.x, ogPos.y + 100, 0);
-        transform.rotation = Quaternion.Euler(Vector3.zero);
+        if (gameControllerScript.instance.isCardDragged)
+        {
+            return;
+        }
+        ogPos = transform.localPosition;
+        ogRotation = transform.localRotation;
+        ogParent = transform.parent;
+        transform.localPosition = new Vector3(ogPos.x, 100, 0);
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
     }
 }

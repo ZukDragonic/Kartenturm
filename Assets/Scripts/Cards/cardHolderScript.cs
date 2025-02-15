@@ -26,109 +26,84 @@ public class cardHolderScript : MonoBehaviour
         
         if (!gameController.isCardDragged)
         {
-            int currentCC = gameObject.transform.childCount;
-            if (cardInHandCount != currentCC || isCardDucked)
+            if (isCardDucked)
             {
-                if (currentCC % 2 == 0)
-                {
-                    for (int i = 0; i < currentCC; i++)
-                    {
-                        if (i % 2 == 0)
-                        {
-                            gameObject.transform.GetChild(i).position = new Vector3(referenceVector3.x - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60,
-                                referenceVector3.y - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 10, 0);
-
-                            gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 5));
-                        }
-                        else
-                        {
-                            gameObject.transform.GetChild(i).position = new Vector3(referenceVector3.x + (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60,
-                                referenceVector3.y - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 10, 0);
-
-                            gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * -5));
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = -1; i < currentCC - 1; i++)
-                    {
-                        if (i == -1)
-                        {
-                            gameObject.transform.GetChild(i + 1).position = new Vector3(referenceVector3.x - 5, referenceVector3.y - 5, 0);
-                            gameObject.transform.GetChild(i + 1).rotation = Quaternion.Euler(Vector3.zero);
-                        }
-                        else
-                        {
-                            if (i % 2 == 0)
-                            {
-                                gameObject.transform.GetChild(i + 1).position = new Vector3(referenceVector3.x - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 80,
-                                    referenceVector3.y - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 10, 0);
-
-                                gameObject.transform.GetChild(i + 1).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 5));
-                            }
-                            else
-                            {
-                                gameObject.transform.GetChild(i + 1).position = new Vector3(referenceVector3.x + (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 80,
-                                    referenceVector3.y - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 10, 0);
-
-                                gameObject.transform.GetChild(i + 1).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * -5));
-                            }
-                        }
-                    }
-                }
+                gameController.timelineManager.PlayAnim(13001);
+                isCardDucked = false;
             }
-            cardInHandCount = currentCC;
-            isCardDucked = false;
+            resetCardPosition();
         }
-        else //if a card is being card
+        else //if a card is being dragged
         {
             if (isCardDucked)
             {
                 return;
             }
+            gameController.timelineManager.PlayAnim(13000);
+            isCardDucked = true;
+        }
+    }
 
-            if (cardInHandCount % 2 == 1)
+    IEnumerator waitForTimeline(float time)
+    {
+        yield return new WaitForSeconds(time);
+        isCardDucked = false;
+    }
+
+    void resetCardPosition()
+    {
+        int currentCC = gameObject.transform.childCount;
+        if (cardInHandCount != currentCC || isCardDucked)
+        {
+            if (currentCC % 2 == 0)
             {
-                gameObject.transform.GetChild(0).position = new Vector3(referenceVector3.x, referenceVector3.y - 60, 0);
-
-                gameObject.transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                if (cardInHandCount != 1)
+                for (int i = 0; i < currentCC; i++)
                 {
-                    for (int i = 1; i < cardInHandCount; i++)
+                    if (i % 2 == 0)
                     {
-                        float xPos = referenceVector3.x;
-                        if (i % 2 == 1)
-                        {
-                            xPos = xPos - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60;
-                        }
-                        else
-                        {
-                            xPos = xPos + (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60;
-                        }
-                        gameObject.transform.GetChild(i).position = new Vector3(xPos, referenceVector3.y - 60, 0);
-                        gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                        gameObject.transform.GetChild(i).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -60,
+                            (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+
+                        gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
+                    }
+                    else
+                    {
+                        gameObject.transform.GetChild(i).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 60,
+                            (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+
+                        gameObject.transform.GetChild(i).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
                     }
                 }
             }
             else
             {
-                for (int i = 0; i < cardInHandCount; i++)
+                for (int i = -1; i < currentCC - 1; i++)
                 {
-                    float xPos = referenceVector3.x;
-                    if (i % 2 == 1)
+                    if (i == -1)
                     {
-                        xPos = xPos - (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60;
+                        gameObject.transform.GetChild(i + 1).localPosition = new Vector3(0, 5, 0);
+                        gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(Vector3.zero);
                     }
                     else
                     {
-                        xPos = xPos + (Mathf.RoundToInt(i / 2 - 0.4f) + 1) * 60;
+                        if (i % 2 == 0)
+                        {
+                            gameObject.transform.GetChild(i + 1).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -80,
+                                (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+
+                            gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
+                        }
+                        else
+                        {
+                            gameObject.transform.GetChild(i + 1).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 80,
+                                (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+
+                            gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
+                        }
                     }
-                    gameObject.transform.GetChild(i).position = new Vector3(xPos, referenceVector3.y - 60, 0);
-                    gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 }
             }
-            isCardDucked = true;
         }
+        cardInHandCount = currentCC;
     }
 }

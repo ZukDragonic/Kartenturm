@@ -49,6 +49,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             hit = null;
             cosmetic.resetCard();
             isOverPlaceable = false;
+            isTowerShown = false;
+            Destroy(showTower);
             return;
         }
         if (gameController.state == GameState.Wave)
