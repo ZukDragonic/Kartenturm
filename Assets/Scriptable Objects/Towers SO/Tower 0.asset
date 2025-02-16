@@ -18,18 +18,13 @@ MonoBehaviour:
   cardName: Demon
   description: Stunted. A low-ranking demon seeking to grow.
   image: {fileID: 21300000, guid: d574ab82559733f469d1e091642a53b3, type: 3}
-  isAreaAttack: 0
-  isScatter: 0
   shotsPerAttack: 1
-  spreadOfAttack: 0
   attackValue: 100
   secondsPerAttack: 3
   range: 30
   multiplier: 0.5
-  projectileSpeed: 1
-  projectileDuration: 1
-  isProjectileBounce: 0
-  projectileBounceNum: 0
+  projectileImage: {fileID: 21300000, guid: b570049f606652f4ab0c35be4dd953de, type: 3}
   projectilePierce: 2
+  effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
   slotNum: 3
   targetting: 0

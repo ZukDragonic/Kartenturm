@@ -61,14 +61,7 @@ public class SOCardDisplayScript : MonoBehaviour
             spaValueDisplay.text = towerCard.secondsPerAttack.ToString();
             rangeValueDisplay.text = towerCard.range.ToString();
             descriptionTower.text = card.description;
-            if (towerCard.isAreaAttack)
-            {
-                cardImage.sprite = allCardSprite[3];
-            }
-            else
-            {
-                cardImage.sprite = allCardSprite[2];
-            }
+            cardImage.sprite = allCardSprite[2];
         }
         else
         {

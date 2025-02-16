@@ -43,7 +43,6 @@ public class baseTowerScript : MonoBehaviour
     public int projectilePierce;
     private int shotsPerAttack;
     private float secondsPerAttack;
-    public float projectileDuration;
 
     public GameObject baseProjectile;
    
@@ -76,7 +75,6 @@ public class baseTowerScript : MonoBehaviour
         projectilePierce = baseCard.projectilePierce;
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
-        projectileDuration = baseCard.projectileDuration;
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
 
         hasAttacked = false;
@@ -202,9 +200,6 @@ public class baseTowerScript : MonoBehaviour
             range += slot.range / 2 * baseCard.multiplier;
         }
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
-
-        //makes duration scale in respect to range
-        projectileDuration = baseCard.projectileDuration * (range / baseCard.range);
     }
 
     public void changeTargetting(int change)
@@ -256,7 +251,10 @@ public class baseTowerScript : MonoBehaviour
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
                         GameObject projectile = Instantiate(baseProjectile, transform.position, rotation);
-                        projectile.GetComponent<projectileScript>().parentTower = this;
+                        projectileScript current = projectile.GetComponent<projectileScript>();
+                        current.parentTower = this;
+                        current.target = currentTarget.transform.position;
+                        projectile.GetComponent<SpriteRenderer>().sprite = baseCard.projectileImage;
                     }
                     hasAttacked = true;
                 }

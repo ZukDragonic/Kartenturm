@@ -19,18 +19,13 @@ MonoBehaviour:
   description: A archer trainee seeking to improve her skills. Sadly she lost her
     bow in a forest.
   image: {fileID: 21300000, guid: 92f503be78327f64fa43603915548240, type: 3}
-  isAreaAttack: 0
-  isScatter: 0
   shotsPerAttack: 1
-  spreadOfAttack: 0
   attackValue: 15
   secondsPerAttack: 0.5
   range: 60
   multiplier: 1
-  projectileSpeed: 1.5
-  projectileDuration: 1
-  isProjectileBounce: 0
-  projectileBounceNum: 0
+  projectileImage: {fileID: 21300000, guid: 52fb2e13d838bd54da8d80f08ca70e3a, type: 3}
   projectilePierce: 1
+  effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
   slotNum: 3
   targetting: 0

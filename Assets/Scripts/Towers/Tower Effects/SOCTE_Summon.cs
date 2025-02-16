@@ -8,10 +8,12 @@ public class SOCTE_Summon : SOCTEffect
     public GameObject summonedPrefab;
     public override void ApplyTEffect(baseTowerScript script)
     {
-        Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
+        GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
+        current.GetComponent<SumObj_Base>().parentTower = script;
     }
     public override void ApplyPEffect(projectileScript script)
     {
-        Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
+        GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
+        current.GetComponent<SumObj_Base>().parentTower = script.parentTower;
     }
 }

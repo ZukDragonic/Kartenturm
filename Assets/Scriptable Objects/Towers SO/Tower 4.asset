@@ -18,18 +18,13 @@ MonoBehaviour:
   cardName: Cannoner
   description: A soldier arming a cannon. He sure can wreck but he might be slow.
   image: {fileID: 21300000, guid: 5851d1a79baab344bafe2faced4116e0, type: 3}
-  isAreaAttack: 1
-  isScatter: 0
   shotsPerAttack: 1
-  spreadOfAttack: 0
   attackValue: 40
   secondsPerAttack: 2
   range: 30
   multiplier: 1
-  projectileSpeed: 0.5
-  projectileDuration: 1
-  isProjectileBounce: 0
-  projectileBounceNum: 0
+  projectileImage: {fileID: 21300000, guid: 444511dac5d143848bac76c4fb1e5067, type: 3}
   projectilePierce: 1
+  effects: {fileID: 11400000, guid: fd9b1095bd133ef4c88aedb4944eaf3a, type: 2}
   slotNum: 3
   targetting: 0

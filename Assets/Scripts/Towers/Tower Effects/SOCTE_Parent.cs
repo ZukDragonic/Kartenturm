@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardTowerEffectBase", menuName = "Card/TowerEffect/Base")]
+[CreateAssetMenu(fileName = "CardTowerEffectParent", menuName = "Card/TowerEffectParent")]
 public class SOCTE_Parent : ScriptableObject
 {
     public SOCTEffect[] passive;
@@ -26,6 +26,7 @@ public class SOCTE_Parent : ScriptableObject
     {
         playEffectFromArray(summon, script, null);
     }
+
     public void PPassiveEffect(projectileScript script)
     {
         playEffectFromArray(pPassive, null, script);
@@ -40,7 +41,7 @@ public class SOCTE_Parent : ScriptableObject
     }
     public void OnPSummonEffect(projectileScript script)
     {
-        playEffectFromArray(pHit, null, script);
+        playEffectFromArray(pSummon, null, script);
     }
 
     void playEffectFromArray(SOCTEffect[] allEffect, baseTowerScript tScript, projectileScript pScript)
