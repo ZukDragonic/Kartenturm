@@ -22,7 +22,7 @@ public class SOCTower : SOCard
     public int projectileBounceNum;
     public int projectilePierce;
 
-    public SOCTE_Base[] Effects;
+    public SOCTE_Parent Effects;
 
     public int slotNum;
     public targettingOption targetting;
