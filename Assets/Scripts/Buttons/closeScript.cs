@@ -14,5 +14,6 @@ public class closeScript : MonoBehaviour, IPointerDownHandler
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         Destroy(destroyObject);
+        gameControllerScript.instance.UpdateGameState(GameState.Wave);
     }
 }

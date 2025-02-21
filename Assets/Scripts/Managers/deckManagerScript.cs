@@ -43,6 +43,8 @@ public class deckManagerScript : MonoBehaviour
 
     public void openShop()
     {
-        Instantiate(shop, gameController.topCanvas.transform);
+        shopScript current = Instantiate(shop, gameController.topCanvas.transform).GetComponent<shopScript>();
+        current.createShop(-1);
+        gameController.timeManager.pauseTime();
     }
 }

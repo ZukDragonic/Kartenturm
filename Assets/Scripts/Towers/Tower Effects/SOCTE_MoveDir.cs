@@ -10,6 +10,5 @@ public class SOCTE_MoveDir : SOCTEffect
     {
         dir = (script.target - script.parentTower.transform.position).normalized;
         script.transform.position += dir * speed * Time.deltaTime;
-        Debug.Log(dir);
     }
 }

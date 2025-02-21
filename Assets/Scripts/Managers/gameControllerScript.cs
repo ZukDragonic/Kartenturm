@@ -22,6 +22,17 @@ public enum GameState
     PauseMenu
 }
 [System.Serializable]
+public enum Managers
+{
+    None,
+    Game,
+    Resource,
+    Time,
+    Deck,
+    Wave,
+    Timeline
+}
+[System.Serializable]
 public class Flag
 {
     public int ID;
@@ -185,6 +196,33 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void middleMan(Managers managerCalled, string voidCalled)
+    {
+        switch (managerCalled)
+        {
+            case Managers.Game:
+                gameControllerScript.instance.SendMessage(voidCalled);
+                break;
+            case Managers.Resource:
+                gameControllerScript.instance.resourceManager.SendMessage(voidCalled);
+                break;
+            case Managers.Time:
+                gameControllerScript.instance.timeManager.SendMessage(voidCalled);
+                break;
+            case Managers.Deck:
+                gameControllerScript.instance.deckManager.SendMessage(voidCalled);
+                break;
+            case Managers.Wave:
+                gameControllerScript.instance.waveManager.SendMessage(voidCalled);
+                break;
+            case Managers.Timeline:
+                gameControllerScript.instance.timelineManager.SendMessage(voidCalled);
                 break;
             default:
                 break;

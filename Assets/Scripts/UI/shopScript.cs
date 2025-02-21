@@ -14,14 +14,9 @@ public class shopScript : MonoBehaviour
     public GameObject randomCardPrefab;
     public int buyNum;
 
-    void Start()
+    public void createShop(float multiplier)
     {
         gameController = gameControllerScript.instance;
-        createShop(-1);
-    }
-
-    void createShop(float multiplier)
-    {
         gameController.UpdateGameState(GameState.ShopMenu);
         if (multiplier == -1)
         {

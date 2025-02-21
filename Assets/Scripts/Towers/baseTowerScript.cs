@@ -92,6 +92,10 @@ public class baseTowerScript : MonoBehaviour
     }
     void Update()
     {
+        if (gameController.state == GameState.PauseMenu || gameController.state == GameState.ShopMenu)
+        {
+            return;
+        }
         //hover highlight, click hightlight, and gui open/close
         //if mouse is over the tower
         if (gameController.mainInput_Ray.hit == gameObject)
@@ -157,6 +161,11 @@ public class baseTowerScript : MonoBehaviour
 
     public void openTowerMenu()
     {
+        StartCoroutine(delayedOpenTowerMenu());
+    }
+    IEnumerator delayedOpenTowerMenu()
+    {
+        yield return null;
         openedTowerMenu = null;
         gameController.UpdateGameState(GameState.TowerMenu);
 
