@@ -103,6 +103,7 @@ public class gameControllerScript : MonoBehaviour
     private Camera mainCamera;
     public GameObject handCanvas;
     public GameObject topCanvas;
+    public GameObject stopCanvas;
 
     [SerializeField]
     NewFlagDic eventDict;
@@ -125,6 +126,7 @@ public class gameControllerScript : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         handCanvas = GameObject.Find("Hand Canvas");
         topCanvas = GameObject.Find("Top Canvas");
+        stopCanvas = GameObject.Find("Stop Canvas");
 
         state = GameState.Wave;
 
