@@ -30,8 +30,17 @@ public enum Managers
     Time,
     Deck,
     Wave,
-    Timeline
+    Timeline,
+    Audio
 }
+[System.Serializable]
+public enum SoundType
+{
+    Master,
+    SFX,
+    Music
+}
+
 [System.Serializable]
 public class Flag
 {
@@ -88,6 +97,23 @@ public class EnemyAndDelay
     public float delay;
     public int repeat;
 }
+[System.Serializable]
+public class Sound
+{
+    public int ID;
+    
+    public AudioClip[] clips;
+
+    [Range(0f,1f)]
+    public float volume;
+    [Range(0.1f, 3f)]
+    public float pitch;
+
+    [HideInInspector]
+    public AudioSource source;
+
+    public SoundType type;
+}
 public class gameControllerScript : MonoBehaviour
 {
     public static gameControllerScript instance;
@@ -97,6 +123,7 @@ public class gameControllerScript : MonoBehaviour
     public waveManagerScript waveManager;
     public timeManagerScript timeManager;
     public timelineManagerScript timelineManager;
+    public audioManagerScript audioManager;
 
     public MainInput_Ray mainInput_Ray;
     private LayerMask MouseArea;
@@ -158,6 +185,7 @@ public class gameControllerScript : MonoBehaviour
         waveManager = GameObject.Find("waveManager").GetComponent<waveManagerScript>();
         timeManager = GameObject.Find("timeManager").GetComponent<timeManagerScript>();
         timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
+        audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
     }
 
     public void checkFlag(int ID)
@@ -225,6 +253,9 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case Managers.Timeline:
                 gameControllerScript.instance.timelineManager.SendMessage(voidCalled);
+                break;
+            case Managers.Audio:
+                gameControllerScript.instance.audioManager.SendMessage(voidCalled);
                 break;
             default:
                 break;

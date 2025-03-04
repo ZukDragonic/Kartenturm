@@ -11,10 +11,10 @@ public class sliderDisplayScript : MonoBehaviour
     {
         slider = transform.GetChild(0).GetComponent<Slider>();
     }
-    public void updateDisplay(float min, float max)
+    public void updateDisplay(float current, float max)
     {
         slider = transform.GetChild(0).GetComponent<Slider>();
 
-        slider.value = min / max;
+        slider.value = current / max;
     }
 }

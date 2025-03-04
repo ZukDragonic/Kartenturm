@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class middleManCallScript : MonoBehaviour, IPointerDownHandler
+public class M_middleManCallScript : MonoBehaviour, IPointerDownHandler
 {
     public Managers managerCalled;
     public string voidCalled;
