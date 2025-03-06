@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardSpellEffectSummon", menuName = "Card/Spell/Effect/Summon")]
-public class SOCSESummon : SOCSEffect
+public class SOCSE_Summon : SOCSEffect
 {
     public GameObject summonedPrefab;
     public override void ApplyEffect()

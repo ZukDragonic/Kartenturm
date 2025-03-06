@@ -11,26 +11,17 @@ public class audioManagerScript : MonoBehaviour
     public float SFXVolume;
     public float musicVolume;
 
+    /*[HideInInspector]
     public List<AudioSource> SFXSource;
-    public List<AudioSource> MusicSource;
+    [HideInInspector]
+    public List<AudioSource> MusicSource;*/
+    //no clue why I made this but must be here for a reason
+
+    private bool isInitialized = false;
 
     void Start()
     {
-        foreach (Sound sound in sounds)
-        {
-            AudioSource current = gameObject.AddComponent<AudioSource>();
-            sound.source = current;
-            current.clip = sound.clips[0];
-            sound.source.pitch = sound.pitch;
-            if (sound.type == SoundType.SFX)
-            {
-                SFXSource.Add(sound.source);
-            }
-            else
-            {
-                MusicSource.Add(sound.source);
-            }
-        }
+        InitalizeAudioSource();
     }
     public void PlaySound(int ID)
     {
@@ -40,20 +31,86 @@ public class audioManagerScript : MonoBehaviour
             Debug.Log("Fuck off and enter an an actual audio ID.");
             return;
         }
+
+        //checks for any empty instances it can be played on and if it doesn't exist it overrides the earliest instance
+        AudioSource source = CheckEmptySource(current.source);
+        if (source == null)
+        {
+            source = CheckFirstSource(current.source);
+        }
+
+        //randomizes the clip played if possible
         AudioClip playedClip = current.clips[0];
         if (current.clips.Length > 1)
         {
             playedClip = current.clips[UnityEngine.Random.Range(0, current.clips.Length)];
         }
-        current.source.clip = playedClip;
+
+        source.clip = playedClip;
+
+        //sets volume
         if (current.type == SoundType.SFX)
         {
-            current.source.volume = current.volume * masterVolume * SFXVolume;
+            source.volume = current.volume * masterVolume * SFXVolume;
         }
         else
         {
-            current.source.volume = current.volume * masterVolume * musicVolume;
+            source.volume = current.volume * masterVolume * musicVolume;
         }
-        current.source.Play();
+
+        source.Play();
+    }
+
+    AudioSource CheckEmptySource(AudioSource[] sourceList)
+    {
+        foreach (AudioSource source in sourceList)
+        {
+            if (!source.isPlaying)
+            {
+                return source;
+            }
+        }
+        return null;
+    }
+
+    AudioSource CheckFirstSource(AudioSource[] sourceList)
+    {
+        AudioSource current = sourceList[0];
+        foreach (AudioSource source in sourceList)
+        {
+            if (source.time > current.time)
+            {
+                current = source;
+            }
+        }
+        return current;
+    }
+
+    void InitalizeAudioSource()
+    {
+        if (isInitialized)
+        {
+            return;
+        }
+        foreach (Sound sound in sounds)
+        {
+            List<AudioSource> sourceList = new List<AudioSource>();
+            for (int i = 0; i < sound.maxInstances; i++)
+            {
+                AudioSource current = gameObject.AddComponent<AudioSource>();
+                sourceList.Add(current);
+                current.clip = sound.clips[0];
+                current.pitch = sound.pitch;
+                /*if (sound.type == SoundType.SFX)
+                {
+                    SFXSource.Add(current);
+                }
+                else
+                {
+                    MusicSource.Add(current);
+                }*/
+            }
+            sound.source = sourceList.ToArray();
+        }
     }
 }
