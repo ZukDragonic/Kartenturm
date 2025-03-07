@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class timeManagerScript : MonoBehaviour
-{
-    public bool isAutoStart;
-
+{    
     public int[] timeChanges;
     public int currentTime;
 
@@ -13,7 +11,7 @@ public class timeManagerScript : MonoBehaviour
 
     public void changeTime()
     {
-        if (Time.timeScale == 0 && currentTime != 0 && !isAutoStart)
+        if (Time.timeScale == 0 && currentTime != 0 && !gameControllerScript.instance.FlagInfo(20001))
         {
             timeButton.previousImage();
             resetTime();
@@ -35,16 +33,5 @@ public class timeManagerScript : MonoBehaviour
     public void pauseTime()
     {
         Time.timeScale = 0;
-    }
-    public void autoStart()
-    {
-        if (isAutoStart)
-        {
-            isAutoStart = false;
-        }
-        else
-        {
-            isAutoStart = true;
-        }
     }
 }

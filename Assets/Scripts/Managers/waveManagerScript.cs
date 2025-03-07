@@ -43,8 +43,8 @@ public class waveManagerScript : MonoBehaviour
         {
             if (enemyAlive == 0)
             {
-                gameController.checkFlag(currentWave.ID);
-                if (!gameController.timeManager.isAutoStart)
+                gameController.FlagTrigger(currentWave.ID);
+                if (!gameController.FlagInfo(20001))
                 {
                     gameController.timeManager.pauseTime();
                 }

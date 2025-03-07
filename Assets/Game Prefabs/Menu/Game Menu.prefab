@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6847062877906238693}
   - component: {fileID: 7059216303534496094}
   - component: {fileID: 6205146934555768880}
-  - component: {fileID: 7394384528949583657}
   - component: {fileID: 8281809593008983783}
   - component: {fileID: 4592774644114572989}
   m_Layer: 5
@@ -79,23 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7394384528949583657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850407191036672474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e2b24fe857293341b14ecaa77e6c0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  images:
-  - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
-  - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
-  managerChecked: 3
-  varChecked: AutoStart
 --- !u!114 &8281809593008983783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f31d9dda2f6cb48a113275329b9850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 7394384528949583657}
+  script: {fileID: 0}
   voidCalled: nextImage
 --- !u!114 &4592774644114572989
 MonoBehaviour:
@@ -122,8 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78277619f4e00ca4ca4327f8bb0cedf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerCalled: 3
-  voidCalled: autoStart
+  managerCalled: 1
+  voidCalled: ResetGame
+  IDCalled: -1
 --- !u!1 &1408358819708180353
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +278,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
   managerChecked: 3
-  varChecked: AutoStart
+  varChecked: 
+  flagChecked: 0
 --- !u!114 &4064113975458882578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerCalled: 3
   voidCalled: autoStart
+  IDCalled: 0
 --- !u!1 &2553144264903142064
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +570,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
   managerChecked: 3
-  varChecked: AutoStart
+  varChecked: 
+  flagChecked: 0
 --- !u!114 &6272114544549780971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,8 +756,9 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
-  managerChecked: 3
+  managerChecked: 1
   varChecked: AutoStart
+  flagChecked: 20001
 --- !u!114 &2400061822681886230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,8 +785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78277619f4e00ca4ca4327f8bb0cedf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerCalled: 3
-  voidCalled: autoStart
+  managerCalled: 1
+  voidCalled: FlagTrigger
+  IDCalled: 20001
 --- !u!1 &4575004424654568046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1081,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
   managerChecked: 3
-  varChecked: AutoStart
+  varChecked: 
+  flagChecked: 0
 --- !u!114 &5601812320040676630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,7 +1192,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
   managerChecked: 3
-  varChecked: AutoStart
+  varChecked: 
+  flagChecked: 0
 --- !u!114 &4651630206988285551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,8 +1302,9 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
   - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
-  managerChecked: 3
-  varChecked: AutoStart
+  managerChecked: 1
+  varChecked: Tutorial
+  flagChecked: 20002
 --- !u!114 &4271908135100421634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,8 +1331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78277619f4e00ca4ca4327f8bb0cedf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerCalled: 3
-  voidCalled: autoStart
+  managerCalled: 1
+  voidCalled: FlagTrigger
+  IDCalled: 20001
 --- !u!1 &6519676325657017726
 GameObject:
   m_ObjectHideFlags: 0

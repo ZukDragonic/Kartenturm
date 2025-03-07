@@ -46,10 +46,12 @@ public class Flag
 {
     public int ID;
     public bool check;
-    public Flag(int newID, bool newCheck)
+    public Flag NewFlag(int newID, bool newCheck)
     {
-        ID = newID;
-        check = newCheck;
+        Flag current = new Flag();
+        current.ID = newID;
+        current.check = newCheck;
+        return current;
     }
 }
 [System.Serializable]
@@ -142,7 +144,10 @@ public class gameControllerScript : MonoBehaviour
 
     void Start()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
 
         flagDict = eventDict.toDictionary();
         findManagers();
@@ -188,10 +193,9 @@ public class gameControllerScript : MonoBehaviour
         audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
     }
 
-    public void checkFlag(int ID)
+    public void FlagTrigger(int ID)
     {
         //flagDict[ID] = true;
-        Debug.Log(ID + 1);
         //spawns the pre-set waves
         if (ID > 11000 && ID < 11010)
         {
@@ -207,9 +211,18 @@ public class gameControllerScript : MonoBehaviour
         {
             case 11010:
                 break;
+            case 20001:
+                flagDict[ID] = !flagDict[ID];
+                break;
             default:
                 break;
         }
+    }
+
+    public bool FlagInfo(int ID)
+    {
+        Debug.Log(flagDict[ID]);
+        return (flagDict[ID]);
     }
 
     public void UpdateGameState(GameState newState)
@@ -232,33 +245,38 @@ public class gameControllerScript : MonoBehaviour
         }
     }
 
-    public void middleMan(Managers managerCalled, string voidCalled)
+    public void MiddleMan(Managers managerCalled, string voidCalled, int IDCalled)
     {
         switch (managerCalled)
         {
             case Managers.Game:
-                gameControllerScript.instance.SendMessage(voidCalled);
+                gameControllerScript.instance.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Resource:
-                gameControllerScript.instance.resourceManager.SendMessage(voidCalled);
+                gameControllerScript.instance.resourceManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Time:
-                gameControllerScript.instance.timeManager.SendMessage(voidCalled);
+                gameControllerScript.instance.timeManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Deck:
-                gameControllerScript.instance.deckManager.SendMessage(voidCalled);
+                gameControllerScript.instance.deckManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Wave:
-                gameControllerScript.instance.waveManager.SendMessage(voidCalled);
+                gameControllerScript.instance.waveManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Timeline:
-                gameControllerScript.instance.timelineManager.SendMessage(voidCalled);
+                gameControllerScript.instance.timelineManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Audio:
-                gameControllerScript.instance.audioManager.SendMessage(voidCalled);
+                gameControllerScript.instance.audioManager.SendMessage(voidCalled, IDCalled);
                 break;
             default:
                 break;
         }
+    }
+
+    public void ResetGame()
+    {
+        //scene manager to reset scene
     }
 }

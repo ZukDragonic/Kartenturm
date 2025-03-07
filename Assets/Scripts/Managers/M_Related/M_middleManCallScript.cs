@@ -7,9 +7,10 @@ public class M_middleManCallScript : MonoBehaviour, IPointerDownHandler
 {
     public Managers managerCalled;
     public string voidCalled;
+    public int IDCalled;
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        gameControllerScript.instance.middleMan(managerCalled, voidCalled);
+        gameControllerScript.instance.MiddleMan(managerCalled, voidCalled, IDCalled);
     }
 }

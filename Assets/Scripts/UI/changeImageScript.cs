@@ -11,6 +11,7 @@ public class changeImageScript : MonoBehaviour
 
     public Managers managerChecked;
     public string varChecked;
+    public int flagChecked;
 
     void Start()
     {
@@ -49,7 +50,14 @@ public class changeImageScript : MonoBehaviour
             case Managers.None:
                 return 0;
             case Managers.Game:
-                break;
+                if (gameControllerScript.instance.FlagInfo(flagChecked))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             case Managers.Resource:
                 break;
             case Managers.Time:
@@ -57,15 +65,6 @@ public class changeImageScript : MonoBehaviour
                 {
                     case "Time":
                         return gameControllerScript.instance.timeManager.currentTime;
-                    case "AutoStart":
-                        if (gameControllerScript.instance.timeManager.isAutoStart)
-                        {
-                            return 1;
-                        }
-                        else
-                        {
-                            return 0;
-                        }
                     default:
                         break;
                 }
