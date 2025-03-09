@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardSpellSpellCard", menuName = "Card/Spell/SpellCard")]
 public class SOCSpell : SOCard
 {
-    public List<SOCSEffect> allEffects = new List<SOCSEffect>();
+    public List<SOC_Effect> allEffects = new List<SOC_Effect>();
     public List<SOCSRequirement> allRequirement = new List<SOCSRequirement>();
 
     public void PlayCard()
     {
-        foreach (SOCSEffect effect in allEffects)
+        foreach (SOC_Effect effect in allEffects)
         {
-            effect.ApplyEffect();
+            effect.ApplyEffect(null, null);
         }
     }
 

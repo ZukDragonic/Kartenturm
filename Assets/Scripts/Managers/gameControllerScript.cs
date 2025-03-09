@@ -40,6 +40,13 @@ public enum SoundType
     SFX,
     Music
 }
+[System.Serializable]
+public enum StatType
+{
+    Damage,
+    Pierce,
+    Speed,
+}
 
 [System.Serializable]
 public class Flag

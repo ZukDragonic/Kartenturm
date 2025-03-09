@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   ID: 0
+  gold: 0
   archetype: test
   cardName: Pot of Greed
   description: test
   image: {fileID: 21300000, guid: e92fc44f12c21dd44a49e390f39f7ffd, type: 3}
   allEffects:
   - {fileID: 11400000, guid: e0e9d483bbffa074b85e27b5a2276b05, type: 2}
+  allRequirement: []

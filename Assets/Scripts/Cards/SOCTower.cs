@@ -16,7 +16,7 @@ public class SOCTower : SOCard
 
     public int projectilePierce;
 
-    public SOCTE_Parent effects;
+    public SOCE_Parent effects;
 
     public int slotNum;
     public targettingOption targetting;

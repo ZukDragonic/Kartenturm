@@ -88,7 +88,13 @@ public class baseTowerScript : MonoBehaviour
         gameController = gameControllerScript.instance;
         gameController.resourceManager.addTower(gameObject);
 
+        StartCoroutine(WaitForStart());
         StartCoroutine(attackCycle());
+    }
+    IEnumerator WaitForStart()
+    {
+        yield return null;
+        baseCard.effects.OnSummonEffect(this);
     }
     void Update()
     {
@@ -96,6 +102,7 @@ public class baseTowerScript : MonoBehaviour
         {
             return;
         }
+        baseCard.effects.PassiveEffect(this);
         //hover highlight, click hightlight, and gui open/close
         //if mouse is over the tower
         if (gameController.mainInput_Ray.hit == gameObject)
@@ -260,7 +267,7 @@ public class baseTowerScript : MonoBehaviour
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
                         GameObject projectile = Instantiate(baseProjectile, transform.position, rotation);
-                        projectileScript current = projectile.GetComponent<projectileScript>();
+                        sumObj_Projectile current = projectile.GetComponent<sumObj_Projectile>();
                         current.parentTower = this;
                         current.target = currentTarget.transform.position;
                         projectile.GetComponent<SpriteRenderer>().sprite = baseCard.projectileImage;
@@ -274,5 +281,9 @@ public class baseTowerScript : MonoBehaviour
 
             hasAttacked = false;
         }
+    }
+    void OnDestroy()
+    {
+        baseCard.effects.OnDestroyEffect(this);
     }
 }
