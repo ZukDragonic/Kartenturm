@@ -171,11 +171,11 @@ public class baseTowerScript : MonoBehaviour
 
         if (Camera.main.WorldToViewportPoint(gameObject.transform.position).x < 0.5f)
         {
-            openedTowerMenu = Instantiate(towerMenuPrefabR, gameController.topCanvas.transform);
+            openedTowerMenu = Instantiate(towerMenuPrefabR, gameController.allCanvas[1].transform);
         }
         else
         {
-            openedTowerMenu = Instantiate(towerMenuPrefabL, gameController.topCanvas.transform);
+            openedTowerMenu = Instantiate(towerMenuPrefabL, gameController.allCanvas[1].transform);
         }
         openedTowerMenu.GetComponent<towerMenuDisplay>().parentTower = this;
         openedTowerMenu.GetComponentInChildren<slotParentScriptUGUI>().parentTower = this;

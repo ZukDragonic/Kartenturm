@@ -10,7 +10,7 @@ public class openUIScript : MonoBehaviour
     {
         if (gameControllerScript.instance.state != GameState.PauseMenu)
         {
-            Instantiate(UI, gameControllerScript.instance.stopCanvas.transform);
+            Instantiate(UI, gameControllerScript.instance.allCanvas[4].transform);
             gameControllerScript.instance.UpdateGameState(GameState.PauseMenu);
         }
     }

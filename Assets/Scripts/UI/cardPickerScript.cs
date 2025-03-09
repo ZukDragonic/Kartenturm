@@ -7,13 +7,11 @@ public class cardPickerScript : MonoBehaviour
     public gameControllerScript gameController;
     public SOCard[] allCardList;
     public GameObject cardOptionPrefab;
-    private GameObject topCanvas;
     void Start()
     {
         gameController = gameControllerScript.instance;
         allCardList = gameController.deckManager.allCards;
-        topCanvas = gameController.topCanvas;
-        gameObject.transform.SetParent(topCanvas.transform);
+        gameObject.transform.SetParent(gameController.allCanvas[3].transform);
 
         if (gameObject.transform.GetComponentsInChildren<cardOptionScript>() != null)
         {

@@ -43,13 +43,13 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         GameObject GameHit = gameController.mainInput_Ray.hit;
 
         //checks if something is being hit
-        if (UIHit == null)
+        /*if (UIHit == null)
         {
             hit = null;
             cosmetic.resetCard();
             isOverPlaceable = false;
             return;
-        }
+        }*/
         if (gameController.state == GameState.Wave)
         {
             hit = GameHit;

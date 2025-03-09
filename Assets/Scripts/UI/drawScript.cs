@@ -12,7 +12,7 @@ public class drawScript : MonoBehaviour
     void Start()
     {
         gameController = gameControllerScript.instance;
-        playerHand = gameController.handCanvas.gameObject.transform.Find("playerHand").gameObject;
+        playerHand = GameObject.Find("playerHand").gameObject;
     }
     public void drawCard(int drawNum)
     {

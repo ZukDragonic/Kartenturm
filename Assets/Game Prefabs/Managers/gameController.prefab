@@ -47,11 +47,22 @@ MonoBehaviour:
   resourceManager: {fileID: 0}
   deckManager: {fileID: 0}
   waveManager: {fileID: 0}
+  timeManager: {fileID: 0}
+  timelineManager: {fileID: 0}
+  audioManager: {fileID: 0}
   mainInput_Ray:
     hit: {fileID: 0}
     hittingSomething: 0
   handCanvas: {fileID: 0}
   topCanvas: {fileID: 0}
-  towerList: []
+  stopCanvas: {fileID: 0}
   eventDict:
-    dictItems: []
+    dictItems:
+    - ID: 20001
+      check: 0
+      name: Auto Start
+    - ID: 20002
+      check: 0
+      name: Tutorial
+  state: 0
+  isCardDragged: 0

@@ -46,11 +46,13 @@ public class Flag
 {
     public int ID;
     public bool check;
-    public Flag NewFlag(int newID, bool newCheck)
+    public string name;
+    public Flag NewFlag(int newID, bool newCheck, string newName)
     {
         Flag current = new Flag();
         current.ID = newID;
         current.check = newCheck;
+        current.name = newName;
         return current;
     }
 }
@@ -130,9 +132,7 @@ public class gameControllerScript : MonoBehaviour
     public MainInput_Ray mainInput_Ray;
     private LayerMask MouseArea;
     private Camera mainCamera;
-    public GameObject handCanvas;
-    public GameObject topCanvas;
-    public GameObject stopCanvas;
+    public GameObject[] allCanvas;
 
     [SerializeField]
     NewFlagDic eventDict;
@@ -140,6 +140,7 @@ public class gameControllerScript : MonoBehaviour
     Dictionary<int, bool> flagDict;
 
     public GameState state;
+    private GameState prevState;
     public bool isCardDragged;
 
     void Start()
@@ -155,10 +156,7 @@ public class gameControllerScript : MonoBehaviour
         mainInput_Ray.hit = gameObject;
         MouseArea = LayerMask.GetMask("Mouse");
 
-        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        handCanvas = GameObject.Find("Hand Canvas");
-        topCanvas = GameObject.Find("Top Canvas");
-        stopCanvas = GameObject.Find("Stop Canvas");
+        findCanvas();
 
         state = GameState.Wave;
 
@@ -183,16 +181,6 @@ public class gameControllerScript : MonoBehaviour
         }
     }
 
-    void findManagers()
-    {
-        resourceManager = GameObject.Find("resourceManager").GetComponent<resourceManagerScript>();
-        deckManager = GameObject.Find("deckManager").GetComponent<deckManagerScript>();
-        waveManager = GameObject.Find("waveManager").GetComponent<waveManagerScript>();
-        timeManager = GameObject.Find("timeManager").GetComponent<timeManagerScript>();
-        timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
-        audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
-    }
-
     public void FlagTrigger(int ID)
     {
         //flagDict[ID] = true;
@@ -206,13 +194,14 @@ public class gameControllerScript : MonoBehaviour
                 deckManager.openShop();
             }
         }
+        if (ID > 20000 && ID < 21000)
+        {
+            flagDict[ID] = !flagDict[ID];
+        }
         //each event an ID would trigger, use for really important events
         switch (ID)
         {
             case 11010:
-                break;
-            case 20001:
-                flagDict[ID] = !flagDict[ID];
                 break;
             default:
                 break;
@@ -221,14 +210,17 @@ public class gameControllerScript : MonoBehaviour
 
     public bool FlagInfo(int ID)
     {
-        Debug.Log(flagDict[ID]);
         return (flagDict[ID]);
     }
 
     public void UpdateGameState(GameState newState)
     {
-        state = newState;
-        switch (state)
+        if (state == GameState.PauseMenu)
+        {
+            state = prevState;
+            return;
+        }
+        switch (newState)
         {
             case GameState.Wave:
                 timeManager.resetTime();
@@ -239,10 +231,12 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();
+                prevState = state;
                 break;
             default:
                 break;
         }
+        state = newState;
     }
 
     public void MiddleMan(Managers managerCalled, string voidCalled, int IDCalled)
@@ -278,5 +272,25 @@ public class gameControllerScript : MonoBehaviour
     public void ResetGame()
     {
         //scene manager to reset scene
+    }
+    void findManagers()
+    {
+        resourceManager = GameObject.Find("resourceManager").GetComponent<resourceManagerScript>();
+        deckManager = GameObject.Find("deckManager").GetComponent<deckManagerScript>();
+        waveManager = GameObject.Find("waveManager").GetComponent<waveManagerScript>();
+        timeManager = GameObject.Find("timeManager").GetComponent<timeManagerScript>();
+        timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
+        audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
+    }
+
+    void findCanvas()
+    {
+        List<GameObject> allCanvasList = new List<GameObject>();
+        allCanvasList.Add(GameObject.Find("UI Canvas"));
+        allCanvasList.Add(GameObject.Find("Game Menu Canvas"));
+        allCanvasList.Add(GameObject.Find("Hand Canvas"));
+        allCanvasList.Add(GameObject.Find("Top Canvas"));
+        allCanvasList.Add(GameObject.Find("Stop Canvas"));
+        allCanvas = allCanvasList.ToArray();
     }
 }
