@@ -27,19 +27,19 @@ public class SOCE_Parent : ScriptableObject
         playEffectFromArray(summon, script, null);
     }
 
-    public void PPassiveEffect(sumObj_Base script)
+    public void OPassiveEffect(sumObj_Base script)
     {
         playEffectFromArray(pPassive, null, script);
     }
-    public void OnPDestroyEffect(sumObj_Base script)
+    public void OnODestroyEffect(sumObj_Base script)
     {
         playEffectFromArray(pDestroy, null, script);
     }
-    public void OnPHitEffect(sumObj_Base script)
+    public void OnOHitEffect(sumObj_Base script)
     {
         playEffectFromArray(pHit, null, script);
     }
-    public void OnPSummonEffect(sumObj_Base script)
+    public void OnOSummonEffect(sumObj_Base script)
     {
         playEffectFromArray(pSummon, null, script);
     }

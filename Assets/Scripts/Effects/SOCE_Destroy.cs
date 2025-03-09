@@ -10,7 +10,11 @@ public class SOCE_Destroy : SOC_Effect
     {
         Destroy(script.gameObject, duration);
     }
-    public override void ApplyPEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Base script)
+    {
+        Destroy(script.gameObject, duration);
+    }
+    public override void ApplyOPEffect(sumObj_Base script)
     {
         //makes duration scale in respect to range
         duration *= ((script as sumObj_Projectile).parentTower.range / (script as sumObj_Projectile).parentTower.baseCard.range);

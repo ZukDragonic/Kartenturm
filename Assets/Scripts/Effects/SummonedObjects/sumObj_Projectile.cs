@@ -18,25 +18,25 @@ public class sumObj_Projectile : sumObj_Base
     IEnumerator WaitForStart()
     {
         yield return null;
-        effects.OnPSummonEffect(this as sumObj_Base);
+        effects.OnOSummonEffect(this as sumObj_Base);
     }
     void Update()
     {
-        effects.PPassiveEffect(this as sumObj_Base);
+        effects.OPassiveEffect(this as sumObj_Base);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            effects.OnPHitEffect(this as sumObj_Base);
+            effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
             script.health -= damage;
             script.sliderDisplay.updateDisplay(script.health, script.enemy.health);
             pierce -= 1;
             if (pierce <= 0)
             {
-                effects.OnPDestroyEffect(this as sumObj_Base);
+                effects.OnODestroyEffect(this as sumObj_Base);
                 Destroy(gameObject);
             }
         }

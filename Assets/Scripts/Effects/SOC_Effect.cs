@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SOC_Effect : ScriptableObject
 {
-    public void ApplyEffect(baseTowerScript tScript, sumObj_Base pScript)
+    public void ApplyEffect(baseTowerScript tScript, sumObj_Base oScript)
     {
-        if (pScript != null)
+        if (oScript != null)
         {
-            ApplyPEffect(pScript);
+            if (oScript as sumObj_Standalone != null)
+            {
+                ApplyOSEffect(oScript);
+            }
+            else
+            {
+                ApplyOPEffect(oScript);
+            }
         }
         else if(tScript != null)
         {
@@ -22,7 +29,10 @@ public class SOC_Effect : ScriptableObject
     public virtual void ApplyTEffect(baseTowerScript script)
     {
     }
-    public virtual void ApplyPEffect(sumObj_Base script)
+    public virtual void ApplyOSEffect(sumObj_Base script)
+    {
+    }
+    public virtual void ApplyOPEffect(sumObj_Base script)
     {
     }
     public virtual void ApplyBEffect()

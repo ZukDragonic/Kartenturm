@@ -9,7 +9,11 @@ public class SOCTE_Sound : SOC_Effect
     {
         gameControllerScript.instance.audioManager.PlaySound(soundID);
     }
-    public override void ApplyPEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Base script)
+    {
+        gameControllerScript.instance.audioManager.PlaySound(soundID);
+    }
+    public override void ApplyOPEffect(sumObj_Base script)
     {
         gameControllerScript.instance.audioManager.PlaySound(soundID);
     }

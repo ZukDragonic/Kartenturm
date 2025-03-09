@@ -13,7 +13,14 @@ public class SOCE_Summon : SOC_Effect
         /*GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
         current.GetComponent<SumObj_Tower>().parentProjectile = script;*/
     }
-    public override void ApplyPEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Base script)
+    {
+        GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
+        sumObj_Standalone summonedScript = current.GetComponent<sumObj_Standalone>();
+        summonedScript.effects = summonedEffects;
+        summonedScript.parentProjectile = script as sumObj_Projectile;
+    }
+    public override void ApplyOPEffect(sumObj_Base script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
         sumObj_Standalone summonedScript = current.GetComponent<sumObj_Standalone>();

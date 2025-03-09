@@ -11,7 +11,21 @@ public class SOCE_Override : SOC_Effect
     {
         Debug.Log("TBA");
     }
-    public override void ApplyPEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Base script)
+    {
+        switch (stat)
+        {
+            case StatType.Damage:
+                script.damage = newStat;
+                break;
+            case StatType.Pierce:
+                script.pierce = newStat;
+                break;
+            default:
+                break;
+        }
+    }
+    public override void ApplyOPEffect(sumObj_Base script)
     {
         switch (stat)
         {
