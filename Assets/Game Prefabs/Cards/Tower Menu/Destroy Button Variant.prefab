@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destroy Button Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2669020573853845320, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1ed47c0012baeb4a8df9d05ff46a3b4, type: 3}
     - target: {fileID: 2669020573853845322, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: hoverColor.b
       value: 0.3066038
@@ -52,14 +56,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -89,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 127
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -201
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

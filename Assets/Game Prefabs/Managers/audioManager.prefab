@@ -44,9 +44,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f62221113e74c418306b41458616f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
-  masterVolume: 0
-  SFXVolume: 0
-  musicVolume: 0
-  SFXSource: []
-  MusicSource: []
+  sounds:
+  - ID: 0
+    clips:
+    - {fileID: 0}
+    maxInstances: 1
+    volume: 0
+    pitch: 0.1
+    source: []
+    type: 0
+  - ID: 0
+    clips:
+    - {fileID: 0}
+    maxInstances: 3
+    volume: 0
+    pitch: 0.1
+    source: []
+    type: 0
+  - ID: 0
+    clips:
+    - {fileID: 0}
+    maxInstances: 3
+    volume: 0
+    pitch: 0.1
+    source: []
+    type: 0
+  SFXVolume: 1
+  musicVolume: 1

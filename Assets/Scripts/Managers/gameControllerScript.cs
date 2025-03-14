@@ -36,7 +36,6 @@ public enum Managers
 [System.Serializable]
 public enum SoundType
 {
-    Master,
     SFX,
     Music
 }

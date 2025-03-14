@@ -5838,8 +5838,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 51.19995, y: -51.19995}
+  m_SizeDelta: {x: 102.4, y: 102.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834262443
 MonoBehaviour:
@@ -5888,7 +5888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1eaba2ad382c1334e905862b6bc0cd22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b926db3ee7f9444f957142f5ac650a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6027,7 +6027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50.299988, y: 52}
+  m_AnchoredPosition: {x: 50.30005, y: 52}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936161816
@@ -14154,8 +14154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -51.19995, y: -51.19995}
+  m_SizeDelta: {x: 102.4, y: 102.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003396532
 MonoBehaviour:
@@ -14177,8 +14177,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a138d8637fdc0c242be083f4458595aa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14236,10 +14236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: f7d01d7a73b811544aeb012a167dd8b0, type: 3}
-  - {fileID: 21300000, guid: 4e45e6552d258064dab9535978e74b8c, type: 3}
-  - {fileID: 21300000, guid: d6a3f823f1a196a439cbf7d0130e4cbf, type: 3}
-  - {fileID: 21300000, guid: 562e51da12a86f543acb093509886794, type: 3}
+  - {fileID: 21300000, guid: 0e015e69d68ec264ab4e1263697f2ffc, type: 3}
+  - {fileID: 21300000, guid: a138d8637fdc0c242be083f4458595aa, type: 3}
+  - {fileID: 21300000, guid: 854815acb2851d34f99e1ffcc6858c9f, type: 3}
+  - {fileID: 21300000, guid: 8e6d36dd696d7fb4f9df1ec7f48cdc26, type: 3}
   managerChecked: 0
   varChecked: 
   flagChecked: 0
@@ -14875,50 +14875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 68070753}
     m_Modifications:
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[2].pitch
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[0].maxInstances
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[1].maxInstances
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[2].maxInstances
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[0].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[1].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329580158695349165, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
-      propertyPath: sounds.Array.data[2].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4329580158695349166, guid: 0f52f89dae764bb488431b493cfe2aaf, type: 3}
       propertyPath: m_RootOrder
       value: 6

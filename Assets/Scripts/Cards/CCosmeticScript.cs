@@ -7,6 +7,11 @@ public class CCosmeticScript : MonoBehaviour
 {
     private Sprite ogSprite;
 
+    private void Start()
+    {
+        initiateOgSprite();
+    }
+
     public void initiateOgSprite()
     {
         ogSprite = GetComponent<Image>().sprite;

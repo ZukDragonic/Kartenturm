@@ -705,12 +705,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 30
+      propertyPath: m_LocalScale.x
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 30
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_LocalPosition.x

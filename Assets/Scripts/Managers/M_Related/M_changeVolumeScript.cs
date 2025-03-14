@@ -8,14 +8,14 @@ public class M_changeVolumeScript : MonoBehaviour
     public Slider slider;
     public SoundType type;
 
+    private changeImageScript changeImage;
+
     void Start()
     {
+        changeImage = GetComponent<changeImageScript>();
         gameControllerScript gc = gameControllerScript.instance;
         switch (type)
         {
-            case SoundType.Master:
-                slider.value = gc.audioManager.masterVolume;
-                break;
             case SoundType.SFX:
                 slider.value = gc.audioManager.SFXVolume;
                 break;
@@ -36,9 +36,6 @@ public class M_changeVolumeScript : MonoBehaviour
         gameControllerScript gc = gameControllerScript.instance;
         switch (type)
         {
-            case SoundType.Master:
-                gc.audioManager.masterVolume = volume;
-                break;
             case SoundType.SFX:
                 gc.audioManager.SFXVolume = volume;
                 break;
@@ -47,6 +44,14 @@ public class M_changeVolumeScript : MonoBehaviour
                 break;
             default:
                 break;
+        }
+        if (volume == 0)
+        {
+            changeImage.selectImage(0);
+        }
+        else
+        {
+            changeImage.selectImage(1);
         }
     }
 }

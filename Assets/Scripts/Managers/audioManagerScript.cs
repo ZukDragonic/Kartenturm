@@ -7,7 +7,6 @@ public class audioManagerScript : MonoBehaviour
 {
     public Sound[] sounds;
 
-    public float masterVolume;
     public float SFXVolume;
     public float musicVolume;
 
@@ -51,11 +50,11 @@ public class audioManagerScript : MonoBehaviour
         //sets volume
         if (current.type == SoundType.SFX)
         {
-            source.volume = current.volume * masterVolume * SFXVolume;
+            source.volume = current.volume * SFXVolume;
         }
         else
         {
-            source.volume = current.volume * masterVolume * musicVolume;
+            source.volume = current.volume * musicVolume;
         }
 
         source.Play();

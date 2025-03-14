@@ -50,6 +50,7 @@ public class changeImageScript : MonoBehaviour
             case Managers.None:
                 return 0;
             case Managers.Game:
+                //1 means that it's active, 0 means inactive, so the inactive should be earlier in list
                 if (gameControllerScript.instance.FlagInfo(flagChecked))
                 {
                     return 1;
