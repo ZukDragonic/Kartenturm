@@ -36,14 +36,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4901132420117035386, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4901132420117035386, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 450
-      objectReference: {fileID: 0}
-    - target: {fileID: 4901132420117035386, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -73,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901132420117035386, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -150
+      value: -152
       objectReference: {fileID: 0}
     - target: {fileID: 4901132420117035386, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -95,5 +87,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Menu R Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7470592596489416941, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6a5a5e3efe858543b146acd00e0b45a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}

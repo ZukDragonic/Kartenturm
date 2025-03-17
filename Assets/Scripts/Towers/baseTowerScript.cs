@@ -193,7 +193,11 @@ public class baseTowerScript : MonoBehaviour
     public void closeTowerMenu()
     {
         gameController.UpdateGameState(GameState.Wave);
-        Destroy(openedTowerMenu);
+        isSelected = false;
+        if (openedTowerMenu != null)
+        {
+            Destroy(openedTowerMenu);
+        }
         openedTowerMenu = null;
         cosmetic.rangeActivity(false, range);
     }

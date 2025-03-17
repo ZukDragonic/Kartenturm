@@ -8,6 +8,7 @@ public class towerMenuDisplay : MonoBehaviour
 {
     public baseTowerScript parentTower;
 
+    public TextMeshProUGUI towerName;
     public TextMeshProUGUI attackValue;
     public TextMeshProUGUI range;
     public TextMeshProUGUI pierce;
@@ -23,6 +24,8 @@ public class towerMenuDisplay : MonoBehaviour
 
     void cardsHasChanged()
     {
+        towerName.text = parentTower.baseCard.cardName;
+        
         float bonusStat = 0;
         foreach (var slot in parentTower.stackedCards)
         {
@@ -68,10 +71,9 @@ public class towerMenuDisplay : MonoBehaviour
         StartCoroutine(targettingChanged());
     }
 
+
     void OnDestroy()
     {
         parentTower.closeTowerMenu();
-        parentTower.GetComponent<baseTowerScript>().isSelected = false;
-        gameControllerScript.instance.UpdateGameState(GameState.Wave);
     }
 }

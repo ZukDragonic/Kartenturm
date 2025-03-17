@@ -15344,6 +15344,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 68070753}
     m_Modifications:
     - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: abe1e05491813e64f892a10261e5e915, type: 2}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: -1999990238154802752, guid: d8bdddc2f55628b42bc59efccca308f4, type: 2}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_SceneBindings.Array.data[4].key
+      value: 
+      objectReference: {fileID: -1999990238154802752, guid: abe1e05491813e64f892a10261e5e915, type: 2}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: -1999990238154802752, guid: 5849e173448e0bf498722e28e8523c2a, type: 2}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 2116165002}
@@ -15351,6 +15371,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
       objectReference: {fileID: 2116165002}
+    - target: {fileID: 7857137865755475580, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].value
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7857137865755475582, guid: a983ebe47e0b93542bbe3e39f070a359, type: 3}
       propertyPath: m_Name
       value: timelineManager
