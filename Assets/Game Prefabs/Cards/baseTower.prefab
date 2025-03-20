@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4904886877793751422}
   - component: {fileID: 436247232415272559}
   m_Layer: 9
-  m_Name: Selectable (1)
-  m_TagString: Untagged
+  m_Name: Selectable + Block Placeable
+  m_TagString: Block Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,6 @@ MonoBehaviour:
   range: 0
   attackValue: 0
   projectilePierce: 0
-  projectileDuration: 0
   baseProjectile: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
 --- !u!4 &4408194135892189636 stripped
 Transform:

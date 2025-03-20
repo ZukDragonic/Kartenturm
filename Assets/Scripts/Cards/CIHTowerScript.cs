@@ -11,7 +11,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private CCosmeticScript cosmetic;
 
     public SOCTower card;
-    
+
     private Sprite ogSprite;
 
     private bool isOverPlaceable;
@@ -23,6 +23,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public GameObject baseTower;
     public GameObject showTowerPrefab;
     private GameObject showTower;
+    private placeTowerScript placeTower;
     private bool isTowerShown;
 
     void Start()
@@ -42,7 +43,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         wPRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        hit = gameController.mainInput_Ray.hit;
+        Debug.Log(hit);
         //checks if something is being hit
         if (eventData.pointerCurrentRaycast.gameObject == null)
         {
@@ -53,45 +55,41 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             Destroy(showTower);
             return;
         }
-        if (gameController.state == GameState.Wave)
+        if (gameController.state == GameState.Placing || gameController.state == GameState.Wave)
         {
-            if (gameController.mainInput_Ray.hit.tag == "Tower Placeable")
-            {
-                //first checks if raycast hits a placeable area
-                hit = gameController.mainInput_Ray.hit;
+            gameController.UpdateGameState(GameState.Placing);
 
-                if (hit.GetComponent<placeableAreaScript>().isPlaceable)
+            if (!isTowerShown)
+            {
+                //cosmetic purposes
+                foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
                 {
-                    isOverPlaceable = true;
-                    //cosmetic purposes
-                    foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
-                    {
-                        text.enabled = false;
-                    }
-                    foreach (Image image in transform.GetComponentsInChildren<Image>())
-                    {
-                        image.enabled = false;
-                    }
-                    if (!isTowerShown)
-                    {
-                        showTower = Instantiate(showTowerPrefab, hit.transform.position, Quaternion.identity, hit.transform);
-                        showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
-                        showTower.GetComponent<tCosmeticScript>().showTower(card);
-                        showTower.GetComponent<tCosmeticScript>().rangeActivity(true, card.range);
-                        transform.position = Camera.main.WorldToScreenPoint(hit.transform.position);
-                        isTowerShown = true;
-                    }
+                    text.enabled = false;
                 }
+                foreach (Image image in transform.GetComponentsInChildren<Image>())
+                {
+                    image.enabled = false;
+                }
+                showTower = Instantiate(showTowerPrefab, hit.transform);
+                showTower.GetComponent<tCosmeticScript>().showTower(card);
+                showTower.GetComponent<tCosmeticScript>().rangeActivity(true, card.range);
+                placeTower = showTower.GetComponent<placeTowerScript>();
+                isTowerShown = true;
             }
             else
             {
-                hit = null;
-                cosmetic.resetCard();
+                transform.position = Camera.main.WorldToScreenPoint(Input.mousePosition);
+                showTower.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
+            if (placeTower.isPlaceable)
+            {
+                isOverPlaceable = true;
+                showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
+            }
+            else
+            {
                 isOverPlaceable = false;
-                isTowerShown = false;
-                Destroy(showTower);
-                showTower = null;
-                return;
+                showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.1f, 0.1f, 0.5f);
             }
         }
         else if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)
@@ -125,26 +123,26 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         gameObject.GetComponent<Image>().raycastTarget = true;
 
-        if (showTower != null)
-        {
-            isTowerShown = false;
-            Destroy(showTower);
-            showTower = null;
-        }
-
         if (isOverPlaceable)
         {
             //create a spot that this checks for when dropped. if the spot is there, it stay
-            if (gameController.state == GameState.Wave)
+            if (gameController.state == GameState.Placing || gameController.state == GameState.Wave)
             {
                 //when it is  over a placeable area
-                GameObject placedCard = Instantiate(baseTower, hit.transform.position,
-                    Quaternion.identity, hit.transform);
+                GameObject placedCard = Instantiate(baseTower, showTower.transform.position,
+                    Quaternion.identity, showTower.transform.parent);
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
 
-                //place anywhere change
-                hit.GetComponent<placeableAreaScript>().isPlaceable = false;
-                hit.GetComponent<CircleCollider2D>().enabled = false;
+                gameController.UpdateGameState(GameState.Wave);
+                //change for limited placements
+                /*hit.GetComponent<placeableAreaScript>().isPlaceable = false;
+                hit.GetComponent<CircleCollider2D>().enabled = false;*/
+                if (showTower != null)
+                {
+                    isTowerShown = false;
+                    Destroy(showTower);
+                    showTower = null;
+                }
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)

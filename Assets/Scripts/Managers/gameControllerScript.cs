@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 [System.Serializable]
 public enum targettingOption
@@ -17,6 +18,7 @@ public enum targettingOption
 public enum GameState
 {
     Wave,
+    Placing,
     TowerMenu,
     ShopMenu,
     PauseMenu
@@ -86,6 +88,36 @@ public class MainInput_Ray
     public GameObject hit;
     public bool hittingSomething;
 }
+[System.Serializable]
+public class StateMask
+{
+    public GameState state;
+    public string[] masks;
+    public StateMask newStateMask(GameState newState, string[] newMasks)
+    {
+        StateMask current = new StateMask();
+        current.state = newState;
+        current.masks = newMasks;
+        return current;
+    }
+}
+[System.Serializable]
+public class NewStateMaskDic
+{
+    public StateMask[] dictItems;
+    public Dictionary<GameState, LayerMask> toDictionary()
+    {
+        Dictionary<GameState, LayerMask> newDict = new Dictionary<GameState, LayerMask>();
+        
+        foreach (StateMask item in dictItems)
+        {
+            LayerMask newMask = LayerMask.GetMask(item.masks);
+            newDict.Add(item.state, newMask);
+        }
+
+        return newDict;
+    }
+}
 
 [System.Serializable]
 public class Wave
@@ -136,7 +168,9 @@ public class gameControllerScript : MonoBehaviour
     public audioManagerScript audioManager;
 
     public MainInput_Ray mainInput_Ray;
-    private LayerMask MouseArea;
+    [SerializeField]
+    NewStateMaskDic maskDict;
+    Dictionary<GameState, LayerMask> stateMaskDict;
     private Camera mainCamera;
     public GameObject[] allCanvas;
 
@@ -160,7 +194,8 @@ public class gameControllerScript : MonoBehaviour
         findManagers();
         mainInput_Ray = new MainInput_Ray();
         mainInput_Ray.hit = gameObject;
-        MouseArea = LayerMask.GetMask("Mouse");
+
+        stateMaskDict = maskDict.toDictionary();
 
         findCanvas();
 
@@ -176,14 +211,14 @@ public class gameControllerScript : MonoBehaviour
         Debug.DrawRay(eventData.pointerCurrentRaycast.screenPosition, Vector3.forward, Color.black, 3f);
         Debug.Log(mainInput_Ray.hit);*/
         mainInput_Ray.ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        mainInput_Ray.hittingSomething = Physics2D.Raycast(mainInput_Ray.ray.origin, mainInput_Ray.ray.direction, 1000, MouseArea);
+        mainInput_Ray.hittingSomething = Physics2D.Raycast(mainInput_Ray.ray.origin, mainInput_Ray.ray.direction, 1000, stateMaskDict[state]);
         if (mainInput_Ray.hittingSomething)
         {
-            mainInput_Ray.hit = Physics2D.Raycast(mainInput_Ray.ray.origin, mainInput_Ray.ray.direction, 1000, MouseArea).transform.gameObject;
+            mainInput_Ray.hit = Physics2D.Raycast(mainInput_Ray.ray.origin, mainInput_Ray.ray.direction, 1000, stateMaskDict[state]).transform.gameObject;
         }
         else
         {
-            mainInput_Ray.hit = gameObject;
+            mainInput_Ray.hit = null;
         }
     }
 
@@ -230,6 +265,8 @@ public class gameControllerScript : MonoBehaviour
         {
             case GameState.Wave:
                 timeManager.resetTime();
+                break;
+            case GameState.Placing:
                 break;
             case GameState.TowerMenu:
                 break;

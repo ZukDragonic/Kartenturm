@@ -6,9 +6,11 @@ TagManager:
   tags:
   - Enemy
   - Slot
-  - Tower Placeable
   - Tower
   - Card
+  - Ground
+  - EnemyPath
+  - Block Placeable
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Enemy
   - Card
   - Mouse
-  - 
-  - 
+  - Ground
+  - EnemyPath
   - 
   - 
   - 
