@@ -53,6 +53,10 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (gameController.state == GameState.Wave)
         {
             hit = GameHit;
+            if (hit == null)
+            {
+                return;
+            }
             if (GameHit.tag != "hi") //hi = ogSpotPrefab tag
             {
                 isOverPlaceable = true;

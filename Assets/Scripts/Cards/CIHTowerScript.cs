@@ -44,7 +44,6 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         wPRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         hit = gameController.mainInput_Ray.hit;
-        Debug.Log(hit);
         //checks if something is being hit
         if (eventData.pointerCurrentRaycast.gameObject == null)
         {
@@ -58,7 +57,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (gameController.state == GameState.Placing || gameController.state == GameState.Wave)
         {
             gameController.UpdateGameState(GameState.Placing);
-
+            if (hit == null)
+            {
+                return;
+            }
             if (!isTowerShown)
             {
                 //cosmetic purposes
@@ -80,6 +82,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 transform.position = Camera.main.WorldToScreenPoint(Input.mousePosition);
                 showTower.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Debug.Log(showTower.transform.position);
             }
             if (placeTower.isPlaceable)
             {

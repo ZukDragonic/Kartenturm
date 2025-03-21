@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4904886877793751422}
   - component: {fileID: 436247232415272559}
   m_Layer: 9
-  m_Name: Selectable + Block Placeable
-  m_TagString: Block Placeable
+  m_Name: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,21 +151,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1189117547836510922, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.284964
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.065535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.562624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -199,7 +203,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: baseTower
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8510439315972449483, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6079099805674998982, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
 --- !u!1 &2721076032841075567 stripped
 GameObject:

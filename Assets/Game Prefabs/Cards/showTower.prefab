@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2440800409406339464}
   - component: {fileID: 7582088764900469312}
   - component: {fileID: 623450214383737207}
-  - component: {fileID: -7640220698146748470}
   - component: {fileID: 6079099805674998982}
+  - component: {fileID: 9204885892229819875}
   m_Layer: 6
   m_Name: showTower
   m_TagString: Tower
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4121160897819890467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8330712, y: 0.64455616, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -103,7 +103,20 @@ MonoBehaviour:
   rangeIndicatorPrefab: {fileID: 2072681932203819689, guid: 37359326f8aadbe4a9c52244c1c89b22, type: 3}
   hoverMat: {fileID: 2100000, guid: a09e0fa095b557c4fb341255dfc652b3, type: 2}
   clickMat: {fileID: 2100000, guid: 5c2926482bfb9a245afa064539ab762a, type: 2}
---- !u!50 &-7640220698146748470
+--- !u!114 &6079099805674998982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121160897819890467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ed2f5484c4796439892729a51f2d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaceable: 0
+--- !u!50 &9204885892229819875
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -118,25 +131,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6079099805674998982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121160897819890467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ed2f5484c4796439892729a51f2d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlaceable: 0
 --- !u!1 &6407772916933134413
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8510439315972449483}
-  - component: {fileID: 612939756167467336}
+  - component: {fileID: 1189117547836510922}
   m_Layer: 0
   m_Name: Block Placeable
   m_TagString: Block Placeable
@@ -162,14 +162,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6407772916933134413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.118034, y: -12.710091, z: 0.562624}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2440800409406339464}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &612939756167467336
+--- !u!58 &1189117547836510922
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,4 +184,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.5
