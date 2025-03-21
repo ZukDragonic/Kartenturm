@@ -18,6 +18,7 @@ public enum targettingOption
 public enum GameState
 {
     Wave,
+    BetweeWave,
     Placing,
     TowerMenu,
     ShopMenu,
@@ -256,17 +257,28 @@ public class gameControllerScript : MonoBehaviour
 
     public void UpdateGameState(GameState newState)
     {
-        if (state == GameState.PauseMenu)
+        switch (state)
         {
-            state = prevState;
-            return;
+            case GameState.PauseMenu:
+                state = prevState;
+                return;
+            case GameState.Placing:
+                state = prevState;
+                return;
+            default:
+                break;
         }
+
         switch (newState)
         {
             case GameState.Wave:
                 timeManager.resetTime();
                 break;
+            case GameState.BetweeWave:
+                timeManager.buttonChange(-1);
+                break;
             case GameState.Placing:
+                prevState = state;
                 break;
             case GameState.TowerMenu:
                 break;

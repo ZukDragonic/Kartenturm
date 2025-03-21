@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 029afac3c892fd743a95cdc619c8647d, type: 3}
+  m_Sprite: {fileID: 416227235, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d651f53f407ae20499e52b653483e2ba, type: 3}
+  m_Sprite: {fileID: -675173835, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98823f339f5772c42aebe41acc53e1c4, type: 3}
+  m_Sprite: {fileID: -510677154, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: ba8666538d94e30499553fb1c444554f, type: 3}
-  - {fileID: 21300000, guid: 98823f339f5772c42aebe41acc53e1c4, type: 3}
+  - {fileID: -1841721520, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
+  - {fileID: -510677154, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   managerChecked: 3
   varChecked: 
   flagChecked: 0
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1eec8d25a4a9999458861f6cbfab4d36, type: 3}
+  m_Sprite: {fileID: 2119326684, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -762,8 +762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: 752cffe82ba7f3a40a53f5d511bbb9e2, type: 3}
-  - {fileID: 21300000, guid: 1eec8d25a4a9999458861f6cbfab4d36, type: 3}
+  - {fileID: -1396885550, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
+  - {fileID: 2119326684, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   managerChecked: 1
   varChecked: AutoStart
   flagChecked: 20001
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a8231bd608aacf48bff64e28060c93c, type: 3}
+  m_Sprite: {fileID: 10749564, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: 47509267bf21aa24995deed32cee765c, type: 3}
-  - {fileID: 21300000, guid: 1a8231bd608aacf48bff64e28060c93c, type: 3}
+  - {fileID: 1997443882, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
+  - {fileID: 10749564, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   managerChecked: 3
   varChecked: 
   flagChecked: 0
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4728cb935ac86a043a3cf79ef01fd51e, type: 3}
+  m_Sprite: {fileID: -521551278, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1250,8 +1250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: ea71b5e8236dfc440834d172a8ac0729, type: 3}
-  - {fileID: 21300000, guid: 4728cb935ac86a043a3cf79ef01fd51e, type: 3}
+  - {fileID: -1117867050, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
+  - {fileID: -521551278, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   managerChecked: 1
   varChecked: Tutorial
   flagChecked: 20002
@@ -2192,7 +2192,7 @@ PrefabInstance:
     - target: {fileID: 2669020573853845320, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 094931f59cf6dfc4f93b0fec4b7064f8, type: 3}
+      objectReference: {fileID: -1227985726, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
     - target: {fileID: 2669020573853845323, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

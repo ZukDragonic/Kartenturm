@@ -44,9 +44,10 @@ public class waveManagerScript : MonoBehaviour
             if (enemyAlive == 0)
             {
                 gameController.FlagTrigger(currentWave.ID);
+                //if not autostart, update gameState to a semi-paused state
                 if (!gameController.FlagInfo(20001))
                 {
-                    gameController.timeManager.pauseTime();
+                    gameController.UpdateGameState(GameState.BetweeWave);
                 }
             }
         }
@@ -54,6 +55,13 @@ public class waveManagerScript : MonoBehaviour
 
     IEnumerator waveManager(Wave wave)
     {
+        Debug.Log("hi");
+        yield return null;
+        while (gameController.state == GameState.BetweeWave || gameController.state == GameState.Placing)
+        {
+            yield return null;
+        }
+        
         enemyAlive = 0;
         isWaveSpawning = true;
         for (int i = 0; i < wave.spawnOrder.Length; i++)

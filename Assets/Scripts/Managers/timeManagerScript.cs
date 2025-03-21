@@ -11,13 +11,13 @@ public class timeManagerScript : MonoBehaviour
 
     public void changeTime()
     {
-        if (Time.timeScale == 0 && currentTime != 0 && !gameControllerScript.instance.FlagInfo(20001))
+        if (gameControllerScript.instance.state == GameState.BetweeWave)
         {
-            timeButton.previousImage();
-            resetTime();
+            gameControllerScript.instance.UpdateGameState(GameState.Wave);
             return;
         }
         currentTime++;
+        timeButton.nextImage();
         if (currentTime > timeChanges.Length - 1)
         {
             currentTime -= timeChanges.Length;
@@ -33,5 +33,20 @@ public class timeManagerScript : MonoBehaviour
     public void pauseTime()
     {
         Time.timeScale = 0;
+    }
+
+    public void buttonChange(int index)
+    {
+        if (index == -1)
+        {
+            timeButton.previousImage();
+            return;
+        }
+        else if (index == -2)
+        {
+            timeButton.nextImage();
+            return;
+        }
+        timeButton.selectImage(index);
     }
 }

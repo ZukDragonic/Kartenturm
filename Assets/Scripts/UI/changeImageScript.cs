@@ -65,7 +65,14 @@ public class changeImageScript : MonoBehaviour
                 switch (varChecked)
                 {
                     case "Time":
-                        return gameControllerScript.instance.timeManager.currentTime;
+                        if (gameControllerScript.instance.state == GameState.BetweeWave)
+                        {
+                            return 2 * gameControllerScript.instance.timeManager.currentTime;
+                        }
+                        else
+                        {
+                            return 1 + 2 * gameControllerScript.instance.timeManager.currentTime;
+                        }
                     default:
                         break;
                 }

@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706f3e0afc22bf14295570d15d3d730a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAutoStart: 0
-  timeChanges: 00000000010000000200000003000000
+  timeChanges: 010000000200000003000000
   currentTime: 0
   timeButton: {fileID: 0}

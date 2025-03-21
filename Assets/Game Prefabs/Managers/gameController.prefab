@@ -53,9 +53,22 @@ MonoBehaviour:
   mainInput_Ray:
     hit: {fileID: 0}
     hittingSomething: 0
-  handCanvas: {fileID: 0}
-  topCanvas: {fileID: 0}
-  stopCanvas: {fileID: 0}
+  maskDict:
+    dictItems:
+    - state: 0
+      masks:
+      - Mouse
+    - state: 1
+      masks:
+      - Placeable
+    - state: 2
+      masks:
+      - Mouse
+    - state: 3
+      masks: []
+    - state: 4
+      masks: []
+  allCanvas: []
   eventDict:
     dictItems:
     - ID: 20001
