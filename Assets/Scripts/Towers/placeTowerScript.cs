@@ -8,48 +8,37 @@ public class placeTowerScript : MonoBehaviour
 
     private List<GameObject> touchedObjects;
 
+    public GameObject myBlock;
+
     private void Start()
     {
         isPlaceable = true;
-    }
-
-    private void Update()
-    {
-        transform.position += Vector3.right * 0.01f;
+        touchedObjects = new List<GameObject>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision);
+        if (collision.gameObject == myBlock)
+        {
+            return;
+        }
+        
         if (collision.tag == "Block Placeable")
         {
-            Debug.Log("hi");
             touchedObjects.Add(collision.gameObject);
             isPlaceable = false;
         }
     }
     
-    void OnTriggerStay(Collider other)
-    {
-        Debug.Log("a");
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log("b");
-    }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("c");
-    }
-
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("d");
+        if (collision.gameObject == myBlock)
+        {
+            return;
+        }
+        
         if (collision.tag == "Block Placeable")
         {
-            Debug.Log("e");
             touchedObjects.Remove(collision.gameObject);
             if (touchedObjects.Count == 0)
             {

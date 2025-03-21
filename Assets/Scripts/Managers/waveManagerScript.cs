@@ -47,7 +47,7 @@ public class waveManagerScript : MonoBehaviour
                 //if not autostart, update gameState to a semi-paused state
                 if (!gameController.FlagInfo(20001))
                 {
-                    gameController.UpdateGameState(GameState.BetweeWave);
+                    gameController.UpdateGameState(GameState.BetweenWave);
                 }
             }
         }
@@ -55,9 +55,8 @@ public class waveManagerScript : MonoBehaviour
 
     IEnumerator waveManager(Wave wave)
     {
-        Debug.Log("hi");
         yield return null;
-        while (gameController.state == GameState.BetweeWave || gameController.state == GameState.Placing)
+        while (gameController.state != GameState.Wave)
         {
             yield return null;
         }

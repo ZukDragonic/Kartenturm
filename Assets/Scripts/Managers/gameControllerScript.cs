@@ -18,11 +18,12 @@ public enum targettingOption
 public enum GameState
 {
     Wave,
-    BetweeWave,
+    BetweenWave,
     Placing,
     TowerMenu,
     ShopMenu,
-    PauseMenu
+    PauseMenu,
+    Previous
 }
 [System.Serializable]
 public enum Managers
@@ -198,12 +199,7 @@ public class gameControllerScript : MonoBehaviour
 
         stateMaskDict = maskDict.toDictionary();
 
-        findCanvas();
-
-        state = GameState.Wave;
-
-        timeManager.resetTime();
-        waveManager.spawnWave(11001);
+        StartCoroutine(startAfterLoad());
     }
     void Update()
     {
@@ -257,37 +253,40 @@ public class gameControllerScript : MonoBehaviour
 
     public void UpdateGameState(GameState newState)
     {
-        switch (state)
-        {
-            case GameState.PauseMenu:
-                state = prevState;
-                return;
-            case GameState.Placing:
-                state = prevState;
-                return;
-            default:
-                break;
-        }
-
         switch (newState)
         {
             case GameState.Wave:
+                if (state == GameState.TowerMenu || state == GameState.Placing)
+                {
+                    prevState = GameState.Wave;
+                    return;
+                }
                 timeManager.resetTime();
                 break;
-            case GameState.BetweeWave:
+            case GameState.BetweenWave:
+                if (state == GameState.TowerMenu || state == GameState.Placing)
+                {
+                    prevState = GameState.BetweenWave;
+                    return;
+                }
                 timeManager.buttonChange(-1);
                 break;
             case GameState.Placing:
                 prevState = state;
                 break;
             case GameState.TowerMenu:
+                prevState = state;
                 break;
             case GameState.ShopMenu:
+                prevState = state;
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();
                 prevState = state;
                 break;
+            case GameState.Previous:
+            state = prevState;
+                return;
             default:
                 break;
         }
@@ -347,5 +346,16 @@ public class gameControllerScript : MonoBehaviour
         allCanvasList.Add(GameObject.Find("Top Canvas"));
         allCanvasList.Add(GameObject.Find("Stop Canvas"));
         allCanvas = allCanvasList.ToArray();
+    }
+
+    IEnumerator startAfterLoad()
+    {
+        yield return null;
+        findCanvas();
+
+        UpdateGameState(GameState.BetweenWave);
+
+        timeManager.resetTime();
+        waveManager.spawnWave(11001);
     }
 }

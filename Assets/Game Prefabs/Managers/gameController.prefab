@@ -60,13 +60,18 @@ MonoBehaviour:
       - Mouse
     - state: 1
       masks:
-      - Placeable
+      - Mouse
     - state: 2
       masks:
-      - Mouse
+      - Placeable
     - state: 3
-      masks: []
+      masks:
+      - Mouse
     - state: 4
+      masks: []
+    - state: 5
+      masks: []
+    - state: 6
       masks: []
   allCanvas: []
   eventDict:
@@ -77,5 +82,5 @@ MonoBehaviour:
     - ID: 20002
       check: 0
       name: Tutorial
-  state: 0
+  state: 1
   isCardDragged: 0

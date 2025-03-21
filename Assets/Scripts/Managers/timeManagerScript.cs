@@ -11,7 +11,7 @@ public class timeManagerScript : MonoBehaviour
 
     public void changeTime()
     {
-        if (gameControllerScript.instance.state == GameState.BetweeWave)
+        if (gameControllerScript.instance.state == GameState.BetweenWave)
         {
             gameControllerScript.instance.UpdateGameState(GameState.Wave);
             return;

@@ -38,6 +38,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         gameObject.GetComponent<Image>().raycastTarget = false;
+        if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)
+        {
+            gameController.UpdateGameState(GameState.Placing);
+        }
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
@@ -54,9 +58,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             Destroy(showTower);
             return;
         }
-        if (gameController.state == GameState.Placing || gameController.state == GameState.Wave)
+        Debug.Log(gameController.state);
+        if (gameController.state == GameState.Placing)
         {
-            gameController.UpdateGameState(GameState.Placing);
+            Debug.Log(hit);
             if (hit == null)
             {
                 return;
@@ -80,9 +85,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             else
             {
-                transform.position = Camera.main.WorldToScreenPoint(Input.mousePosition);
                 showTower.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Debug.Log(showTower.transform.position);
             }
             if (placeTower.isPlaceable)
             {
@@ -129,14 +132,14 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (isOverPlaceable)
         {
             //create a spot that this checks for when dropped. if the spot is there, it stay
-            if (gameController.state == GameState.Placing || gameController.state == GameState.Wave)
+            if (gameController.state == GameState.Placing)
             {
                 //when it is  over a placeable area
                 GameObject placedCard = Instantiate(baseTower, showTower.transform.position,
                     Quaternion.identity, showTower.transform.parent);
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
 
-                gameController.UpdateGameState(GameState.Wave);
+                gameController.UpdateGameState(GameState.Previous);
                 //change for limited placements
                 /*hit.GetComponent<placeableAreaScript>().isPlaceable = false;
                 hit.GetComponent<CircleCollider2D>().enabled = false;*/
@@ -154,6 +157,16 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
                 Destroy(gameObject);
             }
+        }
+        if (showTower != null)
+        {
+            isTowerShown = false;
+            Destroy(showTower);
+            showTower = null;
+        }
+        if (gameController.state == GameState.Placing)
+        {
+            gameController.UpdateGameState(GameState.Previous);
         }
         cosmetic.resetCard();
         isOverPlaceable = false;

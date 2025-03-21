@@ -192,7 +192,7 @@ public class baseTowerScript : MonoBehaviour
     }
     public void closeTowerMenu()
     {
-        gameController.UpdateGameState(GameState.Wave);
+        gameController.UpdateGameState(GameState.Previous);
         isSelected = false;
         if (openedTowerMenu != null)
         {
