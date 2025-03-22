@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Tower 2
   m_EditorClassIdentifier: 
   ID: 10002
-  gold: 250
+  shopGold: 400
+  actionGold: 150
   archetype: 
   cardName: Mage
   description: A man of magic. He knows none but one spell. Magic missle.

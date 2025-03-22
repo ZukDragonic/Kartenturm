@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Tower 4
   m_EditorClassIdentifier: 
   ID: 10004
-  gold: 500
+  shopGold: 500
+  actionGold: 300
   archetype: 
   cardName: Cannoner
   description: A soldier arming a cannon. He sure can wreck but he might be slow.

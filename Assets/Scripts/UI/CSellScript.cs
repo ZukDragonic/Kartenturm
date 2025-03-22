@@ -32,7 +32,7 @@ public class CSellScript : MonoBehaviour
         stackedCards = slotChildDisplay.stackedCards;
         foreach (SOCard card in stackedCards)
         {
-            currentValue += (int)(card.gold * 0.8f * shop.multiplierReference);
+            currentValue += (int)(card.shopGold * 0.8f * shop.multiplierReference);
         }
         sellValue = currentValue;
         valueDisplay.text = sellValue.ToString();

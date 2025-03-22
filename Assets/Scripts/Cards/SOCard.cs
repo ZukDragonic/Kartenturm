@@ -6,7 +6,8 @@ using UnityEngine;
 public class SOCard : ScriptableObject
 {
     public int ID;
-    public int gold;
+    public int shopGold;
+    public int actionGold;
     public string archetype;
     public string cardName;
     [TextArea(5, 3)]

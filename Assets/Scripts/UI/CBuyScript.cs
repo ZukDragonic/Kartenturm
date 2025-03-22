@@ -8,7 +8,7 @@ public class CBuyScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     private gameControllerScript gameController;
     private CCosmeticScript cosmetic;
-    public int gold;
+    public int shopGold;
     public float multiplier;
     private int price;
     public TextMeshProUGUI pricePrefab;
@@ -19,13 +19,13 @@ public class CBuyScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         gameController = gameControllerScript.instance;
         cosmetic = gameObject.GetComponent<CCosmeticScript>();
-        price = (int)(gold * multiplier);
+        price = (int)(shopGold * multiplier);
         pricePrefab.text = price.ToString();
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
-        if (gameController.resourceManager.gold >= price)
+        if (gameController.resourceManager.playerGold >= price)
         {
             cosmetic.cosmeticColor(new Color(1, 1, 0.5f, 1));
         }
@@ -36,7 +36,7 @@ public class CBuyScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        if (gameController.resourceManager.gold >= gold * multiplier)
+        if (gameController.resourceManager.playerGold >= shopGold * multiplier)
         {
             gameController.resourceManager.changeGold(price * -1);
             if (!isRandom)

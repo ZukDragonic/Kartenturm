@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b837bdef5c5694c8c7077bb5c0d8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display: {fileID: 0}
-  gold: 0
+  goldDisplay: {fileID: 0}
+  playerGold: 1000
+  health: 0
+  allTower: []

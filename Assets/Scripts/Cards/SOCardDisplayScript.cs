@@ -14,6 +14,7 @@ public class SOCardDisplayScript : MonoBehaviour
     private SOCSpell spellCard;
 
     public TextMeshProUGUI cardName;
+    public TextMeshProUGUI actionGold;
     public Image cardImage;
     public Image displayedImage;
     private Vector2 artworkProportions;
@@ -41,11 +42,13 @@ public class SOCardDisplayScript : MonoBehaviour
         if (checkNull())
         {
             cardName.text = "";
+            actionGold.text = "";
             cardImage.sprite = allCardSprite[1];
             displayedImage.gameObject.SetActive(false);
             return;
         }
         cardName.text = card.cardName;
+        actionGold.text = card.actionGold.ToString();
         displayedImage.gameObject.SetActive(true);
         displayedImage.sprite = card.image;
         artworkProportions = card.image.rect.size;

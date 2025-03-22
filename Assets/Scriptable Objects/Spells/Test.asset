@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   ID: 0
-  gold: 0
+  shopGold: 0
+  actionGold: 250
   archetype: test
   cardName: Pot of Greed
   description: test

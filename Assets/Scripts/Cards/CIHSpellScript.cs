@@ -31,8 +31,10 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         gameObject.GetComponent<Image>().raycastTarget = false;
         Vector3 xzPos = gameObject.transform.position;
         //currentSpotObject = Instantiate(ogSpotPrefab, new Vector3(xzPos.x, ogSpotPrefab.transform.position.y, xzPos.z), Quaternion.identity);
-        cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
-        cosmetic.cosmeticSize(0.5f);
+        if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)
+        {
+            gameController.UpdateGameState(GameState.Placing);
+        }
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
@@ -50,19 +52,24 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             isOverPlaceable = false;
             return;
         }*/
-        if (gameController.state == GameState.Wave)
+        if (gameController.state == GameState.Placing)
         {
             hit = GameHit;
             if (hit == null)
             {
                 return;
             }
-            if (GameHit.tag != "hi") //hi = ogSpotPrefab tag
+            if (GameHit.tag != "hi" && //hi = ogSpotPrefab tag
+                 gameController.resourceManager.playerGold > card.actionGold)
             {
+                cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                cosmetic.cosmeticSize(0.5f);
                 isOverPlaceable = true;
             }
             else
             {
+                cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
+                cosmetic.cosmeticSize(0.5f);
                 isOverPlaceable = false;
             }
         }
@@ -96,9 +103,11 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
         if (isOverPlaceable)
         {
-            if (gameController.state == GameState.Wave)
+            if (gameController.state == GameState.Placing)
             {
                 card.PlayCard();
+                gameController.UpdateGameState(GameState.Previous);
+                gameController.resourceManager.changeGold(card.actionGold * -1);
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.ShopMenu)
@@ -107,6 +116,10 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
                 Destroy(gameObject);
             }
+        }
+        if (gameController.state == GameState.Placing)
+        {
+            gameController.UpdateGameState(GameState.Previous);
         }
         cosmetic.resetCard();
     }

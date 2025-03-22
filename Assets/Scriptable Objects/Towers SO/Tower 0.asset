@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Tower 0
   m_EditorClassIdentifier: 
   ID: 10000
-  gold: 300
+  shopGold: 250
+  actionGold: 500
   archetype: 
   cardName: Demon
   description: Stunted. A low-ranking demon seeking to grow.

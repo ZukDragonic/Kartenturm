@@ -30,13 +30,13 @@ public class shopScript : MonoBehaviour
             GameObject current = Instantiate(shopCardPrefab, buyArea);
             SOCard soldCard = gameController.deckManager.allCards[Random.Range(0, gameController.deckManager.allCards.Length)];
             current.GetComponent<SOCardDisplayScript>().card = soldCard;
-            current.GetComponent<CBuyScript>().gold = current.GetComponent<SOCardDisplayScript>().card.gold;
+            current.GetComponent<CBuyScript>().shopGold = current.GetComponent<SOCardDisplayScript>().card.shopGold;
             current.GetComponent<CBuyScript>().multiplier = multiplier;
         }
         for (int i = 0; i < ran; i++)
         {
             GameObject current = Instantiate(randomCardPrefab, buyArea);
-            current.GetComponent<CBuyScript>().gold = 10;
+            current.GetComponent<CBuyScript>().shopGold = 10;
             current.GetComponent<CBuyScript>().multiplier = multiplier;
         }
         StartCoroutine(destroyNextFrame());

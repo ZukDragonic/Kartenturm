@@ -87,7 +87,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 showTower.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
-            if (placeTower.isPlaceable)
+            if (placeTower.isPlaceable && gameController.resourceManager.playerGold > card.actionGold)
             {
                 isOverPlaceable = true;
                 showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
@@ -108,9 +108,17 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
-                    isOverPlaceable = true;
-                    //cosmetic purposes
-                    cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                    if (gameController.resourceManager.playerGold > card.actionGold)
+                    {
+                        isOverPlaceable = true;
+                        //cosmetic purposes
+                        cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                    }
+                    else
+                    {
+                        isOverPlaceable = false;
+                        cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
+                    }
                 }
             }
             else
@@ -140,6 +148,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
 
                 gameController.UpdateGameState(GameState.Previous);
+                gameController.resourceManager.changeGold(card.actionGold * -1);
+
                 //change for limited placements
                 /*hit.GetComponent<placeableAreaScript>().isPlaceable = false;
                 hit.GetComponent<CircleCollider2D>().enabled = false;*/
@@ -155,6 +165,10 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 //when it is  over a card slot
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
+                if (gameController.state == GameState.TowerMenu)
+                {
+                    gameController.resourceManager.changeGold(card.actionGold * -1);
+                }
                 Destroy(gameObject);
             }
         }

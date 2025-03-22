@@ -6,7 +6,7 @@ using TMPro;
 public class resourceManagerScript : MonoBehaviour
 {
     public numberDisplayScript goldDisplay;
-    public int gold;
+    public int playerGold;
     public int health;
 
     public List<GameObject> allTower;
@@ -20,8 +20,8 @@ public class resourceManagerScript : MonoBehaviour
 
     public void changeGold(int value)
     {
-        gold += value;
-        goldDisplay.updateDisplay(gold);
+        playerGold += value;
+        goldDisplay.updateDisplay(playerGold);
     }
 
     public void changeHealth(int value)
