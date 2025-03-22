@@ -79,7 +79,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 }
                 showTower = Instantiate(showTowerPrefab, hit.transform);
                 showTower.GetComponent<tCosmeticScript>().showTower(card);
-                showTower.GetComponent<tCosmeticScript>().rangeActivity(true, card.range);
+                showTower.GetComponent<tCosmeticScript>().rangeDisplayUpdate(true, card.range);
                 placeTower = showTower.GetComponent<placeTowerScript>();
                 isTowerShown = true;
             }

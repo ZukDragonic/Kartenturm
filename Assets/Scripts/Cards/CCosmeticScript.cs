@@ -48,7 +48,7 @@ public class CCosmeticScript : MonoBehaviour
         foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
         {
             text.enabled = true;
-            text.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+            text.color = new Color(0.1f, 0.1f, 0.1f, 1.0f);
         }
         foreach (Image image in transform.GetComponentsInChildren<Image>())
         {

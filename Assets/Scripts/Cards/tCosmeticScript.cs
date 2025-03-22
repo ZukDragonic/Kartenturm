@@ -36,16 +36,20 @@ public class tCosmeticScript : MonoBehaviour
     {
         spriteRenderer.flipX = flip;
     }
-    public void rangeActivity(bool isShown, float range)
+    public void rangeDisplayUpdate(bool isShown, float range)
     {
         if (isShown)
         {
-            rIObject = Instantiate(rangeIndicatorPrefab, transform.position, Quaternion.identity, transform);
+            if (rIObject == null)
+            {
+                rIObject = Instantiate(rangeIndicatorPrefab, transform.position, Quaternion.identity, transform);
+            }
             rIObject.GetComponent<Transform>().localScale = Vector3.one * range / 5 / 3.125f;
         }
         else
         {
             Destroy(rIObject);
+            rIObject = null;
         }
     }
 }

@@ -256,20 +256,20 @@ public class gameControllerScript : MonoBehaviour
         switch (newState)
         {
             case GameState.Wave:
+                timeManager.resetTime();
                 if (state == GameState.TowerMenu || state == GameState.Placing)
                 {
                     prevState = GameState.Wave;
                     return;
                 }
-                timeManager.resetTime();
                 break;
             case GameState.BetweenWave:
+                timeManager.buttonChange(-1);
                 if (state == GameState.TowerMenu || state == GameState.Placing)
                 {
                     prevState = GameState.BetweenWave;
                     return;
                 }
-                timeManager.buttonChange(-1);
                 break;
             case GameState.Placing:
                 prevState = state;

@@ -188,7 +188,7 @@ public class baseTowerScript : MonoBehaviour
         openedTowerMenu.GetComponentInChildren<slotParentScriptUGUI>().parentTower = this;
         openedTowerMenu.GetComponentInChildren<destroyTowerScript>().parentTower = this;
 
-        cosmetic.rangeActivity(true, range);
+        cosmetic.rangeDisplayUpdate(true, range);
     }
     public void closeTowerMenu()
     {
@@ -199,7 +199,7 @@ public class baseTowerScript : MonoBehaviour
             Destroy(openedTowerMenu);
         }
         openedTowerMenu = null;
-        cosmetic.rangeActivity(false, range);
+        cosmetic.rangeDisplayUpdate(false, range);
     }
 
     public void changeStats()
@@ -220,6 +220,7 @@ public class baseTowerScript : MonoBehaviour
             range += slot.range / 2 * baseCard.multiplier;
         }
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
+        cosmetic.rangeDisplayUpdate(true, range);
     }
 
     public void changeTargetting(int change)
