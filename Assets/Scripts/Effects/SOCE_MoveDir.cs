@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardEffectMoveDir", menuName = "Card/Effect/MoveInDirection")]
 public class SOCE_MoveDir : SOC_Effect
 {
-    private Vector3 dir;
+    public Vector3 dir;
     public float speed;
     public override void ApplyOSEffect(sumObj_Base script)
     {
@@ -12,7 +12,9 @@ public class SOCE_MoveDir : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
-        dir = ((script as sumObj_Projectile).target - (script as sumObj_Projectile).parentTower.transform.position).normalized;
-        script.transform.position += dir * speed * Time.deltaTime;
+        if (dir.y == 1)
+        {
+            script.transform.position += script.transform.right * speed * Time.deltaTime;
+        }
     }
 }

@@ -11,7 +11,7 @@ public class sumObj_Projectile : sumObj_Base
     {
         damage = parentTower.attackValue;
         pierce = parentTower.projectilePierce;
-        effects = parentTower.baseCard.effects;
+        effects = parentTower.currentEffect;
 
         StartCoroutine(WaitForStart());
     }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460908ff06b7c6948b4f268bd95ed892, type: 3}
-  m_Name: MoveToEnemy_15
+  m_Script: {fileID: 11500000, guid: 6ddf9927e04796541af2ebcb1a40bd9a, type: 3}
+  m_Name: PLifeTime_2
   m_EditorClassIdentifier: 
-  speed: 15
+  duration: 3

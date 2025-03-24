@@ -58,10 +58,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             Destroy(showTower);
             return;
         }
-        Debug.Log(gameController.state);
         if (gameController.state == GameState.Placing)
         {
-            Debug.Log(hit);
             if (hit == null)
             {
                 return;

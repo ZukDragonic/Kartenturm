@@ -10,6 +10,8 @@ public class baseTowerScript : MonoBehaviour
     public List<SOCTower> stackedCards;
     public SOCTower placeHolderCard;
 
+    public SOCE_Parent currentEffect;
+
     private bool hasAttacked;
 
     private tCosmeticScript cosmetic;
@@ -75,6 +77,7 @@ public class baseTowerScript : MonoBehaviour
         projectilePierce = baseCard.projectilePierce;
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
+        currentEffect = baseCard.effects;
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
 
         hasAttacked = false;
@@ -94,7 +97,7 @@ public class baseTowerScript : MonoBehaviour
     IEnumerator WaitForStart()
     {
         yield return null;
-        baseCard.effects.OnSummonEffect(this);
+        currentEffect.OnSummonEffect(this);
     }
     void Update()
     {
@@ -102,7 +105,7 @@ public class baseTowerScript : MonoBehaviour
         {
             return;
         }
-        baseCard.effects.PassiveEffect(this);
+        currentEffect.PassiveEffect(this);
         //hover highlight, click hightlight, and gui open/close
         //if mouse is over the tower
         if (gameController.mainInput_Ray.hit == gameObject)
@@ -204,6 +207,7 @@ public class baseTowerScript : MonoBehaviour
 
     public void changeStats()
     {
+        currentEffect = baseCard.effects;
         attackValue = baseCard.attackValue;
         foreach (var slot in stackedCards)
         {
@@ -254,10 +258,7 @@ public class baseTowerScript : MonoBehaviour
                         target = new Vector3(xPos, yPos, 0);
                         target += transform.position;
                     }
-                    target.z = transform.position.z;
-                    target = transform.position - target;
-                    Quaternion rotation = Quaternion.FromToRotation(Vector3.left,target);
-                   // Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, target.z));
+ 
 
                     if (currentTarget.transform.position.x < transform.position.x)
                     {
@@ -271,7 +272,7 @@ public class baseTowerScript : MonoBehaviour
                     //spawns attack
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
-                        GameObject projectile = Instantiate(baseProjectile, transform.position, rotation);
+                        GameObject projectile = Instantiate(baseProjectile, transform.position, Quaternion.identity);
                         sumObj_Projectile current = projectile.GetComponent<sumObj_Projectile>();
                         current.parentTower = this;
                         current.target = currentTarget.transform.position;
@@ -289,6 +290,6 @@ public class baseTowerScript : MonoBehaviour
     }
     void OnDestroy()
     {
-        baseCard.effects.OnDestroyEffect(this);
+        currentEffect.OnDestroyEffect(this);
     }
 }
