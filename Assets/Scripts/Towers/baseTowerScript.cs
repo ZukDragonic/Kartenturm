@@ -89,7 +89,7 @@ public class baseTowerScript : MonoBehaviour
         stackedCards.Add(placeHolderCard);
 
         gameController = gameControllerScript.instance;
-        gameController.resourceManager.addTower(gameObject);
+        gameController.resourceManager.addTower(this);
 
         StartCoroutine(WaitForStart());
         StartCoroutine(attackCycle());
@@ -291,5 +291,13 @@ public class baseTowerScript : MonoBehaviour
     void OnDestroy()
     {
         currentEffect.OnDestroyEffect(this);
+    }
+    public void waveStartAction()
+    {
+        currentEffect.OnWaveStartEffect(this);
+    }
+    public void waveEndAction()
+    {
+        currentEffect.OnWaveEndEffect(this);
     }
 }

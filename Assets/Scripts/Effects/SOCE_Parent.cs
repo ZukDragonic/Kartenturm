@@ -8,6 +8,8 @@ public class SOCE_Parent : ScriptableObject
     public SOC_Effect[] passive;
     public SOC_Effect[] destroy;
     public SOC_Effect[] summon;
+    public SOC_Effect[] waveStart;
+    public SOC_Effect[] waveEnd;
     public SOC_Effect[] pPassive;
     public SOC_Effect[] pDestroy;
     public SOC_Effect[] pHit;
@@ -26,7 +28,14 @@ public class SOCE_Parent : ScriptableObject
     {
         playEffectFromArray(summon, script, null);
     }
-
+    public void OnWaveStartEffect(baseTowerScript script)
+    {
+        playEffectFromArray(waveStart, script, null);
+    }
+    public void OnWaveEndEffect(baseTowerScript script)
+    {
+        playEffectFromArray(waveEnd, script, null);
+    }
     public void OPassiveEffect(sumObj_Base script)
     {
         playEffectFromArray(pPassive, null, script);

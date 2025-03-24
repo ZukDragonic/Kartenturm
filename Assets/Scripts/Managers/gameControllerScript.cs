@@ -50,6 +50,12 @@ public enum StatType
     Pierce,
     Speed,
 }
+[System.Serializable]
+public enum ProjectileTargetOptions
+{
+    Tower,
+    Closest
+}
 
 [System.Serializable]
 public class Flag

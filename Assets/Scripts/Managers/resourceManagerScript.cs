@@ -9,12 +9,13 @@ public class resourceManagerScript : MonoBehaviour
     public int playerGold;
     public int health;
 
-    public List<GameObject> allTower;
+    public List<baseTowerScript> allTower;
+    public List<SOEnemyDisplay> allEnemy;
 
     void Start()
     {
         goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
-        allTower = new List<GameObject>();
+        allTower = new List<baseTowerScript>();
         changeGold(0);
     }
 
@@ -29,15 +30,22 @@ public class resourceManagerScript : MonoBehaviour
         health += value;
     }
 
-    public void addTower(GameObject tower)
+    public void addTower(baseTowerScript tower)
     {
         allTower.Add(tower);
     }
-    public void removeTower(GameObject tower)
+    public void removeTower(baseTowerScript tower)
     {
         if (allTower.Contains(tower))
         {
             allTower.Remove(tower);
+        }
+    }
+    public void removeEnemy(SOEnemyDisplay enemy)
+    {
+        if (allEnemy.Contains(enemy))
+        {
+            allEnemy.Remove(enemy);
         }
     }
 }

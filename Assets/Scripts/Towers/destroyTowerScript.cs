@@ -16,7 +16,7 @@ public class destroyTowerScript : MonoBehaviour
 
         parentTower.transform.parent.GetComponent<placeableAreaScript>().isPlaceable = true;
         parentTower.transform.parent.GetComponent<CircleCollider2D>().enabled = true;
-        gameControllerScript.instance.resourceManager.removeTower(parentTower.gameObject);
+        gameControllerScript.instance.resourceManager.removeTower(parentTower);
         Destroy(parentTower.gameObject);
     }
 }

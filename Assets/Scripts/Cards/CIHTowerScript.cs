@@ -143,6 +143,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 //when it is  over a placeable area
                 GameObject placedCard = Instantiate(baseTower, showTower.transform.position,
                     Quaternion.identity, showTower.transform.parent);
+                placedCard.transform.position = new Vector3(showTower.transform.position.x, showTower.transform.position.y, 0);
                 placedCard.GetComponent<baseTowerScript>().baseCard = card;
 
                 gameController.UpdateGameState(GameState.Previous);

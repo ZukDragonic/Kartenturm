@@ -47,6 +47,10 @@ public class waveManagerScript : MonoBehaviour
                 //if not autostart, update gameState to a semi-paused state
                 if (!gameController.FlagInfo(20001))
                 {
+                    foreach (baseTowerScript tower in gameController.resourceManager.allTower)
+                    {
+                        tower.waveEndAction();
+                    }
                     gameController.UpdateGameState(GameState.BetweenWave);
                 }
             }
@@ -60,7 +64,10 @@ public class waveManagerScript : MonoBehaviour
         {
             yield return null;
         }
-        
+        foreach (baseTowerScript tower in gameController.resourceManager.allTower)
+        {
+            tower.waveStartAction();
+        }
         enemyAlive = 0;
         isWaveSpawning = true;
         for (int i = 0; i < wave.spawnOrder.Length; i++)
@@ -70,7 +77,9 @@ public class waveManagerScript : MonoBehaviour
                 yield return new WaitForSeconds(wave.spawnOrder[i].delay);
                 GameObject current = Instantiate(enemyPrefab, new Vector3(checkpointList[0].transform.position.x - 0.1f,
                     checkpointList[0].transform.position.y - 0.1f, 0), Quaternion.identity);
-                current.GetComponent<SOEnemyDisplay>().enemy = findEnemy(wave.spawnOrder[i].enemyID);
+                SOEnemyDisplay eScript = current.GetComponent<SOEnemyDisplay>();
+                eScript.enemy = findEnemy(wave.spawnOrder[i].enemyID);
+                gameController.resourceManager.allEnemy.Add(eScript);
                 enemyAlive += 1;
             }
         }

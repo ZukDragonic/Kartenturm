@@ -74,6 +74,7 @@ public class SOEnemyDisplay : MonoBehaviour
         {
             gameController.waveManager.enemyDied();
             gameController.resourceManager.changeGold(enemy.goldDrop);
+            gameController.resourceManager.removeEnemy(this);
             Destroy(gameObject);
         }
     }
