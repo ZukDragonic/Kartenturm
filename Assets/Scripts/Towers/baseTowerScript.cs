@@ -45,6 +45,9 @@ public class baseTowerScript : MonoBehaviour
         cosmetic = GetComponent<tCosmeticScript>();
         cosmetic.showTower(baseCard);
 
+        allTargetting = baseCard.allTargetting;
+        currentTargetting = allTargetting[0];
+
         range = baseCard.range;
         attackValue = baseCard.attackValue;
         projectilePierce = baseCard.projectilePierce;
@@ -202,6 +205,7 @@ public class baseTowerScript : MonoBehaviour
 
     public void changeTargetting(int change)
     {
+        targetChange = change;
         currentTargetting.ExitCheck(this);
     }
 
@@ -219,20 +223,7 @@ public class baseTowerScript : MonoBehaviour
                 {
                     Vector3 target = Vector3.zero;
                     //face target
-                    if (baseCard.targetting != targettingOption.Random)
-                    {
-                        target = currentTarget.transform.position;
-                    }
-                    else //if the targetting is supposed to be random
-                    {
-                        int ran = UnityEngine.Random.Range(0, 360);
-                        float ranRadian = ran / 180 * 3.14f;
-                        float xPos = Mathf.Cos(ranRadian);
-                        float yPos = Mathf.Sin(ranRadian);
-                        target = new Vector3(xPos, yPos, 0);
-                        target += transform.position;
-                    }
- 
+                    target = currentTarget.transform.position;
 
                     if (currentTarget.transform.position.x < transform.position.x)
                     {

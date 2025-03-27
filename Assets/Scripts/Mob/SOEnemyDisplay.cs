@@ -64,6 +64,7 @@ public class SOEnemyDisplay : MonoBehaviour
             {
                 reachedEnd = true;
                 gameController.waveManager.enemyDied();
+                gameController.resourceManager.removeEnemy(this);
                 Destroy(gameObject);
                 //add code to decrease hp
             }

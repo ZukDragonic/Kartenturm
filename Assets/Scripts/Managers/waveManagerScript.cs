@@ -44,13 +44,13 @@ public class waveManagerScript : MonoBehaviour
             if (enemyAlive == 0)
             {
                 gameController.FlagTrigger(currentWave.ID);
+                foreach (baseTowerScript tower in gameController.resourceManager.allTower)
+                {
+                    tower.waveEndAction();
+                }
                 //if not autostart, update gameState to a semi-paused state
                 if (!gameController.FlagInfo(20001))
                 {
-                    foreach (baseTowerScript tower in gameController.resourceManager.allTower)
-                    {
-                        tower.waveEndAction();
-                    }
                     gameController.UpdateGameState(GameState.BetweenWave);
                 }
             }

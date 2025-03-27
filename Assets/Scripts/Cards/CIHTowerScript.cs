@@ -85,7 +85,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 showTower.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
-            if (placeTower.isPlaceable && gameController.resourceManager.playerGold > card.actionGold)
+            if (placeTower.isPlaceable && gameController.resourceManager.playerGold >= card.actionGold)
             {
                 isOverPlaceable = true;
                 showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
@@ -106,7 +106,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
-                    if (gameController.resourceManager.playerGold > card.actionGold)
+                    if (gameController.resourceManager.playerGold >= card.actionGold)
                     {
                         isOverPlaceable = true;
                         //cosmetic purposes
@@ -114,11 +114,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                     }
                     else
                     {
-                        hit = null;
-                        cosmetic.resetCard();
                         isOverPlaceable = false;
-                        isTowerShown = false;
-                        Destroy(showTower);
+                        cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                     }
                 }
             }

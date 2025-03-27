@@ -60,7 +60,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 return;
             }
             if (GameHit.tag != "hi" && //hi = ogSpotPrefab tag
-                 gameController.resourceManager.playerGold > card.actionGold)
+                 gameController.resourceManager.playerGold >= card.actionGold)
             {
                 cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
                 cosmetic.cosmeticSize(0.5f);

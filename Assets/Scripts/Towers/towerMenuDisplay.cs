@@ -16,6 +16,8 @@ public class towerMenuDisplay : MonoBehaviour
 
     public TextMeshProUGUI targetting;
 
+    public GameObject targettingChild;
+
     void Start()
     {
         cardsHasChanged();
@@ -57,6 +59,11 @@ public class towerMenuDisplay : MonoBehaviour
     {
         yield return null;
         targetting.text = parentTower.currentTargetting.TargettingCheck();
+        if (parentTower.allTargetting.Length == 1)
+        {
+            targettingChild.transform.GetChild(0).gameObject.SetActive(false);
+            targettingChild.transform.GetChild(1).gameObject.SetActive(false);
+        }
     }
 
     void targetPrevious()

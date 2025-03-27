@@ -29,4 +29,6 @@ MonoBehaviour:
   effects: {fileID: 11400000, guid: 601030edec92b054f82add0e943862b9, type: 2}
   slotNum: 3
   targetting: 4
+  allTargetting:
+  - {fileID: 11400000, guid: a5cef2e7bc1f92d45a5aed0739ab30ab, type: 2}
   selectRadius: 2

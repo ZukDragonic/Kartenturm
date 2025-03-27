@@ -264,7 +264,7 @@ public class gameControllerScript : MonoBehaviour
         {
             case GameState.Wave:
                 timeManager.resetTime();
-                if (state == GameState.TowerMenu || state == GameState.Placing)
+                if (state == GameState.TowerMenu || state == GameState.Placing || state == GameState.ShopMenu)
                 {
                     prevState = GameState.Wave;
                     return;
@@ -272,7 +272,7 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case GameState.BetweenWave:
                 timeManager.buttonChange(-1);
-                if (state == GameState.TowerMenu || state == GameState.Placing)
+                if (state == GameState.TowerMenu || state == GameState.Placing || state == GameState.ShopMenu)
                 {
                     prevState = GameState.BetweenWave;
                     return;

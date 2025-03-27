@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c549c32a3f410844b8a822c5357bb78f, type: 3}
-  m_Name: TargettingFirst
+  m_Script: {fileID: 11500000, guid: b09db3b42034fdd4cb2c83e3e2c9c62b, type: 3}
+  m_Name: Tar_Tower
   m_EditorClassIdentifier: 

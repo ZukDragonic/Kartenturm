@@ -50,6 +50,6 @@ public class shopScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        gameController.UpdateGameState(GameState.Wave);
+        gameController.UpdateGameState(GameState.Previous);
     }
 }

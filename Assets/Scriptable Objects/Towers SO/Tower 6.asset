@@ -30,4 +30,9 @@ MonoBehaviour:
   effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
   slotNum: 0
   targetting: 1
+  allTargetting:
+  - {fileID: 11400000, guid: 789fb77a865567b4cad664fa9e0fef6d, type: 2}
+  - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
+  - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
+  - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
   selectRadius: 2

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f0f2712b9182e49b74fb1e63b75568, type: 3}
-  m_Name: TargettingFar
+  m_Script: {fileID: 11500000, guid: b28c3fc66aad30e45bf01a4a1e691243, type: 3}
+  m_Name: Tar_Strong
   m_EditorClassIdentifier: 
