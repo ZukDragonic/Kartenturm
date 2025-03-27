@@ -114,8 +114,11 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                     }
                     else
                     {
+                        hit = null;
+                        cosmetic.resetCard();
                         isOverPlaceable = false;
-                        cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
+                        isTowerShown = false;
+                        Destroy(showTower);
                     }
                 }
             }

@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8510439315972449483}
   - component: {fileID: 1189117547836510922}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: Block Placeable
   m_TagString: Block Placeable
   m_Icon: {fileID: 0}

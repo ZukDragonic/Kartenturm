@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "TargettingLast", menuName = "Targetting/Last")]
 public class targettingLast : targettingBase
 {
     public override void EnterCheck(baseTowerScript script)
@@ -49,15 +50,19 @@ public class targettingLast : targettingBase
     }
     public override void ExitCheck(baseTowerScript script)
     {
-        if (script.targetChange == -1)
-        {
-            script.currentTargetting = script.targetFirst;
-        }
-        else
-        {
-            script.currentTargetting = script.targetStrong;
-        }
+        int FoundIndex = FindIndexInArray(script.allTargetting, this);
 
+        //target change can only ever be -1, 0, or 1
+        FoundIndex += script.targetChange;
+        if (FoundIndex >= script.allTargetting.Length)
+        {
+            FoundIndex = 0;
+        }
+        else if (FoundIndex < 0)
+        {
+            FoundIndex = script.allTargetting.Length;
+        }
+        script.currentTargetting = script.allTargetting[FoundIndex];
         script.targetChange = 0;
     }
     public override string TargettingCheck()

@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
+[CreateAssetMenu(fileName = "TargettingTower", menuName = "Targetting/Tower")]
 public class targettingTower : targettingBase
 {
     public override void EnterCheck(baseTowerScript script)
@@ -41,7 +41,20 @@ public class targettingTower : targettingBase
     }
     public override void ExitCheck(baseTowerScript script)
     {
-        script.currentTargetting = this;
+        int FoundIndex = FindIndexInArray(script.allTargetting, this);
+
+        //target change can only ever be -1, 0, or 1
+        FoundIndex += script.targetChange;
+        if (FoundIndex >= script.allTargetting.Length)
+        {
+            FoundIndex = 0;
+        }
+        else if (FoundIndex < 0)
+        {
+            FoundIndex = script.allTargetting.Length;
+        }
+        script.currentTargetting = script.allTargetting[FoundIndex];
+        script.targetChange = 0;
     }
     public override string TargettingCheck()
     {

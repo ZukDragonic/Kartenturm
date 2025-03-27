@@ -20,6 +20,8 @@ public class SOCTower : SOCard
 
     public int slotNum;
     public targettingOption targetting;
+    [SerializeField]
+    public targettingBase[] allTargetting;
 
     public float selectRadius;
 }

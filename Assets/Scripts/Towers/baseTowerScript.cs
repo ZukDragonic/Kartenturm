@@ -27,13 +27,7 @@ public class baseTowerScript : MonoBehaviour
     public List<GameObject> enemyInRange;
 
     public targettingBase currentTargetting;
-    public targettingFirst targetFirst = new targettingFirst();
-    public targettingLast targetLast = new targettingLast();
-    public targettingStrong targetStrong =  new targettingStrong();
-    public targettingWeak targetWeak = new targettingWeak();
-    public targettingClose targetClose = new targettingClose();
-    public targettingFar targetFar = new targettingFar();
-    public targettingTower targetTower = new targettingTower();
+    public targettingBase[] allTargetting;
 
 
     public int targetChange;
@@ -50,15 +44,6 @@ public class baseTowerScript : MonoBehaviour
     {
         cosmetic = GetComponent<tCosmeticScript>();
         cosmetic.showTower(baseCard);
-        
-        if (baseCard.targetting == targettingOption.Enemy)
-        {
-            currentTargetting = targetFirst;
-        }
-        else if (baseCard.targetting == targettingOption.Ally)
-        {
-            currentTargetting = targetTower;
-        }
 
         range = baseCard.range;
         attackValue = baseCard.attackValue;

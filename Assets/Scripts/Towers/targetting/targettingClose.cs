@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "TargettingClose", menuName = "Targetting/Close")]
 public class targettingClose : targettingBase
 {
     public override void EnterCheck(baseTowerScript script)
@@ -61,14 +62,19 @@ public class targettingClose : targettingBase
     }
     public override void ExitCheck(baseTowerScript script)
     {
-        if (script.targetChange == -1)
+        int FoundIndex = FindIndexInArray(script.allTargetting, this);
+
+        //target change can only ever be -1, 0, or 1
+        FoundIndex += script.targetChange;
+        if (FoundIndex >= script.allTargetting.Length)
         {
-            script.currentTargetting = script.targetWeak;
+            FoundIndex = 0;
         }
-        else
+        else if (FoundIndex < 0)
         {
-            script.currentTargetting = script.targetFar;
+            FoundIndex = script.allTargetting.Length;
         }
+        script.currentTargetting = script.allTargetting[FoundIndex];
         script.targetChange = 0;
     }
 
