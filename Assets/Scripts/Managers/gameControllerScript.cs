@@ -12,6 +12,7 @@ public enum targettingOption
     Enemy,
     Ally,
     Road,
+    Random,
     None,
 }
 [System.Serializable]

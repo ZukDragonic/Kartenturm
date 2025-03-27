@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3513c5b1e0cb2d34caedd58c27bc018e, type: 3}
   m_Name: LookAtTarget_8
   m_EditorClassIdentifier: 
-  maxRot: 10
+  maxRot: 5

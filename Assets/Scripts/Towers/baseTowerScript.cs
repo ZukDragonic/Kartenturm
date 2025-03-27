@@ -35,9 +35,7 @@ public class baseTowerScript : MonoBehaviour
     public targettingFar targetFar = new targettingFar();
     public targettingTower targetTower = new targettingTower();
 
-    private bool targetAlly;
-    private bool targetEnemy;
-    private bool targetNone;
+
     public int targetChange;
 
     public float range;
@@ -52,24 +50,14 @@ public class baseTowerScript : MonoBehaviour
     {
         cosmetic = GetComponent<tCosmeticScript>();
         cosmetic.showTower(baseCard);
-
-        targetAlly = false;
-        targetEnemy = false;
-        targetNone = false;
         
         if (baseCard.targetting == targettingOption.Enemy)
         {
             currentTargetting = targetFirst;
-            targetEnemy = true;
         }
         else if (baseCard.targetting == targettingOption.Ally)
         {
             currentTargetting = targetTower;
-            targetAlly = true;
-        }
-        else if (baseCard.targetting == targettingOption.None)
-        {
-            targetNone = true;
         }
 
         range = baseCard.range;
@@ -234,7 +222,8 @@ public class baseTowerScript : MonoBehaviour
 
     IEnumerator attackCycle()
     {
-        while (true)
+        bool isTargetNone = baseCard.targetting == targettingOption.None;
+        while (!isTargetNone)
         {
             while (!hasAttacked)
             {
@@ -245,11 +234,11 @@ public class baseTowerScript : MonoBehaviour
                 {
                     Vector3 target = Vector3.zero;
                     //face target
-                    if (targetEnemy || targetAlly)
+                    if (baseCard.targetting != targettingOption.Random)
                     {
                         target = currentTarget.transform.position;
                     }
-                    else if (targetNone)
+                    else //if the targetting is supposed to be random
                     {
                         int ran = UnityEngine.Random.Range(0, 360);
                         float ranRadian = ran / 180 * 3.14f;

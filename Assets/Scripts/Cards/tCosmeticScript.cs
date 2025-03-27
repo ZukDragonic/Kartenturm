@@ -18,6 +18,10 @@ public class tCosmeticScript : MonoBehaviour
     public void showTower(SOCTower card)
     {
         GetComponent<SpriteRenderer>().sprite = card.image;
+        foreach (CircleCollider2D mouseElement in GetComponentsInChildren<CircleCollider2D>())
+        {
+            mouseElement.radius = card.selectRadius/20;
+        }
     }
 
     public void ResetMat()

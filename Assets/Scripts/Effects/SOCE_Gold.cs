@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "CardEffectGold", menuName = "Card/Effect/Gold")]
 public class SOCE_Gold : SOC_Effect
 {
     public int gold;
