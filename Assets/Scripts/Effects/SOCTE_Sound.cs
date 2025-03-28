@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "CardEffectSound", menuName = "Card/Effect/Sound")]
 public class SOCTE_Sound : SOC_Effect
 {
     public int soundID;

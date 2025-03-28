@@ -524,7 +524,7 @@ MonoBehaviour:
   images:
   - {fileID: -1841721520, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   - {fileID: -510677154, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
-  managerChecked: 3
+  managerChecked: 0
   varChecked: 
   flagChecked: 0
 --- !u!114 &6272114544549780971
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7034473392284764031}
-  type: 2
+  type: 1
 --- !u!1 &3921961583512395958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   images:
   - {fileID: 1997443882, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
   - {fileID: 10749564, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
-  managerChecked: 3
+  managerChecked: 0
   varChecked: 
   flagChecked: 0
 --- !u!114 &4651630206988285551
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2417849675144659055}
-  type: 1
+  type: 0
 --- !u!1 &6077190538864584956
 GameObject:
   m_ObjectHideFlags: 0
