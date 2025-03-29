@@ -59,6 +59,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fa1243fc8d2ecd4c8af626d8ff5d882, type: 2}
   - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
   - {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
-  shop: {fileID: 4570742780391169123, guid: f4e8d62a6d961cb4c9045d4c73d4e9a1, type: 3}
+  shop: {fileID: 9019435789538556782, guid: 2e0fa6b2e151f5748bec203eeacac972, type: 3}
   TowerCardPrefab: {fileID: 7133946745989015632, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
   SpellCardPrefab: {fileID: 5521934578821515540, guid: 51aec0202a77b2b4eb235b3ba8d31430, type: 3}

@@ -67,14 +67,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             if (!isTowerShown)
             {
                 //cosmetic purposes
-                foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
-                {
-                    text.enabled = false;
-                }
-                foreach (Image image in transform.GetComponentsInChildren<Image>())
-                {
-                    image.enabled = false;
-                }
+                cosmetic.cosmeticColor(new Color(0, 0, 0, 0));
                 showTower = Instantiate(showTowerPrefab, hit.transform);
                 showTower.GetComponent<tCosmeticScript>().showTower(card);
                 showTower.GetComponent<tCosmeticScript>().rangeDisplayUpdate(true, card.range);

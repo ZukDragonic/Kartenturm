@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297486137128013252, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 22.5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4297486137128013252, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba31e3dd5765601429b14eec15ce2915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  shopGold: 0
   multiplier: 1
   pricePrefab: {fileID: 301929430025236424}
   isRandom: 0
