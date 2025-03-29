@@ -44,7 +44,6 @@ public class shopScript : MonoBehaviour
 
         //sets a random cost multiplier for shop if -1
         gameController = gameControllerScript.instance;
-        gameController.UpdateGameState(GameState.ShopMenu);
         if (multiplier == -1)
         {
             multiplier = Random.Range(5, 16) / 10f;
