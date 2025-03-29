@@ -228,9 +228,6 @@ public class gameControllerScript : MonoBehaviour
 
     public void FlagTrigger(int ID)
     {
-        deckManager.openShop();
-        return;
-        //flagDict[ID] = true;
         //spawns the pre-set waves
         if (ID > 11000 && ID < 11010)
         {
@@ -241,6 +238,7 @@ public class gameControllerScript : MonoBehaviour
                 deckManager.openShop();
             }
         }
+        //flippable flags
         if (ID > 20000 && ID < 21000)
         {
             flagDict[ID] = !flagDict[ID];
