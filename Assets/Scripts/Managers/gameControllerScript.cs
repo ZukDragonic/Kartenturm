@@ -228,6 +228,7 @@ public class gameControllerScript : MonoBehaviour
 
     public void FlagTrigger(int ID)
     {
+
         //flagDict[ID] = true;
         //spawns the pre-set waves
         if (ID > 11000 && ID < 11010)

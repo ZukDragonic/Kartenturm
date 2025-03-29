@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3811964570327488365}
   - component: {fileID: 3811964570327488366}
-  - component: {fileID: 4084954658066574650}
   m_Layer: 0
   m_Name: deckManager
   m_TagString: Untagged
@@ -61,19 +60,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
   - {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
   shop: {fileID: 4570742780391169123, guid: f4e8d62a6d961cb4c9045d4c73d4e9a1, type: 3}
---- !u!114 &4084954658066574650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811964570327488364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eeb3b6cfac09c74981530b4044fd349, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawDeck: []
   TowerCardPrefab: {fileID: 7133946745989015632, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
   SpellCardPrefab: {fileID: 5521934578821515540, guid: 51aec0202a77b2b4eb235b3ba8d31430, type: 3}
-  gameController: {fileID: 0}

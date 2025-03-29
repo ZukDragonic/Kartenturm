@@ -6,6 +6,7 @@ using TMPro;
 public class CCosmeticScript : MonoBehaviour
 {
     private Sprite ogSprite;
+    private List<Color> ogColor;
 
     private void Start()
     {
@@ -15,6 +16,15 @@ public class CCosmeticScript : MonoBehaviour
     public void initiateOgSprite()
     {
         ogSprite = GetComponent<Image>().sprite;
+        ogColor = new List<Color>();
+        foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
+        {
+            ogColor.Add(text.color);
+        }
+        foreach (Image image in transform.GetComponentsInChildren<Image>())
+        {
+            ogColor.Add(image.color);
+        }
     }
     public void cosmeticColor(Color color)
     {
@@ -26,7 +36,7 @@ public class CCosmeticScript : MonoBehaviour
         {
             image.color = color;
         }
-        transform.GetComponent<Image>().color = color;
+//        transform.GetComponent<Image>().color = color;
     }
 
     public void cosmeticSize(float size)
@@ -45,15 +55,18 @@ public class CCosmeticScript : MonoBehaviour
 
     public void resetCard()
     {
-        foreach (TextMeshProUGUI text in transform.GetComponentsInChildren<TextMeshProUGUI>())
+        TextMeshProUGUI[] textComp = transform.GetComponentsInChildren<TextMeshProUGUI>();
+        Image[] imageComp = transform.GetComponentsInChildren<Image>();
+
+        for (int i = 0; i < textComp.Length; i++)
         {
-            text.enabled = true;
-            text.color = new Color(0.1f, 0.1f, 0.1f, 1.0f);
+            textComp[i].color = ogColor[i];
         }
-        foreach (Image image in transform.GetComponentsInChildren<Image>())
+
+        int imageStart = textComp.Length;
+        for (int i = imageStart; i < imageStart + imageComp.Length; i++)
         {
-            image.enabled = true;
-            image.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            imageComp[i - imageStart].color = ogColor[i];
         }
 
         transform.GetComponent<Image>().sprite = ogSprite;

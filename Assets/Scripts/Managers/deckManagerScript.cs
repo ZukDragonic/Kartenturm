@@ -7,14 +7,17 @@ public class deckManagerScript : MonoBehaviour
     public gameControllerScript gameController;
     public SOCard[] allCards;
     public List<SOCard> drawDeck;
-    private drawScript draw;
 
     public GameObject shop;
 
+    public GameObject TowerCardPrefab;
+    public GameObject SpellCardPrefab;
+    private GameObject playerHand;
+
     private void Start()
     {
-        draw = GetComponent<drawScript>();
         gameController = gameControllerScript.instance;
+        playerHand = GameObject.Find("playerHand").gameObject;
     }
     public void shuffleDeck()
     {
@@ -36,15 +39,40 @@ public class deckManagerScript : MonoBehaviour
         drawDeck.Insert(Random.Range(0, drawDeck.Count), card);
     }
 
-    public void drawCard(int num)
-    {
-        draw.drawCard(num);
-    }
-
     public void openShop()
     {
         shopScript current = Instantiate(shop, gameController.allCanvas[1].transform).GetComponent<shopScript>();
         current.createShop(-1);
         gameController.timeManager.pauseTime();
+    }
+
+    public void drawCard(int drawNum)
+    {
+        drawDeck = gameController.deckManager.drawDeck;
+        for (int i = 0; i < drawNum; i++)
+        {
+            if (gameController.deckManager.drawDeck.Count > 0)
+            {
+                SOCard drawnCard = drawDeck[0];
+
+                AddCardToHand(drawnCard);
+
+                gameController.deckManager.drawDeck.RemoveAt(0);
+            }
+        }
+    }
+    public void AddCardToHand(SOCard card)
+    {
+        GameObject current;
+        if (card as SOCTower != null)
+        {
+            current = Instantiate(TowerCardPrefab, playerHand.transform);
+        }
+        else
+        {
+            current = Instantiate(SpellCardPrefab, playerHand.transform);
+        }
+        current.GetComponent<SOCardDisplayScript>().card = card;
+        //add a onDraw effect here in the future maybe
     }
 }
