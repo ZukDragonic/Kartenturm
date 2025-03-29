@@ -156,7 +156,7 @@ public class Sound
     public AudioClip[] clips;
     public int maxInstances;
     [Range(0f,1f)]
-    public float volume;
+    public float baseVolume;
     [Range(0.1f, 3f)]
     public float pitch;
 
