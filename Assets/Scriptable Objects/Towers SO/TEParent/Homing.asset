@@ -20,9 +20,9 @@ MonoBehaviour:
   pPassive:
   - {fileID: 11400000, guid: 0cf988bdada557a48b075639cc7b1236, type: 2}
   - {fileID: 11400000, guid: e8d9639040be94a47b866565289fcf86, type: 2}
+  - {fileID: 11400000, guid: 8e784e3691918b2429fe6ad6ff9f9b8f, type: 2}
   pDestroy: []
   pHit:
-  - {fileID: 11400000, guid: 8e784e3691918b2429fe6ad6ff9f9b8f, type: 2}
   - {fileID: 11400000, guid: bd0ca5ebe0f217645a1197eb64a90a62, type: 2}
   pSummon:
   - {fileID: 11400000, guid: 7df3d9dc6d6edaf4ab6b6289660cb0ee, type: 2}

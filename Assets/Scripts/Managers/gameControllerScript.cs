@@ -132,6 +132,9 @@ public class NewStateMaskDic
 public class Wave
 {
     public int ID;
+    public int endGold;
+    public int waveNum;
+    //public bool isFinalWave;
     public EnemyAndDelay[] spawnOrder;
 }
 [System.Serializable]
@@ -229,7 +232,8 @@ public class gameControllerScript : MonoBehaviour
     public void FlagTrigger(int ID)
     {
         //spawns the pre-set waves
-        if (ID > 11000 && ID < 11010)
+        //second number should be 1 number before max wave
+        if (ID > 11000 && ID < 12000)
         {
             waveManager.spawnWave(ID + 1);
             deckManager.drawCard(1);
@@ -246,7 +250,11 @@ public class gameControllerScript : MonoBehaviour
         //each event an ID would trigger, use for really important events
         switch (ID)
         {
-            case 11010:
+            case 20004:
+                //insert game win shit
+                break;
+            case 20003:
+                //insert game loss shit
                 break;
             default:
                 break;

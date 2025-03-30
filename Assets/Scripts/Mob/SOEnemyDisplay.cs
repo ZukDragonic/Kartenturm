@@ -10,7 +10,7 @@ public class SOEnemyDisplay : MonoBehaviour
     
     public SOEnemy enemy;
 
-    public Sprite image;
+    private SpriteRenderer sR;
 
     public float speed;
     public float health;
@@ -30,8 +30,8 @@ public class SOEnemyDisplay : MonoBehaviour
     {
         gameController = gameControllerScript.instance;
         sliderDisplay = transform.GetChild(0).GetComponent<sliderDisplayScript>();
-
-        GetComponent<SpriteRenderer>().sprite = enemy.image;
+        sR = GetComponent<SpriteRenderer>();
+        sR.sprite = enemy.image;
 
         speed = enemy.speed;
         health = enemy.health;
@@ -52,6 +52,14 @@ public class SOEnemyDisplay : MonoBehaviour
         Vector3 direction = checkpointPos - transform.position;
         //find the direction from point A to point B via Vector subtraction
         transform.position += direction.normalized * speed * Time.deltaTime;
+        if (direction.x > 0)
+        {
+            sR.flipX = false;
+        }
+        else
+        {
+            sR.flipX = true;
+        }
         if (distanceToCheckpoint <= 0.5)
         {
             //if not reached end, go to next checkpoint
@@ -65,8 +73,8 @@ public class SOEnemyDisplay : MonoBehaviour
                 reachedEnd = true;
                 gameController.waveManager.enemyDied();
                 gameController.resourceManager.removeEnemy(this);
+                gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
                 Destroy(gameObject);
-                //add code to decrease hp
             }
             checkpointNum += 1;
         }

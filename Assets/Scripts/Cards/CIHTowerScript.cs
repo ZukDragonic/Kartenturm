@@ -51,11 +51,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         //checks if something is being hit
         if (eventData.pointerCurrentRaycast.gameObject == null)
         {
-            hit = null;
-            cosmetic.resetCard();
-            isOverPlaceable = false;
-            isTowerShown = false;
-            Destroy(showTower);
+            ResetEverything();
             return;
         }
         if (gameController.state == GameState.Placing)
@@ -89,9 +85,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.1f, 0.1f, 0.5f);
             }
         }
-        else if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)
+        else if (gameController.state == GameState.TowerMenu)
         {
-
             if (eventData.pointerCurrentRaycast.gameObject.tag == "Slot")
             {
                 //then checks if it is in a UI slot
@@ -114,11 +109,27 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             else
             {
-                hit = null;
-                cosmetic.resetCard();
-                isOverPlaceable = false;
-                Destroy(showTower);
-                showTower = null;
+                ResetEverything();
+                return;
+            }
+        }
+        else if (gameController.state == GameState.ShopMenu)
+        {
+            if (eventData.pointerCurrentRaycast.gameObject.tag == "Slot")
+            {
+                //then checks if it is in a UI slot
+                hit = eventData.pointerCurrentRaycast.gameObject;
+
+                if (hit.GetComponent<placeableAreaScript>().isPlaceable)
+                {
+                    isOverPlaceable = true;
+                    //cosmetic purposes
+                    cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                }
+            }
+            else
+            {
+                ResetEverything();
                 return;
             }
         }
@@ -153,7 +164,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 }
                 Destroy(gameObject);
             }
-            if (gameController.state == GameState.TowerMenu || gameController.state == GameState.ShopMenu)
+            if (gameController.state == GameState.TowerMenu)
             {
                 //when it is  over a card slot
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
@@ -161,6 +172,12 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 {
                     gameController.resourceManager.changeGold(card.actionGold * -1);
                 }
+                Destroy(gameObject);
+            }
+            if (gameController.state == GameState.ShopMenu)
+            {
+                //when it is  over a card slot
+                hit.GetComponent<slotUGUI>().cardHasDropped(card);
                 Destroy(gameObject);
             }
         }
@@ -176,5 +193,15 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
         cosmetic.resetCard();
         isOverPlaceable = false;
+    }
+
+    void ResetEverything()
+    {
+        hit = null;
+        cosmetic.resetCard();
+        isOverPlaceable = false;
+        Destroy(showTower);
+        showTower = null;
+        isTowerShown = false;
     }
 }

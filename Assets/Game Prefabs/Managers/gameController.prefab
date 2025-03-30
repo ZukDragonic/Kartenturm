@@ -82,5 +82,8 @@ MonoBehaviour:
     - ID: 20002
       check: 0
       name: Tutorial
+    - ID: 20003
+      check: 0
+      name: GameOver
   state: 1
   isCardDragged: 0

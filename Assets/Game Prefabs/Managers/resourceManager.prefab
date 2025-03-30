@@ -46,5 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldDisplay: {fileID: 0}
   playerGold: 1000
-  health: 0
+  healthDisplay: {fileID: 0}
+  health: 10
+  waveDisplay: {fileID: 0}
+  waveNum: 0
   allTower: []
+  allEnemy: []

@@ -33,6 +33,11 @@ public class waveManagerScript : MonoBehaviour
     public void spawnWave(int ID)
     {
         currentWave = findWave(ID);
+        if (currentWave == null)
+        {
+            Debug.Log("YOU ENTERED AN INVALID WAVE");
+            return;
+        }
         StartCoroutine(waveManager(currentWave));
     }
 
@@ -43,6 +48,7 @@ public class waveManagerScript : MonoBehaviour
         {
             if (enemyAlive == 0)
             {
+                gameController.resourceManager.changeGold(currentWave.endGold);
                 gameController.FlagTrigger(currentWave.ID);
                 foreach (baseTowerScript tower in gameController.resourceManager.allTower)
                 {
@@ -60,6 +66,7 @@ public class waveManagerScript : MonoBehaviour
     IEnumerator waveManager(Wave wave)
     {
         yield return null;
+        gameController.resourceManager.updateWave(currentWave.waveNum);
         while (gameController.state != GameState.Wave)
         {
             yield return null;

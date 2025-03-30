@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Woof
   description: His parents named him Woof and now he hates it whenever his packmate
     calls him.
-  image: {fileID: 21300026, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
+  image: {fileID: 21300030, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
   speed: 1.5
   health: 2000
   damageToHP: 2

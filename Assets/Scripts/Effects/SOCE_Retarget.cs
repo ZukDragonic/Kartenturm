@@ -16,6 +16,10 @@ public class SOCE_Retarget : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
+        if (gameControllerScript.instance.resourceManager.allEnemy.Count <= 0)
+        {
+            return;
+        }
         sumObj_Projectile pScript = script as sumObj_Projectile;
         switch (targetType)
         {
