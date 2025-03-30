@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 
 public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Vector3 ogPos;
-    private Quaternion ogRotation;
+    public Vector3 ogPos;
+    public Quaternion ogRotation;
     private Transform ogParent;
 
     void Start()

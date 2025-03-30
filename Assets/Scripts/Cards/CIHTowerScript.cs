@@ -142,7 +142,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 gameController.UpdateGameState(GameState.Previous);
                 gameController.resourceManager.changeGold(card.actionGold * -1);
 
-                //change for limited placements
+                //change for limited placement, ctrl + f all doc
                 /*hit.GetComponent<placeableAreaScript>().isPlaceable = false;
                 hit.GetComponent<CircleCollider2D>().enabled = false;*/
                 if (showTower != null)

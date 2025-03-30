@@ -59,48 +59,70 @@ public class cardHolderScript : MonoBehaviour
             {
                 for (int i = 0; i < currentCC; i++)
                 {
+                    Vector3 lPos;
+                    Quaternion lRot;
+                    Transform currentChild = gameObject.transform.GetChild(i);
                     if (i % 2 == 0)
                     {
-                        gameObject.transform.GetChild(i).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -60,
+                        lPos = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -60,
                             (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+                        lRot = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
 
-                        gameObject.transform.GetChild(i).rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
+                        currentChild.localPosition = lPos;
+                        currentChild.rotation = lRot;
                     }
                     else
                     {
-                        gameObject.transform.GetChild(i).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 60,
+                        lPos = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 60,
                             (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+                        lRot = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
 
-                        gameObject.transform.GetChild(i).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
+                        currentChild.localPosition = lPos;
+                        currentChild.localRotation = lRot;
                     }
+                    cardInHandScript childCIH = currentChild.GetComponent<cardInHandScript>();
+                    childCIH.ogPos = lPos;
+                    childCIH.ogRotation = lRot;
                 }
             }
             else
             {
                 for (int i = -1; i < currentCC - 1; i++)
                 {
+                    Vector3 lPos;
+                    Quaternion lRot;
+                    Transform currentChild = gameObject.transform.GetChild(i + 1);
                     if (i == -1)
                     {
-                        gameObject.transform.GetChild(i + 1).localPosition = new Vector3(0, 5, 0);
-                        gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(Vector3.zero);
+                        lPos = new Vector3(0, 5, 0);
+                        lRot = Quaternion.Euler(Vector3.zero);
+                        currentChild.localPosition = lPos;
+                        currentChild.localRotation = lRot;
                     }
                     else
                     {
                         if (i % 2 == 0)
                         {
-                            gameObject.transform.GetChild(i + 1).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -80,
+                            lPos = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -80,
                                 (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
-
-                            gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
+                            lRot = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
+                            
+                            currentChild.localPosition = lPos;
+                            currentChild.localRotation = lRot;
                         }
                         else
                         {
-                            gameObject.transform.GetChild(i + 1).localPosition = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 80,
+                            lPos = new Vector3((Mathf.FloorToInt(i / 2) + 1) * 80,
                                 (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
+                            lRot = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
 
-                            gameObject.transform.GetChild(i + 1).localRotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * -5));
+                            currentChild.localPosition = lPos;
+                            currentChild.localRotation = lRot;
                         }
                     }
+                    cardInHandScript childCIH = currentChild.GetComponent<cardInHandScript>();
+                    childCIH.ogPos = lPos;
+                    childCIH.ogRotation = lRot;
                 }
             }
         }
