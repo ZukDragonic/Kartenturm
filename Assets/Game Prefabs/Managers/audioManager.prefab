@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - ID: 30001
+  - ID: 30000
     clips:
     - {fileID: 8300000, guid: 68aa715e71f8c534ebb784814e7cd2b6, type: 3}
     maxInstances: 10
@@ -53,7 +53,7 @@ MonoBehaviour:
     pitch: 1
     source: []
     type: 0
-  - ID: 30002
+  - ID: 30001
     clips:
     - {fileID: 8300000, guid: babf1f25b29a91c468c239b6b607a65f, type: 3}
     maxInstances: 10
@@ -61,11 +61,27 @@ MonoBehaviour:
     pitch: 1
     source: []
     type: 0
-  - ID: 30003
+  - ID: 30002
     clips:
     - {fileID: 8300000, guid: 40e6029a7c857d045a521dc28b784a9e, type: 3}
     maxInstances: 3
     baseVolume: 0.2
+    pitch: 1
+    source: []
+    type: 0
+  - ID: 30003
+    clips:
+    - {fileID: 8300000, guid: 68396394b83f2f5458fccd4bd4af5a28, type: 3}
+    maxInstances: 300
+    baseVolume: 0.25
+    pitch: 1
+    source: []
+    type: 0
+  - ID: 30004
+    clips:
+    - {fileID: 8300000, guid: 62998bd7847191f4eac2bc349242b6d2, type: 3}
+    maxInstances: 15
+    baseVolume: 0.5
     pitch: 1
     source: []
     type: 0

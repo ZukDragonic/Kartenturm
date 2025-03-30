@@ -18,6 +18,7 @@ MonoBehaviour:
   waveStart: []
   waveEnd:
   - {fileID: 11400000, guid: e65f5e5aff3b70340906e82130cdeaef, type: 2}
+  - {fileID: 11400000, guid: b1370ba6f3335394480920540bb0a03a, type: 2}
   pPassive:
   - {fileID: 11400000, guid: e8d9639040be94a47b866565289fcf86, type: 2}
   pDestroy: []
