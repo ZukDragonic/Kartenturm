@@ -51,9 +51,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18d0a51c1b57efc4dbcf1109c5c17b45, type: 2}
   - {fileID: 11400000, guid: 8f3bfff8d60aa824aad4ca7ce1125237, type: 2}
   - {fileID: 11400000, guid: 52e77db8409281449b495faf75c5c559, type: 2}
+  - {fileID: 11400000, guid: e740869d95fcb1546952540495c77066, type: 2}
+  - {fileID: 11400000, guid: e208232d2865b6d41b046da3bf59cad8, type: 2}
+  - {fileID: 11400000, guid: 6c39c19c7c5c9ae4ea072b32a3e8e3c8, type: 2}
   waveList:
   - ID: 11000
-    endGold: -500
+    endGold: -404
     waveNum: -404
     spawnOrder:
     - enemyID: 404
@@ -150,7 +153,7 @@ MonoBehaviour:
     - enemyID: 12004
       delay: 5
       repeat: 1
-  - ID: 11010
+  - ID: 11011
     endGold: 325
     waveNum: 11
     spawnOrder:
@@ -178,5 +181,117 @@ MonoBehaviour:
     - enemyID: 12001
       delay: 1
       repeat: 10
+  - ID: 11012
+    endGold: 300
+    waveNum: 12
+    spawnOrder:
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.2
+      repeat: 5
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.2
+      repeat: 5
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.2
+      repeat: 5
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.2
+      repeat: 5
+    - enemyID: 12004
+      delay: 1
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.2
+      repeat: 5
+  - ID: 11013
+    endGold: 350
+    waveNum: 13
+    spawnOrder:
+    - enemyID: 12002
+      delay: 0.5
+      repeat: 10
+    - enemyID: 12003
+      delay: 0.5
+      repeat: 10
+    - enemyID: 12002
+      delay: 0.5
+      repeat: 10
+    - enemyID: 12005
+      delay: 2
+      repeat: 1
+  - ID: 11014
+    endGold: 200
+    waveNum: 14
+    spawnOrder:
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 10
+    - enemyID: 12003
+      delay: 6
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12003
+      delay: 6
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12003
+      delay: 6
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12003
+      delay: 6
+      repeat: 1
+    - enemyID: 12003
+      delay: 0.1
+      repeat: 9
+  - ID: 11015
+    endGold: 200
+    waveNum: 15
+    spawnOrder:
+    - enemyID: 12004
+      delay: 0.1
+      repeat: 10
+    - enemyID: 12004
+      delay: 6
+      repeat: 1
+    - enemyID: 12004
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12004
+      delay: 6
+      repeat: 1
+    - enemyID: 12004
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12004
+      delay: 6
+      repeat: 1
+    - enemyID: 12004
+      delay: 0.1
+      repeat: 9
+    - enemyID: 12004
+      delay: 6
+      repeat: 1
+    - enemyID: 12004
+      delay: 0.1
+      repeat: 9
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []

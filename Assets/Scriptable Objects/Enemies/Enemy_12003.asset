@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: 004Woof
+  m_Name: Enemy_12003
   m_EditorClassIdentifier: 
-  ID: 12004
-  Enemyname: Woof
-  description: His parents named him Woof and now he hates it whenever his packmate
-    calls him.
-  image: {fileID: 21300030, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
-  speed: 1.5
-  health: 2000
-  damageToHP: 2
+  ID: 12003
+  Enemyname: Rat
+  description: The rat on his 999 year journey to find cheese. Sadly, he has not
+    found any,
+  image: {fileID: 21300044, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
+  speed: 3
+  health: 300
+  damageToHP: 1
   hitRadius: 0.2
-  goldDrop: 25
+  goldDrop: 10

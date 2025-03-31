@@ -84,6 +84,9 @@ MonoBehaviour:
       name: Tutorial
     - ID: 20003
       check: 0
-      name: GameOver
+      name: GameLoss
+    - ID: 20004
+      check: 0
+      name: GameWin
   state: 1
   isCardDragged: 0
