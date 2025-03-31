@@ -25,6 +25,7 @@ public class SOCE_LookAtTarget : SOC_Effect
         // Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, target.z));
         float referenceZ = script.gameObject.transform.rotation.eulerAngles.z;
         float eRotZ = rotation.eulerAngles.z;
+        Debug.Log(Time.deltaTime);
         eRotZ = Mathf.Clamp(rotation.eulerAngles.z,
             referenceZ - maxRot,
             referenceZ + maxRot);
