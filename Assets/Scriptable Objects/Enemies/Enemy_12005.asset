@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Boar
   description: Boar was borne a bored boar that bored upon the barren bar.
   image: {fileID: 21300046, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
-  speed: 1.5
+  speed: 15
   health: 2500
   damageToHP: 1
   hitRadius: 0.2

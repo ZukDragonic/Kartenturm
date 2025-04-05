@@ -10,6 +10,7 @@ public class sumObj_Standalone : sumObj_Base
     {
         damage = parentProjectile.damage;
         pierce = parentProjectile.pierce;
+        effects = SOCE_Parent.CreateInstance(effects);
         StartCoroutine(WaitForStart());
     }
     IEnumerator WaitForStart()

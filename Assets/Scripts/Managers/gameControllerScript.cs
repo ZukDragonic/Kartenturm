@@ -197,6 +197,8 @@ public class gameControllerScript : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
+
         if (instance == null)
         {
             instance = this;

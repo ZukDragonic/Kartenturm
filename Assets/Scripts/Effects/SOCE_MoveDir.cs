@@ -14,7 +14,7 @@ public class SOCE_MoveDir : SOC_Effect
     {
         if (dir.y == 1)
         {
-            script.transform.position += script.transform.right * speed * Time.deltaTime;
+            script.transform.position += script.transform.right * speed * gameControllerScript.instance.timeManager.currentTime / 100;
         }
     }
 }

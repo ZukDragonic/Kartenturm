@@ -17,7 +17,7 @@ MonoBehaviour:
   description: His parents named him Woof and now he hates it whenever his packmate
     calls him.
   image: {fileID: 21300030, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
-  speed: 2
+  speed: 20
   health: 1500
   damageToHP: 1
   hitRadius: 0.2

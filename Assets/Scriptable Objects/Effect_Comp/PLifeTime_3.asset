@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PLifeTime_3
   m_EditorClassIdentifier: 
   duration: 3
+  frameCount: 0

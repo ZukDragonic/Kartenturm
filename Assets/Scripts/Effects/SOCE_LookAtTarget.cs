@@ -25,15 +25,15 @@ public class SOCE_LookAtTarget : SOC_Effect
         // Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, target.z));
         float referenceZ = script.gameObject.transform.rotation.eulerAngles.z;
         float eRotZ = rotation.eulerAngles.z;
-        Debug.Log(Time.deltaTime);
+        int rotMultiplier = gameControllerScript.instance.timeManager.currentTime;
         eRotZ = Mathf.Clamp(rotation.eulerAngles.z,
-            referenceZ - maxRot,
-            referenceZ + maxRot);
+            referenceZ - maxRot * rotMultiplier,
+            referenceZ + maxRot * rotMultiplier);
         //if object attmpts max rotation in wrong direction, force other direction
         //a small rotation in other direction is fine to make straight targetting
-        if (eRotZ == referenceZ - maxRot)
+        if (eRotZ == referenceZ - (maxRot * rotMultiplier))
         {
-            eRotZ = eRotZ + maxRot * 2;
+            eRotZ = eRotZ + (maxRot * 2 * rotMultiplier);
         }
         rotation.eulerAngles = new Vector3(0,0, eRotZ);
         script.gameObject.transform.rotation = rotation;

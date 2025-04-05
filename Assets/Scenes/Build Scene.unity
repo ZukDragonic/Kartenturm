@@ -5102,10 +5102,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.099999994
+    x: 0
     y: 0
     width: 1
-    height: 0.8
+    height: 1
   near clip plane: 0
   far clip plane: 1000
   field of view: 60
@@ -17018,10 +17018,6 @@ PrefabInstance:
       propertyPath: timeButton
       value: 
       objectReference: {fileID: 2003396536}
-    - target: {fileID: 5498893863559824936, guid: 1fdcaf568c9b50c4c86bc875760bf650, type: 3}
-      propertyPath: currentTime
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fdcaf568c9b50c4c86bc875760bf650, type: 3}
 --- !u!1001 &7403111425720553098

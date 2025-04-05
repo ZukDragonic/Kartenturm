@@ -14,8 +14,8 @@ public class SOCE_Parent : ScriptableObject
     public SOC_Effect[] pDestroy;
     public SOC_Effect[] pHit;
     public SOC_Effect[] pSummon;
-    
-    
+
+
     public void PassiveEffect(baseTowerScript script)
     {
         playEffectFromArray(passive, script, null);
@@ -59,5 +59,67 @@ public class SOCE_Parent : ScriptableObject
         {
             effect.ApplyEffect(tScript, pScript);
         }
+    }
+
+    public static SOCE_Parent CreateInstance(SOCE_Parent copied)
+    {
+        SOCE_Parent current = Instantiate(copied);
+
+        List<SOC_Effect> newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.passive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.passive = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.destroy)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.destroy = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.summon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.summon = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.waveStart)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.waveStart = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.waveEnd)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.waveEnd = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.pPassive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pPassive = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.pHit)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pHit = newEffects.ToArray();
+        
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in copied.pSummon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pSummon = newEffects.ToArray();
+        return current;
     }
 }

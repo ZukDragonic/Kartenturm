@@ -52,7 +52,7 @@ public class baseTowerScript : MonoBehaviour
         projectilePierce = baseCard.projectilePierce;
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
-        currentEffect = baseCard.effects;
+        currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
 
         hasAttacked = false;
@@ -182,7 +182,7 @@ public class baseTowerScript : MonoBehaviour
 
     public void changeStats()
     {
-        currentEffect = baseCard.effects;
+        currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
         attackValue = baseCard.attackValue;
         foreach (var slot in stackedCards)
         {
@@ -200,6 +200,7 @@ public class baseTowerScript : MonoBehaviour
         }
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         cosmetic.rangeDisplayUpdate(true, range);
+        //add in a merge effect somewhere here
     }
 
     public void changeTargetting(int change)

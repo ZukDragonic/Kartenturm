@@ -51,7 +51,7 @@ public class SOEnemyDisplay : MonoBehaviour
         distanceToCheckpoint = Vector3.Distance(transform.position, checkpointPos);
         Vector3 direction = checkpointPos - transform.position;
         //find the direction from point A to point B via Vector subtraction
-        transform.position += direction.normalized * speed * Time.deltaTime;
+        transform.position += direction.normalized * speed * gameController.timeManager.currentTime / 1000;
         if (direction.x > 0)
         {
             sR.flipX = false;

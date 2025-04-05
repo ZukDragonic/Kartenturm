@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class timeManagerScript : MonoBehaviour
-{    
-    public int[] timeChanges;
+{
+    public int prevTime;
     public int currentTime;
+    public int maxTime;
 
     public changeImageScript timeButton;
 
@@ -18,21 +19,20 @@ public class timeManagerScript : MonoBehaviour
         }
         currentTime++;
         timeButton.nextImage();
-        if (currentTime > timeChanges.Length - 1)
+        if (currentTime > maxTime)
         {
-            currentTime -= timeChanges.Length;
+            currentTime -= maxTime;
         }
-
-        Time.timeScale = timeChanges[currentTime];
     }
 
     public void resetTime()
     {
-        Time.timeScale = timeChanges[currentTime];
+        currentTime = prevTime;
     }
     public void pauseTime()
     {
-        Time.timeScale = 0;
+        prevTime = currentTime;
+        currentTime = 0;
     }
 
     public void buttonChange(int index)

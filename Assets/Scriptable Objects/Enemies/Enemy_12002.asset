@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Earth Worm
   description: A really big worm. One day, she wants to be a dragon.
   image: {fileID: 21300020, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
-  speed: 1
+  speed: 10
   health: 500
   damageToHP: 1
   hitRadius: 0.2
