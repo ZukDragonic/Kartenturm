@@ -58,6 +58,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         {
             if (hit == null)
             {
+                ResetEverything();
                 return;
             }
             if (!isTowerShown)

@@ -115,4 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 31ba9f0ec07dee745ae2192ad9a1af56, type: 2}
-  ogSpotPrefab: {fileID: 0}
+  ogSpotPrefab: {fileID: 5254261843561532207, guid: 03a50bda5667be04eac541ef5ee5da21, type: 3}

@@ -40,6 +40,7 @@ public class cardHolderScript : MonoBehaviour
             }
             gameController.timelineManager.PlayAnim(13000);
             isCardDucked = true;
+            resetCardPosition();
         }
     }
 

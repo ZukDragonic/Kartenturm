@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 
 public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    //* Everything is indented once here
     private gameControllerScript gameController;
     private CCosmeticScript cosmetic;
     public SOCSpell card;
@@ -33,6 +32,8 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         //currentSpotObject = Instantiate(ogSpotPrefab, new Vector3(xzPos.x, ogSpotPrefab.transform.position.y, xzPos.z), Quaternion.identity);
         if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)
         {
+            currentSpotObject = Instantiate(ogSpotPrefab, Vector3.zero, Quaternion.identity, gameController.allCanvas[2].transform);
+            currentSpotObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, -50, 0);
             gameController.UpdateGameState(GameState.Placing);
         }
     }
@@ -55,11 +56,11 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (gameController.state == GameState.Placing)
         {
             hit = GameHit;
-            if (hit == null)
+            if (hit == null || UIHit == null)
             {
                 return;
             }
-            if (GameHit.tag != "hi" && //hi = ogSpotPrefab tag
+            if (UIHit.tag != "Card" &&
                  gameController.resourceManager.playerGold >= card.actionGold)
             {
                 cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
@@ -69,7 +70,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             else
             {
                 cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
-                cosmetic.cosmeticSize(0.5f);
+                cosmetic.cosmeticSize(1f);
                 isOverPlaceable = false;
             }
         }
@@ -108,6 +109,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 card.PlayCard();
                 gameController.UpdateGameState(GameState.Previous);
                 gameController.resourceManager.changeGold(card.actionGold * -1);
+                Destroy(currentSpotObject);
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.ShopMenu)
@@ -119,6 +121,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
         if (gameController.state == GameState.Placing)
         {
+            Destroy(currentSpotObject);
             gameController.UpdateGameState(GameState.Previous);
         }
         cosmetic.resetCard();
