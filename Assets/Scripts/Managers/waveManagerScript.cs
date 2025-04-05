@@ -81,7 +81,13 @@ public class waveManagerScript : MonoBehaviour
         {
             for (int k = 0; k < wave.spawnOrder[i].repeat; k++)
             {
-                yield return new WaitForSeconds(wave.spawnOrder[i].delay);
+                float relativeDelay = wave.spawnOrder[i].delay * Application.targetFrameRate;
+                int currentFrame = 0;
+                while (currentFrame < relativeDelay)
+                {
+                    currentFrame += gameController.timeManager.currentTime;
+                    yield return null;
+                }
                 GameObject current = Instantiate(enemyPrefab, new Vector3(checkpointList[0].transform.position.x - 0.1f,
                     checkpointList[0].transform.position.y - 0.1f, 0), Quaternion.identity);
                 SOEnemyDisplay eScript = current.GetComponent<SOEnemyDisplay>();
