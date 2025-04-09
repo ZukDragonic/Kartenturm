@@ -26,29 +26,22 @@ public class towerMenuDisplay : MonoBehaviour
 
     void cardsHasChanged()
     {
+        StartCoroutine(WaitNextFrame());
+    }
+    IEnumerator WaitNextFrame()
+    {
+        yield return null;
         towerName.text = parentTower.baseCard.cardName;
-        
-        float bonusStat = 0;
-        foreach (var slot in parentTower.stackedCards)
-        {
-            bonusStat += slot.attackValue / 2 * parentTower.baseCard.multiplier;
-        }
+
+        float bonusStat = parentTower.attackValue - parentTower.baseCard.attackValue;
         attackValue.text = "Attack: " + parentTower.baseCard.attackValue.ToString() + " (+" +
             bonusStat.ToString() + ")";
 
-        bonusStat = 0;
-        foreach (var slot in parentTower.stackedCards)
-        {
-            bonusStat += slot.range / 2 * parentTower.baseCard.multiplier;
-        }
+        bonusStat = parentTower.range - parentTower.baseCard.range;
         range.text = "Range: " + parentTower.baseCard.range.ToString() + " (+" +
             bonusStat + ")";
 
-        bonusStat = 0;
-        foreach (var slot in parentTower.stackedCards)
-        {
-            bonusStat += slot.projectilePierce / 2 * parentTower.baseCard.multiplier;
-        }
+        bonusStat = parentTower.projectilePierce - parentTower.baseCard.projectilePierce;
         pierce.text = "Pierce: " + parentTower.baseCard.projectilePierce.ToString() + " (+" +
             bonusStat.ToString() + ")";
 
@@ -77,8 +70,6 @@ public class towerMenuDisplay : MonoBehaviour
         parentTower.changeTargetting(1);
         StartCoroutine(targettingChanged());
     }
-
-
     void OnDestroy()
     {
         parentTower.closeTowerMenu();

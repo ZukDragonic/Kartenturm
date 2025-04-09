@@ -27,7 +27,6 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
-        gameObject.GetComponent<Image>().raycastTarget = false;
         Vector3 xzPos = gameObject.transform.position;
         //currentSpotObject = Instantiate(ogSpotPrefab, new Vector3(xzPos.x, ogSpotPrefab.transform.position.y, xzPos.z), Quaternion.identity);
         if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)

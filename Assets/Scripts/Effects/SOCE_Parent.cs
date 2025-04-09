@@ -55,6 +55,10 @@ public class SOCE_Parent : ScriptableObject
 
     void playEffectFromArray(SOC_Effect[] allEffect, baseTowerScript tScript, sumObj_Base pScript)
     {
+        if (allEffect == null)
+        {
+            return;
+        }
         foreach (SOC_Effect effect in allEffect)
         {
             effect.ApplyEffect(tScript, pScript);
@@ -63,7 +67,7 @@ public class SOCE_Parent : ScriptableObject
 
     public static SOCE_Parent CreateInstance(SOCE_Parent copied)
     {
-        SOCE_Parent current = Instantiate(copied);
+        SOCE_Parent current = ScriptableObject.CreateInstance<SOCE_Parent>();
 
         List<SOC_Effect> newEffects = new List<SOC_Effect>();
         foreach (SOC_Effect effect in copied.passive)
@@ -116,6 +120,99 @@ public class SOCE_Parent : ScriptableObject
         
         newEffects = new List<SOC_Effect>();
         foreach (SOC_Effect effect in copied.pSummon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pSummon = newEffects.ToArray();
+        return current;
+    }
+    public static SOCE_Parent MergeInstances(SOCE_Parent mergerOne, SOCE_Parent mergerTwo)
+    {
+        SOCE_Parent current = ScriptableObject.CreateInstance<SOCE_Parent>();
+
+        List<SOC_Effect> newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.passive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.passive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.passive = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.destroy)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.destroy)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.destroy = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.summon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.summon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.summon = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.waveStart)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.waveStart)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.waveStart = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.waveEnd)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.waveEnd)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.waveEnd = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.pPassive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.pPassive)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pPassive = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.pHit)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.pHit)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        current.pHit = newEffects.ToArray();
+
+        newEffects = new List<SOC_Effect>();
+        foreach (SOC_Effect effect in mergerOne.pSummon)
+        {
+            newEffects.Add(Instantiate(effect));
+        }
+        foreach (SOC_Effect effect in mergerTwo.pSummon)
         {
             newEffects.Add(Instantiate(effect));
         }

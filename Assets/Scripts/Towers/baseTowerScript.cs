@@ -6,7 +6,7 @@ using UnityEngine;
 public class baseTowerScript : MonoBehaviour
 {
     public SOCTower baseCard;
-    public List<SOCTower> stackedCards;
+    public List<SOCard> stackedCards;
     public SOCTower placeHolderCard;
 
     public SOCE_Parent currentEffect;
@@ -34,8 +34,8 @@ public class baseTowerScript : MonoBehaviour
     public float range;
     public float attackValue;
     public int projectilePierce;
-    private int shotsPerAttack;
-    private float secondsPerAttack;
+    public int shotsPerAttack;
+    public float secondsPerAttack;
 
     public GameObject baseProjectile;
    
@@ -66,13 +66,8 @@ public class baseTowerScript : MonoBehaviour
         gameController = gameControllerScript.instance;
         gameController.resourceManager.addTower(this);
 
-        StartCoroutine(WaitForStart());
-        StartCoroutine(attackCycle());
-    }
-    IEnumerator WaitForStart()
-    {
-        yield return null;
         currentEffect.OnSummonEffect(this);
+        StartCoroutine(attackCycle());
     }
     void Update()
     {
@@ -184,23 +179,27 @@ public class baseTowerScript : MonoBehaviour
     {
         currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
         attackValue = baseCard.attackValue;
-        foreach (var slot in stackedCards)
-        {
-            attackValue += slot.attackValue / 2 * baseCard.multiplier;
-        }
         projectilePierce = baseCard.projectilePierce;
-        foreach (var slot in stackedCards)
-        {
-            projectilePierce += (int)(slot.projectilePierce / 2 * baseCard.multiplier);
-        }
         range = baseCard.range;
-        foreach (var slot in stackedCards)
+
+        foreach (SOCard slot in stackedCards)
         {
-            range += slot.range / 2 * baseCard.multiplier;
+            if (slot as SOCTower != null)
+            {
+                SOCTower towerSlot = slot as SOCTower;
+                attackValue += towerSlot.attackValue / 2 * baseCard.multiplier;
+                projectilePierce += (int)(towerSlot.projectilePierce / 2 * baseCard.multiplier);
+                range += towerSlot.range / 2 * baseCard.multiplier;
+            }
+            else if (slot as SOCArtifact != null)
+            {
+                SOCArtifact artifactSlot = slot as SOCArtifact;
+                currentEffect = SOCE_Parent.MergeInstances(currentEffect, artifactSlot.addedEffects);
+            }
         }
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         cosmetic.rangeDisplayUpdate(true, range);
-        //add in a merge effect somewhere here
+        currentEffect.OnSummonEffect(this);
     }
 
     public void changeTargetting(int change)

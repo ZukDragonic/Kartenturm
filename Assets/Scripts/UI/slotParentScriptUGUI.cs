@@ -14,9 +14,9 @@ public class slotParentScriptUGUI : MonoBehaviour
         slotChildDisplay = GetComponent<slotChildDisplayScript>();
         slotChildDisplay.slotNum = parentTower.baseCard.slotNum;
         List<SOCard> stacked = new List<SOCard>();
-        foreach (SOCTower tower in parentTower.stackedCards)
+        foreach (SOCard card in parentTower.stackedCards)
         {
-            stacked.Add(tower as SOCard);
+            stacked.Add(card);
         }
         slotChildDisplay.stackedCards = stacked;
         slotChildDisplay.cardsHasChanged();
@@ -30,10 +30,10 @@ public class slotParentScriptUGUI : MonoBehaviour
     IEnumerator waitOneFrame()
     {
         yield return null;
-        List<SOCTower> stacked = new List<SOCTower>();
-        foreach (SOCard tower in slotChildDisplay.stackedCards)
+        List<SOCard> stacked = new List<SOCard>();
+        foreach (SOCard card in slotChildDisplay.stackedCards)
         {
-            stacked.Add(tower as SOCTower);
+            stacked.Add(card);
         }
         parentTower.stackedCards = stacked;
         transform.parent.SendMessage("cardsHasChanged");

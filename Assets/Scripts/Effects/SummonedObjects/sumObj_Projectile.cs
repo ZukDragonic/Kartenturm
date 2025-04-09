@@ -13,11 +13,6 @@ public class sumObj_Projectile : sumObj_Base
         pierce = parentTower.projectilePierce;
         effects = SOCE_Parent.CreateInstance(parentTower.currentEffect);
 
-        StartCoroutine(WaitForStart());
-    }
-    IEnumerator WaitForStart()
-    {
-        yield return null;
         effects.OnOSummonEffect(this as sumObj_Base);
     }
     void Update()

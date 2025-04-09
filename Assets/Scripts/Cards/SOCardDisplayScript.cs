@@ -25,8 +25,8 @@ public class SOCardDisplayScript : MonoBehaviour
     public TextMeshProUGUI rangeValueDisplay;
     public TextMeshProUGUI descriptionTower;
 
-    public GameObject spellDP;
-    public TextMeshProUGUI descriptionSpell;
+    public GameObject GeneralDP;
+    public TextMeshProUGUI descriptionGeneral;
 
     public Sprite[] allCardSprite;
     //0 is back, 1 is empty, 2 is normal tower, 3 is aoe tower, 4 is spell, 5 is artifact
@@ -57,7 +57,7 @@ public class SOCardDisplayScript : MonoBehaviour
 
         if (card as SOCTower != null)
         {
-            spellDP.SetActive(false);
+            GeneralDP.SetActive(false);
             towerDP.SetActive(true);
             towerCard = card as SOCTower;
             attackValueDisplay.text = towerCard.attackValue.ToString();
@@ -69,11 +69,16 @@ public class SOCardDisplayScript : MonoBehaviour
         else
         {
             towerDP.SetActive(false);
-            spellDP.SetActive(true);
-            spellCard = card as SOCSpell;
-            descriptionSpell.text = spellCard.description;
-
-            cardImage.sprite = allCardSprite[4];
+            GeneralDP.SetActive(true);
+            descriptionGeneral.text = card.description;
+            if (card as SOCSpell != null)
+            {
+                cardImage.sprite = allCardSprite[4];
+            }
+            else
+            {
+                cardImage.sprite = allCardSprite[5];
+            }
         }
         if(TryGetComponent<CCosmeticScript>(out CCosmeticScript script))
         {

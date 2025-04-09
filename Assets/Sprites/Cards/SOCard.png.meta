@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 600
+        y: 1200
         width: 200
         height: 300
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc149f0e58f05c4d9c36c2baff780fe
-      internalID: -306035818
+      spriteID: dd5460c5e4889b146a1014645812a16d
+      internalID: 1920131788
       vertices: []
       indices: 
       edges: []
@@ -142,6 +142,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
+        y: 1200
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a12f6168a1de264d9ffac4774d88b45
+      internalID: 775338191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb7200da41cf6246bacb4fd2f6036a3
+      internalID: 1056886372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 900
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9c9756294e6314baa5a0e550599022
+      internalID: 1775567196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 600
         width: 200
         height: 300
@@ -152,71 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d538b1d28ca0dd4fa71c51f953c1f76
-      internalID: -1888347563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SOCard_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 300
-        width: 200
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b50ca88d6c7a2644baaffa5dd874e3e5
-      internalID: 891365595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SOCard_3
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 300
-        width: 200
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 285e30b2ecb2a194fad0c6e7ee1e0658
-      internalID: -818305151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SOCard_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 200
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bd7187e125d87c469988f71096cbeb9
-      internalID: -144566137
+      spriteID: d5e7ee64552c9c648a520dc1bc7b81c5
+      internalID: -1401919217
       vertices: []
       indices: 
       edges: []
@@ -226,6 +226,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
+        y: 600
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e26a83fe91c9b740adb2d01e7929b56
+      internalID: -985607799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3bc33aace9ed54f872c7307ea7f727
+      internalID: -1032237929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237c947cfca3de7488cfb8d5c3f5560f
+      internalID: -1430096311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_8
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 200
         height: 300
@@ -236,8 +299,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea45f6056e1d56c4982b0a3190670e5f
-      internalID: 1116007468
+      spriteID: a9eb1b54124f4b44fb353da16f29d3ba
+      internalID: -2063654210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOCard_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf38efb2f7f4044088c3f3f4f089197
+      internalID: 1587591839
       vertices: []
       indices: 
       edges: []
@@ -253,12 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SOCard_0: -306035818
-      SOCard_1: -1888347563
-      SOCard_2: 891365595
-      SOCard_3: -818305151
-      SOCard_4: -144566137
-      SOCard_5: 1116007468
+      SOCard_0: 1920131788
+      SOCard_1: 775338191
+      SOCard_2: 1056886372
+      SOCard_3: 1775567196
+      SOCard_4: -1401919217
+      SOCard_5: -985607799
+      SOCard_6: -1032237929
+      SOCard_7: -1430096311
+      SOCard_8: -2063654210
+      SOCard_9: 1587591839
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

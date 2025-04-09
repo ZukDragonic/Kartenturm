@@ -18,6 +18,7 @@ public class timeManagerScript : MonoBehaviour
             return;
         }
         currentTime++;
+        prevTime = currentTime;
         timeButton.nextImage();
         if (currentTime > maxTime)
         {

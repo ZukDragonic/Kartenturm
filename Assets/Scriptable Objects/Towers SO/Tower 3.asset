@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
   m_Name: Tower 3
   m_EditorClassIdentifier: 
-  ID: 10003
+  ID: 40003
   shopGold: 500
   actionGold: 100
   archetype: 

@@ -141,15 +141,15 @@ MonoBehaviour:
   spaValueDisplay: {fileID: 1786039725491748522}
   rangeValueDisplay: {fileID: 1595762532778921563}
   descriptionTower: {fileID: 4836358049995233370}
-  spellDP: {fileID: 3734430609355544286}
-  descriptionSpell: {fileID: 3470669336281656440}
+  GeneralDP: {fileID: 3734430609355544286}
+  descriptionGeneral: {fileID: 3470669336281656440}
   allCardSprite:
-  - {fileID: -306035818, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  - {fileID: -1888347563, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  - {fileID: 891365595, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  - {fileID: -818305151, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  - {fileID: -144566137, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
-  - {fileID: 1116007468, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 1920131788, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 775338191, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 1056886372, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: 1775567196, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: -1401919217, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
+  - {fileID: -985607799, guid: b18a53bd2b0e179469f279b8dea36bc5, type: 3}
 --- !u!1 &3569387047836629870
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5373468396909960402}
   m_Layer: 5
-  m_Name: Spell
+  m_Name: Spell/Artifact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

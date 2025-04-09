@@ -37,7 +37,6 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
-        gameObject.GetComponent<Image>().raycastTarget = false;
         if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)
         {
             gameController.UpdateGameState(GameState.Placing);
@@ -169,10 +168,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 //when it is  over a card slot
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
-                if (gameController.state == GameState.TowerMenu)
-                {
-                    gameController.resourceManager.changeGold(card.actionGold * -1);
-                }
+                gameController.resourceManager.changeGold(card.actionGold * -1);
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.ShopMenu)

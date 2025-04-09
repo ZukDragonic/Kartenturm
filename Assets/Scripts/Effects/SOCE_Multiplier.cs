@@ -9,7 +9,20 @@ public class SOCE_Multiplier : SOC_Effect
     public int multiplier;
     public override void ApplyTEffect(baseTowerScript script)
     {
-        Debug.Log("TBA");
+        switch (stat)
+        {
+            case StatType.Damage:
+                script.attackValue *= multiplier;
+                break;
+            case StatType.Pierce:
+                script.projectilePierce *= multiplier;
+                break;
+            case StatType.Speed:
+                script.secondsPerAttack *= multiplier;
+                break;
+            default:
+                break;
+        }
     }
     public override void ApplyOSEffect(sumObj_Base script)
     {
