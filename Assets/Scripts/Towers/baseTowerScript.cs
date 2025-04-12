@@ -193,7 +193,7 @@ public class baseTowerScript : MonoBehaviour
                 projectilePierce += (int)(towerSlot.projectilePierce / 2 * multiplier);
                 range += towerSlot.range / 2 * multiplier;
             }
-            else if (slot as SOCArtifact != null)
+            if (slot as SOCArtifact != null)
             {
                 SOCArtifact artifactSlot = slot as SOCArtifact;
                 currentEffect = SOCE_Parent.MergeInstances(currentEffect, artifactSlot.addedEffects);
@@ -202,6 +202,16 @@ public class baseTowerScript : MonoBehaviour
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         cosmetic.rangeDisplayUpdate(true, range);
         currentEffect.OnSummonEffect(this);
+        foreach (SOCard slot in stackedCards)
+        {
+            if (slot as SOCTower != null)
+            {
+                SOCTower towerSlot = slot as SOCTower;
+                attackValue += towerSlot.attackValue / 2 * multiplier;
+                projectilePierce += (int)(towerSlot.projectilePierce / 2 * multiplier);
+                range += towerSlot.range / 2 * multiplier;
+            }
+        }
     }
 
     public void changeTargetting(int change)
