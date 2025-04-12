@@ -375,7 +375,6 @@ public class gameControllerScript : MonoBehaviour
         UpdateGameState(GameState.BetweenWave);
 
         timeManager.resetTime();
-        deckManager.openShop();
-//        waveManager.spawnWave(11001);
+        waveManager.spawnWave(11001);
     }
 }
