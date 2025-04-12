@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Playables;
 using UnityEngine.Timeline;
-using UnityEngine.UI;
 
 [System.Serializable]
 public enum targettingOption
@@ -169,6 +166,25 @@ public class Sound
     public AudioSource[] source;
 
     public SoundType type;
+}
+[System.Serializable]
+public class EffectAndReq
+{
+    public SOC_Effect effect;
+
+    public SOC_Requirement[] req;
+    public bool CheckRequirement(baseTowerScript tScript, sumObj_Base oScript)
+    {
+        bool tempBool = true;
+        foreach (SOC_Requirement req in req)
+        {
+            if (!req.ApplyRequirement(tScript, oScript))
+            {
+                tempBool = false;
+            }
+        }
+        return tempBool;
+    }
 }
 public class gameControllerScript : MonoBehaviour
 {

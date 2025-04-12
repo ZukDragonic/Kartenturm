@@ -6,7 +6,7 @@ using UnityEngine;
 public class SOCSpell : SOCard
 {
     public List<SOC_Effect> allEffects = new List<SOC_Effect>();
-    public List<SOCSRequirement> allRequirement = new List<SOCSRequirement>();
+    public List<SOC_Requirement> allRequirement = new List<SOC_Requirement>();
 
     public void PlayCard()
     {
@@ -19,9 +19,9 @@ public class SOCSpell : SOCard
     public bool Requirement()
     {
         bool current = true;
-        foreach (SOCSRequirement req in allRequirement)
+        foreach (SOC_Requirement req in allRequirement)
         {
-            if (req.ApplyRequirement())
+            if (!req.ApplyRequirement(null, null))
             {
                 current = false;
             }

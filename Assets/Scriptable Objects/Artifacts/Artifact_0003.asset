@@ -19,4 +19,4 @@ MonoBehaviour:
   cardName: Fated One
   description: Lady fate has given her blessing. The fated one grows faster.
   image: {fileID: 21300000, guid: a48759b824d86dc4f98fe5d9e61e9484, type: 3}
-  addedEffects: {fileID: 11400000, guid: b3f488f4c822d17449b854786325c7c5, type: 2}
+  addedEffects: {fileID: 11400000, guid: 1353cebc312b2764bb9fda6edb11d2d2, type: 2}

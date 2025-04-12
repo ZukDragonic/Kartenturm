@@ -6,20 +6,49 @@ using UnityEngine;
 public class SOCE_Override : SOC_Effect
 {
     public StatType stat;
-    public int newStat;
+    public float newStat;
+
+    public int odds;
     public override void ApplyTEffect(baseTowerScript script)
     {
-        Debug.Log("TBA");
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
+        switch (stat)
+        {
+            case StatType.Damage:
+                script.attackValue = newStat;
+                break;
+            case StatType.Pierce:
+                script.projectilePierce = (int)newStat;
+                break;
+            case StatType.SPA:
+                script.secondsPerAttack = newStat;
+                break;
+            case StatType.Range:
+                script.range = newStat;
+                break;
+            case StatType.Growth:
+                script.multiplier = newStat;
+                break;
+            default:
+                break;
+        }
     }
     public override void ApplyOSEffect(sumObj_Base script)
     {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
         switch (stat)
         {
             case StatType.Damage:
                 script.damage = newStat;
                 break;
             case StatType.Pierce:
-                script.pierce = newStat;
+                script.pierce = (int)newStat;
                 break;
             default:
                 break;
@@ -27,13 +56,17 @@ public class SOCE_Override : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
         switch (stat)
         {
             case StatType.Damage:
                 script.damage = newStat;
                 break;
             case StatType.Pierce:
-                script.pierce = newStat;
+                script.pierce = (int)newStat;
                 break;
             default:
                 break;

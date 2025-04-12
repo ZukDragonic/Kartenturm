@@ -5,15 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardEffectParent", menuName = "Card/Effect/Parent")]
 public class SOCE_Parent : ScriptableObject
 {
-    public SOC_Effect[] passive;
-    public SOC_Effect[] destroy;
-    public SOC_Effect[] summon;
-    public SOC_Effect[] waveStart;
-    public SOC_Effect[] waveEnd;
-    public SOC_Effect[] pPassive;
-    public SOC_Effect[] pDestroy;
-    public SOC_Effect[] pHit;
-    public SOC_Effect[] pSummon;
+    public EffectAndReq[] passive;
+    public EffectAndReq[] destroy;
+    public EffectAndReq[] summon;
+    public EffectAndReq[] waveStart;
+    public EffectAndReq[] waveEnd;
+    public EffectAndReq[] pPassive;
+    public EffectAndReq[] pDestroy;
+    public EffectAndReq[] pHit;
+    public EffectAndReq[] pSummon;
 
 
     public void PassiveEffect(baseTowerScript script)
@@ -53,170 +53,186 @@ public class SOCE_Parent : ScriptableObject
         playEffectFromArray(pSummon, null, script);
     }
 
-    void playEffectFromArray(SOC_Effect[] allEffect, baseTowerScript tScript, sumObj_Base pScript)
+    void playEffectFromArray(EffectAndReq[] applied, baseTowerScript tScript, sumObj_Base pScript)
     {
-        if (allEffect == null)
+        if (applied == null)
         {
             return;
         }
-        foreach (SOC_Effect effect in allEffect)
+
+        foreach (EffectAndReq effectAndReq in applied)
         {
-            effect.ApplyEffect(tScript, pScript);
+            if (effectAndReq.CheckRequirement(tScript, pScript))
+            {
+                effectAndReq.effect.ApplyEffect(tScript, pScript);
+            }
         }
     }
 
+    public static EffectAndReq instantiateEnR(EffectAndReq oldEnR)
+    {
+        EffectAndReq currentEnR = new EffectAndReq();
+        currentEnR.effect = Instantiate(oldEnR.effect);
+        List<SOC_Requirement> reqList = new List<SOC_Requirement>();
+        foreach (SOC_Requirement req in oldEnR.req)
+        {
+            reqList.Add(Instantiate(req));
+        }
+        currentEnR.req = reqList.ToArray();
+        return currentEnR;
+    }
     public static SOCE_Parent CreateInstance(SOCE_Parent copied)
     {
         SOCE_Parent current = ScriptableObject.CreateInstance<SOCE_Parent>();
 
-        List<SOC_Effect> newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.passive)
+        List<EffectAndReq> newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.passive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.passive = newEffects.ToArray();
+        current.passive = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.destroy)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.destroy)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.destroy = newEffects.ToArray();
+        current.destroy = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.summon)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.summon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.summon = newEffects.ToArray();
+        current.summon = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.waveStart)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.waveStart)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.waveStart = newEffects.ToArray();
+        current.waveStart = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.waveEnd)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.waveEnd)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.waveEnd = newEffects.ToArray();
+        current.waveEnd = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.pPassive)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.pPassive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pPassive = newEffects.ToArray();
+        current.pPassive = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.pHit)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.pHit)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pHit = newEffects.ToArray();
+        current.pHit = newEnR.ToArray();
         
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in copied.pSummon)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.pSummon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pSummon = newEffects.ToArray();
+        current.pSummon = newEnR.ToArray();
         return current;
     }
     public static SOCE_Parent MergeInstances(SOCE_Parent mergerOne, SOCE_Parent mergerTwo)
     {
         SOCE_Parent current = ScriptableObject.CreateInstance<SOCE_Parent>();
 
-        List<SOC_Effect> newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.passive)
+        List<EffectAndReq> newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.passive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.passive)
+        foreach (EffectAndReq EnR in mergerTwo.passive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.passive = newEffects.ToArray();
+        current.passive = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.destroy)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.destroy)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.destroy)
+        foreach (EffectAndReq EnR in mergerTwo.destroy)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.destroy = newEffects.ToArray();
+        current.destroy = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.summon)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.summon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.summon)
+        foreach (EffectAndReq EnR in mergerTwo.summon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.summon = newEffects.ToArray();
+        current.summon = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.waveStart)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.waveStart)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.waveStart)
+        foreach (EffectAndReq EnR in mergerTwo.waveStart)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.waveStart = newEffects.ToArray();
+        current.waveStart = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.waveEnd)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.waveEnd)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.waveEnd)
+        foreach (EffectAndReq EnR in mergerTwo.waveEnd)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.waveEnd = newEffects.ToArray();
+        current.waveEnd = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.pPassive)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.pPassive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.pPassive)
+        foreach (EffectAndReq EnR in mergerTwo.pPassive)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pPassive = newEffects.ToArray();
+        current.pPassive = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.pHit)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.pHit)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.pHit)
+        foreach (EffectAndReq EnR in mergerTwo.pHit)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pHit = newEffects.ToArray();
+        current.pHit = newEnR.ToArray();
 
-        newEffects = new List<SOC_Effect>();
-        foreach (SOC_Effect effect in mergerOne.pSummon)
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.pSummon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        foreach (SOC_Effect effect in mergerTwo.pSummon)
+        foreach (EffectAndReq EnR in mergerTwo.pSummon)
         {
-            newEffects.Add(Instantiate(effect));
+            newEnR.Add(instantiateEnR(EnR));
         }
-        current.pSummon = newEffects.ToArray();
+        current.pSummon = newEnR.ToArray();
         return current;
     }
 }
