@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stat: 0
   multiplier: 100
+  odds: 1

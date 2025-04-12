@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stat: 1
   addition: 5
+  odds: 1

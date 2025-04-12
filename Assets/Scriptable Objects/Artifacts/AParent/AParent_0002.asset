@@ -16,10 +16,10 @@ MonoBehaviour:
   destroy: []
   summon:
   - {fileID: 11400000, guid: 48a0dddd43636f04c8ca4fafd9a5c980, type: 2}
+  - {fileID: 11400000, guid: 3821c6b610e33a8418595c4bcf964fc8, type: 2}
   waveStart: []
   waveEnd: []
-  pPassive:
-  - {fileID: 11400000, guid: 3821c6b610e33a8418595c4bcf964fc8, type: 2}
+  pPassive: []
   pDestroy: []
   pHit: []
   pSummon: []

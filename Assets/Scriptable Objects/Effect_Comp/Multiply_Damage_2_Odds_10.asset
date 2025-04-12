@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3246695ca04e9944a949cccb991dc599, type: 3}
-  m_Name: Chance_Multiply_Damage_2
+  m_Script: {fileID: 11500000, guid: 98a204dda21aeba42b95635373545965, type: 3}
+  m_Name: Multiply_Damage_2_Odds_10
   m_EditorClassIdentifier: 
-  executedEffect: {fileID: 11400000}
+  stat: 0
+  multiplier: 2
   odds: 10

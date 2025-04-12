@@ -7,8 +7,14 @@ public class SOCE_Multiplier : SOC_Effect
 {
     public StatType stat;
     public float multiplier;
+
+    public int odds;
     public override void ApplyTEffect(baseTowerScript script)
     {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
         switch (stat)
         {
             case StatType.Damage:
@@ -32,6 +38,10 @@ public class SOCE_Multiplier : SOC_Effect
     }
     public override void ApplyOSEffect(sumObj_Base script)
     {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
         switch (stat)
         {
             case StatType.Damage:
@@ -46,6 +56,10 @@ public class SOCE_Multiplier : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
         switch (stat)
         {
             case StatType.Damage:
