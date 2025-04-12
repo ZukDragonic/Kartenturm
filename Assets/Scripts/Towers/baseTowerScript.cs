@@ -183,16 +183,10 @@ public class baseTowerScript : MonoBehaviour
         attackValue = baseCard.attackValue;
         projectilePierce = baseCard.projectilePierce;
         range = baseCard.range;
+        multiplier = baseCard.multiplier;
 
         foreach (SOCard slot in stackedCards)
         {
-            if (slot as SOCTower != null)
-            {
-                SOCTower towerSlot = slot as SOCTower;
-                attackValue += towerSlot.attackValue / 2 * multiplier;
-                projectilePierce += (int)(towerSlot.projectilePierce / 2 * multiplier);
-                range += towerSlot.range / 2 * multiplier;
-            }
             if (slot as SOCArtifact != null)
             {
                 SOCArtifact artifactSlot = slot as SOCArtifact;
