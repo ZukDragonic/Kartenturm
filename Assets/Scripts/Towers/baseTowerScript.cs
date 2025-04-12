@@ -36,6 +36,7 @@ public class baseTowerScript : MonoBehaviour
     public int projectilePierce;
     public int shotsPerAttack;
     public float secondsPerAttack;
+    public float multiplier;
 
     public GameObject baseProjectile;
    
@@ -54,6 +55,7 @@ public class baseTowerScript : MonoBehaviour
         secondsPerAttack = baseCard.secondsPerAttack;
         currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
+        multiplier = baseCard.multiplier;
 
         hasAttacked = false;
 
@@ -187,9 +189,9 @@ public class baseTowerScript : MonoBehaviour
             if (slot as SOCTower != null)
             {
                 SOCTower towerSlot = slot as SOCTower;
-                attackValue += towerSlot.attackValue / 2 * baseCard.multiplier;
-                projectilePierce += (int)(towerSlot.projectilePierce / 2 * baseCard.multiplier);
-                range += towerSlot.range / 2 * baseCard.multiplier;
+                attackValue += towerSlot.attackValue / 2 * multiplier;
+                projectilePierce += (int)(towerSlot.projectilePierce / 2 * multiplier);
+                range += towerSlot.range / 2 * multiplier;
             }
             else if (slot as SOCArtifact != null)
             {

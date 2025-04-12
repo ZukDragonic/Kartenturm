@@ -5,6 +5,10 @@ using UnityEngine;
 public class deckManagerScript : MonoBehaviour
 {
     public gameControllerScript gameController;
+    public SOCTower[] allTowers;
+    public SOCArtifact[] allArtifacts;
+    public SOCSpell[] allSpells;
+    [HideInInspector]
     public SOCard[] allCards;
     public List<SOCard> drawDeck;
 
@@ -16,6 +20,20 @@ public class deckManagerScript : MonoBehaviour
 
     private void Start()
     {
+        List<SOCard> tempCards = new List<SOCard>();
+        foreach (SOCard card in allTowers)
+        {
+            tempCards.Add(card);
+        }
+        foreach (SOCard card in allArtifacts)
+        {
+            tempCards.Add(card);
+        }
+        foreach (SOCard card in allSpells)
+        {
+            tempCards.Add(card);
+        }
+        allCards = tempCards.ToArray();
         gameController = gameControllerScript.instance;
         playerHand = GameObject.Find("playerHand").gameObject;
     }

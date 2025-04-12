@@ -6,7 +6,7 @@ using UnityEngine;
 public class SOCE_Multiplier : SOC_Effect
 {
     public StatType stat;
-    public int multiplier;
+    public float multiplier;
     public override void ApplyTEffect(baseTowerScript script)
     {
         switch (stat)
@@ -15,10 +15,16 @@ public class SOCE_Multiplier : SOC_Effect
                 script.attackValue *= multiplier;
                 break;
             case StatType.Pierce:
-                script.projectilePierce *= multiplier;
+                script.projectilePierce *= (int)multiplier;
                 break;
-            case StatType.Speed:
+            case StatType.SPA:
                 script.secondsPerAttack *= multiplier;
+                break;
+            case StatType.Range:
+                script.range *= multiplier;
+                break;
+            case StatType.Growth:
+                script.multiplier *= multiplier;
                 break;
             default:
                 break;
@@ -32,7 +38,7 @@ public class SOCE_Multiplier : SOC_Effect
                 script.damage *= multiplier;
                 break;
             case StatType.Pierce:
-                script.pierce *= multiplier;
+                script.pierce *= (int)multiplier;
                 break;
             default:
                 break;
@@ -46,7 +52,7 @@ public class SOCE_Multiplier : SOC_Effect
                 script.damage *= multiplier;
                 break;
             case StatType.Pierce:
-                script.pierce *= multiplier;
+                script.pierce *= (int)multiplier;
                 break;
             default:
                 break;

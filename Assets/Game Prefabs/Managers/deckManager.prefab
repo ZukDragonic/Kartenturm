@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  allCards:
+  allTowers:
   - {fileID: 11400000, guid: 9fa1243fc8d2ecd4c8af626d8ff5d882, type: 2}
   - {fileID: 11400000, guid: 493913d8d0404f14bb9da3ba29ea1aca, type: 2}
   - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
@@ -54,6 +54,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
   - {fileID: 11400000, guid: 4ec4a66fa15717b4e8b12c7d1e510937, type: 2}
   - {fileID: 11400000, guid: 6f24407238868e34fa31a74547c8a5e2, type: 2}
+  allArtifacts:
+  - {fileID: 11400000, guid: 3337cdfd8be1a3845adcc975ef172931, type: 2}
+  - {fileID: 11400000, guid: 20fa4876b1927eb4292538f5ae3920c3, type: 2}
+  - {fileID: 11400000, guid: 004f9afb34b4fa04ab4549fe841c5788, type: 2}
+  - {fileID: 11400000, guid: f9bd8474ab73cbe4281aa875d3aa2757, type: 2}
+  - {fileID: 11400000, guid: 70f9d9f58e4c8434096970eb91c1e56e, type: 2}
+  - {fileID: 11400000, guid: b4c895af1a008534c8bfe4c923faf753, type: 2}
+  allSpells: []
+  allCards: []
   drawDeck:
   - {fileID: 11400000, guid: 493913d8d0404f14bb9da3ba29ea1aca, type: 2}
   - {fileID: 11400000, guid: 9fa1243fc8d2ecd4c8af626d8ff5d882, type: 2}

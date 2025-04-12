@@ -7,6 +7,8 @@ public class sumObj_Projectile : sumObj_Base
     public baseTowerScript parentTower;
     public Vector3 target;
 
+    public SOEnemyDisplay hitEnemy;
+
     void Start()
     {
         damage = parentTower.attackValue;
@@ -24,10 +26,10 @@ public class sumObj_Projectile : sumObj_Base
     {
         if (collision.tag == "Enemy")
         {
+            hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
-            SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
-            script.health -= damage;
-            script.sliderDisplay.updateDisplay(script.health, script.enemy.health);
+            hitEnemy.health -= damage;
+            hitEnemy.sliderDisplay.updateDisplay(hitEnemy.health, hitEnemy.enemy.health);
             pierce -= 1;
             if (pierce <= 0)
             {

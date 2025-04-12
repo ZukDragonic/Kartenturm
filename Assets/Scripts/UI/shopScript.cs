@@ -51,22 +51,53 @@ public class shopScript : MonoBehaviour
         multiplierReference = multiplier;
 
         //creates shop cards
-        int ran = Random.Range(1, 3);
-        for (int i = 0; i < buyNum - ran; i++)
+
+        //first creates tower random
+        int towerRan = Random.Range(0, buyNum + 1);
+        for (int i = 0; i < towerRan; i++)
         {
             GameObject current = Instantiate(shopCardPrefab, buyArea);
-            SOCard soldCard = gameController.deckManager.allCards[Random.Range(0, gameController.deckManager.allCards.Length)];
+            SOCard soldCard = gameController.deckManager.allTowers[Random.Range(0, gameController.deckManager.allTowers.Length)];
             current.GetComponent<SOCardDisplayScript>().card = soldCard;
             current.GetComponent<CBuyScript>().shopGold = current.GetComponent<SOCardDisplayScript>().card.shopGold;
             current.GetComponent<CBuyScript>().multiplier = multiplier;
         }
-        for (int i = 0; i < ran; i++)
+        
+
+        //then artifact shop cards are created
+        //subtraction is needed to exclude tower cards
+        int artifactRan = Random.Range(0, buyNum + 1 - towerRan);
+        for (int i = 0; i < artifactRan; i++)
+        {
+            GameObject current = Instantiate(shopCardPrefab, buyArea);
+            SOCard soldCard = gameController.deckManager.allArtifacts[Random.Range(0, gameController.deckManager.allArtifacts.Length)];
+            current.GetComponent<SOCardDisplayScript>().card = soldCard;
+            current.GetComponent<CBuyScript>().shopGold = current.GetComponent<SOCardDisplayScript>().card.shopGold;
+            current.GetComponent<CBuyScript>().multiplier = multiplier;
+        }
+
+        //then spell shop cards are created
+        //subtraction is needed to exclude prev cards
+        int spellRan = Random.Range(0, buyNum + 1 - towerRan - artifactRan);
+        for (int i = 0; i < spellRan; i++)
+        {
+            GameObject current = Instantiate(shopCardPrefab, buyArea);
+            SOCard soldCard = gameController.deckManager.allArtifacts[Random.Range(0, gameController.deckManager.allArtifacts.Length)];
+            current.GetComponent<SOCardDisplayScript>().card = soldCard;
+            current.GetComponent<CBuyScript>().shopGold = current.GetComponent<SOCardDisplayScript>().card.shopGold;
+            current.GetComponent<CBuyScript>().multiplier = multiplier;
+        }
+
+        //fills remaining slot with random cards
+        int leftSlots = buyNum - towerRan - artifactRan - spellRan;
+        for (int i = 0; i < leftSlots; i++)
         {
             GameObject current = Instantiate(randomCardPrefab, buyArea);
             CBuyScript ranCard = current.GetComponent<CBuyScript>();
             ranCard.shopGold = baseRanCost;
             ranCard.multiplier = multiplier;
         }
+
         StartCoroutine(destroyNextFrame());
 
         foreach (TextMeshProUGUI textComp in refreshText)
@@ -87,8 +118,8 @@ public class shopScript : MonoBehaviour
         {
             Destroy(buyArea.GetChild(i).gameObject);
         }
-        createShop(-1);
         refreshNum += 1;
+        createShop(-1);
     }
 
     IEnumerator destroyNextFrame()

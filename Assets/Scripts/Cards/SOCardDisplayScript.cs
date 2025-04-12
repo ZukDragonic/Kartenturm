@@ -21,8 +21,9 @@ public class SOCardDisplayScript : MonoBehaviour
 
     public GameObject towerDP;
     public TextMeshProUGUI attackValueDisplay;
-    public TextMeshProUGUI spaValueDisplay;
     public TextMeshProUGUI rangeValueDisplay;
+    public TextMeshProUGUI pierceValueDisplay;
+    public TextMeshProUGUI spaValueDisplay;
     public TextMeshProUGUI descriptionTower;
 
     public GameObject GeneralDP;
@@ -53,7 +54,7 @@ public class SOCardDisplayScript : MonoBehaviour
         displayedImage.sprite = card.image;
         artworkProportions = card.image.rect.size;
         artworkProportions = artworkProportions.normalized;
-        displayedImage.rectTransform.sizeDelta = artworkProportions * new Vector2(140, 120);
+        displayedImage.rectTransform.sizeDelta = artworkProportions * new Vector2(120, 120);
 
         if (card as SOCTower != null)
         {
@@ -61,8 +62,9 @@ public class SOCardDisplayScript : MonoBehaviour
             towerDP.SetActive(true);
             towerCard = card as SOCTower;
             attackValueDisplay.text = towerCard.attackValue.ToString();
-            spaValueDisplay.text = towerCard.secondsPerAttack.ToString();
             rangeValueDisplay.text = towerCard.range.ToString();
+            pierceValueDisplay.text = towerCard.projectilePierce.ToString();
+            spaValueDisplay.text = towerCard.secondsPerAttack.ToString();
             descriptionTower.text = card.description;
             cardImage.sprite = allCardSprite[2];
         }
@@ -71,13 +73,13 @@ public class SOCardDisplayScript : MonoBehaviour
             towerDP.SetActive(false);
             GeneralDP.SetActive(true);
             descriptionGeneral.text = card.description;
-            if (card as SOCSpell != null)
+            if (card as SOCArtifact != null)
             {
-                cardImage.sprite = allCardSprite[4];
+                cardImage.sprite = allCardSprite[3];
             }
             else
             {
-                cardImage.sprite = allCardSprite[5];
+                cardImage.sprite = allCardSprite[4];
             }
         }
         if(TryGetComponent<CCosmeticScript>(out CCosmeticScript script))

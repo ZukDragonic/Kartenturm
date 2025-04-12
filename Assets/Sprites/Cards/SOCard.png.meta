@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5460c5e4889b146a1014645812a16d
-      internalID: 1920131788
+      spriteID: f8233860f3b85cf43ad5fe8aa87523ed
+      internalID: -730322775
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a12f6168a1de264d9ffac4774d88b45
-      internalID: 775338191
+      spriteID: 807318644958f0b4691f9aa52acbccf3
+      internalID: -1751358416
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb7200da41cf6246bacb4fd2f6036a3
-      internalID: 1056886372
+      spriteID: f24aa212bc606b044a423df722a5b116
+      internalID: 1208808606
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9c9756294e6314baa5a0e550599022
-      internalID: 1775567196
+      spriteID: 304fd47497ab9444081015741b9e4525
+      internalID: -1828113473
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5e7ee64552c9c648a520dc1bc7b81c5
-      internalID: -1401919217
+      spriteID: 1d907b279f13b08428d7c6b07c4ddd0f
+      internalID: -881290535
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e26a83fe91c9b740adb2d01e7929b56
-      internalID: -985607799
+      spriteID: d44b8387ff19e8143bffa46a9f983958
+      internalID: -1650335952
       vertices: []
       indices: 
       edges: []
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b3bc33aace9ed54f872c7307ea7f727
-      internalID: -1032237929
+      spriteID: 783da9af5eaede245988a7442903ad74
+      internalID: 718563205
       vertices: []
       indices: 
       edges: []
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 237c947cfca3de7488cfb8d5c3f5560f
-      internalID: -1430096311
+      spriteID: 1a0161389feed944fa64a0f6b65a38f0
+      internalID: -1822110204
       vertices: []
       indices: 
       edges: []
@@ -299,29 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9eb1b54124f4b44fb353da16f29d3ba
-      internalID: -2063654210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SOCard_9
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 200
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cf38efb2f7f4044088c3f3f4f089197
-      internalID: 1587591839
+      spriteID: 36e9c1847ce400143929e0330f8e708a
+      internalID: 794286535
       vertices: []
       indices: 
       edges: []
@@ -337,16 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SOCard_0: 1920131788
-      SOCard_1: 775338191
-      SOCard_2: 1056886372
-      SOCard_3: 1775567196
-      SOCard_4: -1401919217
-      SOCard_5: -985607799
-      SOCard_6: -1032237929
-      SOCard_7: -1430096311
-      SOCard_8: -2063654210
-      SOCard_9: 1587591839
+      SOCard_0: -730322775
+      SOCard_1: -1751358416
+      SOCard_2: 1208808606
+      SOCard_3: -1828113473
+      SOCard_4: -881290535
+      SOCard_5: -1650335952
+      SOCard_6: 718563205
+      SOCard_7: -1822110204
+      SOCard_8: 794286535
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

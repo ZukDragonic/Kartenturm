@@ -49,7 +49,9 @@ public enum StatType
 {
     Damage,
     Pierce,
-    Speed,
+    SPA,
+    Range,
+    Growth
 }
 [System.Serializable]
 public enum ProjectileTargetOptions
@@ -373,6 +375,7 @@ public class gameControllerScript : MonoBehaviour
         UpdateGameState(GameState.BetweenWave);
 
         timeManager.resetTime();
-        waveManager.spawnWave(11001);
+        deckManager.openShop();
+//        waveManager.spawnWave(11001);
     }
 }
