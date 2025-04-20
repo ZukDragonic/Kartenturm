@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 60008
   shopGold: 1000
-  actionGold: 0
+  actionGold: 5000
   archetype: 
   cardName: Sage
   description: Grants a thousand year of knowledge to a mage

@@ -6739,7 +6739,7 @@ PrefabInstance:
     - target: {fileID: 7133946745989015596, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
+      objectReference: {fileID: 11400000, guid: 49499e68e9ffe5441b0f439e3c5edc39, type: 2}
     - target: {fileID: 7133946745989015632, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
       propertyPath: m_Name
       value: Tower CIH

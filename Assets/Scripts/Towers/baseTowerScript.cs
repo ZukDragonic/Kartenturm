@@ -69,6 +69,8 @@ public class baseTowerScript : MonoBehaviour
         gameController.resourceManager.addTower(this);
 
         changeStats();
+        cosmetic.rangeDisplayUpdate(false, range);
+
         StartCoroutine(attackCycle());
     }
     void Update()
