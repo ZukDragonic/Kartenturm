@@ -15,7 +15,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     private bool isOverPlaceable;
 
-    private GameObject hit;
+    public GameObject hit;
 
     void Start()
     {

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa0731b7238d3e4abba253834f608b7, type: 3}
+  m_Name: Artifact_00016
+  m_EditorClassIdentifier: 
+  ID: 60016
+  shopGold: 1000
+  actionGold: 1000
+  archetype: 
+  cardName: All in One
+  description: Exhaust all your power within a single strike
+  image: {fileID: 21300000, guid: 4717a5541631ce846803cac7746a6301, type: 3}
+  addedEffects: {fileID: 11400000, guid: edd22e22d7bd5184fb18ad3e2b011d31, type: 2}

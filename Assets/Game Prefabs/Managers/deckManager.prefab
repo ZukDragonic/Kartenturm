@@ -61,6 +61,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9bd8474ab73cbe4281aa875d3aa2757, type: 2}
   - {fileID: 11400000, guid: 70f9d9f58e4c8434096970eb91c1e56e, type: 2}
   - {fileID: 11400000, guid: b4c895af1a008534c8bfe4c923faf753, type: 2}
+  - {fileID: 11400000, guid: acb357c00f2602f4791681e22fc1b6ad, type: 2}
+  - {fileID: 11400000, guid: 6a3d30ee0d8b3b949ad596c4fd79e848, type: 2}
+  - {fileID: 11400000, guid: d45b2ee81417f884aa3fff7658ee7086, type: 2}
+  - {fileID: 11400000, guid: 8197ef9a65b7e9f4694c4d5a6606f0ac, type: 2}
+  - {fileID: 11400000, guid: 39ad8827b062d4c478f0f5e6d1c8ba2e, type: 2}
+  - {fileID: 11400000, guid: 95177d366d332fc49b5bad96c1bae250, type: 2}
+  - {fileID: 11400000, guid: c15039c3e54d8e243aeadf79d55d000e, type: 2}
+  - {fileID: 11400000, guid: 5482a20bde15bb342a11b8b5e8a059bb, type: 2}
+  - {fileID: 11400000, guid: cd692c09183d6b14a90ba2dc98004c3c, type: 2}
+  - {fileID: 11400000, guid: 3670e92639f9cf448964efaa091f7b16, type: 2}
+  - {fileID: 11400000, guid: 0126cca5fc67a6843b11f98af6109e59, type: 2}
   allSpells: []
   allCards: []
   drawDeck:

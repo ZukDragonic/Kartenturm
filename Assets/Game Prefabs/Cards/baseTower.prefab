@@ -73,7 +73,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2576603434444906187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1208786997729814717, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -230,15 +234,21 @@ MonoBehaviour:
   baseCard: {fileID: 0}
   stackedCards: []
   placeHolderCard: {fileID: 11400000, guid: d6f8fbe09d1abfb4baeb35735e02b0e7, type: 2}
+  currentEffect: {fileID: 0}
   isSelected: 0
   towerMenuPrefabL: {fileID: 4901132420117035387, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
   towerMenuPrefabR: {fileID: 2712563400052095682, guid: b1ff6e97dcdf0ef499429ecfd420f142, type: 3}
   currentTarget: {fileID: 0}
   enemyInRange: []
+  currentTargetting: {fileID: 0}
+  allTargetting: []
   targetChange: 0
   range: 0
   attackValue: 0
   projectilePierce: 0
+  shotsPerAttack: 0
+  secondsPerAttack: 0
+  multiplier: 0
   baseProjectile: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
 --- !u!4 &4408194135892189636 stripped
 Transform:

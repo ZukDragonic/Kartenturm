@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddf9927e04796541af2ebcb1a40bd9a, type: 3}
-  m_Name: PLifeTime_3
+  m_Script: {fileID: 11500000, guid: 3429d4be9599cd641a0fdeed6bb96978, type: 3}
+  m_Name: BaseT_007
   m_EditorClassIdentifier: 
-  duration: 3
-  frameCount: 0
+  requirement: 0
+  isFlipped: 0
+  checkedTower: {fileID: 11400000, guid: 6f24407238868e34fa31a74547c8a5e2, type: 2}

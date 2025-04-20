@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
   m_Name: AParent_0007 unfin
   m_EditorClassIdentifier: 
-  passive: []
+  passive:
+  - effect: {fileID: 11400000, guid: fa8bc48fc47b2fa458923bb8781b3b1b, type: 2}
+    req:
+    - {fileID: 11400000, guid: 3effee1e98924b144a0c5245c27a4b2c, type: 2}
   destroy: []
-  summon: []
+  summon:
+  - effect: {fileID: 11400000, guid: 941688c5a27dd50489b9e22ee741c824, type: 2}
+    req:
+    - {fileID: 11400000, guid: 3effee1e98924b144a0c5245c27a4b2c, type: 2}
   waveStart: []
   waveEnd: []
   pPassive: []

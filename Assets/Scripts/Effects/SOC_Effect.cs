@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SOC_Effect : ScriptableObject
 {
-    public SOC_Requirement[] requirement;
     public void ApplyEffect(baseTowerScript tScript, sumObj_Base oScript)
     {
         if (oScript != null)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SOC_Requirement : ScriptableObject
 {
+    [HideInInspector]
     public bool requirement;
     public bool isFlipped;
     public bool ApplyRequirement(baseTowerScript tScript, sumObj_Base oScript)
@@ -53,7 +54,7 @@ public class SOC_Requirement : ScriptableObject
         return requirement;
     }
 
-    bool CheckFlipped()
+    public bool CheckFlipped()
     {
         if (isFlipped)
         {
@@ -61,7 +62,7 @@ public class SOC_Requirement : ScriptableObject
         }
         else
         {
-            return !requirement;
+            return requirement;
         }
     }
 }

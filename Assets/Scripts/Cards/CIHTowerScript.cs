@@ -65,8 +65,9 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 //cosmetic purposes
                 cosmetic.cosmeticColor(new Color(0, 0, 0, 0));
                 showTower = Instantiate(showTowerPrefab, hit.transform);
-                showTower.GetComponent<tCosmeticScript>().showTower(card);
-                showTower.GetComponent<tCosmeticScript>().rangeDisplayUpdate(true, card.range);
+                tCosmeticScript sTowerScript = showTower.GetComponentInChildren<tCosmeticScript>();
+                sTowerScript.showTower(card);
+                sTowerScript.rangeDisplayUpdate(true, card.range);
                 placeTower = showTower.GetComponent<placeTowerScript>();
                 isTowerShown = true;
             }
@@ -77,12 +78,12 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             if (placeTower.isPlaceable && gameController.resourceManager.playerGold >= card.actionGold)
             {
                 isOverPlaceable = true;
-                showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
+                showTower.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0, 0.5f);
             }
             else
             {
                 isOverPlaceable = false;
-                showTower.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.1f, 0.1f, 0.5f);
+                showTower.transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.1f, 0.1f, 0.5f);
             }
         }
         else if (gameController.state == GameState.TowerMenu)

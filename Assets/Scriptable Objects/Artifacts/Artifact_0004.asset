@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa0731b7238d3e4abba253834f608b7, type: 3}
   m_Name: Artifact_0004
   m_EditorClassIdentifier: 
-  ID: 60002
+  ID: 60004
   shopGold: 500
   actionGold: 250
   archetype: 

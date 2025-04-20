@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passive: []
   destroy: []
-  summon: []
+  summon:
+  - effect: {fileID: 11400000, guid: d3e20e88f1c2bd448b83acd45614af9b, type: 2}
+    req:
+    - {fileID: 11400000, guid: 0a9eccf7e5c29c642a6f9bb7dad541d4, type: 2}
+  - effect: {fileID: 11400000, guid: b12d3917a8e0ab84183958a30b90a681, type: 2}
+    req:
+    - {fileID: 11400000, guid: 0a9eccf7e5c29c642a6f9bb7dad541d4, type: 2}
+  - effect: {fileID: 11400000, guid: 5c2e448ed58457d42beb935b17be4f01, type: 2}
+    req:
+    - {fileID: 11400000, guid: 0a9eccf7e5c29c642a6f9bb7dad541d4, type: 2}
   waveStart: []
   waveEnd: []
   pPassive: []

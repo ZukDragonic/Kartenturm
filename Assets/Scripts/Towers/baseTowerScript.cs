@@ -42,7 +42,7 @@ public class baseTowerScript : MonoBehaviour
    
     void Start()
     {
-        cosmetic = GetComponent<tCosmeticScript>();
+        cosmetic = GetComponentInChildren<tCosmeticScript>();
         cosmetic.showTower(baseCard);
 
         allTargetting = baseCard.allTargetting;
@@ -193,8 +193,6 @@ public class baseTowerScript : MonoBehaviour
                 currentEffect = SOCE_Parent.MergeInstances(currentEffect, artifactSlot.addedEffects);
             }
         }
-        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
-        cosmetic.rangeDisplayUpdate(true, range);
         currentEffect.OnSummonEffect(this);
         foreach (SOCard slot in stackedCards)
         {
@@ -206,6 +204,8 @@ public class baseTowerScript : MonoBehaviour
                 range += towerSlot.range / 2 * multiplier;
             }
         }
+        cosmetic.rangeDisplayUpdate(true, range);
+        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
     }
 
     public void changeTargetting(int change)

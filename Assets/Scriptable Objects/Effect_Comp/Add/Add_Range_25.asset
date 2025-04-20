@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: AParent_0009 unfin
+  m_Script: {fileID: 11500000, guid: e3485ea7d954cef498b59b94b4adc93b, type: 3}
+  m_Name: Add_Range_25
   m_EditorClassIdentifier: 
-  passive: []
-  destroy: []
-  summon: []
-  waveStart: []
-  waveEnd: []
-  pPassive: []
-  pDestroy: []
-  pHit: []
-  pSummon: []
+  stat: 3
+  addition: 25
+  odds: 1

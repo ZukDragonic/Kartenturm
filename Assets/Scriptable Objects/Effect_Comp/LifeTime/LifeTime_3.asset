@@ -9,15 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: AParent_0010 unfin
+  m_Script: {fileID: 11500000, guid: 6ddf9927e04796541af2ebcb1a40bd9a, type: 3}
+  m_Name: LifeTime_3
   m_EditorClassIdentifier: 
-  passive: []
-  destroy: []
-  summon: []
-  waveStart: []
-  waveEnd: []
-  pPassive: []
-  pDestroy: []
-  pHit: []
-  pSummon: []
+  duration: 3
+  frameCount: 0

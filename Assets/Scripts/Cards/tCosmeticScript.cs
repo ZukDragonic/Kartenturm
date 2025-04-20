@@ -18,7 +18,7 @@ public class tCosmeticScript : MonoBehaviour
     public void showTower(SOCTower card)
     {
         GetComponent<SpriteRenderer>().sprite = card.image;
-        foreach (CircleCollider2D mouseElement in GetComponentsInChildren<CircleCollider2D>())
+        foreach (CircleCollider2D mouseElement in transform.parent.GetComponentsInChildren<CircleCollider2D>())
         {
             mouseElement.radius = card.selectRadius/20;
         }
@@ -46,7 +46,7 @@ public class tCosmeticScript : MonoBehaviour
         {
             if (rIObject == null)
             {
-                rIObject = Instantiate(rangeIndicatorPrefab, transform.position, Quaternion.identity, transform);
+                rIObject = Instantiate(rangeIndicatorPrefab, transform.position, Quaternion.identity, transform.parent);
             }
             rIObject.GetComponent<Transform>().localScale = Vector3.one * range / 5 / 3.125f;
         }
