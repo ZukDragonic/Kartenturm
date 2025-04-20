@@ -9,11 +9,15 @@ public class SOCE_Summon : SOC_Effect
     public GameObject summonedPrefab;
 
     public SOCTower summonedTower;
+    public bool keepSlot;
     public override void ApplyTEffect(baseTowerScript script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity, script.transform.parent);
         baseTowerScript summonedScript = current.GetComponent<baseTowerScript>();
-        summonedScript.stackedCards = script.stackedCards;
+        if (keepSlot)
+        {
+            summonedScript.stackedCards = script.stackedCards;
+        }
         summonedScript.baseCard = summonedTower;
     }
     public override void ApplyOSEffect(sumObj_Base script)

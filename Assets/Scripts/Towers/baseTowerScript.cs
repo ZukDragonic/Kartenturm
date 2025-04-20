@@ -68,7 +68,7 @@ public class baseTowerScript : MonoBehaviour
         gameController = gameControllerScript.instance;
         gameController.resourceManager.addTower(this);
 
-        currentEffect.OnSummonEffect(this);
+        changeStats();
         StartCoroutine(attackCycle());
     }
     void Update()
