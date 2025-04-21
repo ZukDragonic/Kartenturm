@@ -6,7 +6,7 @@ using UnityEngine;
 public class SOCR_Effect : SOC_Requirement
 {
     public SOC_Effect checkedEffect;
-    //if base tower is same as checked tower, standard returns true
+    //req starts as false, returns true if even 1 instance of the effect is found
     public override bool ApplyTRequirement(baseTowerScript script)
     {
         requirement = false;
@@ -137,12 +137,10 @@ public class SOCR_Effect : SOC_Requirement
 
     void FalseReqIfEffectNotSame(SOC_Effect comparedEffect)
     {
-        Debug.Log(comparedEffect);
         //created because i don't wanna type the same shit 10 times
         if (comparedEffect.name.Replace("(Clone)", "") == checkedEffect.name)
         {
             requirement = true;
         }
-        Debug.Log(requirement);
     }
 }
