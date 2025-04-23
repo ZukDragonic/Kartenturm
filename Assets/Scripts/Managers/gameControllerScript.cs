@@ -51,6 +51,19 @@ public enum StatType
     Growth
 }
 [System.Serializable]
+public enum EffectType
+{
+    Passive,
+    Destroy,
+    Summon,
+    WaveStart,
+    WaveEnd,
+    PPassive,
+    PDestroy,
+    PHit,
+    PSummon
+}
+[System.Serializable]
 public enum ProjectileTargetOptions
 {
     Tower,

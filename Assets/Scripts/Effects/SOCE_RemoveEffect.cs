@@ -203,8 +203,8 @@ public class SOCE_RemoveEffect : SOC_Effect
     EffectAndReq[] RemoveItemFromArray(EffectAndReq[] CheckedEnR,EffectAndReq RemovedEnR)
     {
         //created because i don't wanna type the same shit 10 times
-        List<EffectAndReq> newEffect = CheckedEnR.ToList<EffectAndReq>();
-        newEffect.Remove(RemovedEnR);
-        return  newEffect.ToArray();
+        List<EffectAndReq> returnedEffect = CheckedEnR.ToList<EffectAndReq>();
+        returnedEffect.Remove(RemovedEnR);
+        return  returnedEffect.ToArray();
     }
 }
