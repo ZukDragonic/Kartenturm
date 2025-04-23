@@ -17,11 +17,11 @@ MonoBehaviour:
   summon:
   - effect: {fileID: 11400000, guid: 26b530bd54851aa4fa94742b470d11cc, type: 2}
     req: []
-  - effect: {fileID: 11400000, guid: a7d39013111847842860d780e2e6edf0, type: 2}
-    req: []
   waveStart: []
   waveEnd: []
-  pPassive: []
+  pPassive:
+  - effect: {fileID: 11400000, guid: b21941c17a0ec3a46a908158839a9d98, type: 2}
+    req: []
   pDestroy: []
   pHit: []
   pSummon: []
