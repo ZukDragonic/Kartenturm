@@ -126,7 +126,14 @@ public class SOCE_Parent : ScriptableObject
             newEnR.Add(instantiateEnR(EnR));
         }
         current.pPassive = newEnR.ToArray();
-        
+
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.pDestroy)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        current.pDestroy = newEnR.ToArray();
+
         newEnR = new List<EffectAndReq>();
         foreach (EffectAndReq EnR in copied.pHit)
         {
@@ -211,6 +218,17 @@ public class SOCE_Parent : ScriptableObject
             newEnR.Add(instantiateEnR(EnR));
         }
         current.pPassive = newEnR.ToArray();
+
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.pDestroy)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        foreach (EffectAndReq EnR in mergerTwo.pDestroy)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        current.pDestroy = newEnR.ToArray();
 
         newEnR = new List<EffectAndReq>();
         foreach (EffectAndReq EnR in mergerOne.pHit)

@@ -20,4 +20,7 @@ MonoBehaviour:
   pPassive: []
   pDestroy: []
   pHit: []
-  pSummon: []
+  pSummon:
+  - effect: {fileID: 11400000, guid: c8a29da222b30984ca23f3a482c3822c, type: 2}
+    req:
+    - {fileID: 11400000, guid: e6dcc7f6ec2ec0945a04136575191b24, type: 2}

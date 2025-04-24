@@ -75,6 +75,10 @@ public class SOCR_Effect : SOC_Requirement
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
+        foreach (EffectAndReq EnR in script.effects.pDestroy)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
         foreach (EffectAndReq EnR in script.effects.pHit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
@@ -112,6 +116,10 @@ public class SOCR_Effect : SOC_Requirement
             FalseReqIfEffectNotSame(EnR.effect);
         }
         foreach (EffectAndReq EnR in script.effects.pPassive)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
+        foreach (EffectAndReq EnR in script.effects.pDestroy)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
