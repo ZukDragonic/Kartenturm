@@ -253,4 +253,21 @@ public class SOCE_Parent : ScriptableObject
         current.pSummon = newEnR.ToArray();
         return current;
     }
+    public static SOCE_Parent SwapTowerAndSumobj(SOCE_Parent swappedInstance)
+    {
+        SOCE_Parent current = swappedInstance;
+        EffectAndReq[] tempEnR = current.passive;
+        current.passive = current.pPassive;
+        current.pPassive = tempEnR;
+
+        tempEnR = current.destroy;
+        current.destroy = current.pDestroy;
+        current.pDestroy = tempEnR;
+
+        tempEnR = current.summon;
+        current.summon = current.pSummon;
+        current.pSummon = tempEnR;
+
+        return current;
+    }
 }

@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class sumObj_Standalone : sumObj_Base
 {
+    //the effects should go into the base effect since it swaps when instantiated
+    //Any effect that needs to be inherited from parent needs to be placed in the base
+
     public sumObj_Projectile parentProjectile;
-    // Start is called before the first frame update
     void Start()
     {
         damage = parentProjectile.damage;
         pierce = parentProjectile.pierce;
-        effects = SOCE_Parent.CreateInstance(effects);
+        effects = SOCE_Parent.MergeInstances(effects, parentProjectile.effects);
+        effects = SOCE_Parent.SwapTowerAndSumobj(effects);
         effects.OnOSummonEffect(this as sumObj_Base);
     }
-    // Update is called once per frame
+
     void Update()
     {
         effects.OPassiveEffect(this as sumObj_Base);

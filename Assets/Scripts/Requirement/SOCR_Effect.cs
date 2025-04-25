@@ -35,6 +35,10 @@ public class SOCR_Effect : SOC_Requirement
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
+        foreach (EffectAndReq EnR in script.currentEffect.pDestroy)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
         foreach (EffectAndReq EnR in script.currentEffect.pHit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
@@ -43,7 +47,6 @@ public class SOCR_Effect : SOC_Requirement
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        Debug.Log(requirement);
         requirement = CheckFlipped();
         return requirement;
     }

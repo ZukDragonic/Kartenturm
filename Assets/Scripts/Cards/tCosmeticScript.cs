@@ -20,7 +20,7 @@ public class tCosmeticScript : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = card.image;
         foreach (CircleCollider2D mouseElement in transform.parent.GetComponentsInChildren<CircleCollider2D>())
         {
-            mouseElement.radius = card.selectRadius/20;
+            mouseElement.radius = card.selectRadius * mouseElement.radius;
         }
     }
 

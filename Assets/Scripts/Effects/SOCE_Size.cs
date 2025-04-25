@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,23 +12,19 @@ public class SOCE_Size : SOC_Effect
     {
         for (int i = 1; i < script.gameObject.transform.childCount; i++)
         {
-            if (script.transform.GetChild(i).name != "Image")
-            {
-                script.transform.GetChild(i).localScale = new Vector3(scale * 2, scale * 2, scale * 2);
-            }
-            else
-            {
-                script.transform.GetChild(i).localScale = new Vector3(scale, scale, scale);
-            }
+            float ogScale = script.transform.GetChild(i).localScale.x;
+            script.transform.GetChild(i).localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
         }
     }
     public override void ApplyOSEffect(sumObj_Base script)
     {
-        script.transform.localScale = new Vector3(scale, scale, scale);
+        float ogScale = script.transform.localScale.x;
+        script.transform.localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
-        script.transform.localScale = new Vector3(scale, scale, scale);
+        float ogScale = script.transform.localScale.x;
+        script.transform.localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
     }
     public override void ApplyBEffect()
     {

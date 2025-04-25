@@ -60,7 +60,7 @@ public class targettingFirst : targettingBase
         }
         else if (FoundIndex < 0)
         {
-            FoundIndex = script.allTargetting.Length;
+            FoundIndex = script.allTargetting.Length - 1;
         }
         script.currentTargetting = script.allTargetting[FoundIndex];
         script.targetChange = 0;

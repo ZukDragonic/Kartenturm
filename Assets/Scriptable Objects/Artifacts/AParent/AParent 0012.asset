@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
+  m_Name: AParent 0012
+  m_EditorClassIdentifier: 
+  passive: []
+  destroy: []
+  summon:
+  - effect: {fileID: 11400000, guid: 251a370600e074b46a32e4fe7a826a80, type: 2}
+    req:
+    - {fileID: 11400000, guid: e6dcc7f6ec2ec0945a04136575191b24, type: 2}
+  - effect: {fileID: 11400000, guid: f75ce66458b07ca4b94c8c8ccd3195be, type: 2}
+    req:
+    - {fileID: 11400000, guid: e6dcc7f6ec2ec0945a04136575191b24, type: 2}
+  - effect: {fileID: 11400000, guid: 313b0643fb6f1c84d9350d31d4ea6366, type: 2}
+    req:
+    - {fileID: 11400000, guid: e6dcc7f6ec2ec0945a04136575191b24, type: 2}
+  - effect: {fileID: 11400000, guid: 8fa33156bbf13bd4bb5e97311241accf, type: 2}
+    req: []
+  waveStart: []
+  waveEnd: []
+  pPassive: []
+  pDestroy: []
+  pHit: []
+  pSummon: []

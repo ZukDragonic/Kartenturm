@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 public class baseTowerScript : MonoBehaviour
 {
     public SOCTower baseCard;
@@ -186,6 +187,11 @@ public class baseTowerScript : MonoBehaviour
         projectilePierce = baseCard.projectilePierce;
         range = baseCard.range;
         multiplier = baseCard.multiplier;
+        for (int i = 1; i < gameObject.transform.childCount; i++)
+        {
+            float ogScale = transform.GetChild(i).localScale.x;
+            transform.GetChild(i).localScale = Vector3.one;
+        }
 
         foreach (SOCard slot in stackedCards)
         {

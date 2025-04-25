@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
   m_Name: SumObj_Aoe
   m_EditorClassIdentifier: 
-  passive: []
+  passive:
+  - effect: {fileID: 11400000, guid: 5b4107573d17bab4398a6ede6efde8dc, type: 2}
+    req: []
   destroy: []
   summon: []
   waveStart: []
   waveEnd: []
-  pPassive:
-  - effect: {fileID: 11400000, guid: 5b4107573d17bab4398a6ede6efde8dc, type: 2}
-    req: []
+  pPassive: []
   pDestroy: []
   pHit: []
   pSummon: []

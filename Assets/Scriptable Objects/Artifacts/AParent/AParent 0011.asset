@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: AParent 0011 unfin
+  m_Name: AParent 0011
   m_EditorClassIdentifier: 
   passive: []
   destroy: []
-  summon: []
+  summon:
+  - effect: {fileID: 11400000, guid: 23aaf8b3b9fca7b4ea20382cfbbb2f56, type: 2}
+    req: []
   waveStart: []
   waveEnd: []
   pPassive: []

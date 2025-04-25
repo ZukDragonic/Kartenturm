@@ -52,6 +52,13 @@ public class SOCE_RemoveEffect : SOC_Effect
                 script.currentEffect.pPassive = RemoveItemFromArray(script.currentEffect.pPassive, EnR);
             }
         }
+        foreach (EffectAndReq EnR in script.currentEffect.pDestroy)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.currentEffect.pDestroy = RemoveItemFromArray(script.currentEffect.pDestroy, EnR);
+            }
+        }
         foreach (EffectAndReq EnR in script.currentEffect.pHit)
         {
             if (CheckSameEffect(EnR.effect))
@@ -111,6 +118,13 @@ public class SOCE_RemoveEffect : SOC_Effect
                 script.effects.pPassive =  RemoveItemFromArray(script.effects.pPassive, EnR);
             }
         }
+        foreach (EffectAndReq EnR in script.effects.pDestroy)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.effects.pDestroy = RemoveItemFromArray(script.effects.pDestroy, EnR);
+            }
+        }
         foreach (EffectAndReq EnR in script.effects.pHit)
         {
             if (CheckSameEffect(EnR.effect))
@@ -168,6 +182,13 @@ public class SOCE_RemoveEffect : SOC_Effect
             if (CheckSameEffect(EnR.effect))
             {
                 script.effects.pPassive = RemoveItemFromArray(script.effects.pPassive, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in script.effects.pDestroy)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.effects.pDestroy = RemoveItemFromArray(script.effects.pDestroy, EnR);
             }
         }
         foreach (EffectAndReq EnR in script.effects.pHit)
