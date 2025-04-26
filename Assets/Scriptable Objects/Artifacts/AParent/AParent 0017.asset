@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passive: []
   destroy: []
-  summon:
-  - effect: {fileID: 11400000, guid: c83e5f3aa4a2ccb44838f120b1f0c93d, type: 2}
-    req: []
+  summon: []
+  hit: []
   waveStart: []
   waveEnd: []
-  pPassive:
-  - effect: {fileID: 11400000, guid: 0bd7c36cfb615474bac7fe145ae70f15, type: 2}
-    req: []
+  pPassive: []
   pDestroy: []
   pHit: []
   pSummon: []

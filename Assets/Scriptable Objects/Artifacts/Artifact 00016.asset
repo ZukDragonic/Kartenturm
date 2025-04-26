@@ -17,6 +17,6 @@ MonoBehaviour:
   actionGold: 1000
   archetype: 
   cardName: All in One
-  description: Exhaust all your power within a single strike
+  description: Pour all your power within a single strike
   image: {fileID: 21300000, guid: 4717a5541631ce846803cac7746a6301, type: 3}
   addedEffects: {fileID: 11400000, guid: edd22e22d7bd5184fb18ad3e2b011d31, type: 2}

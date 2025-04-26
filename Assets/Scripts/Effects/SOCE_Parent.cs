@@ -8,6 +8,7 @@ public class SOCE_Parent : ScriptableObject
     public EffectAndReq[] passive;
     public EffectAndReq[] destroy;
     public EffectAndReq[] summon;
+    public EffectAndReq[] hit;
     public EffectAndReq[] waveStart;
     public EffectAndReq[] waveEnd;
     public EffectAndReq[] pPassive;
@@ -27,6 +28,10 @@ public class SOCE_Parent : ScriptableObject
     public void OnSummonEffect(baseTowerScript script)
     {
         playEffectFromArray(summon, script, null);
+    }
+    public void OnHitEffect(baseTowerScript script)
+    {
+        playEffectFromArray(hit, script, null);
     }
     public void OnWaveStartEffect(baseTowerScript script)
     {
@@ -72,12 +77,18 @@ public class SOCE_Parent : ScriptableObject
     public static EffectAndReq instantiateEnR(EffectAndReq oldEnR)
     {
         EffectAndReq currentEnR = new EffectAndReq();
-        currentEnR.effect = Instantiate(oldEnR.effect);
+        SOC_Effect newEffect = Instantiate(oldEnR.effect);
+        newEffect.name = newEffect.name.Replace("(Clone)", "");
+        currentEnR.effect = newEffect;
+
         List<SOC_Requirement> reqList = new List<SOC_Requirement>();
         foreach (SOC_Requirement req in oldEnR.req)
         {
-            reqList.Add(Instantiate(req));
+            SOC_Requirement newReq = Instantiate(req);
+            newReq.name = newReq.name.Replace("(Clone)", "");
+            reqList.Add(newReq);
         }
+
         currentEnR.req = reqList.ToArray();
         return currentEnR;
     }
@@ -105,7 +116,14 @@ public class SOCE_Parent : ScriptableObject
             newEnR.Add(instantiateEnR(EnR));
         }
         current.summon = newEnR.ToArray();
-        
+
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in copied.hit)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        current.hit = newEnR.ToArray();
+
         newEnR = new List<EffectAndReq>();
         foreach (EffectAndReq EnR in copied.waveStart)
         {
@@ -185,6 +203,17 @@ public class SOCE_Parent : ScriptableObject
             newEnR.Add(instantiateEnR(EnR));
         }
         current.summon = newEnR.ToArray();
+        
+        newEnR = new List<EffectAndReq>();
+        foreach (EffectAndReq EnR in mergerOne.hit)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        foreach (EffectAndReq EnR in mergerTwo.hit)
+        {
+            newEnR.Add(instantiateEnR(EnR));
+        }
+        current.hit = newEnR.ToArray();
 
         newEnR = new List<EffectAndReq>();
         foreach (EffectAndReq EnR in mergerOne.waveStart)
@@ -267,6 +296,10 @@ public class SOCE_Parent : ScriptableObject
         tempEnR = current.summon;
         current.summon = current.pSummon;
         current.pSummon = tempEnR;
+
+        tempEnR = current.hit;
+        current.hit = current.pHit;
+        current.pHit = tempEnR;
 
         return current;
     }

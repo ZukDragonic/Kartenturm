@@ -26,6 +26,7 @@ public class sumObj_Standalone : sumObj_Base
     {
         if (collision.tag == "Enemy")
         {
+            hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
             script.health -= damage;

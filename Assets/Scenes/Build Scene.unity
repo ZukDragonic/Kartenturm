@@ -16948,7 +16948,7 @@ PrefabInstance:
     - target: {fileID: 8088598788962053704, guid: 3078ddaea9ff6414ba457d8b7b856fee, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: c15039c3e54d8e243aeadf79d55d000e, type: 2}
+      objectReference: {fileID: 11400000, guid: 0126cca5fc67a6843b11f98af6109e59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3078ddaea9ff6414ba457d8b7b856fee, type: 3}
 --- !u!1001 &4976202748011845663
@@ -17175,6 +17175,10 @@ PrefabInstance:
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: display
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
+      propertyPath: playerGold
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: timeChanges.Array.size

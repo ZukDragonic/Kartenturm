@@ -22,6 +22,9 @@ public class SOCE_AddEffect : SOC_Effect
             case EffectType.Summon:
                 script.currentEffect.summon = AddItemToArray(script.currentEffect.summon, addedEffect);
                 break;
+            case EffectType.Hit:
+                script.currentEffect.hit = AddItemToArray(script.currentEffect.hit, addedEffect);
+                break;
             case EffectType.WaveStart:
                 script.currentEffect.waveStart = AddItemToArray(script.currentEffect.waveStart, addedEffect);
                 break;
@@ -57,6 +60,9 @@ public class SOCE_AddEffect : SOC_Effect
             case EffectType.Summon:
                 script.effects.summon = AddItemToArray(script.effects.summon, addedEffect);
                 break;
+            case EffectType.Hit:
+                script.effects.hit = AddItemToArray(script.effects.hit, addedEffect);
+                break;
             case EffectType.WaveStart:
                 script.effects.waveStart = AddItemToArray(script.effects.waveStart, addedEffect);
                 break;
@@ -91,6 +97,9 @@ public class SOCE_AddEffect : SOC_Effect
                 break;
             case EffectType.Summon:
                 script.effects.summon = AddItemToArray(script.effects.summon, addedEffect);
+                break;
+            case EffectType.Hit:
+                script.effects.hit = AddItemToArray(script.effects.hit, addedEffect);
                 break;
             case EffectType.WaveStart:
                 script.effects.waveStart = AddItemToArray(script.effects.waveStart, addedEffect);

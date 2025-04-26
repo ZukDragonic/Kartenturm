@@ -256,13 +256,18 @@ public class baseTowerScript : MonoBehaviour
                         current.target = currentTarget.transform.position;
                         projectile.GetComponent<SpriteRenderer>().sprite = baseCard.projectileImage;
                     }
+                    currentEffect.OnHitEffect(this);
                     hasAttacked = true;
                 }
                 yield return null;
             }
+            float attackTimer = 0;
 
-            yield return new WaitForSeconds(secondsPerAttack);
-
+            while (attackTimer < secondsPerAttack)
+            {
+                attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
+                yield return null;
+            }
             hasAttacked = false;
         }
     }

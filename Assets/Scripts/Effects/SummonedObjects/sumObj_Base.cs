@@ -9,4 +9,6 @@ public class sumObj_Base : MonoBehaviour
     public float speed;
     public float damage;
     public int pierce;
+
+    public SOEnemyDisplay hitEnemy;
 }

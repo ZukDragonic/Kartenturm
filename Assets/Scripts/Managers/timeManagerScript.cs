@@ -10,6 +10,9 @@ public class timeManagerScript : MonoBehaviour
 
     public changeImageScript timeButton;
 
+    public int currentFps;
+    public float secondsPerFrame;
+
     public void changeTime()
     {
         if (gameControllerScript.instance.state == GameState.BetweenWave)
@@ -49,5 +52,12 @@ public class timeManagerScript : MonoBehaviour
             return;
         }
         timeButton.selectImage(index);
+    }
+
+    public void ChangeFps(int Fps)
+    {
+        Application.targetFrameRate = Fps;
+        currentFps = Fps;
+        secondsPerFrame = 1 / Fps;
     }
 }

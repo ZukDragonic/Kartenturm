@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +20,9 @@ public class SOCE_LookAtTarget : SOC_Effect
         //face target
         target.z = script.transform.position.z;
         target = script.transform.position - target;
+        //centers the target with script as origin
         Quaternion rotation = Quaternion.FromToRotation(Vector3.left, target);
-        // Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, target.z));
+        //Looks at target
         float referenceZ = script.gameObject.transform.rotation.eulerAngles.z;
         float eRotZ = rotation.eulerAngles.z;
         int rotMultiplier = gameControllerScript.instance.timeManager.currentTime;

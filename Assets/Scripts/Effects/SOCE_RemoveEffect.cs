@@ -31,6 +31,13 @@ public class SOCE_RemoveEffect : SOC_Effect
                 script.currentEffect.summon =  RemoveItemFromArray(script.currentEffect.summon, EnR);
             }
         }
+        foreach (EffectAndReq EnR in script.currentEffect.hit)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.currentEffect.hit = RemoveItemFromArray(script.currentEffect.hit, EnR);
+            }
+        }
         foreach (EffectAndReq EnR in script.currentEffect.waveStart)
         {
             if (CheckSameEffect(EnR.effect))
@@ -95,6 +102,13 @@ public class SOCE_RemoveEffect : SOC_Effect
             if (CheckSameEffect(EnR.effect))
             {
                 script.effects.summon =  RemoveItemFromArray(script.effects.summon, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in script.effects.hit)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.effects.hit = RemoveItemFromArray(script.effects.hit, EnR);
             }
         }
         foreach (EffectAndReq EnR in script.effects.waveStart)
@@ -163,6 +177,13 @@ public class SOCE_RemoveEffect : SOC_Effect
                 script.effects.summon = RemoveItemFromArray(script.effects.summon, EnR);
             }
         }
+        foreach (EffectAndReq EnR in script.effects.hit)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                script.effects.hit = RemoveItemFromArray(script.effects.hit, EnR);
+            }
+        }
         foreach (EffectAndReq EnR in script.effects.waveStart)
         {
             if (CheckSameEffect(EnR.effect))
@@ -226,6 +247,6 @@ public class SOCE_RemoveEffect : SOC_Effect
         //created because i don't wanna type the same shit 10 times
         List<EffectAndReq> returnedEffect = CheckedEnR.ToList<EffectAndReq>();
         returnedEffect.Remove(RemovedEnR);
-        return  returnedEffect.ToArray();
+        return returnedEffect.ToArray();
     }
 }

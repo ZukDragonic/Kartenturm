@@ -56,6 +56,7 @@ public enum EffectType
     Passive,
     Destroy,
     Summon,
+    Hit,
     WaveStart,
     WaveEnd,
     PPassive,
@@ -228,8 +229,6 @@ public class gameControllerScript : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
-
         if (instance == null)
         {
             instance = this;
@@ -405,5 +404,6 @@ public class gameControllerScript : MonoBehaviour
 
         timeManager.resetTime();
         waveManager.spawnWave(11001);
+        timeManager.ChangeFps(60);
     }
 }

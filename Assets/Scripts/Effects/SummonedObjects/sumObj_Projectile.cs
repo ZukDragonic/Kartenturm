@@ -7,8 +7,6 @@ public class sumObj_Projectile : sumObj_Base
     public baseTowerScript parentTower;
     public Vector3 target;
 
-    public SOEnemyDisplay hitEnemy;
-
     void Start()
     {
         damage = parentTower.attackValue;
@@ -16,6 +14,7 @@ public class sumObj_Projectile : sumObj_Base
         effects = SOCE_Parent.CreateInstance(parentTower.currentEffect);
 
         effects.OnOSummonEffect(this as sumObj_Base);
+        Debug.Log(damage);
     }
     void Update()
     {

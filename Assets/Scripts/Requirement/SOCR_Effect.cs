@@ -23,6 +23,10 @@ public class SOCR_Effect : SOC_Requirement
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
+        foreach (EffectAndReq EnR in script.currentEffect.hit)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
         foreach (EffectAndReq EnR in script.currentEffect.waveStart)
         {
             FalseReqIfEffectNotSame(EnR.effect);
@@ -63,6 +67,10 @@ public class SOCR_Effect : SOC_Requirement
             FalseReqIfEffectNotSame(EnR.effect);
         }
         foreach (EffectAndReq EnR in script.effects.summon)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
+        foreach (EffectAndReq EnR in script.effects.hit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
@@ -107,6 +115,10 @@ public class SOCR_Effect : SOC_Requirement
             FalseReqIfEffectNotSame(EnR.effect);
         }
         foreach (EffectAndReq EnR in script.effects.summon)
+        {
+            FalseReqIfEffectNotSame(EnR.effect);
+        }
+        foreach (EffectAndReq EnR in script.effects.hit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
