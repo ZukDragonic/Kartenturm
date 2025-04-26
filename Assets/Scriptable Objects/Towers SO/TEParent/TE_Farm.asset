@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: None
+  m_Name: TE_Farm
   m_EditorClassIdentifier: 
   passive: []
   destroy: []
   summon: []
+  waveStart: []
+  waveEnd:
+  - effect: {fileID: 11400000, guid: b1370ba6f3335394480920540bb0a03a, type: 2}
+    req: []
+  - effect: {fileID: 11400000, guid: e65f5e5aff3b70340906e82130cdeaef, type: 2}
+    req: []
   pPassive: []
   pDestroy: []
   pHit: []

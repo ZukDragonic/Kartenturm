@@ -5025,7 +5025,7 @@ PrefabInstance:
     - target: {fileID: 7133946745989015596, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: 83e96927d67f36e49bb71132bc982391, type: 2}
+      objectReference: {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
     - target: {fileID: 7133946745989015632, guid: 584d68cc012dfda468c3e76f926fb7a6, type: 3}
       propertyPath: m_Name
       value: Tower CIH (3)
@@ -16948,7 +16948,7 @@ PrefabInstance:
     - target: {fileID: 8088598788962053704, guid: 3078ddaea9ff6414ba457d8b7b856fee, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: 0126cca5fc67a6843b11f98af6109e59, type: 2}
+      objectReference: {fileID: 11400000, guid: 6a3d30ee0d8b3b949ad596c4fd79e848, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3078ddaea9ff6414ba457d8b7b856fee, type: 3}
 --- !u!1001 &4976202748011845663

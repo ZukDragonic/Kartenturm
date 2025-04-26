@@ -17,4 +17,8 @@ public class SOCE_MoveDir : SOC_Effect
             script.transform.position += script.transform.right * speed * gameControllerScript.instance.timeManager.currentTime / 100;
         }
     }
+    public override void ApplyBEffect()
+    {
+        Debug.Log("DNE");
+    }
 }

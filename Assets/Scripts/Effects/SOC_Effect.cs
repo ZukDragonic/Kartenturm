@@ -28,14 +28,18 @@ public class SOC_Effect : ScriptableObject
     }
     public virtual void ApplyTEffect(baseTowerScript script)
     {
+        Debug.Log("DNE");
     }
     public virtual void ApplyOSEffect(sumObj_Base script)
     {
+        Debug.Log("DNE");
     }
     public virtual void ApplyOPEffect(sumObj_Base script)
     {
+        Debug.Log("DNE");
     }
     public virtual void ApplyBEffect()
     {
+        Debug.Log("DNE");
     }
 }

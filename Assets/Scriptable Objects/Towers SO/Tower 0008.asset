@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
-  m_Name: Tower 0008 unfin
+  m_Name: Tower 0008
   m_EditorClassIdentifier: 
   ID: 40008
   shopGold: 8000
@@ -20,16 +20,19 @@ MonoBehaviour:
   description: His armor and sword is forged of pure gold. Why else would it be so
     expensive?
   image: {fileID: 21300000, guid: cd779b27a03e26740b6ba726d98fb0eb, type: 3}
-  shotsPerAttack: 0
+  shotsPerAttack: 1
   attackValue: 800
   secondsPerAttack: 0.5
-  range: 0
+  range: 100
   multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 44d87d3fbb857044bb490b4e05551313, type: 3}
-  projectilePierce: 1
-  effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
+  projectileImage: {fileID: 21300000, guid: 55afafff741a9de42b407295faed7838, type: 3}
+  projectilePierce: 20
+  effects: {fileID: 11400000, guid: 822c2d59b1fabbe43bb7c86cb039daea, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:
-  - {fileID: 11400000, guid: a5cef2e7bc1f92d45a5aed0739ab30ab, type: 2}
-  selectRadius: 2
+  - {fileID: 11400000, guid: 789fb77a865567b4cad664fa9e0fef6d, type: 2}
+  - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
+  - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
+  - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
+  selectRadius: 1

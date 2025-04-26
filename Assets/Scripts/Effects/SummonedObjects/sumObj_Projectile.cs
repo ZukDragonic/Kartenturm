@@ -14,7 +14,6 @@ public class sumObj_Projectile : sumObj_Base
         effects = SOCE_Parent.CreateInstance(parentTower.currentEffect);
 
         effects.OnOSummonEffect(this as sumObj_Base);
-        Debug.Log(damage);
     }
     void Update()
     {
