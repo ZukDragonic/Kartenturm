@@ -16,7 +16,7 @@ public class SOCE_Retarget : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Base script)
     {
-        if (gameControllerScript.instance.resourceManager.allEnemy.Count <= 0)
+        if (gameControllerScript.instance.resourceManager.aliveEnemy.Count <= 0)
         {
             return;
         }
@@ -30,13 +30,13 @@ public class SOCE_Retarget : SOC_Effect
                 }
                 break;
             case (ProjectileTargetOptions.Closest):
-                if (gameControllerScript.instance.resourceManager.allEnemy.Count < 0)
+                if (gameControllerScript.instance.resourceManager.aliveEnemy.Count < 0)
                 {
                     break;
                 }
-                float closestDistance = Vector3.Distance(gameControllerScript.instance.resourceManager.allEnemy[0].transform.position, script.transform.position);
-                SOEnemyDisplay closestEnemy = gameControllerScript.instance.resourceManager.allEnemy[0];
-                foreach (SOEnemyDisplay enemy in gameControllerScript.instance.resourceManager.allEnemy)
+                float closestDistance = Vector3.Distance(gameControllerScript.instance.resourceManager.aliveEnemy[0].transform.position, script.transform.position);
+                SOEnemyDisplay closestEnemy = gameControllerScript.instance.resourceManager.aliveEnemy[0];
+                foreach (SOEnemyDisplay enemy in gameControllerScript.instance.resourceManager.aliveEnemy)
                 {
                     float currentDistance = Vector3.Distance(enemy.transform.position, script.transform.position);
                     if (currentDistance < closestDistance)

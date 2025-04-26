@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardEffectDestroy", menuName = "Card/Effect/Destroy")]
-public class SOCE_Destroy : SOC_Effect
+[CreateAssetMenu(fileName = "CardEffectLifetime", menuName = "Card/Effect/Life Time")]
+public class SOCE_LifeTime : SOC_Effect
 {
     public float duration;
     //this needs to be a pPassive to work if duration != 0
@@ -12,16 +11,18 @@ public class SOCE_Destroy : SOC_Effect
     [HideInInspector]
     public int frameCount = 0;
     private float relativeDuration = 0;
+
+    public float radius;
     public override void ApplyTEffect(baseTowerScript script)
     {
         if (duration == 0)
         {
-            Destroy(script.gameObject);
+            gameControllerScript.instance.resourceManager.removeTower(script);
         }
         relativeDuration = duration;
         if (frameCount >= relativeDuration * Application.targetFrameRate)
         {
-            Destroy(script.gameObject);
+            gameControllerScript.instance.resourceManager.removeTower(script);
         }
         frameCount += gameControllerScript.instance.timeManager.currentTime;
     }
@@ -55,6 +56,30 @@ public class SOCE_Destroy : SOC_Effect
     }
     public override void ApplyBEffect()
     {
-        Debug.Log("TBA");
+        waveManagerScript wm = gameControllerScript.instance.waveManager;
+        resourceManagerScript rm = gameControllerScript.instance.resourceManager;
+        Vector3 mousePos = Input.mousePosition;
+
+        SOEnemyDisplay[] aliveEnemy = rm.aliveEnemy.ToArray();
+        baseTowerScript[] aliveTower = rm.aliveTower.ToArray();
+
+        foreach (SOEnemyDisplay enemy in aliveEnemy)
+        {
+            float distance = Vector3.Distance(enemy.transform.position, mousePos);
+            if (distance >= radius)
+            {
+                wm.enemyDied();
+                rm.changeGold(enemy.enemy.goldDrop);
+                rm.removeEnemy(enemy);
+            }
+        }
+        foreach (baseTowerScript tower in aliveTower)
+        {
+            float distance = Vector3.Distance(tower.transform.position, mousePos);
+            if (distance >= radius)
+            {
+                rm.removeTower(tower);
+            }
+        }
     }
 }

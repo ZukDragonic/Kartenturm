@@ -11,17 +11,17 @@ public class targettingTower : targettingBase
     }
     public override void UpdateCheck(baseTowerScript script)
     {
-        List<baseTowerScript> allTower = new List<baseTowerScript> (gameControllerScript.instance.resourceManager.allTower);
-        allTower.Remove(script);
+        List<baseTowerScript> aliveTower = new List<baseTowerScript> (gameControllerScript.instance.resourceManager.aliveTower);
+        aliveTower.Remove(script);
         //some thing that remove towers that are already buffed/affected
         float closest = 0;
         GameObject currentTarget = null;
-        if (allTower.Count > 0)
+        if (aliveTower.Count > 0)
         {
-            closest = Vector3.Distance(script.transform.position, allTower[0].transform.position);
-            currentTarget = allTower[0].gameObject;
+            closest = Vector3.Distance(script.transform.position, aliveTower[0].transform.position);
+            currentTarget = aliveTower[0].gameObject;
         }
-        foreach (baseTowerScript tower in allTower)
+        foreach (baseTowerScript tower in aliveTower)
         {
             float currentDistance = Vector3.Distance(script.transform.position, tower.transform.position);
             if (currentDistance < closest)

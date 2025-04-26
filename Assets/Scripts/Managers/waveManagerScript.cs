@@ -18,6 +18,8 @@ public class waveManagerScript : MonoBehaviour
 
     private GameObject checkpointParent;
     public List<GameObject> checkpointList;
+
+    public List<SOEnemyDisplay> aliveEnemies;
     //all maps must be 25x18
     void Start()
     {
@@ -50,7 +52,7 @@ public class waveManagerScript : MonoBehaviour
             {
                 gameController.resourceManager.changeGold(currentWave.endGold);
                 gameController.FlagTrigger(currentWave.ID);
-                foreach (baseTowerScript tower in gameController.resourceManager.allTower)
+                foreach (baseTowerScript tower in gameController.resourceManager.aliveTower)
                 {
                     tower.waveEndAction();
                 }
@@ -71,7 +73,7 @@ public class waveManagerScript : MonoBehaviour
         {
             yield return null;
         }
-        foreach (baseTowerScript tower in gameController.resourceManager.allTower)
+        foreach (baseTowerScript tower in gameController.resourceManager.aliveTower)
         {
             tower.waveStartAction();
         }
@@ -92,8 +94,9 @@ public class waveManagerScript : MonoBehaviour
                     checkpointList[0].transform.position.y - 0.1f, 0), Quaternion.identity);
                 SOEnemyDisplay eScript = current.GetComponent<SOEnemyDisplay>();
                 eScript.enemy = findEnemy(wave.spawnOrder[i].enemyID);
-                gameController.resourceManager.allEnemy.Add(eScript);
+                gameController.resourceManager.aliveEnemy.Add(eScript);
                 enemyAlive += 1;
+                aliveEnemies.Add(eScript);
             }
         }
         isWaveSpawning = false;

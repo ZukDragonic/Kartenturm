@@ -12,15 +12,15 @@ public class resourceManagerScript : MonoBehaviour
     public TextMeshProUGUI waveDisplay;
     public int waveNum;
 
-    public List<baseTowerScript> allTower;
-    public List<SOEnemyDisplay> allEnemy;
+    public List<baseTowerScript> aliveTower;
+    public List<SOEnemyDisplay> aliveEnemy;
 
     void Start()
     {
         goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
         healthDisplay = GameObject.Find("Health Display").GetComponent<numberDisplayScript>();
         waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();
-        allTower = new List<baseTowerScript>();
+        aliveTower = new List<baseTowerScript>();
         changeGold(0);
         changeHealth(0);
     }
@@ -48,20 +48,22 @@ public class resourceManagerScript : MonoBehaviour
 
     public void addTower(baseTowerScript tower)
     {
-        allTower.Add(tower);
+        aliveTower.Add(tower);
     }
     public void removeTower(baseTowerScript tower)
     {
-        if (allTower.Contains(tower))
+        if (aliveTower.Contains(tower))
         {
-            allTower.Remove(tower);
+            aliveTower.Remove(tower);
+            Destroy(tower.gameObject);
         }
     }
     public void removeEnemy(SOEnemyDisplay enemy)
     {
-        if (allEnemy.Contains(enemy))
+        if (aliveEnemy.Contains(enemy))
         {
-            allEnemy.Remove(enemy);
+            aliveEnemy.Remove(enemy);
+            Destroy(enemy.gameObject);
         }
     }
 }

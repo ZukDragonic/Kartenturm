@@ -16708,7 +16708,7 @@ PrefabInstance:
     - target: {fileID: 5521934578821515624, guid: 51aec0202a77b2b4eb235b3ba8d31430, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: 31ba9f0ec07dee745ae2192ad9a1af56, type: 2}
+      objectReference: {fileID: 11400000, guid: 6b481faa2412f804191f3dda9896d088, type: 2}
     - target: {fileID: 6927192227824796675, guid: 51aec0202a77b2b4eb235b3ba8d31430, type: 3}
       propertyPath: card
       value: 
@@ -16790,6 +16790,10 @@ PrefabInstance:
     - target: {fileID: 3811964570327488365, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
+      propertyPath: allSpells.Array.size
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
@@ -17178,7 +17182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: playerGold
-      value: 1500
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: timeChanges.Array.size

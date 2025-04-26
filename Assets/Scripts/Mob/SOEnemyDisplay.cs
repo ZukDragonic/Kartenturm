@@ -72,9 +72,8 @@ public class SOEnemyDisplay : MonoBehaviour
             {
                 reachedEnd = true;
                 gameController.waveManager.enemyDied();
-                gameController.resourceManager.removeEnemy(this);
                 gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
-                Destroy(gameObject);
+                gameController.resourceManager.removeEnemy(this);
             }
             checkpointNum += 1;
         }
@@ -84,7 +83,6 @@ public class SOEnemyDisplay : MonoBehaviour
             gameController.waveManager.enemyDied();
             gameController.resourceManager.changeGold(enemy.goldDrop);
             gameController.resourceManager.removeEnemy(this);
-            Destroy(gameObject);
         }
     }
 }

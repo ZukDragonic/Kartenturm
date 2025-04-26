@@ -75,7 +75,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd692c09183d6b14a90ba2dc98004c3c, type: 2}
   - {fileID: 11400000, guid: 3670e92639f9cf448964efaa091f7b16, type: 2}
   - {fileID: 11400000, guid: 0126cca5fc67a6843b11f98af6109e59, type: 2}
-  allSpells: []
+  allSpells:
+  - {fileID: 11400000, guid: 31ba9f0ec07dee745ae2192ad9a1af56, type: 2}
+  - {fileID: 11400000, guid: 6b481faa2412f804191f3dda9896d088, type: 2}
+  - {fileID: 11400000, guid: 81a70b77cc362ef47b3e41133971e6d9, type: 2}
+  - {fileID: 11400000, guid: fb324f07267046a4bbb41720082dd135, type: 2}
   allCards: []
   drawDeck:
   - {fileID: 11400000, guid: 493913d8d0404f14bb9da3ba29ea1aca, type: 2}

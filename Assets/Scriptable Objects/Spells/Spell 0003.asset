@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0300efc558c8906439deb4b4224a0876, type: 3}
-  m_Name: Test
+  m_Name: Spell 0003
   m_EditorClassIdentifier: 
-  ID: 0
-  shopGold: 0
+  ID: 50003
+  shopGold: 1000
   actionGold: 250
-  archetype: test
-  cardName: Pot of Greed
-  description: test
-  image: {fileID: 21300000, guid: e92fc44f12c21dd44a49e390f39f7ffd, type: 3}
+  archetype: 
+  cardName: Clone
+  description: Draw a card and clone the drawn card
+  image: {fileID: 21300000, guid: 70cec60244d286049907fa07e956b35c, type: 3}
   allEffects:
-  - {fileID: 11400000, guid: e0e9d483bbffa074b85e27b5a2276b05, type: 2}
+  - {fileID: 11400000, guid: 89a50db22f7db7b49ae42baec4a24327, type: 2}
+  - {fileID: 11400000, guid: 74120f05773f5c043bb5ab736c47b462, type: 2}
   allRequirement: []
