@@ -7,14 +7,14 @@ public class SOCTower : SOCard
 {
     public int shotsPerAttack;
 
-    public float attackValue;
+    public float damage;
     public float secondsPerAttack;
     public float range;
     public float multiplier;
 
     public Sprite projectileImage;
 
-    public int projectilePierce;
+    public int pierce;
 
     public SOCE_Parent effects;
 

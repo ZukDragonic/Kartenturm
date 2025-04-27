@@ -12,7 +12,7 @@ public class SOCE_Gold : SOC_Effect
         int currentGold = gold;
         if (accountStat)
         {
-            currentGold += (int)(script.attackValue * 2);
+            currentGold += (int)(script.damage * 2);
         }
         gameControllerScript.instance.resourceManager.changeGold(currentGold);
     }

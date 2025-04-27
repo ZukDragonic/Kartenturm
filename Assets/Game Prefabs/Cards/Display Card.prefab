@@ -137,7 +137,7 @@ MonoBehaviour:
   cardImage: {fileID: 3569387046735463457}
   displayedImage: {fileID: 3569387047836629868}
   towerDP: {fileID: 5945379012143462179}
-  attackValueDisplay: {fileID: 4539239073995654670}
+  damageDisplay: {fileID: 4539239073995654670}
   rangeValueDisplay: {fileID: 3390048741601101103}
   pierceValueDisplay: {fileID: 3971139821211871184}
   spaValueDisplay: {fileID: 1096522004454707157}

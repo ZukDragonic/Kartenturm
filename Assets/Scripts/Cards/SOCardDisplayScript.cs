@@ -20,7 +20,7 @@ public class SOCardDisplayScript : MonoBehaviour
     private Vector2 artworkProportions;
 
     public GameObject towerDP;
-    public TextMeshProUGUI attackValueDisplay;
+    public TextMeshProUGUI damageDisplay;
     public TextMeshProUGUI rangeValueDisplay;
     public TextMeshProUGUI pierceValueDisplay;
     public TextMeshProUGUI spaValueDisplay;
@@ -61,9 +61,9 @@ public class SOCardDisplayScript : MonoBehaviour
             GeneralDP.SetActive(false);
             towerDP.SetActive(true);
             towerCard = card as SOCTower;
-            attackValueDisplay.text = towerCard.attackValue.ToString();
+            damageDisplay.text = towerCard.damage.ToString();
             rangeValueDisplay.text = towerCard.range.ToString();
-            pierceValueDisplay.text = towerCard.projectilePierce.ToString();
+            pierceValueDisplay.text = towerCard.pierce.ToString();
             spaValueDisplay.text = towerCard.secondsPerAttack.ToString();
             descriptionTower.text = card.description;
             cardImage.sprite = allCardSprite[2];

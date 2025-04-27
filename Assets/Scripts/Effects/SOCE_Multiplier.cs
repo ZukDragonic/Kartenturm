@@ -18,10 +18,10 @@ public class SOCE_Multiplier : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.attackValue *= multiplier;
+                script.damage *= multiplier;
                 break;
             case StatType.Pierce:
-                script.projectilePierce *= (int)multiplier;
+                script.pierce *= (int)multiplier;
                 break;
             case StatType.SPA:
                 script.secondsPerAttack *= multiplier;

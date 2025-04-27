@@ -9,8 +9,8 @@ public class sumObj_Projectile : sumObj_Base
 
     void Start()
     {
-        damage = parentTower.attackValue;
-        pierce = parentTower.projectilePierce;
+        damage = parentTower.damage;
+        pierce = parentTower.pierce;
         effects = SOCE_Parent.CreateInstance(parentTower.currentEffect);
 
         effects.OnOSummonEffect(this as sumObj_Base);

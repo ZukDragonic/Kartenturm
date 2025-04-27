@@ -18,10 +18,10 @@ public class SOCE_Override : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.attackValue = newStat;
+                script.damage = newStat;
                 break;
             case StatType.Pierce:
-                script.projectilePierce = (int)newStat;
+                script.pierce = (int)newStat;
                 break;
             case StatType.SPA:
                 script.secondsPerAttack = newStat;

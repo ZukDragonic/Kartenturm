@@ -18,10 +18,10 @@ public class SOCE_Addition : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.attackValue += addition;
+                script.damage += addition;
                 break;
             case StatType.Pierce:
-                script.projectilePierce += addition;
+                script.pierce += addition;
                 break;
             case StatType.SPA:
                 script.secondsPerAttack += addition;

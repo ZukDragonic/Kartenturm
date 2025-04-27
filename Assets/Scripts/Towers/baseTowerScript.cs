@@ -4,7 +4,7 @@ using System.Reflection;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
-public class baseTowerScript : MonoBehaviour
+public class baseTowerScript : sumObj_Base
 {
     public SOCTower baseCard;
     public List<SOCard> stackedCards;
@@ -33,8 +33,7 @@ public class baseTowerScript : MonoBehaviour
     public int targetChange;
 
     public float range;
-    public float attackValue;
-    public int projectilePierce;
+    //damage and pierce are in parent
     public int shotsPerAttack;
     public float secondsPerAttack;
     public float multiplier;
@@ -50,8 +49,8 @@ public class baseTowerScript : MonoBehaviour
         currentTargetting = allTargetting[0];
 
         range = baseCard.range;
-        attackValue = baseCard.attackValue;
-        projectilePierce = baseCard.projectilePierce;
+        damage = baseCard.damage;
+        pierce = baseCard.pierce;
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
         currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
@@ -183,8 +182,8 @@ public class baseTowerScript : MonoBehaviour
     public void changeStats()
     {
         currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
-        attackValue = baseCard.attackValue;
-        projectilePierce = baseCard.projectilePierce;
+        damage = baseCard.damage;
+        pierce = baseCard.pierce;
         range = baseCard.range;
         multiplier = baseCard.multiplier;
         for (int i = 1; i < gameObject.transform.childCount; i++)
@@ -207,8 +206,8 @@ public class baseTowerScript : MonoBehaviour
             if (slot as SOCTower != null)
             {
                 SOCTower towerSlot = slot as SOCTower;
-                attackValue += towerSlot.attackValue / 2 * multiplier;
-                projectilePierce += (int)(towerSlot.projectilePierce / 2 * multiplier);
+                damage += towerSlot.damage / 2 * multiplier;
+                pierce += (int)(towerSlot.pierce / 2 * multiplier);
                 range += towerSlot.range / 2 * multiplier;
             }
         }

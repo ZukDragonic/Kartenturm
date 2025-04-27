@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentTower: {fileID: 0}
   towerName: {fileID: 3486996655756893837}
-  attackValue: {fileID: 3749530418877073132}
+  damage: {fileID: 3749530418877073132}
   range: {fileID: 3841946337124104443}
   pierce: {fileID: 3414272384955008193}
   secondsPerAttack: {fileID: 7990438569972759697}

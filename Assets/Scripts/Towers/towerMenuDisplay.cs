@@ -9,7 +9,7 @@ public class towerMenuDisplay : MonoBehaviour
     public baseTowerScript parentTower;
 
     public TextMeshProUGUI towerName;
-    public TextMeshProUGUI attackValue;
+    public TextMeshProUGUI damage;
     public TextMeshProUGUI range;
     public TextMeshProUGUI pierce;
     public TextMeshProUGUI secondsPerAttack;
@@ -33,17 +33,17 @@ public class towerMenuDisplay : MonoBehaviour
         yield return null;
         towerName.text = parentTower.baseCard.cardName;
 
-        float bonusStat = parentTower.attackValue - parentTower.baseCard.attackValue;
+        float bonusStat = parentTower.damage - parentTower.baseCard.damage;
         string bonusDisplay = BonusDisplay(bonusStat);
-        attackValue.text = "Attack: " + parentTower.baseCard.attackValue.ToString() + bonusDisplay;
+        damage.text = "Attack: " + parentTower.baseCard.damage.ToString() + bonusDisplay;
 
         bonusStat = parentTower.range - parentTower.baseCard.range;
         bonusDisplay = BonusDisplay(bonusStat);
         range.text = "Range: " + parentTower.baseCard.range.ToString() + bonusDisplay;
 
-        bonusStat = parentTower.projectilePierce - parentTower.baseCard.projectilePierce;
+        bonusStat = parentTower.pierce - parentTower.baseCard.pierce;
         bonusDisplay = BonusDisplay(bonusStat);
-        pierce.text = "Pierce: " + parentTower.baseCard.projectilePierce.ToString() + bonusDisplay;
+        pierce.text = "Pierce: " + parentTower.baseCard.pierce.ToString() + bonusDisplay;
 
         bonusStat = parentTower.secondsPerAttack - parentTower.baseCard.secondsPerAttack;
         bonusDisplay = BonusDisplay(bonusStat);
