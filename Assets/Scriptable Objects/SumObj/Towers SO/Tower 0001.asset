@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
-  m_Name: Tower 0010
+  m_Name: Tower 0001
   m_EditorClassIdentifier: 
-  ID: 40010
-  shopGold: 750
-  actionGold: 500
+  ID: 40001
+  shopGold: 100
+  actionGold: 300
   archetype: 
-  cardName: Rocker
-  description: The brother of Sisphyus. He loves throwing rocks.
-  image: {fileID: 21300000, guid: 24f90b3f1c33a4843abc3b229c2cb14c, type: 3}
+  cardName: Skeleton
+  description: Stunted. A skeleling that was just born. Apparently he found the bow
+    just the other day.
+  image: {fileID: 21300000, guid: b1fe6a4d6eb10ce4dbc885fbdc595806, type: 3}
   shotsPerAttack: 1
-  attackValue: 80
-  secondsPerAttack: 2
-  range: 30
-  multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 8a1fc9b2ef84cba43980f07f3713003f, type: 3}
-  projectilePierce: 8
-  effects: {fileID: 11400000, guid: 8a78e18a500f6684fb4d7af82d0c1320, type: 2}
+  damage: 30
+  secondsPerAttack: 0.5
+  range: 50
+  multiplier: 0.5
+  projectileImage: {fileID: 21300000, guid: 52fb2e13d838bd54da8d80f08ca70e3a, type: 3}
+  pierce: 1
+  effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:
@@ -34,4 +35,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
   - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
   - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
-  selectRadius: 2
+  selectRadius: 1

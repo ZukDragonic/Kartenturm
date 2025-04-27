@@ -8,12 +8,32 @@ public class sumObj_Standalone : sumObj_Base
     //Any effect that needs to be inherited from parent needs to be placed in the base
 
     public sumObj_Projectile parentProjectile;
+
+    public SOSumObj baseSumObj;
+
+    public CircleCollider2D hitbox;
+    public SpriteRenderer image;
+    public Animator anim;
     void Start()
     {
-        damage = parentProjectile.damage;
-        pierce = parentProjectile.pierce;
-        effects = SOCE_Parent.MergeInstances(effects, parentProjectile.effects);
+        hitbox.radius = baseSumObj.hitRadius / 2;
+        image.sprite = baseSumObj.image;
+        damage = baseSumObj.damage;
+        pierce = baseSumObj.pierce;
+        if (baseSumObj.animation != null)
+        {
+            anim = baseSumObj.animation;
+        }
+        effects = SOCE_Parent.CreateInstance(baseSumObj.effect);
+
+        if (parentProjectile != null)
+        {
+            damage = parentProjectile.damage;
+            pierce = parentProjectile.pierce;
+            effects = SOCE_Parent.MergeInstances(effects, parentProjectile.effects);
+        }
         effects = SOCE_Parent.SwapTowerAndSumobj(effects);
+
         effects.OnOSummonEffect(this as sumObj_Base);
     }
 

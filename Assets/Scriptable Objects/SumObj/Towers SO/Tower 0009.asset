@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
-  m_Name: Tower 0008
+  m_Name: Tower 0009
   m_EditorClassIdentifier: 
-  ID: 40008
+  ID: 40009
   shopGold: 8000
   actionGold: 10000
   archetype: 
-  cardName: Golden Knight
-  description: His armor and sword is forged of pure gold. Why else would it be so
-    expensive?
-  image: {fileID: 21300000, guid: cd779b27a03e26740b6ba726d98fb0eb, type: 3}
+  cardName: Sage
+  description: Through thousands of years of research, the wizard has become a sage.
+    He refined the spell magic missle to perfection.
+  image: {fileID: 21300000, guid: 4ec5b6443ff8f1d4a8ffc22317ee4a0c, type: 3}
   shotsPerAttack: 1
-  attackValue: 800
-  secondsPerAttack: 0.5
+  damage: 200
+  secondsPerAttack: 0.25
   range: 100
   multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 55afafff741a9de42b407295faed7838, type: 3}
-  projectilePierce: 20
-  effects: {fileID: 11400000, guid: 822c2d59b1fabbe43bb7c86cb039daea, type: 2}
+  projectileImage: {fileID: 21300000, guid: f5871ecd98b084b4e8199636942c588b, type: 3}
+  pierce: 10
+  effects: {fileID: 11400000, guid: a3dc7b5cf2464f147b67dec8c79ffd9b, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:

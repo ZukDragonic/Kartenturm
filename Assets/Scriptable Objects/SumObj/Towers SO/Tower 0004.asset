@@ -10,24 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
-  m_Name: Tower 0009
+  m_Name: Tower 0004
   m_EditorClassIdentifier: 
-  ID: 40009
-  shopGold: 8000
-  actionGold: 10000
+  ID: 40004
+  shopGold: 500
+  actionGold: 300
   archetype: 
-  cardName: Sage
-  description: Through thousands of years of research, the wizard has become a sage.
-    He refined the spell magic missle to perfection.
-  image: {fileID: 21300000, guid: 4ec5b6443ff8f1d4a8ffc22317ee4a0c, type: 3}
+  cardName: Cannoner
+  description: A soldier arming a cannon. He sure can wreck but he might be slow.
+  image: {fileID: 21300000, guid: 5851d1a79baab344bafe2faced4116e0, type: 3}
   shotsPerAttack: 1
-  attackValue: 200
-  secondsPerAttack: 0.25
-  range: 100
+  damage: 40
+  secondsPerAttack: 2
+  range: 30
   multiplier: 1
-  projectileImage: {fileID: 21300000, guid: f5871ecd98b084b4e8199636942c588b, type: 3}
-  projectilePierce: 10
-  effects: {fileID: 11400000, guid: a3dc7b5cf2464f147b67dec8c79ffd9b, type: 2}
+  projectileImage: {fileID: 21300000, guid: 444511dac5d143848bac76c4fb1e5067, type: 3}
+  pierce: 1
+  effects: {fileID: 11400000, guid: fd9b1095bd133ef4c88aedb4944eaf3a, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:

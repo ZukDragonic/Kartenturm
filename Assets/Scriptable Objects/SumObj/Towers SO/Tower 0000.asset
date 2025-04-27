@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
-  m_Name: Tower 0004
+  m_Name: Tower 0000
   m_EditorClassIdentifier: 
-  ID: 40004
-  shopGold: 500
-  actionGold: 300
+  ID: 40000
+  shopGold: 250
+  actionGold: 500
   archetype: 
-  cardName: Cannoner
-  description: A soldier arming a cannon. He sure can wreck but he might be slow.
-  image: {fileID: 21300000, guid: 5851d1a79baab344bafe2faced4116e0, type: 3}
+  cardName: Demon
+  description: Stunted. A low-ranking demon seeking to grow.
+  image: {fileID: 21300000, guid: d574ab82559733f469d1e091642a53b3, type: 3}
   shotsPerAttack: 1
-  attackValue: 40
-  secondsPerAttack: 2
+  damage: 10
+  secondsPerAttack: 3
   range: 30
-  multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 444511dac5d143848bac76c4fb1e5067, type: 3}
-  projectilePierce: 1
-  effects: {fileID: 11400000, guid: fd9b1095bd133ef4c88aedb4944eaf3a, type: 2}
+  multiplier: 0.5
+  projectileImage: {fileID: 21300000, guid: b570049f606652f4ab0c35be4dd953de, type: 3}
+  pierce: 2
+  effects: {fileID: 11400000, guid: f447215b1603de84a9d73b1a78d6d320, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:

@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6212c2c270a24884abaca99b5e69ced2, type: 3}
-  m_Name: Sum_Aoe
+  m_Script: {fileID: 11500000, guid: 05493f0bb155a8643865b6e47d87f8d9, type: 3}
+  m_Name: SumObjS_Aoe
   m_EditorClassIdentifier: 
-  summonedEffects: {fileID: 11400000, guid: c83b0f5d46c059c44ab2ed55b63aa9d6, type: 2}
-  summonedPrefab: {fileID: 7252188331371112599, guid: a1e9f47e649ca414db5aa295deb750e9, type: 3}
+  ID: 7000
+  effect: {fileID: 11400000, guid: c83b0f5d46c059c44ab2ed55b63aa9d6, type: 2}
+  hitRadius: 1
+  image: {fileID: 0}
+  animation: {fileID: 0}

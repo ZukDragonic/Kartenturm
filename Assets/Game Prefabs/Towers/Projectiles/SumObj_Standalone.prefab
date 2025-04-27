@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7252188331371112616}
   - component: {fileID: 7252188331371112618}
   - component: {fileID: 5100586712680515564}
+  - component: {fileID: 784666741300133875}
   m_Layer: 0
   m_Name: SumObj_Standalone
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7252188331371112599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.537369, y: -8.423155, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,6 +115,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d6fc4e7aefd84478bab8f472f56636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentTower: {fileID: 0}
   effects: {fileID: 0}
-  duration: 0
+  damage: 0
+  pierce: 0
+  hitEnemy: {fileID: 0}
+  parentProjectile: {fileID: 0}
+  baseSumObj: {fileID: 0}
+  hitbox: {fileID: 7252188331371112618}
+  image: {fileID: 7252188331371112616}
+  anim: {fileID: 784666741300133875}
+--- !u!95 &784666741300133875
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252188331371112599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
