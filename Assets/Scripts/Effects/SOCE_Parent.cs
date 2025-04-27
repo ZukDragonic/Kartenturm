@@ -17,48 +17,48 @@ public class SOCE_Parent : ScriptableObject
     public EffectAndReq[] pSummon;
 
 
-    public void PassiveEffect(baseTowerScript script)
+    public void PassiveEffect(sumObj_Base script)
     {
-        playEffectFromArray(passive, script, null);
+        playEffectFromArray(passive, script);
     }
-    public void OnDestroyEffect(baseTowerScript script)
+    public void OnDestroyEffect(sumObj_Base script)
     {
-        playEffectFromArray(destroy, script, null);
+        playEffectFromArray(destroy, script);
     }
-    public void OnSummonEffect(baseTowerScript script)
+    public void OnSummonEffect(sumObj_Base script)
     {
-        playEffectFromArray(summon, script, null);
+        playEffectFromArray(summon, script);
     }
-    public void OnHitEffect(baseTowerScript script)
+    public void OnHitEffect(sumObj_Base script)
     {
-        playEffectFromArray(hit, script, null);
+        playEffectFromArray(hit, script);
     }
-    public void OnWaveStartEffect(baseTowerScript script)
+    public void OnWaveStartEffect(sumObj_Base script)
     {
-        playEffectFromArray(waveStart, script, null);
+        playEffectFromArray(waveStart, script);
     }
-    public void OnWaveEndEffect(baseTowerScript script)
+    public void OnWaveEndEffect(sumObj_Base script)
     {
-        playEffectFromArray(waveEnd, script, null);
+        playEffectFromArray(waveEnd, script);
     }
     public void OPassiveEffect(sumObj_Base script)
     {
-        playEffectFromArray(pPassive, null, script);
+        playEffectFromArray(pPassive, script);
     }
     public void OnODestroyEffect(sumObj_Base script)
     {
-        playEffectFromArray(pDestroy, null, script);
+        playEffectFromArray(pDestroy, script);
     }
     public void OnOHitEffect(sumObj_Base script)
     {
-        playEffectFromArray(pHit, null, script);
+        playEffectFromArray(pHit, script);
     }
     public void OnOSummonEffect(sumObj_Base script)
     {
-        playEffectFromArray(pSummon, null, script);
+        playEffectFromArray(pSummon, script);
     }
 
-    void playEffectFromArray(EffectAndReq[] applied, baseTowerScript tScript, sumObj_Base pScript)
+    void playEffectFromArray(EffectAndReq[] applied, sumObj_Base script)
     {
         if (applied == null)
         {
@@ -67,9 +67,9 @@ public class SOCE_Parent : ScriptableObject
 
         foreach (EffectAndReq effectAndReq in applied)
         {
-            if (effectAndReq.CheckRequirement(tScript, pScript))
+            if (effectAndReq.CheckRequirement(script))
             {
-                effectAndReq.effect.ApplyEffect(tScript, pScript);
+                effectAndReq.effect.ApplyEffect(script);
             }
         }
     }

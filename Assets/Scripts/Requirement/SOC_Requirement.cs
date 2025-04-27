@@ -7,27 +7,34 @@ public class SOC_Requirement : ScriptableObject
     [HideInInspector]
     public bool requirement;
     public bool isFlipped;
-    public bool ApplyRequirement(baseTowerScript tScript, sumObj_Base oScript)
+    public bool ApplyRequirement(sumObj_Base script)
     {
-        if (oScript != null)
+        if (script as sumObj_Projectile != null)
         {
-            if (oScript as sumObj_Standalone != null)
-            {
-                return ApplyOSRequirement(oScript);
-            }
-            else
-            {
-                return ApplyOPRequirement(oScript);
-            }
+            return ApplyOSRequirement(script as sumObj_Standalone);
         }
-        else if (tScript != null)
+        else if (script as sumObj_Standalone != null)
         {
-            return ApplyTRequirement(tScript);
+            return ApplyOPRequirement(script as sumObj_Projectile);
+        }
+        else if (script as baseTowerScript != null)
+        {
+            return ApplyTRequirement(script as baseTowerScript);
+        }
+        else if (script as SOEnemyDisplay)
+        {
+            return ApplyERequirement(script as SOEnemyDisplay);
         }
         else
         {
             return ApplyBRequirement();
         }
+    }
+    public virtual bool ApplyERequirement(SOEnemyDisplay script)
+    {
+        requirement = true;
+        requirement = CheckFlipped();
+        return requirement;
     }
     public virtual bool ApplyTRequirement(baseTowerScript script)
     {
@@ -35,13 +42,13 @@ public class SOC_Requirement : ScriptableObject
         requirement = CheckFlipped();
         return requirement;
     }
-    public virtual bool ApplyOSRequirement(sumObj_Base script)
+    public virtual bool ApplyOSRequirement(sumObj_Standalone script)
     {
         requirement = true;
         requirement = CheckFlipped();
         return requirement;
     }
-    public virtual bool ApplyOPRequirement(sumObj_Base script)
+    public virtual bool ApplyOPRequirement(sumObj_Projectile script)
     {
         requirement = true;
         requirement = CheckFlipped();

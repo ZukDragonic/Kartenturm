@@ -26,7 +26,7 @@ public class SOCE_LifeTime : SOC_Effect
         }
         frameCount += gameControllerScript.instance.timeManager.currentTime;
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         if (duration == 0)
         {
@@ -39,13 +39,13 @@ public class SOCE_LifeTime : SOC_Effect
         }
         frameCount += gameControllerScript.instance.timeManager.currentTime;
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         if (duration == 0)
         {
             Destroy(script.gameObject);
         }
-        relativeDuration = duration * ((script as sumObj_Projectile).parentTower.range / (script as sumObj_Projectile).parentTower.baseCard.range * 0.1f + 1);
+        relativeDuration = duration * (script.parentTower.range / script.parentTower.baseCard.range * 0.1f + 1);
         //makes duration scale in respect to range
 
         if (frameCount >= relativeDuration * Application.targetFrameRate)

@@ -14,6 +14,11 @@ public class sumObj_Standalone : sumObj_Base
     public CircleCollider2D hitbox;
     public SpriteRenderer image;
     public Animator anim;
+
+    public float damage;
+    public int pierce;
+
+    public SOEnemyDisplay hitEnemy;
     void Start()
     {
         hitbox.radius = baseSumObj.hitRadius / 2;

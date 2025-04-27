@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SOEnemyDisplay : MonoBehaviour
+public class SOEnemyDisplay : sumObj_Base
 {
     public gameControllerScript gameController;
     public sliderDisplayScript sliderDisplay;
@@ -14,7 +14,7 @@ public class SOEnemyDisplay : MonoBehaviour
 
     public float speed;
     public float health;
-    public int damageToHP;
+    public int damage;
 
     public float hitRadius;
 
@@ -35,7 +35,7 @@ public class SOEnemyDisplay : MonoBehaviour
 
         speed = enemy.speed;
         health = enemy.health;
-        damageToHP = enemy.damageToHP;
+        damage = enemy.damageToHP;
         hitRadius = enemy.hitRadius;
         GetComponent<CircleCollider2D>().radius = hitRadius;
 

@@ -4,37 +4,42 @@ using UnityEngine;
 
 public class SOC_Effect : ScriptableObject
 {
-    public void ApplyEffect(baseTowerScript tScript, sumObj_Base oScript)
+    public void ApplyEffect(sumObj_Base script)
     {
-        if (oScript != null)
+        if (script as sumObj_Standalone != null)
         {
-            if (oScript as sumObj_Standalone != null)
-            {
-                ApplyOSEffect(oScript);
-            }
-            else
-            {
-                ApplyOPEffect(oScript);
-            }
+            ApplyOSEffect(script as sumObj_Standalone);
         }
-        else if(tScript != null)
+        else if (script as sumObj_Projectile != null)
         {
-            ApplyTEffect(tScript);
+            ApplyOPEffect(script as sumObj_Projectile);
+        }
+        else if (script as baseTowerScript != null)
+        {
+            ApplyTEffect(script as baseTowerScript);
+        }
+        else if (script as SOEnemyDisplay)
+        {
+            ApplyEEffect(script as SOEnemyDisplay);
         }
         else
         {
             ApplyBEffect();
         }
     }
+    public virtual void ApplyEEffect(SOEnemyDisplay script)
+    {
+        Debug.Log("DNE");
+    }
     public virtual void ApplyTEffect(baseTowerScript script)
     {
         Debug.Log("DNE");
     }
-    public virtual void ApplyOSEffect(sumObj_Base script)
+    public virtual void ApplyOSEffect(sumObj_Standalone script)
     {
         Debug.Log("DNE");
     }
-    public virtual void ApplyOPEffect(sumObj_Base script)
+    public virtual void ApplyOPEffect(sumObj_Projectile script)
     {
         Debug.Log("DNE");
     }

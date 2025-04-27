@@ -9,11 +9,11 @@ public class SOCE_Bounce : SOC_Effect
     {
         Debug.Log("Does not exist");
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         script.gameObject.transform.rotation = Quaternion.Inverse(script.gameObject.transform.rotation);
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         script.gameObject.transform.rotation = Quaternion.Inverse(script.gameObject.transform.rotation);
     }

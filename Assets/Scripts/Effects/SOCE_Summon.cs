@@ -22,19 +22,18 @@ public class SOCE_Summon : SOC_Effect
         }
         summonedScript.baseCard = summonedTower;
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
         sumObj_Standalone summonedScript = current.GetComponent<sumObj_Standalone>();
         summonedScript.baseSumObj = summonedObject;
-        summonedScript.parentProjectile = script as sumObj_Projectile;
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity);
         sumObj_Standalone summonedScript = current.GetComponent<sumObj_Standalone>();
         summonedScript.baseSumObj = summonedObject;
-        summonedScript.parentProjectile = script as sumObj_Projectile;
+        summonedScript.parentProjectile = script;
     }
     public override void ApplyBEffect()
     {

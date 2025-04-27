@@ -12,7 +12,7 @@ public class SOCSpell : SOCard
     {
         foreach (SOC_Effect effect in allEffects)
         {
-            effect.ApplyEffect(null, null);
+            effect.ApplyEffect(null);
         }
     }
 
@@ -21,7 +21,7 @@ public class SOCSpell : SOCard
         bool current = true;
         foreach (SOC_Requirement req in allRequirement)
         {
-            if (!req.ApplyRequirement(null, null))
+            if (!req.ApplyRequirement(null))
             {
                 current = false;
             }

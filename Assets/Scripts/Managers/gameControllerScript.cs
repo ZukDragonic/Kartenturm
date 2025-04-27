@@ -187,12 +187,12 @@ public class EffectAndReq
     public SOC_Effect effect;
 
     public SOC_Requirement[] req;
-    public bool CheckRequirement(baseTowerScript tScript, sumObj_Base oScript)
+    public bool CheckRequirement(sumObj_Base script)
     {
         bool tempBool = true;
         foreach (SOC_Requirement req in req)
         {
-            if (!req.ApplyRequirement(tScript, oScript))
+            if (!req.ApplyRequirement(script))
             {
                 tempBool = false;
             }

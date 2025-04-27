@@ -15,12 +15,12 @@ public class SOCE_Size : SOC_Effect
             script.transform.GetChild(i).localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
         }
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         float ogScale = script.transform.localScale.x;
         script.transform.localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         float ogScale = script.transform.localScale.x;
         script.transform.localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);

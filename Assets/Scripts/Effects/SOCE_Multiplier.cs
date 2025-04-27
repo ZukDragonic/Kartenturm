@@ -36,7 +36,7 @@ public class SOCE_Multiplier : SOC_Effect
                 break;
         }
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         if (Random.Range(0, odds) != 0)
         {
@@ -54,7 +54,7 @@ public class SOCE_Multiplier : SOC_Effect
                 break;
         }
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         if (Random.Range(0, odds) != 0)
         {

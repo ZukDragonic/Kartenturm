@@ -11,7 +11,7 @@ public class SOCE_Teleport : SOC_Effect
         Vector3 newPos = new Vector3(localPos.x + script.transform.position.x, localPos.y + script.transform.position.y, 0);
         script.transform.position = newPos;
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         script.transform.position = (script as sumObj_Projectile).target;
     }

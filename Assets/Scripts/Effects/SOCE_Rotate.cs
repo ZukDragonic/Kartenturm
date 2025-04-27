@@ -9,13 +9,13 @@ public class SOCE_Rotate : SOC_Effect
     public override void ApplyTEffect(baseTowerScript script)
     {
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         Vector3 tempRot = script.transform.rotation.eulerAngles;
         tempRot.z += rot;
         script.transform.rotation = Quaternion.Euler(tempRot);
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         Vector3 tempRot = script.transform.rotation.eulerAngles;
         tempRot.z += rot;

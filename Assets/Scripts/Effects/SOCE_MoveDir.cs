@@ -6,11 +6,11 @@ public class SOCE_MoveDir : SOC_Effect
 {
     public Vector3 dir;
     public float speed;
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         Debug.Log("TBA");
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         if (dir.y == 1)
         {

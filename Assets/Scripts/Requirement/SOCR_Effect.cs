@@ -54,7 +54,7 @@ public class SOCR_Effect : SOC_Requirement
         requirement = CheckFlipped();
         return requirement;
     }
-    public override bool ApplyOSRequirement(sumObj_Base script)
+    public override bool ApplyOSRequirement(sumObj_Standalone script)
     {
         requirement = false;
 
@@ -102,7 +102,7 @@ public class SOCR_Effect : SOC_Requirement
         requirement = CheckFlipped();
         return requirement;
     }
-    public override bool ApplyOPRequirement(sumObj_Base script)
+    public override bool ApplyOPRequirement(sumObj_Projectile script)
     {
         requirement = false;
 

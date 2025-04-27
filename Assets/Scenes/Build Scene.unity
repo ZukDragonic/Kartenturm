@@ -17177,10 +17177,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
-      propertyPath: playerGold
-      value: 9000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: timeChanges.Array.size
       value: 4
       objectReference: {fileID: 0}

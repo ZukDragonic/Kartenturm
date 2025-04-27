@@ -7,6 +7,10 @@ public class sumObj_Projectile : sumObj_Base
     public baseTowerScript parentTower;
     public Vector3 target;
 
+    public float damage;
+    public int pierce;
+
+    public SOEnemyDisplay hitEnemy;
     void Start()
     {
         damage = parentTower.damage;

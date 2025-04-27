@@ -33,7 +33,9 @@ public class baseTowerScript : sumObj_Base
     public int targetChange;
 
     public float range;
-    //damage and pierce are in parent
+    public float damage;
+    public int pierce;
+    
     public int shotsPerAttack;
     public float secondsPerAttack;
     public float multiplier;

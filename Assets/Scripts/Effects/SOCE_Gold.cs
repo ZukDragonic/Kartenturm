@@ -16,9 +16,9 @@ public class SOCE_Gold : SOC_Effect
         }
         gameControllerScript.instance.resourceManager.changeGold(currentGold);
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
-        sumObj_Standalone sScript = script as sumObj_Standalone;
+        sumObj_Standalone sScript = script;
         int currentGold = gold;
         if (accountStat)
         {
@@ -26,9 +26,9 @@ public class SOCE_Gold : SOC_Effect
         }
         gameControllerScript.instance.resourceManager.changeGold(currentGold);
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
-        sumObj_Projectile pScript = script as sumObj_Projectile;
+        sumObj_Projectile pScript = script;
         int currentGold = gold;
         if (accountStat)
         {

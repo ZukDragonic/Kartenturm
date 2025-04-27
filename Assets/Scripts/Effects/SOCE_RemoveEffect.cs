@@ -81,7 +81,7 @@ public class SOCE_RemoveEffect : SOC_Effect
             }
         }
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         foreach (EffectAndReq EnR in script.effects.passive)
         {
@@ -154,7 +154,7 @@ public class SOCE_RemoveEffect : SOC_Effect
             }
         }
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         foreach (EffectAndReq EnR in script.effects.passive)
         {

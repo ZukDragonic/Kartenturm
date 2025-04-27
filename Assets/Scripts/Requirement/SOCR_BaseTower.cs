@@ -17,14 +17,14 @@ public class SOCR_BaseTower : SOC_Requirement
         requirement = CheckFlipped();
         return requirement;
     }
-    public override bool ApplyOSRequirement(sumObj_Base script)
+    public override bool ApplyOSRequirement(sumObj_Standalone script)
     {
         Debug.Log("DNE");
         requirement = true;
         requirement = CheckFlipped();
         return requirement;
     }
-    public override bool ApplyOPRequirement(sumObj_Base script)
+    public override bool ApplyOPRequirement(sumObj_Projectile script)
     {
         requirement = true;
         if ((script as sumObj_Projectile).parentTower.baseCard != checkedTower)

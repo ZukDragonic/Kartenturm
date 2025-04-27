@@ -47,7 +47,7 @@ public class SOCE_AddEffect : SOC_Effect
                 break;
         }
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
         switch (effectType)
         {
@@ -85,7 +85,7 @@ public class SOCE_AddEffect : SOC_Effect
                 break;
         }
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         switch (effectType)
         {

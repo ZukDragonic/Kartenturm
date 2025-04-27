@@ -6,16 +6,9 @@ using UnityEngine;
 public class SOCE_LookAtTarget : SOC_Effect
 {
     public int maxRot;
-    public override void ApplyTEffect(baseTowerScript script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
-    }
-    public override void ApplyOSEffect(sumObj_Base script)
-    {
-
-    }
-    public override void ApplyOPEffect(sumObj_Base script)
-    {
-        Vector3 target = (script as sumObj_Projectile).target;
+        Vector3 target = script.target;
 
         //face target
         target.z = script.transform.position.z;

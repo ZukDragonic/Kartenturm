@@ -11,16 +11,16 @@ public class SOCE_Retarget : SOC_Effect
     public override void ApplyTEffect(baseTowerScript script)
     {
     }
-    public override void ApplyOSEffect(sumObj_Base script)
+    public override void ApplyOSEffect(sumObj_Standalone script)
     {
     }
-    public override void ApplyOPEffect(sumObj_Base script)
+    public override void ApplyOPEffect(sumObj_Projectile script)
     {
         if (gameControllerScript.instance.resourceManager.aliveEnemy.Count <= 0)
         {
             return;
         }
-        sumObj_Projectile pScript = script as sumObj_Projectile;
+        sumObj_Projectile pScript = script;
         switch (targetType)
         {
             case(ProjectileTargetOptions.Tower):
