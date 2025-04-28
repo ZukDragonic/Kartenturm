@@ -18,7 +18,8 @@ public class SOCE_Multiplier : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage *= multiplier;
+                float endDamage = (float)script.damage * multiplier;
+                script.damage *= (int)endDamage;
                 break;
             case StatType.Pierce:
                 script.pierce *= (int)multiplier;
@@ -45,7 +46,8 @@ public class SOCE_Multiplier : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage *= multiplier;
+                float endDamage = (float)script.damage * multiplier;
+                script.damage *= (int)endDamage;
                 break;
             case StatType.Pierce:
                 script.pierce *= (int)multiplier;
@@ -63,7 +65,8 @@ public class SOCE_Multiplier : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage *= multiplier;
+                float endDamage = (float)script.damage * multiplier;
+                script.damage *= (int)endDamage;
                 break;
             case StatType.Pierce:
                 script.pierce *= (int)multiplier;

@@ -15,7 +15,7 @@ public class sumObj_Standalone : sumObj_Base
     public SpriteRenderer image;
     public Animator anim;
 
-    public float damage;
+    public int damage;
     public int pierce;
 
     public SOEnemyDisplay hitEnemy;
@@ -54,8 +54,8 @@ public class sumObj_Standalone : sumObj_Base
             hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
-            script.health -= damage;
-            script.sliderDisplay.updateDisplay(script.health, script.enemy.health);
+            hitEnemy.enemyHit(damage);
+
             pierce -= 1;
             if (pierce <= 0)
             {

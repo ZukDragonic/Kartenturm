@@ -9,7 +9,7 @@ public class SOCE_LifeTime : SOC_Effect
     //this needs to be a pPassive to work if duration != 0
 
     [HideInInspector]
-    public int frameCount = 0;
+    private int frameCount = 0;
     private float relativeDuration = 0;
 
     public float radius;

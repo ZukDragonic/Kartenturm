@@ -19,4 +19,6 @@ public class SOEnemy : ScriptableObject
     public float hitRadius;
 
     public int goldDrop;
+
+    public SOCE_Parent effects;
 }

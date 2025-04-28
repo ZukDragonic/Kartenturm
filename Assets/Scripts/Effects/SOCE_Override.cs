@@ -18,7 +18,7 @@ public class SOCE_Override : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage = newStat;
+                script.damage = (int)newStat;
                 break;
             case StatType.Pierce:
                 script.pierce = (int)newStat;
@@ -45,7 +45,7 @@ public class SOCE_Override : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage = newStat;
+                script.damage = (int)newStat;
                 break;
             case StatType.Pierce:
                 script.pierce = (int)newStat;
@@ -63,7 +63,7 @@ public class SOCE_Override : SOC_Effect
         switch (stat)
         {
             case StatType.Damage:
-                script.damage = newStat;
+                script.damage = (int)newStat;
                 break;
             case StatType.Pierce:
                 script.pierce = (int)newStat;

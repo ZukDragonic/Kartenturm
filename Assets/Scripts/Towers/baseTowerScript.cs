@@ -33,7 +33,7 @@ public class baseTowerScript : sumObj_Base
     public int targetChange;
 
     public float range;
-    public float damage;
+    public int damage;
     public int pierce;
     
     public int shotsPerAttack;
@@ -208,7 +208,7 @@ public class baseTowerScript : sumObj_Base
             if (slot as SOCTower != null)
             {
                 SOCTower towerSlot = slot as SOCTower;
-                damage += towerSlot.damage / 2 * multiplier;
+                damage += (int)(towerSlot.damage / 2 * multiplier);
                 pierce += (int)(towerSlot.pierce / 2 * multiplier);
                 range += towerSlot.range / 2 * multiplier;
             }

@@ -7,7 +7,7 @@ public class SOCTower : SOCard
 {
     public int shotsPerAttack;
 
-    public float damage;
+    public int damage;
     public float secondsPerAttack;
     public float range;
     public float multiplier;

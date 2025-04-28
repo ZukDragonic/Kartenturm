@@ -8,7 +8,8 @@ public class SOCE_AddEffect : SOC_Effect
 {
     public EffectType effectType;
     public SOC_Effect addedEffect;
-    //req starts as false, returns true if even 1 instance of the effect is found
+
+    public bool appliedToHit;
     public override void ApplyTEffect(baseTowerScript script)
     {
         switch (effectType)
@@ -49,37 +50,47 @@ public class SOCE_AddEffect : SOC_Effect
     }
     public override void ApplyOSEffect(sumObj_Standalone script)
     {
+        sumObj_Base checkedScript;
+        if (appliedToHit)
+        {
+            checkedScript = script.hitEnemy;
+        }
+        else
+        {
+            checkedScript = script;
+        }
+
         switch (effectType)
         {
             case EffectType.Passive:
-                script.effects.passive = AddItemToArray(script.effects.passive, addedEffect);
+                checkedScript.effects.passive = AddItemToArray(checkedScript.effects.passive, addedEffect);
                 break;
             case EffectType.Destroy:
-                script.effects.destroy = AddItemToArray(script.effects.destroy, addedEffect);
+                checkedScript.effects.destroy = AddItemToArray(checkedScript.effects.destroy, addedEffect);
                 break;
             case EffectType.Summon:
-                script.effects.summon = AddItemToArray(script.effects.summon, addedEffect);
+                checkedScript.effects.summon = AddItemToArray(checkedScript.effects.summon, addedEffect);
                 break;
             case EffectType.Hit:
-                script.effects.hit = AddItemToArray(script.effects.hit, addedEffect);
+                checkedScript.effects.hit = AddItemToArray(checkedScript.effects.hit, addedEffect);
                 break;
             case EffectType.WaveStart:
-                script.effects.waveStart = AddItemToArray(script.effects.waveStart, addedEffect);
+                checkedScript.effects.waveStart = AddItemToArray(checkedScript.effects.waveStart, addedEffect);
                 break;
             case EffectType.WaveEnd:
-                script.effects.waveEnd = AddItemToArray(script.effects.waveEnd, addedEffect);
+                checkedScript.effects.waveEnd = AddItemToArray(checkedScript.effects.waveEnd, addedEffect);
                 break;
             case EffectType.PPassive:
-                script.effects.pPassive = AddItemToArray(script.effects.pPassive, addedEffect);
+                checkedScript.effects.pPassive = AddItemToArray(checkedScript.effects.pPassive, addedEffect);
                 break;
             case EffectType.PDestroy:
-                script.effects.pDestroy = AddItemToArray(script.effects.pDestroy, addedEffect);
+                checkedScript.effects.pDestroy = AddItemToArray(checkedScript.effects.pDestroy, addedEffect);
                 break;
             case EffectType.PHit:
-                script.effects.pHit = AddItemToArray(script.effects.pHit, addedEffect);
+                checkedScript.effects.pHit = AddItemToArray(checkedScript.effects.pHit, addedEffect);
                 break;
             case EffectType.PSummon:
-                script.effects.pSummon = AddItemToArray(script.effects.pSummon, addedEffect);
+                checkedScript.effects.pSummon = AddItemToArray(checkedScript.effects.pSummon, addedEffect);
                 break;
             default:
                 break;
@@ -87,37 +98,47 @@ public class SOCE_AddEffect : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Projectile script)
     {
+        sumObj_Base checkedScript;
+        if (appliedToHit)
+        {
+            checkedScript = script.hitEnemy;
+        }
+        else
+        {
+            checkedScript = script;
+        }
+
         switch (effectType)
         {
             case EffectType.Passive:
-                script.effects.passive = AddItemToArray(script.effects.passive, addedEffect);
+                checkedScript.effects.passive = AddItemToArray(checkedScript.effects.passive, addedEffect);
                 break;
             case EffectType.Destroy:
-                script.effects.destroy = AddItemToArray(script.effects.destroy, addedEffect);
+                checkedScript.effects.destroy = AddItemToArray(checkedScript.effects.destroy, addedEffect);
                 break;
             case EffectType.Summon:
-                script.effects.summon = AddItemToArray(script.effects.summon, addedEffect);
+                checkedScript.effects.summon = AddItemToArray(checkedScript.effects.summon, addedEffect);
                 break;
             case EffectType.Hit:
-                script.effects.hit = AddItemToArray(script.effects.hit, addedEffect);
+                checkedScript.effects.hit = AddItemToArray(checkedScript.effects.hit, addedEffect);
                 break;
             case EffectType.WaveStart:
-                script.effects.waveStart = AddItemToArray(script.effects.waveStart, addedEffect);
+                checkedScript.effects.waveStart = AddItemToArray(checkedScript.effects.waveStart, addedEffect);
                 break;
             case EffectType.WaveEnd:
-                script.effects.waveEnd = AddItemToArray(script.effects.waveEnd, addedEffect);
+                checkedScript.effects.waveEnd = AddItemToArray(checkedScript.effects.waveEnd, addedEffect);
                 break;
             case EffectType.PPassive:
-                script.effects.pPassive = AddItemToArray(script.effects.pPassive, addedEffect);
+                checkedScript.effects.pPassive = AddItemToArray(checkedScript.effects.pPassive, addedEffect);
                 break;
             case EffectType.PDestroy:
-                script.effects.pDestroy = AddItemToArray(script.effects.pDestroy, addedEffect);
+                checkedScript.effects.pDestroy = AddItemToArray(checkedScript.effects.pDestroy, addedEffect);
                 break;
             case EffectType.PHit:
-                script.effects.pHit = AddItemToArray(script.effects.pHit, addedEffect);
+                checkedScript.effects.pHit = AddItemToArray(checkedScript.effects.pHit, addedEffect);
                 break;
             case EffectType.PSummon:
-                script.effects.pSummon = AddItemToArray(script.effects.pSummon, addedEffect);
+                checkedScript.effects.pSummon = AddItemToArray(checkedScript.effects.pSummon, addedEffect);
                 break;
             default:
                 break;
