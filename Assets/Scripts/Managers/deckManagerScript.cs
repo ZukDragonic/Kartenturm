@@ -16,6 +16,7 @@ public class deckManagerScript : MonoBehaviour
 
     public GameObject TowerCardPrefab;
     public GameObject SpellCardPrefab;
+    public GameObject ArtifactCardPrefab;
     private GameObject playerHand;
 
     public int shopWave;
@@ -96,9 +97,13 @@ public class deckManagerScript : MonoBehaviour
         {
             current = Instantiate(TowerCardPrefab, playerHand.transform);
         }
-        else
+        else if (card as SOCSpell != null)
         {
             current = Instantiate(SpellCardPrefab, playerHand.transform);
+        }
+        else
+        {
+            current = Instantiate(ArtifactCardPrefab, playerHand.transform);
         }
         current.GetComponent<SOCardDisplayScript>().card = card;
         //add a onDraw effect here in the future maybe
