@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4114e6da9237040892ebd294eb950a, type: 3}
   m_Name: Override_Pierce_99
   m_EditorClassIdentifier: 
+  effectDescription: Pierce is always 99
   stat: 1
   newStat: 99
+  odds: 0

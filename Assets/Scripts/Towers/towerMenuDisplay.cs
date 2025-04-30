@@ -14,6 +14,9 @@ public class towerMenuDisplay : MonoBehaviour
     public TextMeshProUGUI pierce;
     public TextMeshProUGUI secondsPerAttack;
 
+    public Transform effectDisplay;
+    public GameObject textPrefab;
+
     public TextMeshProUGUI targetting;
 
     public GameObject targettingChild;
@@ -47,7 +50,102 @@ public class towerMenuDisplay : MonoBehaviour
 
         bonusStat = parentTower.secondsPerAttack - parentTower.baseCard.secondsPerAttack;
         bonusDisplay = BonusDisplay(bonusStat);
-        secondsPerAttack.text = "Seconds Per Attack: " + parentTower.baseCard.secondsPerAttack.ToString() + bonusDisplay;
+        secondsPerAttack.text = "SPA: " + parentTower.baseCard.secondsPerAttack.ToString() + bonusDisplay;
+
+        for(int i = 0; i < effectDisplay.childCount ;i++)
+        {
+            Destroy(effectDisplay.GetChild(i).gameObject);
+        }
+
+        foreach (EffectAndReq EnR in parentTower.currentEffect.passive)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.Passive);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.destroy)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.Destroy);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.summon)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.Summon);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.hit)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.Hit);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.waveStart)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.WaveStart);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.waveEnd)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.WaveEnd);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.pPassive)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.PPassive);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.pDestroy)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.PDestroy);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.pHit)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.PHit);
+        }
+        foreach (EffectAndReq EnR in parentTower.currentEffect.pSummon)
+        {
+            CreateEffectDisplay(EnR.effect, EffectType.PSummon);
+        }
+    }
+
+    void CreateEffectDisplay(SOC_Effect effect, EffectType effectType)
+    {
+        string description = effect.EffectDescription();
+        if (description == null || description == "")
+        {
+            return;
+        }
+        switch (effectType)
+        {
+            case EffectType.Passive:
+                description = "Always: " + description;
+                break;
+            case EffectType.Destroy:
+                description = "On Destroy: " + description;
+                break;
+            case EffectType.Summon:
+                description = "On Summon: " + description;
+                break;
+            case EffectType.Hit:
+                description = "On Hit: " + description;
+                break;
+            case EffectType.WaveStart:
+                description = "On Wave Start: " + description;
+                break;
+            case EffectType.WaveEnd:
+                description = "On Wave End: " + description;
+                break;
+            case EffectType.PPassive:
+                description = "Spawned Objects Always: " + description;
+                break;
+            case EffectType.PDestroy:
+                description = "On Spawned Objects Destroyed: " + description;
+                break;
+            case EffectType.PHit:
+                description = "On Spawned Objects Hit: " + description;
+                break;
+            case EffectType.PSummon:
+                description = "On Spawned Objects Summon: " + description;
+                break;
+            default:
+                break;
+        }
+        GameObject spawnedText = Instantiate(textPrefab, effectDisplay);
+        TextMeshProUGUI spawnTextComp = spawnedText.GetComponent<TextMeshProUGUI>();
+        spawnTextComp.text = description;
+        spawnTextComp.enableAutoSizing = true;
+        spawnTextComp.rectTransform.sizeDelta = new Vector2(190, 50);
     }
 
     string BonusDisplay(float bonusInt)

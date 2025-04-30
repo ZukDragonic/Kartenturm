@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4114e6da9237040892ebd294eb950a, type: 3}
   m_Name: Override_SPA_65536
   m_EditorClassIdentifier: 
+  effectDescription: Can not attack
   stat: 2
   newStat: 65536
   odds: 1

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4325b9b4d12e6419c77573eddfbeba, type: 3}
   m_Name: Gold_5
   m_EditorClassIdentifier: 
+  effectDescription: Gives 5 gold
   gold: 5
   accountStat: 0

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SOC_Effect : ScriptableObject
 {
+    [TextArea(3, 2)]
+    public string effectDescription;
+
     public void ApplyEffect(sumObj_Base script)
     {
         if (script as sumObj_Standalone != null)
@@ -46,5 +49,14 @@ public class SOC_Effect : ScriptableObject
     public virtual void ApplyBEffect()
     {
         Debug.Log("DNE");
+    }
+
+    public string EffectDescription()
+    {
+        if (effectDescription == "")
+        {
+            return null;
+        }
+        return effectDescription;
     }
 }

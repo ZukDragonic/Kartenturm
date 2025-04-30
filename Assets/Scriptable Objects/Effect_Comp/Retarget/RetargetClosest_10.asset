@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959401224ce35bf40beaf61714757fd4, type: 3}
   m_Name: RetargetClosest_10
   m_EditorClassIdentifier: 
+  effectDescription: Follows the closest enemy
   targetType: 1
   closestRange: 10

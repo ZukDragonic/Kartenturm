@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd21d6d2dac54f4a99704a627f36588, type: 3}
   m_Name: Size_2
   m_EditorClassIdentifier: 
+  effectDescription: 2 times bigger
   scale: 2

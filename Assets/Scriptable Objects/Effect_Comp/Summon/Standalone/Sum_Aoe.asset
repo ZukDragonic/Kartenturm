@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6212c2c270a24884abaca99b5e69ced2, type: 3}
   m_Name: Sum_Aoe
   m_EditorClassIdentifier: 
+  effectDescription: Projectiles summons an explosion
   summonedPrefab: {fileID: 7252188331371112599, guid: a1e9f47e649ca414db5aa295deb750e9, type: 3}
   summonedObject: {fileID: 11400000, guid: b0f243f1ec9fd6c4885185801b733e75, type: 2}
   summonedTower: {fileID: 0}
