@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Timeline;
 
 [System.Serializable]
@@ -224,7 +225,7 @@ public class gameControllerScript : MonoBehaviour
     Dictionary<int, bool> flagDict;
 
     public GameState state;
-    private GameState prevState;
+    public GameState prevState;
     public bool isCardDragged;
 
     void Start()
@@ -269,7 +270,7 @@ public class gameControllerScript : MonoBehaviour
         {
             waveManager.spawnWave(ID + 1);
             deckManager.drawCard(1);
-            if (ID % 5 == 0)
+            if (waveManager.findWave(ID).waveNum % deckManager.shopWave == 0)
             {
                 deckManager.openShop();
             }
@@ -304,17 +305,17 @@ public class gameControllerScript : MonoBehaviour
         {
             case GameState.Wave:
                 timeManager.resetTime();
+                prevState = GameState.Wave;
                 if (state == GameState.TowerMenu || state == GameState.Placing || state == GameState.ShopMenu)
                 {
-                    prevState = GameState.Wave;
                     return;
                 }
                 break;
             case GameState.BetweenWave:
                 timeManager.buttonChange(-1);
+                prevState = GameState.BetweenWave;
                 if (state == GameState.TowerMenu || state == GameState.Placing || state == GameState.ShopMenu)
                 {
-                    prevState = GameState.BetweenWave;
                     return;
                 }
                 break;
@@ -325,14 +326,27 @@ public class gameControllerScript : MonoBehaviour
                 prevState = state;
                 break;
             case GameState.ShopMenu:
-                prevState = state;
+                //Could cause some bugs in the future
+                if (FlagInfo(20001))
+                {
+                    prevState = GameState.Wave;
+                }
+                else
+                {
+                    prevState = GameState.BetweenWave;
+                }
                 break;
             case GameState.PauseMenu:
                 timeManager.pauseTime();
                 prevState = state;
                 break;
             case GameState.Previous:
-            state = prevState;
+                if (prevState == GameState.TowerMenu)
+                {
+                    //there are certain state that must not be previous-ed
+                    return;
+                }
+                state = prevState;
                 return;
             default:
                 break;

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: AddEffect_Stun_2.5_Hit
   m_EditorClassIdentifier: 
   effectType: 0
-  addedEffect: {fileID: 0}
-  appliedToHit: 0
-  isUnique: 0
+  addedEffect: {fileID: 11400000, guid: aec0d4c31a3c9a84d8d25d4446c4e612, type: 2}
+  appliedToHit: 1

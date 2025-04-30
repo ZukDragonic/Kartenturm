@@ -171,8 +171,8 @@ public class baseTowerScript : sumObj_Base
     }
     public void closeTowerMenu()
     {
-        gameController.UpdateGameState(GameState.Previous);
         isSelected = false;
+        gameController.UpdateGameState(GameState.Previous);
         if (openedTowerMenu != null)
         {
             Destroy(openedTowerMenu);
@@ -188,6 +188,7 @@ public class baseTowerScript : sumObj_Base
         pierce = baseCard.pierce;
         range = baseCard.range;
         multiplier = baseCard.multiplier;
+        secondsPerAttack = baseCard.secondsPerAttack;
         for (int i = 1; i < gameObject.transform.childCount; i++)
         {
             float ogScale = transform.GetChild(i).localScale.x;

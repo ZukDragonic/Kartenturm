@@ -18,6 +18,8 @@ public class deckManagerScript : MonoBehaviour
     public GameObject SpellCardPrefab;
     private GameObject playerHand;
 
+    public int shopWave;
+
     private void Start()
     {
         List<SOCard> tempCards = new List<SOCard>();
@@ -61,7 +63,9 @@ public class deckManagerScript : MonoBehaviour
     {
         if (gameController.allCanvas[1].transform.childCount > 0)
         {
-            Destroy(gameController.allCanvas[1].transform.GetChild(0).gameObject);
+            //DestroyImmediate is used so that it would call previous state first and then shop state
+            //DestroyImmediate destroy on same frame
+            DestroyImmediate(gameController.allCanvas[1].transform.GetChild(0).gameObject);
         }
         
         shopScript current = Instantiate(shop, gameController.allCanvas[1].transform).GetComponentInChildren<shopScript>();

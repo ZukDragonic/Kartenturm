@@ -225,7 +225,7 @@ MonoBehaviour:
     - enemyID: 60003
       delay: 0.5
       repeat: 10
-    - enemyID: 1260
+    - enemyID: 60002
       delay: 0.5
       repeat: 10
     - enemyID: 60005
@@ -295,3 +295,4 @@ MonoBehaviour:
       repeat: 9
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []
+  aliveEnemies: []

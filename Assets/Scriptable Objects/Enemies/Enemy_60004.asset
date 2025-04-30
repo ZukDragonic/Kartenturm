@@ -22,3 +22,4 @@ MonoBehaviour:
   damageToHP: 1
   hitRadius: 0.2
   goldDrop: 25
+  effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}

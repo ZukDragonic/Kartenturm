@@ -50,16 +50,18 @@ public class waveManagerScript : MonoBehaviour
         {
             if (enemyAlive == 0)
             {
+                //if not autostart or shop wave, update gameState to a semi-paused state
+                if (!gameController.FlagInfo(20001))
+                {
+                    gameController.UpdateGameState(GameState.BetweenWave);
+                }
+
+                //changes to next wave
                 gameController.resourceManager.changeGold(currentWave.endGold);
                 gameController.FlagTrigger(currentWave.ID);
                 foreach (baseTowerScript tower in gameController.resourceManager.aliveTower)
                 {
                     tower.waveEndAction();
-                }
-                //if not autostart, update gameState to a semi-paused state
-                if (!gameController.FlagInfo(20001))
-                {
-                    gameController.UpdateGameState(GameState.BetweenWave);
                 }
             }
         }
@@ -69,7 +71,10 @@ public class waveManagerScript : MonoBehaviour
     {
         yield return null;
         gameController.resourceManager.updateWave(currentWave.waveNum);
-        while (gameController.state != GameState.Wave)
+        //wait for gameState is wait if not autostart
+        //wait for prev gamestate to not be betweenwave if autostart
+        while ((gameController.state != GameState.Wave && !gameController.FlagInfo(20001)) ||
+            (gameController.prevState == GameState.BetweenWave && gameController.FlagInfo(20001)))
         {
             yield return null;
         }
@@ -102,7 +107,7 @@ public class waveManagerScript : MonoBehaviour
         isWaveSpawning = false;
     }
 
-    SOEnemy findEnemy(int ID)
+    public SOEnemy findEnemy(int ID)
     {
         foreach (SOEnemy enemy in allEnemies)
         {
@@ -114,7 +119,7 @@ public class waveManagerScript : MonoBehaviour
         return allEnemies[0];
     }
 
-    Wave findWave(int ID)
+    public Wave findWave(int ID)
     {
         foreach (Wave wave in waveList)
         {
