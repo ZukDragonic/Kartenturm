@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Timeline;
@@ -12,6 +13,13 @@ public enum targettingOption
     Road,
     Random,
     None,
+}
+[System.Serializable]
+public enum ImageSide
+{
+    Left,
+    Right,
+    None
 }
 [System.Serializable]
 public enum GameState
@@ -34,7 +42,8 @@ public enum Managers
     Deck,
     Wave,
     Timeline,
-    Audio
+    Audio,
+    Dialogue
 }
 [System.Serializable]
 public enum SoundType
@@ -152,6 +161,28 @@ public class Wave
     public EnemyAndDelay[] spawnOrder;
 }
 [System.Serializable]
+public class WholeDialogue
+{
+    public int ID;
+
+    public SingleDialogue[] dialogue;
+
+    public Sprite leftImage;
+    public Sprite rightimage;
+}
+[System.Serializable]
+public class SingleDialogue
+{
+    public string name;
+    public Color textColor;
+    [TextArea(3, 2)]
+    public string text;
+
+    public Sprite image;
+
+    public ImageSide imageSide;
+}
+[System.Serializable]
 public class TimelineAnimation
 {
     public int ID;
@@ -211,6 +242,7 @@ public class gameControllerScript : MonoBehaviour
     public timeManagerScript timeManager;
     public timelineManagerScript timelineManager;
     public audioManagerScript audioManager;
+    public dialogueManagerScript dialogueManager;
 
     public MainInput_Ray mainInput_Ray;
     [SerializeField]
@@ -362,22 +394,25 @@ public class gameControllerScript : MonoBehaviour
                 gameControllerScript.instance.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Resource:
-                gameControllerScript.instance.resourceManager.SendMessage(voidCalled, IDCalled);
+                resourceManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Time:
-                gameControllerScript.instance.timeManager.SendMessage(voidCalled, IDCalled);
+                timeManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Deck:
-                gameControllerScript.instance.deckManager.SendMessage(voidCalled, IDCalled);
+                deckManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Wave:
-                gameControllerScript.instance.waveManager.SendMessage(voidCalled, IDCalled);
+                waveManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Timeline:
-                gameControllerScript.instance.timelineManager.SendMessage(voidCalled, IDCalled);
+                timelineManager.SendMessage(voidCalled, IDCalled);
                 break;
             case Managers.Audio:
-                gameControllerScript.instance.audioManager.SendMessage(voidCalled, IDCalled);
+                audioManager.SendMessage(voidCalled, IDCalled);
+                break;
+            case Managers.Dialogue:
+                dialogueManager.SendMessage(voidCalled, IDCalled);
                 break;
             default:
                 break;
@@ -396,6 +431,7 @@ public class gameControllerScript : MonoBehaviour
         timeManager = GameObject.Find("timeManager").GetComponent<timeManagerScript>();
         timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
         audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
+        dialogueManager = GameObject.Find("dialogueManager").GetComponent<dialogueManagerScript>();
     }
 
     void findCanvas()
@@ -419,5 +455,9 @@ public class gameControllerScript : MonoBehaviour
         timeManager.resetTime();
         waveManager.spawnWave(11001);
         timeManager.ChangeFps(60);
+        deckManager.shuffleDeck();
+        deckManager.drawCard(3);
+
+        dialogueManager.CreateDialogue(22000);
     }
 }
