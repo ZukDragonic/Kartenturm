@@ -461,7 +461,6 @@ public class gameControllerScript : MonoBehaviour
         UpdateGameState(GameState.BetweenWave);
 
         timeManager.resetTime();
-        waveManager.spawnWave(11001);
         timeManager.ChangeFps(60);
         deckManager.shuffleDeck();
         deckManager.drawCard(3);
@@ -469,5 +468,7 @@ public class gameControllerScript : MonoBehaviour
         FlagTrigger(20002);
 
         dialogueManager.CreateDialogue(22000);
+
+        waveManager.spawnWave(11001);
     }
 }
