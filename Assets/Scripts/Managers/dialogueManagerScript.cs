@@ -12,6 +12,7 @@ public class dialogueManagerScript : MonoBehaviour
 
     private Queue<SingleDialogue> sentences;
     private SingleDialogue curSDialogue;
+    private WholeDialogue curWDialogue;
 
     public GameObject dialoguePrefab;
 
@@ -36,7 +37,9 @@ public class dialogueManagerScript : MonoBehaviour
         rightImage = currentDialogue.transform.GetChild(2).GetChild(1).GetComponent<Image>();
         rightImage.gameObject.SetActive(false);
 
-        foreach (SingleDialogue dialogue in FindWholeDialogue(ID).dialogue)
+
+        curWDialogue = FindWholeDialogue(ID);
+        foreach (SingleDialogue dialogue in curWDialogue.dialogue)
         {
             sentences.Enqueue(dialogue);
         }
@@ -56,10 +59,12 @@ public class dialogueManagerScript : MonoBehaviour
         StopAllCoroutines();
         if (curSDialogue.textColor == Color.black)
         {
+            nameText.color = new Color(0.098f, 0.098f, 0.098f);
             dialogueText.color = new Color(0.098f, 0.098f, 0.098f);
         }
         else
         {
+            nameText.color = curSDialogue.textColor;
             dialogueText.color = curSDialogue.textColor;
         }
         nameText.text = curSDialogue.name;
@@ -78,6 +83,7 @@ public class dialogueManagerScript : MonoBehaviour
 
     void EndDialogue()
     {
+        gameController.FlagTrigger(curWDialogue.ID);
         Destroy(currentDialogue);
     }
 

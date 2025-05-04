@@ -183,10 +183,18 @@ public class SingleDialogue
     public ImageSide imageSide;
 }
 [System.Serializable]
-public class TimelineAnimation
+public class WholeAnimation
 {
     public int ID;
     public TimelineAsset timelineAnim;
+    public TimelineObject[] boundObjects;
+    public bool hittingSomething;
+}
+[System.Serializable]
+public class TimelineObject
+{
+    public GameObject boundObjects;
+    public int boundTrack;
 }
 
 [System.Serializable]
@@ -457,6 +465,8 @@ public class gameControllerScript : MonoBehaviour
         timeManager.ChangeFps(60);
         deckManager.shuffleDeck();
         deckManager.drawCard(3);
+
+        FlagTrigger(20002);
 
         dialogueManager.CreateDialogue(22000);
     }

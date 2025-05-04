@@ -12,8 +12,6 @@ public class baseTowerScript : sumObj_Base
 
     public SOCE_Parent currentEffect;
 
-    private bool hasAttacked;
-
     private tCosmeticScript cosmetic;
     public bool isSelected;
 
@@ -35,13 +33,15 @@ public class baseTowerScript : sumObj_Base
     public float range;
     public int damage;
     public int pierce;
-    
+
     public int shotsPerAttack;
     public float secondsPerAttack;
     public float multiplier;
 
     public GameObject baseProjectile;
-   
+
+    private float attackTimer;
+
     void Start()
     {
         cosmetic = GetComponentInChildren<tCosmeticScript>();
@@ -58,8 +58,6 @@ public class baseTowerScript : sumObj_Base
         currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         multiplier = baseCard.multiplier;
-
-        hasAttacked = false;
 
         enemyInRange = new List<GameObject>();
 
@@ -108,7 +106,7 @@ public class baseTowerScript : sumObj_Base
             {
                 if (gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
                 {
-                    if (Input.GetMouseButtonDown(0))         
+                    if (Input.GetMouseButtonDown(0))
                     {
                         cosmetic.ResetMat();
                         closeTowerMenu();
@@ -229,27 +227,29 @@ public class baseTowerScript : sumObj_Base
         bool isTargetNone = baseCard.targetting == targettingOption.None;
         while (!isTargetNone)
         {
-            while (!hasAttacked)
+            //check for target
+            currentTargetting.UpdateCheck(this);
+
+            if (currentTarget != null)
             {
-                //check for target
-                currentTargetting.UpdateCheck(this);
+                Vector3 target = Vector3.zero;
+                //face target
+                target = currentTarget.transform.position;
 
-                if (currentTarget != null)
+                if (currentTarget.transform.position.x < transform.position.x)
                 {
-                    Vector3 target = Vector3.zero;
-                    //face target
-                    target = currentTarget.transform.position;
+                    cosmetic.flipSprite(true);
+                }
+                else
+                {
+                    cosmetic.flipSprite(false);
+                }
 
-                    if (currentTarget.transform.position.x < transform.position.x)
-                    {
-                        cosmetic.flipSprite(true);
-                    }
-                    else
-                    {
-                        cosmetic.flipSprite(false);
-                    }
+                //spawns attack
+                while (attackTimer >= secondsPerAttack)
+                {
+                    attackTimer -= secondsPerAttack;
 
-                    //spawns attack
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
                         GameObject projectile = Instantiate(baseProjectile, transform.position, Quaternion.identity);
@@ -259,18 +259,18 @@ public class baseTowerScript : sumObj_Base
                         projectile.GetComponent<SpriteRenderer>().sprite = baseCard.projectileImage;
                     }
                     currentEffect.OnHitEffect(this);
-                    hasAttacked = true;
-                }
-                yield return null;
-            }
-            float attackTimer = 0;
 
-            while (attackTimer < secondsPerAttack)
+                    attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
+                    //come back later and fix it to make projectile spawn in proper pos
+                    //temp fix to have one projectile spawn 1 frame ahead
+                    yield return null;
+                }
+            }
+            if (attackTimer < secondsPerAttack)
             {
                 attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
-                yield return null;
             }
-            hasAttacked = false;
+            yield return null;
         }
     }
     void OnDestroy()
