@@ -175,7 +175,7 @@ public class SingleDialogue
 {
     public string name;
     public Color textColor;
-    [TextArea(3, 2)]
+    [TextArea(3, 8)]
     public string text;
 
     public Sprite image;
@@ -467,7 +467,7 @@ public class gameControllerScript : MonoBehaviour
 
         FlagTrigger(20002);
 
-        dialogueManager.CreateDialogue(22000);
+        dialogueManager.CreateDialogue(22001);
 
         waveManager.spawnWave(11001);
     }

@@ -28,7 +28,7 @@ public class dialogueManagerScript : MonoBehaviour
 
         sentences = new Queue<SingleDialogue>();
 
-        currentDialogue = Instantiate(dialoguePrefab, gameController.allCanvas[1].transform);
+        currentDialogue = Instantiate(dialoguePrefab, gameController.allCanvas[3].transform);
         nameText = currentDialogue.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         dialogueText = currentDialogue.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
 

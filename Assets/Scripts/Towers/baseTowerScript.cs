@@ -260,10 +260,8 @@ public class baseTowerScript : sumObj_Base
                     }
                     currentEffect.OnHitEffect(this);
 
-                    attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
                     //come back later and fix it to make projectile spawn in proper pos
-                    //temp fix to have one projectile spawn 1 frame ahead
-                    yield return null;
+                    //temp fix just have the remaining timer run off to next cycle
                 }
             }
             if (attackTimer < secondsPerAttack)

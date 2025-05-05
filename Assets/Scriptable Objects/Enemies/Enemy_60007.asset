@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Spider
   description: Her sons left their home. She has a very pleasant surprise for them
     when she finds them.
-  image: {fileID: 21300028, guid: c3a0ffcab94f86043aa02beca70d680b, type: 3}
+  image: {fileID: 21300000, guid: 3aec8da9a8b28ad4bae0fe477b627b52, type: 3}
   speed: 25
   health: 1000
   damageToHP: 1

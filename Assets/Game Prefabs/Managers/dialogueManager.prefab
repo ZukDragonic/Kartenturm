@@ -65,21 +65,117 @@ MonoBehaviour:
       imageSide: 0
     leftImage: {fileID: 0}
     rightimage: {fileID: 0}
-  - ID: 22000
+  - ID: 22001
     dialogue:
     - name: God
       textColor: {r: 0, g: 0, b: 0, a: 1}
-      text: Hello, I am god.
-      image: {fileID: 0}
-      imageSide: 0
-    - name: Worshipper
-      textColor: {r: 0, g: 0, b: 0, a: 1}
-      text: Fuck you god
+      text: Hey there!
       image: {fileID: 0}
       imageSide: 0
     - name: God
-      textColor: {r: 0.764151, g: 0.09011213, b: 0.09011213, a: 1}
-      text: No, fuck you!
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: The first thing you should know is how to use your cards.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: You have three types of cards.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.84377843, g: 0.8490566, b: 0.38047346, a: 1}
+      text: Yellow cards are towers. You can drag them to place down towers.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.4856693, g: 0.40899786, b: 0.9528302, a: 1}
+      text: 'Blue cards are spells. Like towers, you can drag them to use them. '
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.8867924, g: 0.4224813, b: 0.4224813, a: 1}
+      text: Red cards, however, are very special. They're artifacts! We will touch
+        on that in a bit.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Try placing down a tower!
+      image: {fileID: 0}
+      imageSide: 0
+    leftImage: {fileID: 0}
+    rightimage: {fileID: 0}
+  - ID: 22002
+    dialogue:
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: It's me, God, again!
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: By now, you've probably clicked on a tower, right?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: You're probably wondering where the upgrade button is, right?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Worry not! Through a mechanism called "Slotting," you can upgrade your
+        towers!
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: What's slotting? You ask?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Well, it's very simple. When you click on a tower, you'll see the targetting,
+        stats, and even a trash button!
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Now, if you look at the very top, you'll see a shilouette resembling
+        a card.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: If you a drag a card there, you can upgrade the tower.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: However! Not every card can be "Slotted." Only select cards can.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.8862745, g: 0.42352942, b: 0.42352942, a: 1}
+      text: Like I mentioned before, Artifacts are for this very purpose! You can
+        slot them and it'll grant your tower special abilities, ranging from stat
+        boosts to even making it really big.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.84313726, g: 0.8509804, b: 0.38039216, a: 1}
+      text: Similarly, towers can also be slotted. Be warned, they don't grant any
+        abilities can only give the "Stacked" tower half of their original stat.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0.4862745, g: 0.40784314, b: 0.9529412, a: 1}
+      text: Spells, unfortuntely, can not be "Slotted."
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: That'll be all! Try it out if you have the necessary cards.
       image: {fileID: 0}
       imageSide: 0
     leftImage: {fileID: 0}

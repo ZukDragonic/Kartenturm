@@ -11,6 +11,7 @@ public class resourceManagerScript : MonoBehaviour
     public int health;
     public TextMeshProUGUI waveDisplay;
     public int waveNum;
+    public numberDisplayScript deckDisplay;
 
     public List<baseTowerScript> aliveTower;
     public List<SOEnemyDisplay> aliveEnemy;
@@ -20,6 +21,7 @@ public class resourceManagerScript : MonoBehaviour
         goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
         healthDisplay = GameObject.Find("Health Display").GetComponent<numberDisplayScript>();
         waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();
+        deckDisplay = GameObject.Find("Deck Display").GetComponent<numberDisplayScript>();
         aliveTower = new List<baseTowerScript>();
         changeGold(0);
         changeHealth(0);

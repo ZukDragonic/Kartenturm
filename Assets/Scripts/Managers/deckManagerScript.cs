@@ -58,6 +58,7 @@ public class deckManagerScript : MonoBehaviour
     public void shuffleCardInDeck(SOCard card)
     {
         drawDeck.Insert(Random.Range(0, drawDeck.Count), card);
+        gameController.resourceManager.goldDisplay.updateDisplay(drawDeck.Count);
     }
 
     public void openShop()
@@ -89,6 +90,7 @@ public class deckManagerScript : MonoBehaviour
                 gameController.deckManager.drawDeck.RemoveAt(0);
             }
         }
+        gameController.resourceManager.goldDisplay.updateDisplay(drawDeck.Count);
     }
     public void AddCardToHand(SOCard card)
     {
@@ -107,5 +109,6 @@ public class deckManagerScript : MonoBehaviour
         }
         current.GetComponent<SOCardDisplayScript>().card = card;
         //add a onDraw effect here in the future maybe
+        gameController.resourceManager.goldDisplay.updateDisplay(drawDeck.Count);
     }
 }
