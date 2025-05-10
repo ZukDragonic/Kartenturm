@@ -17,9 +17,11 @@ MonoBehaviour:
   description: On his way to his hiberation home, he was kidnapped by some bandits.
     Fortunately, he has enough food in his new hiberation home.
   image: {fileID: 21300000, guid: 6b7a7241b5ae56648b948e508a4ab06e, type: 3}
+  animClip: {fileID: 7400000, guid: c8649b1355683744b8440d00844894ae, type: 2}
   speed: 10
   health: 8000
   damageToHP: 1
   hitRadius: 0.2
   goldDrop: 100
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  attacks: []

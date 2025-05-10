@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82fc77453f8006b41a5472c3a2ea50b4
+guid: 408b718cb98b87640835079574f68b48
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,34 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: In_Game_Menu__0
+      name: Monsters_Anim(32x32)_0_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 58
-        width: 644
-        height: 484
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53cf065fcc17bc14b924fba7aee8a556
-      internalID: -1324216528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: In_Game_Menu__1
-      rect:
-        serializedVersion: 2
-        x: 692
+        x: 0
         y: 0
-        width: 304
-        height: 600
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b0759eaf3a19af4eaa131505107e8d8
-      internalID: 1759895686
+      spriteID: 93bc492b2ea533d4780d4af9c65a70c1
+      internalID: -621338048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: In_Game_Menu__2
+      name: Monsters_Anim(32x32)_0_1
       rect:
         serializedVersion: 2
-        x: 1020
-        y: 15
-        width: 770
-        height: 553
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +152,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 151ab0a049cf8e342b69b35e14ea6b15
-      internalID: 283109722
+      spriteID: 99af74751442ce54ba3a11c9d87e1cbb
+      internalID: -1886682338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monsters_Anim(32x32)_0_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c714eacc83f67084baf004f7ee6d7802
+      internalID: -580656531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monsters_Anim(32x32)_0_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6246a49f51659264dae490b24acec4a1
+      internalID: 963401166
       vertices: []
       indices: 
       edges: []
@@ -190,9 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      In_Game_Menu__0: -1324216528
-      In_Game_Menu__1: 1759895686
-      In_Game_Menu__2: 283109722
+      Monsters_Anim(32x32)_0_0: -621338048
+      Monsters_Anim(32x32)_0_1: -1886682338
+      Monsters_Anim(32x32)_0_2: -580656531
+      Monsters_Anim(32x32)_0_3: 963401166
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

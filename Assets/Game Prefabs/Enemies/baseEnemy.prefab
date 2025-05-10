@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4343075055623811013}
   - component: {fileID: -6671158271942149521}
   - component: {fileID: -2705536103655025549}
+  - component: {fileID: 933852508798550224}
   m_Layer: 7
   m_Name: baseEnemy
   m_TagString: Enemy
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4343075055623811013
@@ -100,13 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9444b5e908a4044871d86a9b0a9cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effects: {fileID: 0}
   gameController: {fileID: 0}
   sliderDisplay: {fileID: 0}
   enemy: {fileID: 0}
-  image: {fileID: 0}
+  sR: {fileID: 4343075055623811011}
+  anim: {fileID: 933852508798550224}
   speed: 0
   health: 0
-  damageToHP: 0
+  hitDamage: 0
   hitRadius: 0
   distanceToCheckpoint: 0
   checkpointNum: 0
@@ -150,6 +153,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &933852508798550224
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4343075055623811010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e6e547128e05134e80f4e5dfeca22e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5593997213787696784
 PrefabInstance:
   m_ObjectHideFlags: 0

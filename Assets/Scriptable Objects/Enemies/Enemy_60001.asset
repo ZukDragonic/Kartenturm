@@ -16,9 +16,11 @@ MonoBehaviour:
   Enemyname: Slime (Blue)
   description: He's not a bad slime, he promise.
   image: {fileID: 21300000, guid: 6febf7789bd2f414a9259a14498758d2, type: 3}
+  animClip: {fileID: 7400000, guid: 806caf7a8df3a9641927c65ba059a16d, type: 2}
   speed: 15
   health: 100
   damageToHP: 1
   hitRadius: 0.2
   goldDrop: 5
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  attacks: []

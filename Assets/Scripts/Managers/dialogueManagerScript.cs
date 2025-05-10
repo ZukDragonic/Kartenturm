@@ -16,8 +16,11 @@ public class dialogueManagerScript : MonoBehaviour
 
     public GameObject dialoguePrefab;
 
+
+    public Sprite[] dialogueBackground;
     private GameObject currentDialogue;
-    private TextMeshProUGUI nameText;
+    private TextMeshProUGUI nameTextL;
+    private TextMeshProUGUI nameTextR;
     private TextMeshProUGUI dialogueText;
     private Image leftImage;
     private Image rightImage;
@@ -29,8 +32,9 @@ public class dialogueManagerScript : MonoBehaviour
         sentences = new Queue<SingleDialogue>();
 
         currentDialogue = Instantiate(dialoguePrefab, gameController.allCanvas[3].transform);
-        nameText = currentDialogue.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        dialogueText = currentDialogue.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        nameTextL = currentDialogue.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+        nameTextR = currentDialogue.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        dialogueText = currentDialogue.transform.GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>();
 
         leftImage = currentDialogue.transform.GetChild(2).GetChild(0).GetComponent<Image>();
         leftImage.gameObject.SetActive(false);
@@ -49,6 +53,8 @@ public class dialogueManagerScript : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        StopAllCoroutines();
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -56,18 +62,35 @@ public class dialogueManagerScript : MonoBehaviour
         }
 
         curSDialogue = sentences.Dequeue();
-        StopAllCoroutines();
         if (curSDialogue.textColor == Color.black)
         {
-            nameText.color = new Color(0.098f, 0.098f, 0.098f);
+            nameTextL.color = curSDialogue.textColor;
+            nameTextR.color = curSDialogue.textColor;
             dialogueText.color = new Color(0.098f, 0.098f, 0.098f);
         }
         else
         {
-            nameText.color = curSDialogue.textColor;
+            nameTextL.color = curSDialogue.textColor;
+            nameTextR.color = curSDialogue.textColor;
             dialogueText.color = curSDialogue.textColor;
         }
-        nameText.text = curSDialogue.name;
+
+        if (curSDialogue.imageSide == ImageSide.Left)
+        {
+            dialogueText.transform.parent.GetComponent<Image>().sprite = dialogueBackground[0];
+            nameTextL.text = curSDialogue.name;
+            nameTextR.text = "";
+            leftImage.sprite = curSDialogue.image;
+            rightImage.sprite = null;
+        }
+        else if (curSDialogue.imageSide == ImageSide.Right)
+        {
+            dialogueText.transform.parent.GetComponent<Image>().sprite = dialogueBackground[1];
+            nameTextR.text = curSDialogue.name;
+            nameTextL.text = "";
+            rightImage.sprite = curSDialogue.image;
+            leftImage.sprite = null;
+        }
         StartCoroutine(TypeSentece(curSDialogue.text));
     }
 

@@ -10,7 +10,8 @@ public class SOEnemyDisplay : sumObj_Base
     
     public SOEnemy enemy;
 
-    private SpriteRenderer sR;
+    public SpriteRenderer sR;
+    public Animator anim;
 
     public float speed;
     public float health;
@@ -30,8 +31,18 @@ public class SOEnemyDisplay : sumObj_Base
     {
         gameController = gameControllerScript.instance;
         sliderDisplay = transform.GetChild(0).GetComponent<sliderDisplayScript>();
-        sR = GetComponent<SpriteRenderer>();
         sR.sprite = enemy.image;
+
+        if (enemy.animClip != null)
+        {
+            AnimatorOverrideController aoc = new AnimatorOverrideController(anim.runtimeAnimatorController);
+            aoc["E_AnimBase"] = enemy.animClip;
+            anim.runtimeAnimatorController = aoc;
+        }
+        else
+        {
+            anim.enabled = false;
+        }
 
         speed = enemy.speed;
         health = enemy.health;
@@ -51,6 +62,7 @@ public class SOEnemyDisplay : sumObj_Base
     void Update()
     {
         effects.PassiveEffect(this);
+        anim.speed = gameController.timeManager.currentTime;
 
         distanceToCheckpoint = Vector3.Distance(transform.position, checkpointPos);
         //fix bug where when enemies too fast, it'd jump past the checkpoint

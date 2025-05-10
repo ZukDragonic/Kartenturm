@@ -205,6 +205,16 @@ public class EnemyAndDelay
     public int repeat;
 }
 [System.Serializable]
+public class EnemyAttack
+{
+    public SOC_Effect appliedEffect;
+
+    public float startLag;
+    public AnimationClip anim;
+    public float endLag;
+    public float timeTillNextAttack;
+}
+[System.Serializable]
 public class Sound
 {
     public int ID;
@@ -306,13 +316,31 @@ public class gameControllerScript : MonoBehaviour
     {
         //spawns the pre-set waves
         //second number should be 1 number before max wave
-        if (ID > 11000 && ID < 12000)
+        if (ID >= 11000 && ID < 12000)
         {
             waveManager.spawnWave(ID + 1);
             deckManager.drawCard(1);
             if (waveManager.findWave(ID).waveNum % deckManager.shopWave == 0)
             {
                 deckManager.openShop();
+            }
+
+            if (FlagInfo(20002))
+            {
+                switch (ID)
+                {
+                    case 11000:
+                        dialogueManager.CreateDialogue(22001);
+                        break;
+                    case 11002:
+                        dialogueManager.CreateDialogue(22002);
+                        break;
+                    case 11005:
+                        dialogueManager.CreateDialogue(22003);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         //flippable flags
@@ -467,8 +495,6 @@ public class gameControllerScript : MonoBehaviour
 
         FlagTrigger(20002);
 
-        dialogueManager.CreateDialogue(22001);
-
-        waveManager.spawnWave(11001);
+        FlagTrigger(11000);
     }
 }

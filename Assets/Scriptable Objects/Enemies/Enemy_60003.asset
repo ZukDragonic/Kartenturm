@@ -17,9 +17,11 @@ MonoBehaviour:
   description: The rat on his 999 year journey to find cheese. Sadly, he has not
     found any,
   image: {fileID: 21300000, guid: 533e7c15fcee27945a2aa668f96e470f, type: 3}
+  animClip: {fileID: 7400000, guid: c44901da654cf554e9ccdb24d1ca2e2a, type: 2}
   speed: 30
   health: 300
   damageToHP: 1
   hitRadius: 0.2
   goldDrop: 10
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  attacks: []

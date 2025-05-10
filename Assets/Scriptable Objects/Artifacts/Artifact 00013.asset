@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 60013
   shopGold: 5000
-  actionGold: 0
+  actionGold: 10000
   archetype: 
   cardName: Midas' Touch
   description: Grants 5 gold per enemy hit

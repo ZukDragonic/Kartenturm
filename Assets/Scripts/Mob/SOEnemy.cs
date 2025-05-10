@@ -11,6 +11,7 @@ public class SOEnemy : ScriptableObject
     [TextArea(5, 3)]
     public string description;
     public Sprite image;
+    public AnimationClip animClip;
 
     public float speed;
     public float health;
@@ -21,4 +22,5 @@ public class SOEnemy : ScriptableObject
     public int goldDrop;
 
     public SOCE_Parent effects;
+    public EnemyAttack[] attacks;
 }

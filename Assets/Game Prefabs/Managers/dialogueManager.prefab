@@ -83,7 +83,7 @@ MonoBehaviour:
       image: {fileID: 0}
       imageSide: 0
     - name: God
-      textColor: {r: 0.84377843, g: 0.8490566, b: 0.38047346, a: 1}
+      textColor: {r: 0.98039216, g: 1, b: 0.2509804, a: 1}
       text: Yellow cards are towers. You can drag them to place down towers.
       image: {fileID: 0}
       imageSide: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
       image: {fileID: 0}
       imageSide: 0
     - name: God
-      textColor: {r: 0.84313726, g: 0.8509804, b: 0.38039216, a: 1}
+      textColor: {r: 0.98039216, g: 1, b: 0.2509804, a: 1}
       text: Similarly, towers can also be slotted. Be warned, they don't grant any
-        abilities can only give the "Stacked" tower half of their original stat.
+        abilities and can only give the "Stacked" tower half of their original stat.
       image: {fileID: 0}
       imageSide: 0
     - name: God
@@ -180,4 +180,57 @@ MonoBehaviour:
       imageSide: 0
     leftImage: {fileID: 0}
     rightimage: {fileID: 0}
+  - ID: 22003
+    dialogue:
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: So, you're probably thinking "What's this I'm seeing?"
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Worry not, for I, God, shall teach you again!
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: This, you see, is a shop. You can buy and sell your cards.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Be warned since not every shop offers the same shop.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: If you don't like the cards or the prices, you can refresh the shop for
+        the low LOW price of 1000.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: The prices, however, increases by 500 each time you refresh.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Mhm? Whose running the shop?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Your's truly, of course! I, God, am running the shop.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Be sure to buy as much as you can afford!
+      image: {fileID: 0}
+      imageSide: 0
+    leftImage: {fileID: 0}
+    rightimage: {fileID: 0}
   dialoguePrefab: {fileID: 4689816308881287988, guid: 2483f476f2534ae4f80a458007679cd5, type: 3}
+  dialogueBackground:
+  - {fileID: -637517291, guid: dc2461ac66182824a819deb86f91572a, type: 3}
+  - {fileID: 238393423, guid: dc2461ac66182824a819deb86f91572a, type: 3}

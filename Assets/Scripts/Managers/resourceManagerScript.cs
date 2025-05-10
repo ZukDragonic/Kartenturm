@@ -48,6 +48,11 @@ public class resourceManagerScript : MonoBehaviour
         }
     }
 
+    public void UpdateDeckCount(int value)
+    {
+        deckDisplay.updateDisplay(value);
+    }
+
     public void addTower(baseTowerScript tower)
     {
         aliveTower.Add(tower);
