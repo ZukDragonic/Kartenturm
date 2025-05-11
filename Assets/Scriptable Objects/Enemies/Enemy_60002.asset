@@ -20,7 +20,7 @@ MonoBehaviour:
   speed: 10
   health: 500
   damageToHP: 1
-  hitRadius: 0.2
+  hitRadius: 15
   goldDrop: 10
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
   attacks: []

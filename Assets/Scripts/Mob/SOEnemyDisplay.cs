@@ -54,7 +54,7 @@ public class SOEnemyDisplay : sumObj_Base
         health = enemy.health;
         hitRadius = enemy.hitRadius;
         effects = SOCE_Parent.CreateInstance(enemy.effects);
-        GetComponent<CircleCollider2D>().radius = hitRadius;
+        GetComponent<CircleCollider2D>().radius = hitRadius / 100;
 
         checkpointList = gameController.waveManager.checkpointList;
         checkpointNum = 0;
@@ -131,6 +131,7 @@ public class SOEnemyDisplay : sumObj_Base
                 if (aoc != null)
                 {
                     aoc["E_AnimAttack"] = currentAttack.anim;
+                    anim.Play("Temporary", 0);
                 }
             }
             
@@ -156,13 +157,19 @@ public class SOEnemyDisplay : sumObj_Base
                     foreach (baseTowerScript tower in affectedTowers)
                     {
                         currentAffectedTower = tower;
-                        currentAttack.appliedEffect.ApplyEffect(this);
+                        foreach (SOC_Effect effect in currentAttack.appliedEffect)
+                        {
+                            effect.ApplyEffect(this);
+                        }
                     }
                 }
             }
             else
             {
-                currentAttack.appliedEffect.ApplyEffect(this);
+                foreach (SOC_Effect effect in currentAttack.appliedEffect)
+                {
+                    effect.ApplyEffect(this);
+                }
             }
 
 
@@ -175,7 +182,10 @@ public class SOEnemyDisplay : sumObj_Base
 
             if (currentAttack.endEffect != null)
             {
-                currentAttack.endEffect.ApplyEffect(this);
+                foreach (SOC_Effect effect in currentAttack.endEffect)
+                {
+                    effect.ApplyEffect(this);
+                }
             }
 
             if (!currentAttack.moveDuringAttack)

@@ -208,8 +208,8 @@ public class EnemyAndDelay
 public class EnemyAttack
 {
     public SOETargettingBase target;
-    public SOC_Effect appliedEffect;
-    public SOC_Effect endEffect; //the effect that reverses the previous effect
+    public SOC_Effect[] appliedEffect;
+    public SOC_Effect[] endEffect; //the effect that reverses the previous effect
 
     public float startLag;
     public AnimationClip anim;

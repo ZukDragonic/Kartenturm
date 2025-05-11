@@ -85,5 +85,13 @@ MonoBehaviour:
     pitch: 1
     source: []
     type: 0
+  - ID: 30005
+    clips:
+    - {fileID: 8300000, guid: c0104020bbed9eb4e94af107813466c4, type: 3}
+    maxInstances: 1
+    baseVolume: 0.5
+    pitch: 1
+    source: []
+    type: 0
   SFXVolume: 1
   musicVolume: 1
