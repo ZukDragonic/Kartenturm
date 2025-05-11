@@ -11,43 +11,43 @@ public class SOCR_Effect : SOC_Requirement
     {
         requirement = false;
         
-        foreach (EffectAndReq EnR in script.currentEffect.passive)
+        foreach (EffectAndReq EnR in script.effects.passive)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.destroy)
+        foreach (EffectAndReq EnR in script.effects.destroy)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.summon)
+        foreach (EffectAndReq EnR in script.effects.summon)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.hit)
+        foreach (EffectAndReq EnR in script.effects.hit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.waveStart)
+        foreach (EffectAndReq EnR in script.effects.waveStart)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.waveEnd)
+        foreach (EffectAndReq EnR in script.effects.waveEnd)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.pPassive)
+        foreach (EffectAndReq EnR in script.effects.pPassive)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.pDestroy)
+        foreach (EffectAndReq EnR in script.effects.pDestroy)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.pHit)
+        foreach (EffectAndReq EnR in script.effects.pHit)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }
-        foreach (EffectAndReq EnR in script.currentEffect.pSummon)
+        foreach (EffectAndReq EnR in script.effects.pSummon)
         {
             FalseReqIfEffectNotSame(EnR.effect);
         }

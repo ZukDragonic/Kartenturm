@@ -207,12 +207,14 @@ public class EnemyAndDelay
 [System.Serializable]
 public class EnemyAttack
 {
+    public SOETargettingBase target;
     public SOC_Effect appliedEffect;
     public SOC_Effect endEffect; //the effect that reverses the previous effect
 
     public float startLag;
     public AnimationClip anim;
     public float endLag;
+    public bool moveDuringAttack;
     public float timeTillNextAttack;
 }
 [System.Serializable]

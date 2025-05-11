@@ -7,16 +7,16 @@ public class SOCE_Stun : SOC_Effect
 {
     public float duration;
 
-    public int frameCount = 0;
-    public float relativeDuration = 0;
+    private int frameCount = 0;
+    private float relativeDuration = 0;
 
-    public float OGEnemySpeed = 0;
+    private float OGValue = 0;
 
     public override void ApplyEEffect(SOEnemyDisplay script)
     {
-        if (OGEnemySpeed == 0)
+        if (OGValue == 0)
         {
-            OGEnemySpeed = script.speed;
+            OGValue = script.speed;
             script.speed = 0;
         }
 
@@ -31,7 +31,20 @@ public class SOCE_Stun : SOC_Effect
     }
     public override void ApplyTEffect(baseTowerScript script)
     {
+        if (OGValue == 0)
+        {
+            OGValue = script.secondsPerAttack;
+            script.secondsPerAttack = 65536;
+        }
 
+        relativeDuration = duration;
+
+        if (frameCount >= relativeDuration * Application.targetFrameRate)
+        {
+            script.secondsPerAttack = OGValue;
+        }
+
+        frameCount += gameControllerScript.instance.timeManager.currentTime;
     }
     public override void ApplyOSEffect(sumObj_Standalone script)
     {

@@ -10,8 +10,6 @@ public class baseTowerScript : sumObj_Base
     public List<SOCard> stackedCards;
     public SOCTower placeHolderCard;
 
-    public SOCE_Parent currentEffect;
-
     private tCosmeticScript cosmetic;
     public bool isSelected;
 
@@ -55,7 +53,7 @@ public class baseTowerScript : sumObj_Base
         pierce = baseCard.pierce;
         shotsPerAttack = baseCard.shotsPerAttack;
         secondsPerAttack = baseCard.secondsPerAttack;
-        currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
+        effects = SOCE_Parent.CreateInstance(baseCard.effects);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         multiplier = baseCard.multiplier;
 
@@ -79,7 +77,7 @@ public class baseTowerScript : sumObj_Base
         {
             return;
         }
-        currentEffect.PassiveEffect(this);
+        effects.PassiveEffect(this);
         //hover highlight, click hightlight, and gui open/close
         //if mouse is over the tower
         if (gameController.mainInput_Ray.hit == gameObject)
@@ -181,7 +179,7 @@ public class baseTowerScript : sumObj_Base
 
     public void changeStats()
     {
-        currentEffect = SOCE_Parent.CreateInstance(baseCard.effects);
+        effects = SOCE_Parent.CreateInstance(baseCard.effects);
         damage = baseCard.damage;
         pierce = baseCard.pierce;
         range = baseCard.range;
@@ -198,10 +196,10 @@ public class baseTowerScript : sumObj_Base
             if (slot as SOCArtifact != null)
             {
                 SOCArtifact artifactSlot = slot as SOCArtifact;
-                currentEffect = SOCE_Parent.MergeInstances(currentEffect, artifactSlot.addedEffects);
+                effects = SOCE_Parent.MergeInstances(effects, artifactSlot.addedEffects);
             }
         }
-        currentEffect.OnSummonEffect(this);
+        effects.OnSummonEffect(this);
         foreach (SOCard slot in stackedCards)
         {
             if (slot as SOCTower != null)
@@ -249,6 +247,11 @@ public class baseTowerScript : sumObj_Base
                 while (attackTimer >= secondsPerAttack)
                 {
                     attackTimer -= secondsPerAttack;
+                    if (attackTimer > secondsPerAttack)
+                    {
+                        attackTimer = secondsPerAttack / 2;
+                    }
+
 
                     for (int i = 0; i < shotsPerAttack; i++)
                     {
@@ -258,7 +261,7 @@ public class baseTowerScript : sumObj_Base
                         current.target = currentTarget.transform.position;
                         projectile.GetComponent<SpriteRenderer>().sprite = baseCard.projectileImage;
                     }
-                    currentEffect.OnHitEffect(this);
+                    effects.OnHitEffect(this);
 
                     //come back later and fix it to make projectile spawn in proper pos
                     //temp fix just have the remaining timer run off to next cycle
@@ -273,14 +276,14 @@ public class baseTowerScript : sumObj_Base
     }
     void OnDestroy()
     {
-        currentEffect.OnDestroyEffect(this);
+        effects.OnDestroyEffect(this);
     }
     public void waveStartAction()
     {
-        currentEffect.OnWaveStartEffect(this);
+        effects.OnWaveStartEffect(this);
     }
     public void waveEndAction()
     {
-        currentEffect.OnWaveEndEffect(this);
+        effects.OnWaveEndEffect(this);
     }
 }

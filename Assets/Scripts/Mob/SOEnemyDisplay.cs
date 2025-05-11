@@ -29,6 +29,8 @@ public class SOEnemyDisplay : sumObj_Base
     public bool reachedEnd;
 
     private float attackTimer;
+    private List<baseTowerScript> affectedTowers;
+    public baseTowerScript currentAffectedTower;
 
     // Start is called before the first frame update
     void Start()
@@ -132,6 +134,11 @@ public class SOEnemyDisplay : sumObj_Base
                 }
             }
             
+            if (!currentAttack.moveDuringAttack)
+            {
+                speed = 0;
+            }
+
             while (attackTimer < currentAttack.startLag)
             {
                 attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
@@ -139,7 +146,24 @@ public class SOEnemyDisplay : sumObj_Base
             }
             attackTimer -= currentAttack.startLag;
 
-            currentAttack.appliedEffect.ApplyEffect(this);
+
+            affectedTowers = currentAttack.target.ChangeTargetting(this);
+
+            if (affectedTowers != null || currentAttack.target != null)
+            {
+                if (affectedTowers.Count > 0)
+                {
+                    foreach (baseTowerScript tower in affectedTowers)
+                    {
+                        currentAffectedTower = tower;
+                        currentAttack.appliedEffect.ApplyEffect(this);
+                    }
+                }
+            }
+            else
+            {
+                currentAttack.appliedEffect.ApplyEffect(this);
+            }
 
 
             while (attackTimer < currentAttack.endLag)
@@ -152,6 +176,11 @@ public class SOEnemyDisplay : sumObj_Base
             if (currentAttack.endEffect != null)
             {
                 currentAttack.endEffect.ApplyEffect(this);
+            }
+
+            if (!currentAttack.moveDuringAttack)
+            {
+                speed = enemy.speed;
             }
 
             while (attackTimer < currentAttack.timeTillNextAttack)

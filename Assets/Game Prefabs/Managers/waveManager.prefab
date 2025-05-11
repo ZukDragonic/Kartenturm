@@ -293,6 +293,77 @@ MonoBehaviour:
     - enemyID: 60004
       delay: 0.1
       repeat: 9
+  - ID: 11016
+    endGold: 300
+    waveNum: 16
+    spawnOrder:
+    - enemyID: 60005
+      delay: 0
+      repeat: 1
+    - enemyID: 60003
+      delay: 0.25
+      repeat: 5
+    - enemyID: 60005
+      delay: 2
+      repeat: 1
+    - enemyID: 60003
+      delay: 0.25
+      repeat: 5
+    - enemyID: 60005
+      delay: 2
+      repeat: 1
+    - enemyID: 60003
+      delay: 0.25
+      repeat: 5
+  - ID: 11017
+    endGold: 350
+    waveNum: 17
+    spawnOrder:
+    - enemyID: 60004
+      delay: 0.25
+      repeat: 10
+    - enemyID: 60005
+      delay: 0
+      repeat: 1
+    - enemyID: 60004
+      delay: 0.25
+      repeat: 10
+  - ID: 11018
+    endGold: 350
+    waveNum: 18
+    spawnOrder:
+    - enemyID: 60001
+      delay: 0.25
+      repeat: 32
+    - enemyID: 60002
+      delay: 0.5
+      repeat: 16
+    - enemyID: 60003
+      delay: 0.75
+      repeat: 8
+    - enemyID: 60004
+      delay: 1
+      repeat: 4
+    - enemyID: 60005
+      delay: 1.25
+      repeat: 2
+  - ID: 11019
+    endGold: 250
+    waveNum: 19
+    spawnOrder:
+    - enemyID: 60005
+      delay: 2
+      repeat: 5
+  - ID: 11020
+    endGold: 800
+    waveNum: 20
+    spawnOrder:
+    - enemyID: 60006
+      delay: 0
+      repeat: 1
+    - enemyID: 60005
+      delay: 1
+      repeat: 3
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []
   aliveEnemies: []

@@ -16,12 +16,19 @@ MonoBehaviour:
   Enemyname: Bear
   description: On his way to his hiberation home, he was kidnapped by some bandits.
     Fortunately, he has enough food in his new hiberation home.
-  image: {fileID: 21300000, guid: 6b7a7241b5ae56648b948e508a4ab06e, type: 3}
-  animClip: {fileID: 7400000, guid: c8649b1355683744b8440d00844894ae, type: 2}
+  image: {fileID: 21300000, guid: ddd16241dcf7be844ac076f9833f5b10, type: 3}
+  animClip: {fileID: 0}
   speed: 10
   health: 8000
-  damageToHP: 1
+  damageToHP: 2
   hitRadius: 0.2
   goldDrop: 100
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
-  attacks: []
+  attacks:
+  - target: {fileID: 11400000, guid: 7fdda94c9d72262498dd1f1d78b88167, type: 2}
+    appliedEffect: {fileID: 11400000, guid: b389da8fb53b96246bfd5d3b88812d9e, type: 2}
+    endEffect: {fileID: 0}
+    startLag: 0.25
+    anim: {fileID: 0}
+    endLag: 2
+    timeTillNextAttack: 15

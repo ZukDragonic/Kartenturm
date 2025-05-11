@@ -57,43 +57,43 @@ public class towerMenuDisplay : MonoBehaviour
             Destroy(effectDisplay.GetChild(i).gameObject);
         }
 
-        foreach (EffectAndReq EnR in parentTower.currentEffect.passive)
+        foreach (EffectAndReq EnR in parentTower.effects.passive)
         {
             CreateEffectDisplay(EnR.effect, EffectType.Passive);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.destroy)
+        foreach (EffectAndReq EnR in parentTower.effects.destroy)
         {
             CreateEffectDisplay(EnR.effect, EffectType.Destroy);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.summon)
+        foreach (EffectAndReq EnR in parentTower.effects.summon)
         {
             CreateEffectDisplay(EnR.effect, EffectType.Summon);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.hit)
+        foreach (EffectAndReq EnR in parentTower.effects.hit)
         {
             CreateEffectDisplay(EnR.effect, EffectType.Hit);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.waveStart)
+        foreach (EffectAndReq EnR in parentTower.effects.waveStart)
         {
             CreateEffectDisplay(EnR.effect, EffectType.WaveStart);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.waveEnd)
+        foreach (EffectAndReq EnR in parentTower.effects.waveEnd)
         {
             CreateEffectDisplay(EnR.effect, EffectType.WaveEnd);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.pPassive)
+        foreach (EffectAndReq EnR in parentTower.effects.pPassive)
         {
             CreateEffectDisplay(EnR.effect, EffectType.PPassive);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.pDestroy)
+        foreach (EffectAndReq EnR in parentTower.effects.pDestroy)
         {
             CreateEffectDisplay(EnR.effect, EffectType.PDestroy);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.pHit)
+        foreach (EffectAndReq EnR in parentTower.effects.pHit)
         {
             CreateEffectDisplay(EnR.effect, EffectType.PHit);
         }
-        foreach (EffectAndReq EnR in parentTower.currentEffect.pSummon)
+        foreach (EffectAndReq EnR in parentTower.effects.pSummon)
         {
             CreateEffectDisplay(EnR.effect, EffectType.PSummon);
         }
