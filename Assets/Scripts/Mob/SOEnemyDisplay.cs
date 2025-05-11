@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,7 @@ public class SOEnemyDisplay : sumObj_Base
 
     public SpriteRenderer sR;
     public Animator anim;
+    private AnimatorOverrideController aoc;
 
     public float speed;
     public float health;
@@ -26,6 +28,8 @@ public class SOEnemyDisplay : sumObj_Base
 
     public bool reachedEnd;
 
+    private float attackTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +39,8 @@ public class SOEnemyDisplay : sumObj_Base
 
         if (enemy.animClip != null)
         {
-            AnimatorOverrideController aoc = new AnimatorOverrideController(anim.runtimeAnimatorController);
-            aoc["E_AnimBase"] = enemy.animClip;
+            aoc = new AnimatorOverrideController(anim.runtimeAnimatorController);
+            aoc["E_AnimMove"] = enemy.animClip;
             anim.runtimeAnimatorController = aoc;
         }
         else
@@ -57,6 +61,8 @@ public class SOEnemyDisplay : sumObj_Base
         sliderDisplay.updateDisplay(health, enemy.health);
 
         effects.OnSummonEffect(this);
+
+        StartCoroutine(AttackCycle());
     }
 
     void Update()
@@ -104,6 +110,56 @@ public class SOEnemyDisplay : sumObj_Base
             gameController.waveManager.enemyDied();
             gameController.resourceManager.changeGold(enemy.goldDrop);
             gameController.resourceManager.removeEnemy(this);
+        }
+    }
+
+    IEnumerator AttackCycle()
+    {
+        yield return null;
+
+        bool hasAttack = enemy.attacks.Length > 0;
+        attackTimer = 0;
+        //attackTimer increases relative to the fake frame rate
+        while (hasAttack)
+        {
+            EnemyAttack currentAttack = enemy.attacks[Random.Range(0, enemy.attacks.Length)];
+
+            if (currentAttack.anim != null)
+            {
+                if (aoc != null)
+                {
+                    aoc["E_AnimAttack"] = currentAttack.anim;
+                }
+            }
+            
+            while (attackTimer < currentAttack.startLag)
+            {
+                attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
+                yield return null;
+            }
+            attackTimer -= currentAttack.startLag;
+
+            currentAttack.appliedEffect.ApplyEffect(this);
+
+
+            while (attackTimer < currentAttack.endLag)
+            {
+                attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
+                yield return null;
+            }
+            attackTimer -= currentAttack.endLag;
+
+            if (currentAttack.endEffect != null)
+            {
+                currentAttack.endEffect.ApplyEffect(this);
+            }
+
+            while (attackTimer < currentAttack.timeTillNextAttack)
+            {
+                attackTimer += 1f / (float)Application.targetFrameRate * (float)gameController.timeManager.currentTime;
+                yield return null;
+            }
+            attackTimer -= currentAttack.timeTillNextAttack;
         }
     }
 

@@ -6,6 +6,11 @@ public class SOCE_MoveDir : SOC_Effect
 {
     public Vector3 dir;
     public float speed;
+
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        script.speed = script.enemy.speed + speed;
+    }
     public override void ApplyOSEffect(sumObj_Standalone script)
     {
         Debug.Log("TBA");

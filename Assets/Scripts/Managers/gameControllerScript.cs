@@ -208,6 +208,7 @@ public class EnemyAndDelay
 public class EnemyAttack
 {
     public SOC_Effect appliedEffect;
+    public SOC_Effect endEffect; //the effect that reverses the previous effect
 
     public float startLag;
     public AnimationClip anim;
@@ -329,6 +330,7 @@ public class gameControllerScript : MonoBehaviour
             {
                 switch (ID)
                 {
+                    //spawns at the end of the current wave ID
                     case 11000:
                         dialogueManager.CreateDialogue(22001);
                         break;
@@ -337,6 +339,9 @@ public class gameControllerScript : MonoBehaviour
                         break;
                     case 11005:
                         dialogueManager.CreateDialogue(22003);
+                        break;
+                    case 11013:
+                        dialogueManager.CreateDialogue(22004);
                         break;
                     default:
                         break;

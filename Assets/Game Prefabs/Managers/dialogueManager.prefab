@@ -199,7 +199,7 @@ MonoBehaviour:
       imageSide: 0
     - name: God
       textColor: {r: 0, g: 0, b: 0, a: 1}
-      text: Be warned since not every shop offers the same shop.
+      text: Be warned since not every shop offers the same price.
       image: {fileID: 0}
       imageSide: 0
     - name: God
@@ -226,6 +226,38 @@ MonoBehaviour:
     - name: God
       textColor: {r: 0, g: 0, b: 0, a: 1}
       text: Be sure to buy as much as you can afford!
+      image: {fileID: 0}
+      imageSide: 0
+    leftImage: {fileID: 0}
+    rightimage: {fileID: 0}
+  - ID: 22004
+    dialogue:
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Woah! Did you see that boar?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: It suddenly started charging, did it not?
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Well, just like how certain towers have abilities and artifacts can add
+        abilities, so do the enemies.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: The boar, for instance, can charge every so often. Quite a simple ability
+        if I do say so myself.
+      image: {fileID: 0}
+      imageSide: 0
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Watch out for different abilities! Some might even be... a game changer
+        as one might say.
       image: {fileID: 0}
       imageSide: 0
     leftImage: {fileID: 0}
