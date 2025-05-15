@@ -8,6 +8,9 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler, IPointerExit
     private CCosmeticScript cosmetic;
     public cardPickerScript parent;
 
+    public bool placeCardInDeck;
+    public bool deleteCardFromDeck;
+
     void Start()
     {
         cosmetic = GetComponent<CCosmeticScript>();
@@ -15,7 +18,20 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler, IPointerExit
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        parent.placeSelectedCardInDeck(gameObject.GetComponent<SOCardDisplayScript>().card);
+        SOCard selectedCard = gameObject.GetComponent<SOCardDisplayScript>().card;
+        if (placeCardInDeck)
+        {
+            gameControllerScript.instance.deckManager.shuffleCardInDeck(selectedCard);
+        }
+        else
+        {
+            gameControllerScript.instance.deckManager.AddCardToHand(selectedCard);
+        }
+
+        if (deleteCardFromDeck)
+        {
+            gameControllerScript.instance.deckManager.drawDeck.Remove(selectedCard);
+        }
         Destroy(parent.gameObject);
     }
 

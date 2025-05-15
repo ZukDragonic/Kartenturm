@@ -26,21 +26,42 @@ public class cardPickerScript : MonoBehaviour
         }
     }
 
-    public void displayPickableCard(int options)
+    public void DisplayPickableCard(SOCard[] cardPool, int optionsNum, bool placeInDeck, bool deleteCardFromDeck)
     {
+        allCardList = cardPool;
+
         gameController = gameControllerScript.instance;
-        allCardList = gameController.deckManager.allCards;
 
-        for (int i = 0; i < options; i++)
+        if (optionsNum <= 0)
         {
-            GameObject currentOption = Instantiate(cardOptionPrefab, gameObject.transform);
-            currentOption.GetComponent<cardOptionScript>().parent = this;
-            currentOption.GetComponent<SOCardDisplayScript>().card = allCardList[Random.Range(0, allCardList.Length)];
+            optionsNum = cardPool.Length;
         }
-    }
 
-    public void placeSelectedCardInDeck(SOCard card)
-    {
-        gameController.deckManager.shuffleCardInDeck(card);
+        if (!deleteCardFromDeck)
+        {
+            //if it doesn't remove card from deck, it is random
+            for (int i = 0; i < optionsNum; i++)
+            {
+                GameObject currentOption = Instantiate(cardOptionPrefab, gameObject.transform);
+                cardOptionScript currentOptionScript = currentOption.GetComponent<cardOptionScript>();
+                currentOptionScript.parent = this;
+                currentOptionScript.placeCardInDeck = placeInDeck;
+                currentOptionScript.deleteCardFromDeck = deleteCardFromDeck;
+                currentOption.GetComponent<SOCardDisplayScript>().card = cardPool[Random.Range(0, cardPool.Length)];
+            }
+        }
+        else
+        {
+            //if it removes card from deck, then it displays the top cards
+            for (int i = 0; i < optionsNum; i++)
+            {
+                GameObject currentOption = Instantiate(cardOptionPrefab, gameObject.transform);
+                cardOptionScript currentOptionScript = currentOption.GetComponent<cardOptionScript>();
+                currentOptionScript.parent = this;
+                currentOptionScript.placeCardInDeck = placeInDeck;
+                currentOptionScript.deleteCardFromDeck = deleteCardFromDeck;
+                currentOption.GetComponent<SOCardDisplayScript>().card = cardPool[i];
+            }
+        }
     }
 }

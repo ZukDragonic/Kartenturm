@@ -501,6 +501,7 @@ public class gameControllerScript : MonoBehaviour
         deckManager.drawCard(3);
 
         FlagTrigger(20002);
+        deckManager.openShop();
 
         FlagTrigger(11000);
     }

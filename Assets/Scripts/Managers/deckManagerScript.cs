@@ -13,6 +13,7 @@ public class deckManagerScript : MonoBehaviour
     public List<SOCard> drawDeck;
 
     public GameObject shop;
+    public GameObject cardPickerPrefab;
 
     public GameObject TowerCardPrefab;
     public GameObject SpellCardPrefab;
@@ -74,6 +75,18 @@ public class deckManagerScript : MonoBehaviour
         current.createShop(-1);
         gameController.UpdateGameState(GameState.ShopMenu);
         gameController.timeManager.pauseTime();
+    }
+
+    public void SearchCard(int cardsSearched)
+    {
+        if (gameController.allCanvas[1].transform.childCount > 0)
+        {
+            //DestroyImmediate destroy on same frame
+            DestroyImmediate(gameController.allCanvas[1].transform.GetChild(0).gameObject);
+        }
+
+        GameObject current = Instantiate(cardPickerPrefab, gameController.allCanvas[2].transform);
+        current.GetComponent<cardPickerScript>().DisplayPickableCard(drawDeck.ToArray(), -1, false, true);
     }
 
     public void drawCard(int drawNum)

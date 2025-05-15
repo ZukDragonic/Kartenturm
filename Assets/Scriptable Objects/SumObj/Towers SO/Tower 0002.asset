@@ -17,7 +17,7 @@ MonoBehaviour:
   actionGold: 150
   archetype: 
   cardName: Mage
-  description: A man of magic. He knows none but one spell. Magic missle.
+  description: A man of magic. His mightest, and only, spell is magic missle.
   image: {fileID: 21300000, guid: 8dd42f6028ad7b346940742fa953155f, type: 3}
   shotsPerAttack: 1
   damage: 10

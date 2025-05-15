@@ -148,19 +148,15 @@ public class SOEnemyDisplay : sumObj_Base
             attackTimer -= currentAttack.startLag;
 
 
-            affectedTowers = currentAttack.target.ChangeTargetting(this);
-
-            if (affectedTowers != null || currentAttack.target != null)
+            if (currentAttack.target != null)
             {
-                if (affectedTowers.Count > 0)
+                affectedTowers = currentAttack.target.ChangeTargetting(this);
+                foreach (baseTowerScript tower in affectedTowers)
                 {
-                    foreach (baseTowerScript tower in affectedTowers)
+                    currentAffectedTower = tower;
+                    foreach (SOC_Effect effect in currentAttack.appliedEffect)
                     {
-                        currentAffectedTower = tower;
-                        foreach (SOC_Effect effect in currentAttack.appliedEffect)
-                        {
-                            effect.ApplyEffect(this);
-                        }
+                        effect.ApplyEffect(this);
                     }
                 }
             }
