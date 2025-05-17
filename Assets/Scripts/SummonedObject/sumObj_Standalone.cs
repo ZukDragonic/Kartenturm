@@ -21,7 +21,7 @@ public class sumObj_Standalone : sumObj_Base
     public SOEnemyDisplay hitEnemy;
     void Start()
     {
-        hitbox.radius = baseSumObj.hitRadius / 2;
+        hitbox.radius = (float)baseSumObj.hitRadius / 2f;
         image.sprite = baseSumObj.image;
         damage = baseSumObj.damage;
         pierce = baseSumObj.pierce;
@@ -33,8 +33,8 @@ public class sumObj_Standalone : sumObj_Base
 
         if (parentProjectile != null)
         {
-            damage = parentProjectile.damage;
-            pierce = parentProjectile.pierce;
+            damage += parentProjectile.damage;
+            pierce += parentProjectile.pierce;
             effects = SOCE_Parent.MergeInstances(effects, parentProjectile.effects);
         }
         effects = SOCE_Parent.SwapTowerAndSumobj(effects);

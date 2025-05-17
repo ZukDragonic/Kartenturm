@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SumObjS_Aoe
   m_EditorClassIdentifier: 
   ID: 7000
+  damage: 10000
+  pierce: 20
   effect: {fileID: 11400000, guid: c83b0f5d46c059c44ab2ed55b63aa9d6, type: 2}
   hitRadius: 1
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 6cc5103edc9f0dd4f80e8274c73dfeac, type: 3}
   animation: {fileID: 0}

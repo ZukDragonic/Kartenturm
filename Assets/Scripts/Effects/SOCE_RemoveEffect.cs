@@ -8,6 +8,94 @@ public class SOCE_RemoveEffect : SOC_Effect
 {
     public SOC_Effect checkedEffect;
     //req starts as false, returns true if even 1 instance of the effect is found
+
+    public bool appliedToHit;
+
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        sumObj_Base checkedScript;
+        if (appliedToHit)
+        {
+            checkedScript = script.currentAffectedTower;
+        }
+        else
+        {
+            checkedScript = script;
+        }
+
+
+        foreach (EffectAndReq EnR in checkedScript.effects.passive)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.passive = RemoveItemFromArray(checkedScript.effects.passive, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.destroy)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.destroy = RemoveItemFromArray(checkedScript.effects.destroy, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.summon)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.summon = RemoveItemFromArray(checkedScript.effects.summon, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.hit)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.hit = RemoveItemFromArray(checkedScript.effects.hit, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.waveStart)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.waveStart = RemoveItemFromArray(checkedScript.effects.waveStart, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.waveEnd)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.waveEnd = RemoveItemFromArray(checkedScript.effects.waveEnd, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.pPassive)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.pPassive = RemoveItemFromArray(checkedScript.effects.pPassive, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.pDestroy)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.pDestroy = RemoveItemFromArray(checkedScript.effects.pDestroy, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.pHit)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.pHit = RemoveItemFromArray(checkedScript.effects.pHit, EnR);
+            }
+        }
+        foreach (EffectAndReq EnR in checkedScript.effects.pSummon)
+        {
+            if (CheckSameEffect(EnR.effect))
+            {
+                checkedScript.effects.pSummon = RemoveItemFromArray(checkedScript.effects.pSummon, EnR);
+            }
+        }
+    }
+
     public override void ApplyTEffect(baseTowerScript script)
     {
         foreach (EffectAndReq EnR in script.effects.passive)
@@ -83,147 +171,167 @@ public class SOCE_RemoveEffect : SOC_Effect
     }
     public override void ApplyOSEffect(sumObj_Standalone script)
     {
-        foreach (EffectAndReq EnR in script.effects.passive)
+        sumObj_Base checkedScript;
+        if (appliedToHit)
+        {
+            checkedScript = script.hitEnemy;
+        }
+        else
+        {
+            checkedScript = script;
+        }
+
+        foreach (EffectAndReq EnR in checkedScript.effects.passive)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.passive =  RemoveItemFromArray(script.effects.passive, EnR);
+                checkedScript.effects.passive =  RemoveItemFromArray(checkedScript.effects.passive, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.destroy)
+        foreach (EffectAndReq EnR in checkedScript.effects.destroy)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.destroy =  RemoveItemFromArray(script.effects.destroy, EnR);
+                checkedScript.effects.destroy =  RemoveItemFromArray(checkedScript.effects.destroy, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.summon)
+        foreach (EffectAndReq EnR in checkedScript.effects.summon)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.summon =  RemoveItemFromArray(script.effects.summon, EnR);
+                checkedScript.effects.summon =  RemoveItemFromArray(checkedScript.effects.summon, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.hit)
+        foreach (EffectAndReq EnR in checkedScript.effects.hit)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.hit = RemoveItemFromArray(script.effects.hit, EnR);
+                checkedScript.effects.hit = RemoveItemFromArray(checkedScript.effects.hit, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.waveStart)
+        foreach (EffectAndReq EnR in checkedScript.effects.waveStart)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.waveStart =  RemoveItemFromArray(script.effects.waveStart, EnR);
+                checkedScript.effects.waveStart =  RemoveItemFromArray(checkedScript.effects.waveStart, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.waveEnd)
+        foreach (EffectAndReq EnR in checkedScript.effects.waveEnd)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.waveEnd =  RemoveItemFromArray(script.effects.waveEnd, EnR);
+                checkedScript.effects.waveEnd =  RemoveItemFromArray(checkedScript.effects.waveEnd, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pPassive)
+        foreach (EffectAndReq EnR in checkedScript.effects.pPassive)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pPassive =  RemoveItemFromArray(script.effects.pPassive, EnR);
+                checkedScript.effects.pPassive =  RemoveItemFromArray(checkedScript.effects.pPassive, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pDestroy)
+        foreach (EffectAndReq EnR in checkedScript.effects.pDestroy)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pDestroy = RemoveItemFromArray(script.effects.pDestroy, EnR);
+                checkedScript.effects.pDestroy = RemoveItemFromArray(checkedScript.effects.pDestroy, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pHit)
+        foreach (EffectAndReq EnR in checkedScript.effects.pHit)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pHit =  RemoveItemFromArray(script.effects.pHit, EnR);
+                checkedScript.effects.pHit =  RemoveItemFromArray(checkedScript.effects.pHit, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pSummon)
+        foreach (EffectAndReq EnR in checkedScript.effects.pSummon)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pSummon =  RemoveItemFromArray(script.effects.pSummon, EnR);
+                checkedScript.effects.pSummon =  RemoveItemFromArray(checkedScript.effects.pSummon, EnR);
             }
         }
     }
     public override void ApplyOPEffect(sumObj_Projectile script)
     {
-        foreach (EffectAndReq EnR in script.effects.passive)
+        sumObj_Base checkedScript;
+        if (appliedToHit)
+        {
+            checkedScript = script.hitEnemy;
+        }
+        else
+        {
+            checkedScript = script;
+        }
+
+        foreach (EffectAndReq EnR in checkedScript.effects.passive)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.passive = RemoveItemFromArray(script.effects.passive, EnR);
+                checkedScript.effects.passive = RemoveItemFromArray(checkedScript.effects.passive, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.destroy)
+        foreach (EffectAndReq EnR in checkedScript.effects.destroy)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.destroy = RemoveItemFromArray(script.effects.destroy, EnR);
+                checkedScript.effects.destroy = RemoveItemFromArray(checkedScript.effects.destroy, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.summon)
+        foreach (EffectAndReq EnR in checkedScript.effects.summon)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.summon = RemoveItemFromArray(script.effects.summon, EnR);
+                checkedScript.effects.summon = RemoveItemFromArray(checkedScript.effects.summon, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.hit)
+        foreach (EffectAndReq EnR in checkedScript.effects.hit)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.hit = RemoveItemFromArray(script.effects.hit, EnR);
+                checkedScript.effects.hit = RemoveItemFromArray(checkedScript.effects.hit, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.waveStart)
+        foreach (EffectAndReq EnR in checkedScript.effects.waveStart)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.waveStart = RemoveItemFromArray(script.effects.waveStart, EnR);
+                checkedScript.effects.waveStart = RemoveItemFromArray(checkedScript.effects.waveStart, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.waveEnd)
+        foreach (EffectAndReq EnR in checkedScript.effects.waveEnd)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.waveEnd = RemoveItemFromArray(script.effects.waveEnd, EnR);
+                checkedScript.effects.waveEnd = RemoveItemFromArray(checkedScript.effects.waveEnd, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pPassive)
+        foreach (EffectAndReq EnR in checkedScript.effects.pPassive)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pPassive = RemoveItemFromArray(script.effects.pPassive, EnR);
+                checkedScript.effects.pPassive = RemoveItemFromArray(checkedScript.effects.pPassive, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pDestroy)
+        foreach (EffectAndReq EnR in checkedScript.effects.pDestroy)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pDestroy = RemoveItemFromArray(script.effects.pDestroy, EnR);
+                checkedScript.effects.pDestroy = RemoveItemFromArray(checkedScript.effects.pDestroy, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pHit)
+        foreach (EffectAndReq EnR in checkedScript.effects.pHit)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pHit = RemoveItemFromArray(script.effects.pHit, EnR);
+                checkedScript.effects.pHit = RemoveItemFromArray(checkedScript.effects.pHit, EnR);
             }
         }
-        foreach (EffectAndReq EnR in script.effects.pSummon)
+        foreach (EffectAndReq EnR in checkedScript.effects.pSummon)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.pSummon = RemoveItemFromArray(script.effects.pSummon, EnR);
+                checkedScript.effects.pSummon = RemoveItemFromArray(checkedScript.effects.pSummon, EnR);
             }
         }
     }

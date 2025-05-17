@@ -27,6 +27,7 @@ MonoBehaviour:
   attacks:
   - target: {fileID: 11400000, guid: 7fdda94c9d72262498dd1f1d78b88167, type: 2}
     appliedEffect:
+    - {fileID: 11400000, guid: a2557528207ae2648a898ab8d9f2a738, type: 2}
     - {fileID: 11400000, guid: b389da8fb53b96246bfd5d3b88812d9e, type: 2}
     endEffect: []
     startLag: 0.5

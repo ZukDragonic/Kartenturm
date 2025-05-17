@@ -214,6 +214,55 @@ public class baseTowerScript : sumObj_Base
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
     }
 
+    public float CheckSummonStat(StatType checkedStat)
+    {
+        float returnedStat;
+
+        SOCE_Parent tempEffects = effects;
+        float tempDamage = damage;
+        float tempPierce = pierce;
+        float tempRange = range;
+        float tempMultiplier = multiplier;
+        float tempSecondsPerAttack = secondsPerAttack;
+
+        changeStats();
+
+        switch (checkedStat)
+        {
+            case StatType.Damage:
+                returnedStat = tempDamage;
+                break;
+            case StatType.Pierce:
+                returnedStat = tempPierce;
+                break;
+            case StatType.Range:
+                returnedStat = tempRange;
+                break;
+            case StatType.Growth:
+                returnedStat = tempMultiplier;
+                break;
+            case StatType.SPA:
+                returnedStat = tempSecondsPerAttack;
+                break;
+            default:
+                returnedStat = 0;
+                break;
+        }
+
+        Destroy(effects);
+        effects = tempEffects;
+        damage = (int)tempDamage;
+        pierce = (int)tempPierce;
+        range = tempRange;
+        multiplier = tempMultiplier;
+        secondsPerAttack = tempSecondsPerAttack;
+
+        cosmetic.rangeDisplayUpdate(false, range);
+        transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
+
+        return returnedStat;
+    }
+
     public void changeTargetting(int change)
     {
         targetChange = change;

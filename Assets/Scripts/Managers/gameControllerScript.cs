@@ -502,6 +502,6 @@ public class gameControllerScript : MonoBehaviour
 
         FlagTrigger(20002);
 
-        FlagTrigger(11000);
+        FlagTrigger(11019);
     }
 }
