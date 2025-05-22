@@ -13,6 +13,14 @@ public class timeManagerScript : MonoBehaviour
     public int currentFps;
     public float secondsPerFrame;
 
+    public void StartAction()
+    {
+        if (GameObject.Find("Time") != null)
+        {
+            timeButton = GameObject.Find("Time").GetComponent<changeImageScript>();
+        }
+    }
+
     public void changeTime()
     {
         if (gameControllerScript.instance.state == GameState.BetweenWave)

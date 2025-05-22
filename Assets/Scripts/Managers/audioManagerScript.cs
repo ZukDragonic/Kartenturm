@@ -18,7 +18,7 @@ public class audioManagerScript : MonoBehaviour
 
     private bool isInitialized = false;
 
-    void Start()
+    void Awake()
     {
         InitalizeAudioSource();
     }

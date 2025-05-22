@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class deckManagerScript : MonoBehaviour
@@ -10,7 +11,10 @@ public class deckManagerScript : MonoBehaviour
     public SOCSpell[] allSpells;
     [HideInInspector]
     public SOCard[] allCards;
+    public SOCard[] startDeck;
+    [HideInInspector]
     public List<SOCard> drawDeck;
+   
 
     public GameObject shop;
     public GameObject cardPickerPrefab;
@@ -22,7 +26,7 @@ public class deckManagerScript : MonoBehaviour
 
     public int shopWave;
 
-    private void Start()
+    public void StartAction()
     {
         List<SOCard> tempCards = new List<SOCard>();
         foreach (SOCard card in allTowers)
@@ -38,9 +42,11 @@ public class deckManagerScript : MonoBehaviour
             tempCards.Add(card);
         }
         allCards = tempCards.ToArray();
+        drawDeck = startDeck.ToList();
         gameController = gameControllerScript.instance;
         playerHand = GameObject.Find("playerHand").gameObject;
     }
+
     public void shuffleDeck()
     {
         int drawCount = drawDeck.Count;

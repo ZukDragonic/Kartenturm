@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managerCalled: 1
-  voidCalled: ResetGame
-  IDCalled: -1
+  voidCalled: FlagTrigger
+  IDCalled: 23000
 --- !u!114 &4214290372160796552
 MonoBehaviour:
   m_ObjectHideFlags: 0

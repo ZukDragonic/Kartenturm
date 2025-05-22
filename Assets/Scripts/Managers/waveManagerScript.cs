@@ -21,14 +21,21 @@ public class waveManagerScript : MonoBehaviour
 
     public List<SOEnemyDisplay> aliveEnemies;
     //all maps must be 25x18
-    void Start()
+
+    public void StartAction()
     {
         gameController = gameControllerScript.instance;
 
+        StopAllCoroutines();
+
         checkpointParent = GameObject.Find("Checkpoint Parent");
-        for (int i = 0; i < checkpointParent.transform.childCount; i++)
+        if (checkpointParent != null)
         {
-            checkpointList.Add(checkpointParent.transform.GetChild(i).gameObject);
+            checkpointList = new List<GameObject>();
+            for (int i = 0; i < checkpointParent.transform.childCount; i++)
+            {
+                checkpointList.Add(checkpointParent.transform.GetChild(i).gameObject);
+            }
         }
     }
 

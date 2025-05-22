@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.Timeline;
 
 [System.Serializable]
@@ -96,6 +94,7 @@ public class Flag
         return current;
     }
 }
+
 [System.Serializable]
 public class NewFlagDic
 {
@@ -119,6 +118,13 @@ public class MainInput_Ray
     public Ray ray;
     public GameObject hit;
     public bool hittingSomething;
+}
+[System.Serializable]
+public class SceneNameAndID
+{
+    public int ID;
+
+    public string sceneName;
 }
 [System.Serializable]
 public class StateMask
@@ -264,6 +270,7 @@ public class gameControllerScript : MonoBehaviour
     public timelineManagerScript timelineManager;
     public audioManagerScript audioManager;
     public dialogueManagerScript dialogueManager;
+    public sceneManagerScript sceneManager;
 
     public MainInput_Ray mainInput_Ray;
     [SerializeField]
@@ -327,6 +334,10 @@ public class gameControllerScript : MonoBehaviour
             {
                 deckManager.openShop();
             }
+            if (waveManager.findWave(ID + 1).waveNum == 1)
+            {
+                deckManager.drawCard(3);
+            }
 
             if (FlagInfo(20002))
             {
@@ -354,6 +365,19 @@ public class gameControllerScript : MonoBehaviour
         if (ID > 20000 && ID < 21000)
         {
             flagDict[ID] = !flagDict[ID];
+        }
+        if (ID >= 23000 && ID < 24000)
+        {
+            //sceneManager stuff
+            switch(ID)
+            {
+                case 23000:
+                    sceneManager.LoadNewScene(23000, 11000);
+                    UpdateGameState(GameState.BetweenWave);
+                    break;
+                default:
+                    break;
+            }
         }
         //each event an ID would trigger, use for really important events
         switch (ID)
@@ -475,6 +499,7 @@ public class gameControllerScript : MonoBehaviour
         timelineManager = GameObject.Find("timelineManager").GetComponent<timelineManagerScript>();
         audioManager = GameObject.Find("audioManager").GetComponent<audioManagerScript>();
         dialogueManager = GameObject.Find("dialogueManager").GetComponent<dialogueManagerScript>();
+        sceneManager = GameObject.Find("sceneManager").GetComponent<sceneManagerScript>();
     }
 
     void findCanvas()
@@ -491,6 +516,7 @@ public class gameControllerScript : MonoBehaviour
     IEnumerator startAfterLoad()
     {
         yield return null;
+        InitiateManagerStart();
         findCanvas();
 
         UpdateGameState(GameState.BetweenWave);
@@ -498,10 +524,18 @@ public class gameControllerScript : MonoBehaviour
         timeManager.resetTime();
         timeManager.ChangeFps(60);
         deckManager.shuffleDeck();
-        deckManager.drawCard(3);
 
         FlagTrigger(20002);
 
         FlagTrigger(11019);
+    }
+
+    public void InitiateManagerStart()
+    {
+        deckManager.StartAction();
+        timeManager.StartAction();
+        resourceManager.StartAction();
+        waveManager.StartAction();
+        findCanvas();
     }
 }

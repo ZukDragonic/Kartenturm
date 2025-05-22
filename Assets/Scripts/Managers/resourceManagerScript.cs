@@ -16,8 +16,17 @@ public class resourceManagerScript : MonoBehaviour
     public List<baseTowerScript> aliveTower;
     public List<SOEnemyDisplay> aliveEnemy;
 
-    void Start()
+    public void StartAction()
     {
+        //prevents game from error bugging when not actively in game
+        //intentional error bug for future reference;
+        /*change to a state machine in future
+        bool CheckDisplay = GameObject.Find("Gold Display") != null;
+        if (CheckDisplay)
+        {
+            Debug.Log("I ain't find shit. Debug this NOW.");
+            return;
+        }*/
         goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
         healthDisplay = GameObject.Find("Health Display").GetComponent<numberDisplayScript>();
         waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();

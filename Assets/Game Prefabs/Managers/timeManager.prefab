@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevTime: 1
-  currentTime: 1
+  currentTime: 0
   maxTime: 3
   timeButton: {fileID: 0}
+  currentFps: 0
+  secondsPerFrame: 0

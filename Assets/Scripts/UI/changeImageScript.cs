@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class changeImageScript : MonoBehaviour
 {
     public Sprite[] images;
-    private int currentImage;
+    private int currentImage = 0;
     private Image imageComp;
 
     public Managers managerChecked;
@@ -17,6 +17,10 @@ public class changeImageScript : MonoBehaviour
     {
         imageComp = GetComponent<Image>();
         currentImage = checkVar();
+        if (currentImage == -1)
+        {
+            currentImage = 0;
+        }
         imageComp.sprite = images[currentImage];
     }
     public void nextImage()
