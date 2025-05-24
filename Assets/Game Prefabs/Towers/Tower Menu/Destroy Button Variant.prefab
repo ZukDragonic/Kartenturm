@@ -103,37 +103,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6815511829331573402, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2122749804, guid: d0905d10af4d3514da9bb3ae4d225cac, type: 3}
+    - target: {fileID: 7412003396657204791, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
+      propertyPath: m_Name
+      value: Destroy Button Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
---- !u!1 &6871830363918902853 stripped
+--- !u!1 &2056835017695850294 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2669020573853845316, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7412003396657204791, guid: f337ffcd1882e254fba3f5cab0f27430, type: 3}
   m_PrefabInstance: {fileID: 8815762583352353025}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2930669296065828162
+--- !u!114 &4836524685396818282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871830363918902853}
+  m_GameObject: {fileID: 2056835017695850294}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acc8b1d61a37d364ba1e2e1d58245cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentTower: {fileID: 0}
---- !u!114 &7594223680178500718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871830363918902853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19f31d9dda2f6cb48a113275329b9850, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: {fileID: 2930669296065828162}
-  voidCalled: destroyTower

@@ -47,4 +47,12 @@ MonoBehaviour:
   transitionPrefab: {fileID: 3645104974691722757, guid: 158851598ec36024f897514fd77cd7fb, type: 3}
   allScenes:
   - ID: 23000
+    sceneName: Restart
+  - ID: 23001
+    sceneName: Start Scene
+  - ID: 23002
+    sceneName: Main Menu
+  - ID: 23004
+    sceneName: Level Selector
+  - ID: 23005
     sceneName: Build Scene

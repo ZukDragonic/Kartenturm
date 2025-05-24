@@ -19,21 +19,17 @@ public class resourceManagerScript : MonoBehaviour
     public void StartAction()
     {
         //prevents game from error bugging when not actively in game
-        //intentional error bug for future reference;
-        /*change to a state machine in future
-        bool CheckDisplay = GameObject.Find("Gold Display") != null;
-        if (CheckDisplay)
+        if (gameControllerScript.instance.state != GameState.Loading &&
+            gameControllerScript.instance.state != GameState.MainMenu)
         {
-            Debug.Log("I ain't find shit. Debug this NOW.");
-            return;
-        }*/
-        goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
-        healthDisplay = GameObject.Find("Health Display").GetComponent<numberDisplayScript>();
-        waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();
-        deckDisplay = GameObject.Find("Deck Display").GetComponent<numberDisplayScript>();
-        aliveTower = new List<baseTowerScript>();
-        changeGold(0);
-        changeHealth(0);
+            goldDisplay = GameObject.Find("Gold Display").GetComponent<numberDisplayScript>();
+            healthDisplay = GameObject.Find("Health Display").GetComponent<numberDisplayScript>();
+            waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();
+            deckDisplay = GameObject.Find("Deck Display").GetComponent<numberDisplayScript>();
+            aliveTower = new List<baseTowerScript>();
+            changeGold(0);
+            changeHealth(0);
+        }
     }
 
     public void changeGold(int value)

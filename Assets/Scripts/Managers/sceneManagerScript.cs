@@ -7,15 +7,13 @@ public class sceneManagerScript : MonoBehaviour
 {
     public GameObject transitionPrefab;
     private GameObject currentTransition;
-    private int endID;
 
     public SceneNameAndID[] allScenes;
 
-    public void LoadNewScene(int ID, int EndID)
+    public void LoadNewScene(int ID)
     {
         if (currentTransition == null)
         {
-            endID = EndID;
             currentTransition = Instantiate(transitionPrefab);
             DontDestroyOnLoad(currentTransition);
             StartCoroutine(LoadingScene(ID));
@@ -34,8 +32,8 @@ public class sceneManagerScript : MonoBehaviour
 
         yield return new WaitUntil(() => SceneManager.GetActiveScene().name == FoundScene);
 
-        gameControllerScript.instance.InitiateManagerStart();
-        gameControllerScript.instance.FlagTrigger(endID);
+        gameControllerScript.instance.StartAction();
+        gameControllerScript.instance.FlagTrigger(ID);
         transitionAnim.Play("FadeEnd", 0);
 
         yield return new WaitUntil(() => transitionAnim.GetCurrentAnimatorStateInfo(0).IsName("FadeDestroy"));
@@ -46,6 +44,10 @@ public class sceneManagerScript : MonoBehaviour
 
     string FindScene(int ID)
     {
+        if (ID == 23000)
+        {
+            return SceneManager.GetActiveScene().name;
+        }
         foreach (SceneNameAndID current in allScenes)
         {
             if (current.ID == ID)

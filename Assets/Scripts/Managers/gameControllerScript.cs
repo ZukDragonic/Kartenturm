@@ -28,7 +28,9 @@ public enum GameState
     TowerMenu,
     ShopMenu,
     PauseMenu,
-    Previous
+    Previous,
+    Loading,
+    MainMenu
 }
 [System.Serializable]
 public enum Managers
@@ -41,7 +43,8 @@ public enum Managers
     Wave,
     Timeline,
     Audio,
-    Dialogue
+    Dialogue,
+    Scene
 }
 [System.Serializable]
 public enum SoundType
@@ -304,6 +307,7 @@ public class gameControllerScript : MonoBehaviour
 
         StartCoroutine(startAfterLoad());
     }
+
     void Update()
     {
         /*PointerEventData eventData = new PointerEventData(EventSystem.current);
@@ -369,11 +373,18 @@ public class gameControllerScript : MonoBehaviour
         if (ID >= 23000 && ID < 24000)
         {
             //sceneManager stuff
-            switch(ID)
+            if (ID == 23000 ||ID >= 23005) //change 23005 to whatever freeplay mode start
             {
-                case 23000:
-                    sceneManager.LoadNewScene(23000, 11000);
-                    UpdateGameState(GameState.BetweenWave);
+                UpdateGameState(GameState.BetweenWave);
+                StartAction();
+                timeManager.resetTime();
+                deckManager.shuffleDeck();
+                FlagTrigger(11000);
+            }
+            switch (ID)
+            {
+                case 23002:
+                    UpdateGameState(GameState.MainMenu);
                     break;
                 default:
                     break;
@@ -447,6 +458,10 @@ public class gameControllerScript : MonoBehaviour
                 }
                 state = prevState;
                 return;
+            case GameState.Loading:
+                break;
+            case GameState.MainMenu:
+                break;
             default:
                 break;
         }
@@ -480,6 +495,9 @@ public class gameControllerScript : MonoBehaviour
                 break;
             case Managers.Dialogue:
                 dialogueManager.SendMessage(voidCalled, IDCalled);
+                break;
+            case Managers.Scene:
+                sceneManager.SendMessage(voidCalled, IDCalled);
                 break;
             default:
                 break;
@@ -516,26 +534,21 @@ public class gameControllerScript : MonoBehaviour
     IEnumerator startAfterLoad()
     {
         yield return null;
-        InitiateManagerStart();
-        findCanvas();
 
-        UpdateGameState(GameState.BetweenWave);
-
-        timeManager.resetTime();
-        timeManager.ChangeFps(60);
-        deckManager.shuffleDeck();
+        StartAction();
 
         FlagTrigger(20002);
-
-        FlagTrigger(11019);
     }
 
-    public void InitiateManagerStart()
+    public void StartAction()
     {
+        findCanvas();
+
         deckManager.StartAction();
         timeManager.StartAction();
         resourceManager.StartAction();
         waveManager.StartAction();
-        findCanvas();
+
+        timeManager.ChangeFps(60);
     }
 }

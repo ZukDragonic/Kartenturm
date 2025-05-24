@@ -69,7 +69,7 @@ public class changeImageScript : MonoBehaviour
                 switch (varChecked)
                 {
                     case "Time":
-                        return 2 * gameControllerScript.instance.timeManager.currentTime - 1;
+                        return 2 * gameControllerScript.instance.timeManager.currentTime + 1;
                     default:
                         break;
                 }

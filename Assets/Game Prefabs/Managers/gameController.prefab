@@ -50,6 +50,8 @@ MonoBehaviour:
   timeManager: {fileID: 0}
   timelineManager: {fileID: 0}
   audioManager: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  sceneManager: {fileID: 0}
   mainInput_Ray:
     hit: {fileID: 0}
     hittingSomething: 0
@@ -73,6 +75,10 @@ MonoBehaviour:
       masks: []
     - state: 6
       masks: []
+    - state: 7
+      masks: []
+    - state: 8
+      masks: []
   allCanvas: []
   eventDict:
     dictItems:
@@ -88,5 +94,6 @@ MonoBehaviour:
     - ID: 20004
       check: 0
       name: GameWin
-  state: 1
+  state: 7
+  prevState: 7
   isCardDragged: 0
