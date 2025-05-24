@@ -60,6 +60,7 @@ public class waveManagerScript : MonoBehaviour
                 //if not autostart or shop wave, update gameState to a semi-paused state
                 if (!gameController.FlagInfo(20001))
                 {
+                    gameController.timeManager.buttonChange(-1);
                     gameController.UpdateGameState(GameState.BetweenWave);
                 }
 

@@ -52,6 +52,8 @@ MonoBehaviour:
     sceneName: Start Scene
   - ID: 23002
     sceneName: Main Menu
+  - ID: 23003
+    sceneName: Deck Builder
   - ID: 23004
     sceneName: Level Selector
   - ID: 23005

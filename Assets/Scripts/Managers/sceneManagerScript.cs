@@ -32,7 +32,6 @@ public class sceneManagerScript : MonoBehaviour
 
         yield return new WaitUntil(() => SceneManager.GetActiveScene().name == FoundScene);
 
-        gameControllerScript.instance.StartAction();
         gameControllerScript.instance.FlagTrigger(ID);
         transitionAnim.Play("FadeEnd", 0);
 

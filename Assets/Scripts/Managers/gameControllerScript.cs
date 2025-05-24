@@ -373,6 +373,18 @@ public class gameControllerScript : MonoBehaviour
         if (ID >= 23000 && ID < 24000)
         {
             //sceneManager stuff
+            switch (ID)
+            {
+                case 23001:
+                    UpdateGameState(GameState.Loading);
+                    break;
+                case 23002:
+                    UpdateGameState(GameState.MainMenu);
+                    break;
+                default:
+                    break;
+            }
+            StartAction();
             if (ID == 23000 ||ID >= 23005) //change 23005 to whatever freeplay mode start
             {
                 UpdateGameState(GameState.BetweenWave);
@@ -381,15 +393,12 @@ public class gameControllerScript : MonoBehaviour
                 deckManager.shuffleDeck();
                 FlagTrigger(11000);
             }
-            switch (ID)
+           switch (ID)
             {
-                case 23002:
-                    UpdateGameState(GameState.MainMenu);
-                    break;
                 default:
                     break;
             }
-        }
+        } 
         //each event an ID would trigger, use for really important events
         switch (ID)
         {
@@ -422,7 +431,6 @@ public class gameControllerScript : MonoBehaviour
                 }
                 break;
             case GameState.BetweenWave:
-                timeManager.buttonChange(-1);
                 prevState = GameState.BetweenWave;
                 if (state == GameState.TowerMenu || state == GameState.Placing || state == GameState.ShopMenu)
                 {
