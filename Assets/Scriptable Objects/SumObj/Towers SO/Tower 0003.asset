@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower 0003
   m_EditorClassIdentifier: 
   ID: 40003
-  shopGold: 500
+  shopGold: 800
   actionGold: 100
   archetype: 
   cardName: Archer

@@ -29,16 +29,19 @@ public class baseTowerScript : sumObj_Base
     public int targetChange;
 
     public float range;
-    public int damage;
+    //public int damage; is in sumObj_Base
     public int pierce;
 
     public int shotsPerAttack;
     public float secondsPerAttack;
     public float multiplier;
 
+    public int totalDamage;
+
     public GameObject baseProjectile;
 
     private float attackTimer;
+
 
     void Start()
     {
@@ -56,6 +59,7 @@ public class baseTowerScript : sumObj_Base
         effects = SOCE_Parent.CreateInstance(baseCard.effects);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
         multiplier = baseCard.multiplier;
+        totalDamage = 0;
 
         enemyInRange = new List<GameObject>();
 

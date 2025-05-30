@@ -7,7 +7,6 @@ public class sumObj_Projectile : sumObj_Base
     public baseTowerScript parentTower;
     public Vector3 target;
 
-    public int damage;
     public int pierce;
 
     public SOEnemyDisplay hitEnemy;
@@ -30,7 +29,7 @@ public class sumObj_Projectile : sumObj_Base
         {
             hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
-            hitEnemy.enemyHit(damage);
+            hitEnemy.enemyHit(this);
 
             pierce -= 1;
             if (pierce <= 0)

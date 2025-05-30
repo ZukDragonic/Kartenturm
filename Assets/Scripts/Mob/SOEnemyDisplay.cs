@@ -198,12 +198,22 @@ public class SOEnemyDisplay : sumObj_Base
         }
     }
 
-    public void enemyHit(int damage)
+    public void enemyHit(sumObj_Base hitObject)
     {
-        hitDamage = damage;
+        hitDamage = hitObject.damage;
+
         effects.OnHitEffect(this);
 
         health -= hitDamage;
+
+        if (hitObject as sumObj_Projectile != null)
+        {
+            (hitObject as sumObj_Projectile).parentTower.totalDamage += hitDamage;
+        }
+        else if (hitObject as sumObj_Standalone != null)
+        {
+            (hitObject as sumObj_Standalone).parentTower.totalDamage += hitDamage;
+        }
 
         sliderDisplay.updateDisplay(health, enemy.health);
     }

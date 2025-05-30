@@ -21,9 +21,9 @@ MonoBehaviour:
     He refined the spell magic missle to perfection.
   image: {fileID: 21300000, guid: 4ec5b6443ff8f1d4a8ffc22317ee4a0c, type: 3}
   shotsPerAttack: 1
-  damage: 200
-  secondsPerAttack: 0.25
-  range: 100
+  damage: 10
+  secondsPerAttack: 0.2
+  range: 60
   multiplier: 1
   projectileImage: {fileID: 21300000, guid: f5871ecd98b084b4e8199636942c588b, type: 3}
   pierce: 10

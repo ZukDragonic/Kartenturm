@@ -7,6 +7,7 @@ public class sumObj_Standalone : sumObj_Base
     //the effects should go into the base effect since it swaps when instantiated
     //Any effect that needs to be inherited from parent needs to be placed in the base
 
+    public baseTowerScript parentTower;
     public sumObj_Projectile parentProjectile;
 
     public SOSumObj baseSumObj;
@@ -15,7 +16,6 @@ public class sumObj_Standalone : sumObj_Base
     public SpriteRenderer image;
     public Animator anim;
 
-    public int damage;
     public int pierce;
 
     public SOEnemyDisplay hitEnemy;
@@ -33,6 +33,7 @@ public class sumObj_Standalone : sumObj_Base
 
         if (parentProjectile != null)
         {
+            parentTower = parentProjectile.parentTower;
             damage += parentProjectile.damage;
             pierce += parentProjectile.pierce;
             effects = SOCE_Parent.MergeInstances(effects, parentProjectile.effects);
@@ -54,7 +55,7 @@ public class sumObj_Standalone : sumObj_Base
             hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
-            hitEnemy.enemyHit(damage);
+            hitEnemy.enemyHit(this);
 
             pierce -= 1;
             if (pierce <= 0)

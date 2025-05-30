@@ -13,6 +13,7 @@ public class towerMenuDisplay : MonoBehaviour
     public TextMeshProUGUI range;
     public TextMeshProUGUI pierce;
     public TextMeshProUGUI secondsPerAttack;
+    public TextMeshProUGUI totalDamage;
 
     public Transform effectDisplay;
     public GameObject textPrefab;
@@ -25,6 +26,11 @@ public class towerMenuDisplay : MonoBehaviour
     {
         cardsHasChanged();
         StartCoroutine(targettingChanged());
+    }
+
+    void Update()
+    {
+        totalDamage.text = parentTower.totalDamage.ToString();
     }
 
     void cardsHasChanged()
@@ -112,7 +118,7 @@ public class towerMenuDisplay : MonoBehaviour
                 description = "Always: " + description;
                 break;
             case EffectType.Destroy:
-                description = "On Destroy: " + description;
+                description = "On Expire: " + description;
                 break;
             case EffectType.Summon:
                 description = "On Summon: " + description;
@@ -130,7 +136,7 @@ public class towerMenuDisplay : MonoBehaviour
                 description = "Spawned Objects Always: " + description;
                 break;
             case EffectType.PDestroy:
-                description = "On Spawned Objects Destroyed: " + description;
+                description = "On Spawned Objects Expire: " + description;
                 break;
             case EffectType.PHit:
                 description = "On Spawned Objects Hit: " + description;

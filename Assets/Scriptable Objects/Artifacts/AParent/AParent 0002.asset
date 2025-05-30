@@ -17,8 +17,9 @@ MonoBehaviour:
   summon:
   - effect: {fileID: 11400000, guid: 3821c6b610e33a8418595c4bcf964fc8, type: 2}
     req: []
-  - effect: {fileID: 11400000, guid: 48a0dddd43636f04c8ca4fafd9a5c980, type: 2}
+  - effect: {fileID: 11400000, guid: b12d3917a8e0ab84183958a30b90a681, type: 2}
     req: []
+  hit: []
   waveStart: []
   waveEnd: []
   pPassive: []

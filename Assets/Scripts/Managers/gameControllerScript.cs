@@ -197,12 +197,13 @@ public class WholeAnimation
     public int ID;
     public TimelineAsset timelineAnim;
     public TimelineObject[] boundObjects;
-    public bool hittingSomething;
 }
 [System.Serializable]
 public class TimelineObject
 {
     public GameObject boundObjects;
+    public bool findObjectInScene;
+    public string objectInSceneName;
     public int boundTrack;
 }
 

@@ -49,8 +49,18 @@ MonoBehaviour:
   allAnim:
   - ID: 13000
     timelineAnim: {fileID: 11400000, guid: f1df32eb1f3e370429add2281480b88f, type: 2}
+    boundObjects:
+    - boundObjects: {fileID: 0}
+      findObjectInScene: 1
+      objectInSceneName: playerHand
+      boundTrack: 0
   - ID: 13001
     timelineAnim: {fileID: 11400000, guid: 12704545596cf6b4493f65c648635e8c, type: 2}
+    boundObjects:
+    - boundObjects: {fileID: 0}
+      findObjectInScene: 1
+      objectInSceneName: playerHand
+      boundTrack: 0
 --- !u!320 &7857137865755475580
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -61,7 +71,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 0}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 2
   m_InitialTime: 0

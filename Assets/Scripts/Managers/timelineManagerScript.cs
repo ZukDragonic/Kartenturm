@@ -20,18 +20,31 @@ public class timelineManagerScript : MonoBehaviour
     {
         playedAnim = FindTimeline(ID);
 
-        foreach (TimelineObject item in playedAnim.boundObjects)
+        director.playableAsset = playedAnim.timelineAnim;
+
+        for(int i = 0; i < playedAnim.boundObjects.Length;i++)
         {
-            GameObject currentObject = Instantiate(item.boundObjects);
+            GameObject currentObject = null;
+            if (playedAnim.boundObjects[i].findObjectInScene)
+            {
+                currentObject = GameObject.Find(playedAnim.boundObjects[i].objectInSceneName);
+                if (currentObject == null)
+                {
+                    Debug.Log("You entered the wrong name. Find a proper item to bind.");
+                }
+            }
+            else
+            {
+                currentObject = Instantiate(playedAnim.boundObjects[i].boundObjects);
+            }
 
-            TrackAsset currentTrack = playedAnim.timelineAnim.GetOutputTrack(item.boundTrack);
-
-            director.SetGenericBinding(currentTrack, currentObject);
+            foreach (var track in director.playableAsset.outputs)
+            {
+                director.SetGenericBinding(track.sourceObject, currentObject);
+            }
         }
 
-
-        director.playableAsset = playedAnim.timelineAnim;
-        director.Play(playedAnim.timelineAnim);
+        director.Play();
     }
 
     IEnumerator WaitUntilStop()
