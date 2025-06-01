@@ -386,7 +386,7 @@ public class gameControllerScript : MonoBehaviour
                     break;
             }
             StartAction();
-            if (ID == 23000 ||ID >= 23005) //change 23005 to whatever freeplay mode start
+            if (ID == 23000 ||ID >= 23100) //change 23005 to whatever freeplay mode start
             {
                 UpdateGameState(GameState.BetweenWave);
                 StartAction();

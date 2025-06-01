@@ -94,6 +94,27 @@ MonoBehaviour:
     - ID: 20004
       check: 0
       name: GameWin
+    - ID: 21000
+      check: 0
+      name: 11Level
+    - ID: 21001
+      check: 0
+      name: 12Level
+    - ID: 21002
+      check: 0
+      name: 13Level
+    - ID: 21003
+      check: 0
+      name: 14Level
+    - ID: 21004
+      check: 0
+      name: 15Level
+    - ID: 21005
+      check: 0
+      name: 16Level
+    - ID: 21006
+      check: 0
+      name: 17Level
   state: 7
   prevState: 7
   isCardDragged: 0
