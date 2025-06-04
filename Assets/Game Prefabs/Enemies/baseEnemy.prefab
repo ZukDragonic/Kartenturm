@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effects: {fileID: 0}
+  damage: 0
   gameController: {fileID: 0}
   sliderDisplay: {fileID: 0}
   enemy: {fileID: 0}
@@ -116,6 +117,7 @@ MonoBehaviour:
   checkpointPos: {x: 0, y: 0, z: 0}
   checkpointList: []
   reachedEnd: 0
+  currentAffectedTower: {fileID: 0}
 --- !u!58 &-6671158271942149521
 CircleCollider2D:
   m_ObjectHideFlags: 0

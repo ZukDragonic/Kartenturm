@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 408b718cb98b87640835079574f68b48
+guid: 1fb055c9099773747ab81a2c6c5df3e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monsters_Anim(32x32)_0_0
+      name: SlimeRock(32x32)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 16
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -131,18 +131,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93bc492b2ea533d4780d4af9c65a70c1
-      internalID: -621338048
+      spriteID: b937afa5f3c431f4582f9f52850f3266
+      internalID: -1528837639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monsters_Anim(32x32)_0_1
+      name: SlimeRock(32x32)_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 80
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -152,18 +152,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99af74751442ce54ba3a11c9d87e1cbb
-      internalID: -1886682338
+      spriteID: edd9a45318641e542b4ac64b085dc107
+      internalID: -1846826219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monsters_Anim(32x32)_0_2
+      name: SlimeRock(32x32)_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 144
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -173,18 +173,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c714eacc83f67084baf004f7ee6d7802
-      internalID: -580656531
+      spriteID: 7b9dd985ee8b7e241b836788dc3600ad
+      internalID: -1188424611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monsters_Anim(32x32)_0_3
+      name: SlimeRock(32x32)_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 208
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6246a49f51659264dae490b24acec4a1
-      internalID: 963401166
+      spriteID: a7fc858b7eca00c4baabf9ce8bae66d9
+      internalID: 1305289994
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monsters_Anim(32x32)_0_0: -621338048
-      Monsters_Anim(32x32)_0_1: -1886682338
-      Monsters_Anim(32x32)_0_2: -580656531
-      Monsters_Anim(32x32)_0_3: 963401166
+      SlimeRock(32x32)_0: -1528837639
+      SlimeRock(32x32)_1: -1846826219
+      SlimeRock(32x32)_2: -1188424611
+      SlimeRock(32x32)_3: 1305289994
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
