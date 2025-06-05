@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy_60005
+  m_Name: Enemy 60005
   m_EditorClassIdentifier: 
   ID: 60005
   Enemyname: Boar

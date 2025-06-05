@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
+  m_Name: Enemy 60009 WIP
+  m_EditorClassIdentifier: 
+  ID: 60009
+  Enemyname: Magma Slime (Blue)
+  description: Rumors say she has two doppelgangers somewhere out there.
+  image: {fileID: -988221162, guid: 69ba6274802b72f439edd6201f7673af, type: 3}
+  animClip: {fileID: 7400000, guid: ca4696b67c336004ba3ff2a158ed5d7b, type: 2}
+  speed: 20
+  health: 1000
+  damageToHP: 1
+  hitRadius: 10
+  goldDrop: 20
+  effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  attacks: []

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy_60001
+  m_Name: Enemy 60017 WIP
   m_EditorClassIdentifier: 
-  ID: 60001
-  Enemyname: Slime (Blue)
-  description: He's not a bad slime, he promise.
-  image: {fileID: 1404848449, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
-  animClip: {fileID: 7400000, guid: 806caf7a8df3a9641927c65ba059a16d, type: 2}
-  speed: 15
-  health: 100
-  damageToHP: 1
-  hitRadius: 15
-  goldDrop: 5
+  ID: 60017
+  Enemyname: Big Slime (Green)
+  description: Had a one night fling that one time. He wonders what happened to her.
+  image: {fileID: 1077783034, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
+  animClip: {fileID: 7400000, guid: 9726011d5096cd744ae814d23612863e, type: 2}
+  speed: 10
+  health: 10000
+  damageToHP: 2
+  hitRadius: 10
+  goldDrop: 50
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
   attacks: []

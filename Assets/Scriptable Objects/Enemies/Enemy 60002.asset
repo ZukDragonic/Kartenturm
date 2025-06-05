@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy_60003
+  m_Name: Enemy 60002
   m_EditorClassIdentifier: 
-  ID: 60003
-  Enemyname: Rat
-  description: The rat on his 999 year journey to find cheese. Sadly, he has not
-    found any,
-  image: {fileID: 21300000, guid: 533e7c15fcee27945a2aa668f96e470f, type: 3}
-  animClip: {fileID: 7400000, guid: c44901da654cf554e9ccdb24d1ca2e2a, type: 2}
-  speed: 30
-  health: 300
+  ID: 60002
+  Enemyname: Earth Worm
+  description: A really big worm. One day, she wants to be a dragon.
+  image: {fileID: 21300000, guid: 6b7a7241b5ae56648b948e508a4ab06e, type: 3}
+  animClip: {fileID: 7400000, guid: 7cfe57aa84ec1f04d8de21affe5211c6, type: 2}
+  speed: 10
+  health: 500
   damageToHP: 1
-  hitRadius: 10
+  hitRadius: 15
   goldDrop: 10
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
   attacks: []

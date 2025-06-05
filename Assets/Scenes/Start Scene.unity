@@ -1838,6 +1838,7 @@ MonoBehaviour:
   managerCalled: 9
   voidCalled: LoadNewScene
   IDCalled: 23002
+  IDCheckedForActive: 0
 --- !u!1 &2075576055
 GameObject:
   m_ObjectHideFlags: 0

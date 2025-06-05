@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy_60007
+  m_Name: Enemy 60001
   m_EditorClassIdentifier: 
-  ID: 60007
-  Enemyname: Spider
-  description: Her sons left their home. She has a very pleasant surprise for them
-    when she finds them.
-  image: {fileID: 21300000, guid: 3aec8da9a8b28ad4bae0fe477b627b52, type: 3}
-  animClip: {fileID: 0}
-  speed: 40
-  health: 1000
+  ID: 60001
+  Enemyname: Slime (Blue)
+  description: He's not a bad slime, he promise.
+  image: {fileID: -1067958260, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
+  animClip: {fileID: 7400000, guid: 806caf7a8df3a9641927c65ba059a16d, type: 2}
+  speed: 15
+  health: 100
   damageToHP: 1
   hitRadius: 10
-  goldDrop: 50
+  goldDrop: 5
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
   attacks: []
