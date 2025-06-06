@@ -23,4 +23,14 @@ MonoBehaviour:
   hitRadius: 10
   goldDrop: 20
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
-  attacks: []
+  attacks:
+  - target: {fileID: 0}
+    appliedEffect:
+    - {fileID: 11400000, guid: e71fd8df583096045a51f28feb5a6888, type: 2}
+    - {fileID: 11400000, guid: 62d1fec742816dc44a79cae6c3c08499, type: 2}
+    endEffect: []
+    startLag: 0
+    anim: {fileID: 0}
+    endLag: 0
+    moveDuringAttack: 0
+    timeTillNextAttack: 0

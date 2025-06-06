@@ -12,6 +12,10 @@ public class SOCE_Summon : SOC_Effect
     //specifically for tower
     public SOCTower summonedTower;
     public bool keepSlot;
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity, script.transform.parent);
+    }
     public override void ApplyTEffect(baseTowerScript script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity, script.transform.parent);

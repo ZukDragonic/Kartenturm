@@ -18,16 +18,18 @@ public class sumObj_Standalone : sumObj_Base
 
     public int pierce;
 
-    public SOEnemyDisplay hitEnemy;
+    public sumObj_Base hitObject;
     void Start()
     {
-        hitbox.radius = (float)baseSumObj.hitRadius / 2f;
+        hitbox.radius = (float)baseSumObj.hitRadius / 5f;
+        gameObject.transform.localScale *= baseSumObj.hitRadius;
         image.sprite = baseSumObj.image;
         damage = baseSumObj.damage;
         pierce = baseSumObj.pierce;
-        if (baseSumObj.animation != null)
+        if (baseSumObj.anim != null)
         {
-            anim = baseSumObj.animation;
+            anim.runtimeAnimatorController = baseSumObj.anim;
+            anim.speed = gameControllerScript.instance.timeManager.currentTime;
         }
         effects = SOCE_Parent.CreateInstance(baseSumObj.effect);
 
@@ -52,10 +54,23 @@ public class sumObj_Standalone : sumObj_Base
     {
         if (collision.tag == "Enemy")
         {
-            hitEnemy = collision.gameObject.GetComponent<SOEnemyDisplay>();
+            hitObject = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
-            hitEnemy.enemyHit(this);
+            (hitObject as SOEnemyDisplay).enemyHit(this);
+
+            pierce -= 1;
+            if (pierce <= 0)
+            {
+                effects.OnODestroyEffect(this as sumObj_Base);
+                Destroy(gameObject);
+            }
+        }
+        if (collision.tag == "Tower")
+        {
+            hitObject = collision.gameObject.GetComponent<baseTowerScript>();
+            effects.OnOHitEffect(this as sumObj_Base);
+            SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
 
             pierce -= 1;
             if (pierce <= 0)
