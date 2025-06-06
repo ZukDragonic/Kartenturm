@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e18222922d97240bdef6c1ced70480, type: 3}
   m_Name: ETRange_3
   m_EditorClassIdentifier: 
-  range: 25
+  range: 3

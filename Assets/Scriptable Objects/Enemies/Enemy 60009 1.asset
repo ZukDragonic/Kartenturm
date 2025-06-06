@@ -24,7 +24,7 @@ MonoBehaviour:
   goldDrop: 0
   effects: {fileID: 11400000, guid: 4bd75403eda6dd64c8e86670c24286e0, type: 2}
   attacks:
-  - target: {fileID: 11400000, guid: 7fdda94c9d72262498dd1f1d78b88167, type: 2}
+  - target: {fileID: 11400000, guid: 2fa64f9f5aab7f54e992ea0b37d78bfd, type: 2}
     appliedEffect:
     - {fileID: 11400000, guid: dcfd57a3d9cb2604eadcda06e8043005, type: 2}
     - {fileID: 11400000, guid: 62d1fec742816dc44a79cae6c3c08499, type: 2}
