@@ -11,10 +11,16 @@ public class SOCE_Summon : SOC_Effect
     public SOSumObj summonedObject;
     //specifically for tower
     public SOCTower summonedTower;
+    //specifically for enemy
+    public SOEnemy summonedEnemy;
+
     public bool keepSlot;
     public override void ApplyEEffect(SOEnemyDisplay script)
     {
         GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity, script.transform.parent);
+        SOEnemyDisplay summonedScript = current.GetComponent<SOEnemyDisplay>();
+        summonedScript.enemy = summonedEnemy;
+        gameControllerScript.instance.resourceManager.addEnemy(summonedScript);
     }
     public override void ApplyTEffect(baseTowerScript script)
     {
@@ -42,6 +48,6 @@ public class SOCE_Summon : SOC_Effect
     public override void ApplyBEffect()
     {
         GameObject summoned = Instantiate(summonedPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-        summoned.GetComponent<sumObj_Standalone>().baseSumObj = summonedObject;
+        summoned.GetComponent<sumObj_Standalone>().baseSumObj = summonedObject as SOSumObj;
     }
 }

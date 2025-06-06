@@ -22,7 +22,6 @@ public class sumObj_Standalone : sumObj_Base
     void Start()
     {
         hitbox.radius = (float)baseSumObj.hitRadius / 5f;
-        gameObject.transform.localScale *= baseSumObj.hitRadius;
         image.sprite = baseSumObj.image;
         damage = baseSumObj.damage;
         pierce = baseSumObj.pierce;
@@ -58,19 +57,6 @@ public class sumObj_Standalone : sumObj_Base
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
             (hitObject as SOEnemyDisplay).enemyHit(this);
-
-            pierce -= 1;
-            if (pierce <= 0)
-            {
-                effects.OnODestroyEffect(this as sumObj_Base);
-                Destroy(gameObject);
-            }
-        }
-        if (collision.tag == "Tower")
-        {
-            hitObject = collision.gameObject.GetComponent<baseTowerScript>();
-            effects.OnOHitEffect(this as sumObj_Base);
-            SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
 
             pierce -= 1;
             if (pierce <= 0)

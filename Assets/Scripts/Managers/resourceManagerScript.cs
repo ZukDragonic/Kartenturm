@@ -27,9 +27,16 @@ public class resourceManagerScript : MonoBehaviour
             waveDisplay = GameObject.Find("Wave Display").GetComponent<TextMeshProUGUI>();
             deckDisplay = GameObject.Find("Deck Display").GetComponent<numberDisplayScript>();
             aliveTower = new List<baseTowerScript>();
-            changeGold(0);
-            changeHealth(0);
+            resetResources();
         }
+    }
+
+    public void resetResources()
+    {
+        playerGold = 1000;
+        health = 10;
+        changeGold(0);
+        changeHealth(0);
     }
 
     public void changeGold(int value)
@@ -62,6 +69,10 @@ public class resourceManagerScript : MonoBehaviour
     {
         aliveTower.Add(tower);
     }
+    public void addEnemy(SOEnemyDisplay enemy)
+    {
+        aliveEnemy.Add(enemy);
+    }
     public void removeTower(baseTowerScript tower)
     {
         if (aliveTower.Contains(tower))
@@ -75,6 +86,7 @@ public class resourceManagerScript : MonoBehaviour
         if (aliveEnemy.Contains(enemy))
         {
             aliveEnemy.Remove(enemy);
+            gameControllerScript.instance.waveManager.enemyDied();
             Destroy(enemy.gameObject);
         }
     }

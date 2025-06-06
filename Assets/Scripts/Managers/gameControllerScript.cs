@@ -333,14 +333,17 @@ public class gameControllerScript : MonoBehaviour
         //second number should be 1 number before max wave
         if (ID >= 11000 && ID < 12000)
         {
-            switch (ID)
+            if (waveManager.currentWave != null)
             {
-                //stops spawning whenever a wave is a "final" wave
-                case 11105:
-                    FlagTrigger(21000);
-                    return;
-                default:
-                    break;
+                switch (ID)
+                {
+                    //stops spawning whenever a wave is a "final" wave
+                    case 11105:
+                        FlagTrigger(21000);
+                        return;
+                    default:
+                        break;
+                }
             }
 
 
@@ -402,6 +405,9 @@ public class gameControllerScript : MonoBehaviour
                 case 23012:
                     waveWhenLoaded = 11100;
                     break;
+                case 23013:
+                    waveWhenLoaded = 11105;
+                    break;
                 case 23100:
                     waveWhenLoaded = 11000;
                     break;
@@ -415,6 +421,8 @@ public class gameControllerScript : MonoBehaviour
                 StartAction();
                 timeManager.resetTime();
                 deckManager.shuffleDeck();
+                waveManager.currentWave = null;
+                resourceManager.resetResources();
                 FlagTrigger(waveWhenLoaded);
             }
            switch (ID)

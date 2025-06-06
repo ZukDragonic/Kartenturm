@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: SE_Aoe
+  m_Name: SE_Aoe 3
   m_EditorClassIdentifier: 
   passive:
   - effect: {fileID: 11400000, guid: 5b4107573d17bab4398a6ede6efde8dc, type: 2}
     req: []
   destroy: []
-  summon: []
+  summon:
+  - effect: {fileID: 11400000, guid: 33c8fa82e0dd09c4ca1589d8d305b53d, type: 2}
+    req: []
+  hit: []
   waveStart: []
   waveEnd: []
   pPassive: []

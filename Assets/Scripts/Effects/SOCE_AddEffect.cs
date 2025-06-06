@@ -102,7 +102,7 @@ public class SOCE_AddEffect : SOC_Effect
         sumObj_Base checkedScript;
         if (appliedToHit)
         {
-            checkedScript = script.hitEnemy;
+            checkedScript = script.hitObject;
         }
         else
         {

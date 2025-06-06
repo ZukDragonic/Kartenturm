@@ -10,16 +10,14 @@ public class waveManagerScript : MonoBehaviour
     public SOEnemy[] allEnemies;
 
     public Wave[] waveList;
-    private Wave currentWave;
-    private int enemyAlive;
+    public Wave currentWave;
+    public int enemyAlive;
     private bool isWaveSpawning;
 
     public GameObject enemyPrefab;
 
     private GameObject checkpointParent;
     public List<GameObject> checkpointList;
-
-    public List<SOEnemyDisplay> aliveEnemies;
     //all maps must be 25x18
 
     public void StartAction()
@@ -71,6 +69,7 @@ public class waveManagerScript : MonoBehaviour
                 {
                     tower.waveEndAction();
                 }
+                currentWave = null;
             }
         }
     }
@@ -107,9 +106,8 @@ public class waveManagerScript : MonoBehaviour
                     checkpointList[0].transform.position.y - 0.1f, 0), Quaternion.identity);
                 SOEnemyDisplay eScript = current.GetComponent<SOEnemyDisplay>();
                 eScript.enemy = findEnemy(wave.spawnOrder[i].enemyID);
-                gameController.resourceManager.aliveEnemy.Add(eScript);
                 enemyAlive += 1;
-                aliveEnemies.Add(eScript);
+                gameController.resourceManager.addEnemy(eScript);
             }
         }
         isWaveSpawning = false;

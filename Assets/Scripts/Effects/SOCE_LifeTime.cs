@@ -13,6 +13,19 @@ public class SOCE_LifeTime : SOC_Effect
     private float relativeDuration = 0;
 
     public float radius;
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        if (duration == 0)
+        {
+            gameControllerScript.instance.resourceManager.removeEnemy(script);
+        }
+        relativeDuration = duration;
+        if (frameCount >= relativeDuration * Application.targetFrameRate)
+        {
+            gameControllerScript.instance.resourceManager.removeEnemy(script);
+        }
+        frameCount += gameControllerScript.instance.timeManager.currentTime;
+    }
     public override void ApplyTEffect(baseTowerScript script)
     {
         if (duration == 0)
@@ -68,7 +81,6 @@ public class SOCE_LifeTime : SOC_Effect
             float distance = Vector3.Distance(enemy.transform.position, mousePos);
             if (distance >= radius)
             {
-                wm.enemyDied();
                 rm.changeGold(enemy.enemy.goldDrop);
                 rm.removeEnemy(enemy);
             }

@@ -61,6 +61,11 @@ public class SOEnemyDisplay : sumObj_Base
         checkpointPos = checkpointList[checkpointNum].transform.position;
 
         sliderDisplay.updateDisplay(health, enemy.health);
+        if (hitRadius <= 0)
+        {
+            sliderDisplay.gameObject.SetActive(false);
+        }
+
 
         effects.OnSummonEffect(this);
 
@@ -98,20 +103,10 @@ public class SOEnemyDisplay : sumObj_Base
                 effects.OnDestroyEffect(this);
 
                 reachedEnd = true;
-                gameController.waveManager.enemyDied();
                 gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
                 gameController.resourceManager.removeEnemy(this);
             }
             checkpointNum += 1;
-        }
-        //if die, die
-        if (health <= 0)
-        {
-            effects.OnDestroyEffect(this);
-
-            gameController.waveManager.enemyDied();
-            gameController.resourceManager.changeGold(enemy.goldDrop);
-            gameController.resourceManager.removeEnemy(this);
         }
     }
 
@@ -216,5 +211,14 @@ public class SOEnemyDisplay : sumObj_Base
         }
 
         sliderDisplay.updateDisplay(health, enemy.health);
+
+        //if die, die
+        if (health <= 0)
+        {
+            effects.OnDestroyEffect(this);
+
+            gameController.resourceManager.changeGold(enemy.goldDrop);
+            gameController.resourceManager.removeEnemy(this);
+        }
     }
 }

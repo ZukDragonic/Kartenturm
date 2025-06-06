@@ -174,7 +174,7 @@ public class SOCE_RemoveEffect : SOC_Effect
         sumObj_Base checkedScript;
         if (appliedToHit)
         {
-            checkedScript = script.hitEnemy;
+            checkedScript = script.hitObject;
         }
         else
         {

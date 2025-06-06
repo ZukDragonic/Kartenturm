@@ -7,6 +7,11 @@ public class SOCE_Size : SOC_Effect
 {
     public float scale;
 
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        float ogScale = script.transform.localScale.x;
+        script.transform.localScale = new Vector3(scale * ogScale, scale * ogScale, scale * ogScale);
+    }
     public override void ApplyTEffect(baseTowerScript script)
     {
         for (int i = 1; i < script.gameObject.transform.childCount; i++)
