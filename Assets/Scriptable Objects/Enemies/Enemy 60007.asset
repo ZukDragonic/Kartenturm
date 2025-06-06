@@ -17,7 +17,7 @@ MonoBehaviour:
   description: The youngest of the three slime siblings. He like to annoy his green
     middle sister.
   image: {fileID: 2083860891, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
-  animClip: {fileID: 7400000, guid: ea956b590422b314faade2f5d2b19567, type: 2}
+  animClip: {fileID: 7400000, guid: 6386287bc15636e4f8919f3a7b88ffe6, type: 2}
   speed: 30
   health: 100
   damageToHP: 1

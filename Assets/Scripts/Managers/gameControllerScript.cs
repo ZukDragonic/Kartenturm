@@ -333,9 +333,20 @@ public class gameControllerScript : MonoBehaviour
         //second number should be 1 number before max wave
         if (ID >= 11000 && ID < 12000)
         {
+            switch (ID)
+            {
+                //stops spawning whenever a wave is a "final" wave
+                case 11105:
+                    FlagTrigger(21000);
+                    return;
+                default:
+                    break;
+            }
+
+
             waveManager.spawnWave(ID + 1);
             deckManager.drawCard(1);
-            if (waveManager.findWave(ID).waveNum % deckManager.shopWave == 0)
+            if (waveManager.findWave(ID + 1).waveNum % deckManager.shopWave == 0)
             {
                 deckManager.openShop();
             }
@@ -343,7 +354,6 @@ public class gameControllerScript : MonoBehaviour
             {
                 deckManager.drawCard(3);
             }
-
             if (FlagInfo(20002))
             {
                 switch (ID)
@@ -367,13 +377,20 @@ public class gameControllerScript : MonoBehaviour
             }
         }
         //flippable flags
-        if (ID > 20000 && ID < 21000)
+        if (ID >= 20000 && ID < 21000)
         {
             flagDict[ID] = !flagDict[ID];
         }
+        //single flip flags
+        if (ID >= 21000 && ID < 22000)
+        {
+            flagDict[ID] = true;
+        }
+
         if (ID >= 23000 && ID < 24000)
         {
             //sceneManager stuff
+            int waveWhenLoaded = 0;
             switch (ID)
             {
                 case 23001:
@@ -382,17 +399,23 @@ public class gameControllerScript : MonoBehaviour
                 case 23002:
                     UpdateGameState(GameState.MainMenu);
                     break;
+                case 23012:
+                    waveWhenLoaded = 11100;
+                    break;
+                case 23100:
+                    waveWhenLoaded = 11000;
+                    break;
                 default:
                     break;
             }
             StartAction();
-            if (ID == 23000 ||ID >= 23100) //change 23005 to whatever freeplay mode start
+            if (waveWhenLoaded != 0) //if waveWhenLoaded is not zero, then a wave should be spawned;
             {
                 UpdateGameState(GameState.BetweenWave);
                 StartAction();
                 timeManager.resetTime();
                 deckManager.shuffleDeck();
-                FlagTrigger(11000);
+                FlagTrigger(waveWhenLoaded);
             }
            switch (ID)
             {
@@ -439,10 +462,8 @@ public class gameControllerScript : MonoBehaviour
                 }
                 break;
             case GameState.Placing:
-                prevState = state;
                 break;
             case GameState.TowerMenu:
-                prevState = state;
                 break;
             case GameState.ShopMenu:
                 //Could cause some bugs in the future

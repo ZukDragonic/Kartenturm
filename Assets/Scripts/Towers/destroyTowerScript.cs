@@ -9,11 +9,6 @@ public class destroyTowerScript : MonoBehaviour
 
     void destroyTower()
     {
-        foreach (SOCard card in parentTower.stackedCards)
-        {
-            gameControllerScript.instance.deckManager.shuffleCardInDeck(card);
-        }
-
         //remove comment for limited placement
         /*parentTower.transform.parent.GetComponent<placeableAreaScript>().isPlaceable = true;
         parentTower.transform.parent.GetComponent<CircleCollider2D>().enabled = true;*/

@@ -53,6 +53,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52e77db8409281449b495faf75c5c559, type: 2}
   - {fileID: 11400000, guid: e740869d95fcb1546952540495c77066, type: 2}
   - {fileID: 11400000, guid: e208232d2865b6d41b046da3bf59cad8, type: 2}
+  - {fileID: 11400000, guid: 1a7d814d030d46142a2f54731b6e3c09, type: 2}
+  - {fileID: 11400000, guid: 18a5037e2a9122c488054cb21e48a97a, type: 2}
+  - {fileID: 11400000, guid: 4e5d4a84be437684dbf025a34499b47e, type: 2}
+  - {fileID: 11400000, guid: b08e7da5cea9dc54e95f53b390cb4567, type: 2}
+  - {fileID: 11400000, guid: 0ca0c0c4ab8c7184fb9fdd5f54c51cd0, type: 2}
+  - {fileID: 11400000, guid: af6773bce3c7cd846877517a8af1085a, type: 2}
+  - {fileID: 11400000, guid: c51f069926a1a97449a52fd5156a9838, type: 2}
+  - {fileID: 11400000, guid: ec8934d4941227f4ba62270496265c15, type: 2}
+  - {fileID: 11400000, guid: 0252a87b349308b42b569ca4ceddc2bf, type: 2}
+  - {fileID: 11400000, guid: 3f3d5b9a6bb457946ba08b34dd709f69, type: 2}
+  - {fileID: 11400000, guid: 41de8dbbd9ac029449ecf069c2ba88ae, type: 2}
+  - {fileID: 11400000, guid: 30af8480f71535541ac7b71fbc0c3cc4, type: 2}
+  - {fileID: 11400000, guid: cf2ece5356a63ee4a87b72a0425216b3, type: 2}
   - {fileID: 11400000, guid: 6c39c19c7c5c9ae4ea072b32a3e8e3c8, type: 2}
   waveList:
   - ID: 11000
@@ -364,6 +377,59 @@ MonoBehaviour:
     - enemyID: 60005
       delay: 1
       repeat: 3
+  - ID: 11101
+    endGold: 150
+    waveNum: 1
+    spawnOrder:
+    - enemyID: 60001
+      delay: 2
+      repeat: 5
+  - ID: 11102
+    endGold: 150
+    waveNum: 2
+    spawnOrder:
+    - enemyID: 60001
+      delay: 2
+      repeat: 5
+    - enemyID: 60007
+      delay: 1
+      repeat: 10
+  - ID: 11103
+    endGold: 100
+    waveNum: 3
+    spawnOrder:
+    - enemyID: 60001
+      delay: 2
+      repeat: 5
+    - enemyID: 60007
+      delay: 1
+      repeat: 10
+    - enemyID: 60008
+      delay: 3
+      repeat: 50
+  - ID: 11104
+    endGold: 200
+    waveNum: 4
+    spawnOrder:
+    - enemyID: 60008
+      delay: 2
+      repeat: 50
+    - enemyID: 60007
+      delay: 0.5
+      repeat: 25
+  - ID: 11105
+    endGold: 250
+    waveNum: 5
+    spawnOrder:
+    - enemyID: 60001
+      delay: 2
+      repeat: 50
+    - enemyID: 60007
+      delay: 1
+      repeat: 50
+    - enemyID: 60008
+      delay: 3
+      repeat: 50
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []
   aliveEnemies: []

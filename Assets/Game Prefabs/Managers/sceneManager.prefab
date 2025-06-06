@@ -70,5 +70,19 @@ MonoBehaviour:
     sceneName: Level Selector 6
   - ID: 23011
     sceneName: Level Selector 7
+  - ID: 23012
+    sceneName: Level1 1
+  - ID: 23013
+    sceneName: Level1 2
+  - ID: 23014
+    sceneName: Level1 3
+  - ID: 23015
+    sceneName: Level1 4
+  - ID: 23016
+    sceneName: Level1 5
+  - ID: 23017
+    sceneName: Level1 6
+  - ID: 23018
+    sceneName: Level1 7
   - ID: 23100
     sceneName: Build Scene

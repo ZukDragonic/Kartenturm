@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Slime (Green)
   description: She is shy but wants to be a singer.
   image: {fileID: -796100560, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
-  animClip: {fileID: 7400000, guid: ca4696b67c336004ba3ff2a158ed5d7b, type: 2}
+  animClip: {fileID: 7400000, guid: ea956b590422b314faade2f5d2b19567, type: 2}
   speed: 10
   health: 500
   damageToHP: 1
