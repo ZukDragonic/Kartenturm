@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
+  m_Name: Enemy 60010 1
+  m_EditorClassIdentifier: 
+  ID: 600091
+  Enemyname: Explosion
+  description: 
+  image: {fileID: -1509146818, guid: 09e46a74c1ea33640b127507087f1fe3, type: 3}
+  animClip: {fileID: 7400000, guid: f6b3bb8288a59e34f909a46c21374a36, type: 2}
+  speed: 0
+  health: 4.2949673e+9
+  damageToHP: 0
+  hitRadius: 0
+  goldDrop: 0
+  effects: {fileID: 11400000, guid: 4bd75403eda6dd64c8e86670c24286e0, type: 2}
+  attacks:
+  - target: {fileID: 11400000, guid: 034fe83bf7e1a8b45a6744cc32ceb993, type: 2}
+    appliedEffect:
+    - {fileID: 11400000, guid: dcfd57a3d9cb2604eadcda06e8043005, type: 2}
+    - {fileID: 11400000, guid: 62d1fec742816dc44a79cae6c3c08499, type: 2}
+    endEffect:
+    - {fileID: 11400000, guid: e2885265384530d409ff49025aae4487, type: 2}
+    startLag: 0
+    anim: {fileID: 7400000, guid: f6b3bb8288a59e34f909a46c21374a36, type: 2}
+    endLag: 0
+    moveDuringAttack: 0
+    timeTillNextAttack: 4.2949673e+9

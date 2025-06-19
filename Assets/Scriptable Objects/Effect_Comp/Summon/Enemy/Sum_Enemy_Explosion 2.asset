@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6212c2c270a24884abaca99b5e69ced2, type: 3}
-  m_Name: Sum_Enemy_Explosion
+  m_Name: Sum_Enemy_Explosion 2
   m_EditorClassIdentifier: 
   effectDescription: 
   summonedPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   summonedObject: {fileID: 0}
   summonedTower: {fileID: 0}
-  summonedEnemy: {fileID: 11400000, guid: e83715d7f18c41a448c654edf1670aca, type: 2}
+  summonedEnemy: {fileID: 11400000, guid: 90f8f224743ab854aa6253690ca280cc, type: 2}
   keepSlot: 0

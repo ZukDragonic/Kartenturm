@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: EE_Explode3
+  m_Name: EE_Explode 5
   m_EditorClassIdentifier: 
   passive: []
   destroy:

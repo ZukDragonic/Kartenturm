@@ -13,7 +13,7 @@ public class changeImageScript : MonoBehaviour
     public string varChecked;
     public int flagChecked;
 
-    void Start()
+    void Awake()
     {
         imageComp = GetComponent<Image>();
         currentImage = checkVar();
@@ -69,7 +69,7 @@ public class changeImageScript : MonoBehaviour
                 switch (varChecked)
                 {
                     case "Time":
-                        return 2 * gameControllerScript.instance.timeManager.currentTime;
+                        return 2 * (gameControllerScript.instance.timeManager.prevTime - 1);
                     default:
                         break;
                 }

@@ -69,7 +69,6 @@ public class waveManagerScript : MonoBehaviour
                 {
                     tower.waveEndAction();
                 }
-                currentWave = null;
             }
         }
     }

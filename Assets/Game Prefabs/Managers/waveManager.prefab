@@ -430,6 +430,105 @@ MonoBehaviour:
     - enemyID: 60008
       delay: 3
       repeat: 50
+  - ID: 11106
+    endGold: 150
+    waveNum: 1
+    spawnOrder:
+    - enemyID: 60007
+      delay: 1.5
+      repeat: 20
+  - ID: 11107
+    endGold: 150
+    waveNum: 2
+    spawnOrder:
+    - enemyID: 60007
+      delay: 1
+      repeat: 50
+  - ID: 11108
+    endGold: 200
+    waveNum: 3
+    spawnOrder:
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 1
+      repeat: 30
+  - ID: 11109
+    endGold: 300
+    waveNum: 4
+    spawnOrder:
+    - enemyID: 60010
+      delay: 2
+      repeat: 5
+  - ID: 11110
+    endGold: 300
+    waveNum: 5
+    spawnOrder:
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 100
+  - ID: 11111
+    endGold: 500
+    waveNum: 6
+    spawnOrder:
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 39
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 39
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 39
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 39
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60007
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 0.8
+      repeat: 39
+  - ID: 11112
+    endGold: 400
+    waveNum: 7
+    spawnOrder:
+    - enemyID: 60010
+      delay: 2
+      repeat: 50
+  currentWave:
+    ID: 0
+    endGold: 0
+    waveNum: 0
+    spawnOrder: []
+  enemyAlive: 0
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []
-  aliveEnemies: []

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy 60011 WIP
+  m_Name: Enemy 60011
   m_EditorClassIdentifier: 
   ID: 60011
   Enemyname: Magma Slime (Green)
@@ -22,5 +22,5 @@ MonoBehaviour:
   damageToHP: 1
   hitRadius: 10
   goldDrop: 20
-  effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  effects: {fileID: 11400000, guid: 86e066fedcbedc64da8a0a34f4d02d70, type: 2}
   attacks: []

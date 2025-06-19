@@ -338,9 +338,34 @@ public class gameControllerScript : MonoBehaviour
                 switch (ID)
                 {
                     //stops spawning whenever a wave is a "final" wave
-                    case 11105:
+                    case 11105: //world 1-1 clear
                         FlagTrigger(21000);
+                        //tell waveManager to spawn an endWave menu
                         return;
+                    case 11112: //world 1-2 clear
+                        FlagTrigger(21001);
+                        //tell waveManager to spawn an endWave menu
+                        break;
+                    case 11122: //world 1-3 clear
+                        FlagTrigger(21002);
+                        //tell waveManager to spawn an endWave menu
+                        break;
+                    case 11132:
+                        FlagTrigger(21003);
+                        //tell waveManager to spawn an endWave menu
+                        break;
+                    case 11142:
+                        FlagTrigger(21004);
+                        //tell waveManager to spawn an endWave menu
+                        break;
+                    case 11162:
+                        FlagTrigger(21005);
+                        //tell waveManager to spawn an endWave menu
+                        break;
+                    case 11187:
+                        FlagTrigger(21006);
+                        //tell waveManager to spawn an endWave menu
+                        break;
                     default:
                         break;
                 }
@@ -402,13 +427,29 @@ public class gameControllerScript : MonoBehaviour
                 case 23002:
                     UpdateGameState(GameState.MainMenu);
                     break;
-                case 23012:
+                case 23012: //world 1-1
                     waveWhenLoaded = 11100;
                     break;
-                case 23013:
+                case 23013: //world 1-2
+                    Debug.Log(1);
                     waveWhenLoaded = 11105;
                     break;
-                case 23100:
+                case 23014: //world 1-3
+                    waveWhenLoaded = 11112;
+                    break;
+                case 23015: //world 1-4
+                    waveWhenLoaded = 11122;
+                    break;
+                case 23016: //world 1-5
+                    waveWhenLoaded = 11132;
+                    break;
+                case 23017: //world 1-6
+                    waveWhenLoaded = 11142;
+                    break;
+                case 23018: //world 1-7
+                    waveWhenLoaded = 11162;
+                    break;
+                case 23100: //free play
                     waveWhenLoaded = 11000;
                     break;
                 default:
