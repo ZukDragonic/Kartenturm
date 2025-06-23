@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Magma Slime (Red)
   description: The king of the underworld... or so he believes.
   image: {fileID: 1602782264, guid: 69ba6274802b72f439edd6201f7673af, type: 3}
-  animClip: {fileID: 7400000, guid: 49ad7092ece33cc4faaa69157e8d2731, type: 2}
+  animClip: {fileID: 7400000, guid: 720536828ebabd846a4edcc78d75ff23, type: 2}
   speed: 40
   health: 800
   damageToHP: 1

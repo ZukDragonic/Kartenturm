@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6212c2c270a24884abaca99b5e69ced2, type: 3}
   m_Name: Sum_GoldenKnight
   m_EditorClassIdentifier: 
-  summonedEffects: {fileID: 11400000, guid: c83b0f5d46c059c44ab2ed55b63aa9d6, type: 2}
+  effectDescription: 
   summonedPrefab: {fileID: 2721076032841075567, guid: e9d4e27b92ac10e4ca581cedb648070e, type: 3}
+  summonedObject: {fileID: 0}
   summonedTower: {fileID: 11400000, guid: 75fd3b03d4e6b284ebd867e003b7b687, type: 2}
+  summonedEnemy: {fileID: 0}
+  sumNum: 1
+  keepSlot: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [CreateAssetMenu(fileName = "CardEffectSummon", menuName = "Card/Effect/Summon")]
 public class SOCE_Summon : SOC_Effect
@@ -14,13 +15,22 @@ public class SOCE_Summon : SOC_Effect
     //specifically for enemy
     public SOEnemy summonedEnemy;
 
+    public int sumNum;
+
     public bool keepSlot;
     public override void ApplyEEffect(SOEnemyDisplay script)
     {
-        GameObject current = Instantiate(summonedPrefab, script.gameObject.transform.position, Quaternion.identity, script.transform.parent);
-        SOEnemyDisplay summonedScript = current.GetComponent<SOEnemyDisplay>();
-        summonedScript.enemy = summonedEnemy;
-        gameControllerScript.instance.resourceManager.addEnemy(summonedScript);
+        for (int i = 0; i < sumNum; i++)
+        {
+            Vector3 sumPos = script.gameObject.transform.position;
+            sumPos -= (script.transform.position - script.checkpointPos).normalized * i;
+            GameObject current = Instantiate(summonedPrefab, sumPos, Quaternion.identity, script.transform.parent);
+            SOEnemyDisplay summonedScript = current.GetComponent<SOEnemyDisplay>();
+            summonedScript.enemy = summonedEnemy;
+            summonedScript.checkpointNum = script.checkpointNum;
+            gameControllerScript.instance.resourceManager.addEnemy(summonedScript);
+            gameControllerScript.instance.waveManager.enemyAlive += 1;
+        }
     }
     public override void ApplyTEffect(baseTowerScript script)
     {

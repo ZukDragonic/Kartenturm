@@ -16,11 +16,11 @@ MonoBehaviour:
   Enemyname: Big Slime (Blue)
   description: She worries her husband might find out about her dirty little secret.
   image: {fileID: -1689301070, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
-  animClip: {fileID: 7400000, guid: de21f09cc9dc3294fba3f1b088908082, type: 2}
+  animClip: {fileID: 7400000, guid: 6c8222b88540c6a479289dece99fc6dd, type: 2}
   speed: 15
   health: 5000
   damageToHP: 2
   hitRadius: 10
   goldDrop: 50
-  effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  effects: {fileID: 11400000, guid: f0690f33089ce0141ace18918b6b2e85, type: 2}
   attacks: []

@@ -18,11 +18,12 @@ public class SOEnemyDisplay : sumObj_Base
     public float speed;
     public float health;
     public int hitDamage; //the damage the enemy takes when hit by tower. purely here for effect modification
+    public sumObj_Base hitProjectile;
 
     public float hitRadius;
 
     public float distanceToCheckpoint;
-    public int checkpointNum;
+    public int checkpointNum = 0;
     public Vector3 checkpointPos;
     public List<GameObject> checkpointList;
 
@@ -57,7 +58,6 @@ public class SOEnemyDisplay : sumObj_Base
         GetComponent<CircleCollider2D>().radius = hitRadius / 100;
 
         checkpointList = gameController.waveManager.checkpointList;
-        checkpointNum = 0;
         checkpointPos = checkpointList[checkpointNum].transform.position;
 
         sliderDisplay.updateDisplay(health, enemy.health);
@@ -196,6 +196,7 @@ public class SOEnemyDisplay : sumObj_Base
     public void enemyHit(sumObj_Base hitObject)
     {
         hitDamage = hitObject.damage;
+        hitProjectile = hitObject;
 
         effects.OnHitEffect(this);
 

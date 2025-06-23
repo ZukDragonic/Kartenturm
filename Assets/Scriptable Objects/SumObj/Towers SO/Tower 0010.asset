@@ -21,7 +21,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 24f90b3f1c33a4843abc3b229c2cb14c, type: 3}
   shotsPerAttack: 1
   damage: 80
-  secondsPerAttack: 2
+  secondsPerAttack: 4
   range: 30
   multiplier: 1
   projectileImage: {fileID: 21300000, guid: 8a1fc9b2ef84cba43980f07f3713003f, type: 3}

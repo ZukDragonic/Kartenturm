@@ -2603,6 +2603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8177393799260208737, guid: 05745e82c0f65ba4ab2e96931f9c4578, type: 3}
+      propertyPath: waveList.Array.data[21].spawnOrder.Array.data[0].enemyID
+      value: 60015
+      objectReference: {fileID: 0}
     - target: {fileID: 8177393799260208743, guid: 05745e82c0f65ba4ab2e96931f9c4578, type: 3}
       propertyPath: m_Name
       value: waveManager

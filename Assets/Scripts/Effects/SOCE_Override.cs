@@ -9,6 +9,33 @@ public class SOCE_Override : SOC_Effect
     public float newStat;
 
     public int odds;
+
+    public override void ApplyEEffect(SOEnemyDisplay script)
+    {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
+        switch (stat)
+        {
+            case StatType.Damage:
+                script.hitDamage = (int)newStat;
+                break;
+            case StatType.Pierce:
+                if (script.hitProjectile as sumObj_Projectile != null)
+                {
+                    (script.hitProjectile as sumObj_Projectile).pierce = (int)newStat;
+                }
+                else
+                {
+                    (script.hitProjectile as sumObj_Standalone).pierce = (int)newStat;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     public override void ApplyTEffect(baseTowerScript script)
     {
         if (Random.Range(0, odds) != 0)

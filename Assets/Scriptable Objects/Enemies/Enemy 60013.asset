@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy 60012 WIP
+  m_Name: Enemy 60013
   m_EditorClassIdentifier: 
-  ID: 60012
-  Enemyname: Rock Slime (Blue)
-  description: '"Definitely not a slime. Nope. Definitely not." - The Slime'
-  image: {fileID: -1846826219, guid: 1fb055c9099773747ab81a2c6c5df3e6, type: 3}
+  ID: 60013
+  Enemyname: Rock Slime (Red)
+  description: He claims he would be faster If only he weren't wearing such a heavy
+    rock.
+  image: {fileID: -1188424611, guid: 1fb055c9099773747ab81a2c6c5df3e6, type: 3}
   animClip: {fileID: 7400000, guid: 9026cc598df65fd4ba16902c937e66ae, type: 2}
-  speed: 10
-  health: 100
+  speed: 50
+  health: 10
   damageToHP: 1
   hitRadius: 10
   goldDrop: 10
-  effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  effects: {fileID: 11400000, guid: 9b76c6843b7014549967bc4cb6622ad0, type: 2}
   attacks: []

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432f5d4bdb8db264fb75ecd96f20307f, type: 3}
-  m_Name: EE_Explode 5
+  m_Name: EE_FixedDmg 1
   m_EditorClassIdentifier: 
   passive: []
-  destroy:
-  - effect: {fileID: 11400000, guid: 2ffdd007dba494549a2b6dbc86793e84, type: 2}
-    req: []
+  destroy: []
   summon: []
-  hit: []
+  hit:
+  - effect: {fileID: 11400000, guid: d4768b8d1d681c6438275758cc7612f7, type: 2}
+    req: []
   waveStart: []
   waveEnd: []
   pPassive: []

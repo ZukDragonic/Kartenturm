@@ -17,4 +17,5 @@ MonoBehaviour:
   summonedObject: {fileID: 0}
   summonedTower: {fileID: 0}
   summonedEnemy: {fileID: 11400000, guid: 90f8f224743ab854aa6253690ca280cc, type: 2}
+  sumNum: 1
   keepSlot: 0

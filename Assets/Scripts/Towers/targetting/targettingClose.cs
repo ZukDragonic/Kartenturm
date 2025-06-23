@@ -16,6 +16,14 @@ public class targettingClose : targettingBase
         float furthestDistance = -1;
         float closest = -1;
 
+        foreach (GameObject enemy in script.enemyInRange)
+        {
+            if (enemy == null)
+            {
+                script.enemyInRange.Remove(enemy);
+            }
+        }
+
         if (script.enemyInRange.Count > 0)
         {
             SOEnemyDisplay first = script.enemyInRange[0].GetComponent<SOEnemyDisplay>();
