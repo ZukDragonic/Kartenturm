@@ -74,9 +74,16 @@ public class deckManagerScript : MonoBehaviour
         {
             //DestroyImmediate is used so that it would call previous state first and then shop state
             //DestroyImmediate destroy on same frame
-            DestroyImmediate(gameController.allCanvas[1].transform.GetChild(0).gameObject);
+            //DestroyImmediate is not used due to stopping animation and that creates a bug
+            Destroy(gameController.allCanvas[1].transform.GetChild(0).gameObject);
         }
-        
+
+        StartCoroutine(OpenWhenSafe());
+    }
+
+    IEnumerator OpenWhenSafe()
+    {
+        yield return new WaitUntil(() => gameController.allCanvas[1].transform.childCount < 1);
         shopScript current = Instantiate(shop, gameController.allCanvas[1].transform).GetComponentInChildren<shopScript>();
         current.createShop(-1);
         gameController.UpdateGameState(GameState.ShopMenu);

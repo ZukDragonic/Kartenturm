@@ -627,6 +627,10 @@ PrefabInstance:
       propertyPath: eventDict.dictItems.Array.data[4].check
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
+      propertyPath: eventDict.dictItems.Array.data[5].check
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1262187504832694779, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
       propertyPath: m_RootOrder
       value: 0

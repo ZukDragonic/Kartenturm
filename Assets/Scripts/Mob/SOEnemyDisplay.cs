@@ -100,8 +100,6 @@ public class SOEnemyDisplay : sumObj_Base
             //if each end, do stuff
             else
             {
-                effects.OnDestroyEffect(this);
-
                 reachedEnd = true;
                 gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
                 gameController.resourceManager.removeEnemy(this);

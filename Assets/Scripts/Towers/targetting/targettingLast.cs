@@ -15,12 +15,10 @@ public class targettingLast : targettingBase
         int furthestCheckpoint = -1;
         float furthestDistance = -1;
 
-        foreach (GameObject enemy in script.enemyInRange)
+        int enemyListCount = script.enemyInRange.Count + 1;
+        for (int i = 0; i < enemyListCount; i++)
         {
-            if (enemy == null)
-            {
-                script.enemyInRange.Remove(enemy);
-            }
+            script.enemyInRange.Remove(null);
         }
 
         if (script.enemyInRange.Count > 0)
