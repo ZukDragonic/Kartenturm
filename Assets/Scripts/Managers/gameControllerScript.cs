@@ -452,6 +452,9 @@ public class gameControllerScript : MonoBehaviour
                 case 23100: //free play
                     waveWhenLoaded = 11000;
                     break;
+                case 23999: //testing
+                    waveWhenLoaded = 11122;
+                    break;
                 default:
                     break;
             }

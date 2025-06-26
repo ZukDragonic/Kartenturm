@@ -86,3 +86,6 @@ MonoBehaviour:
     sceneName: Level1 7
   - ID: 23100
     sceneName: Build Scene
+  - ID: 23999
+    sceneName: Test Scene
+  restartScene: 0

@@ -16,6 +16,13 @@ public class SOCE_Retarget : SOC_Effect
     }
     public override void ApplyOPEffect(sumObj_Projectile script)
     {
+        //spaghetti fix that impacts PERFORMANCE or LAG
+        int enemyListCount = gameControllerScript.instance.resourceManager.aliveEnemy.Count + 1;
+        for (int i = 0; i < enemyListCount; i++)
+        {
+            gameControllerScript.instance.resourceManager.aliveEnemy.Remove(null);
+        }
+
         if (gameControllerScript.instance.resourceManager.aliveEnemy.Count <= 0)
         {
             return;
