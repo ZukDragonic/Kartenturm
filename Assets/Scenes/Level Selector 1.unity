@@ -468,6 +468,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].leftImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ad7ab0771d899814e83aa12d6a6c80c8, type: 3}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].rightimage
+      value: 
+      objectReference: {fileID: 21300000, guid: e3e8aca1542bc1544abdba0051fffd13, type: 3}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[1].name
+      value: God
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[1].text
+      value: It suddenly started charging, did it not?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[2].name
+      value: God
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[2].text
+      value: Well, just like how certain towers have abilities and artifacts can
+        add abilities, so do the enemies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[3].name
+      value: God
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[3].text
+      value: The boar, for instance, can charge every so often. Quite a simple ability
+        if I do say so myself.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[4].name
+      value: God
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[4].text
+      value: Watch out for different abilities! Some might even be... a game changer
+        as one might say.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[1].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[2].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[3].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157304328841453057, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
+      propertyPath: dialogueList.Array.data[5].dialogue.Array.data[4].textColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7157304328841453087, guid: a698af449a98cdd47b77d22030eff5c4, type: 3}
       propertyPath: m_Name
       value: dialogueManager

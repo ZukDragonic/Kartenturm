@@ -28,6 +28,7 @@ public class dialogueManagerScript : MonoBehaviour
     public void CreateDialogue(int ID)
     {
         gameController = gameControllerScript.instance;
+        gameController.timeManager.pauseTime();
 
         sentences = new Queue<SingleDialogue>();
 
@@ -62,6 +63,9 @@ public class dialogueManagerScript : MonoBehaviour
         }
 
         curSDialogue = sentences.Dequeue();
+        leftImage.gameObject.SetActive(false);
+        rightImage.gameObject.SetActive(false);
+
         if (curSDialogue.textColor == Color.black)
         {
             nameTextL.color = curSDialogue.textColor;
@@ -77,6 +81,7 @@ public class dialogueManagerScript : MonoBehaviour
 
         if (curSDialogue.imageSide == ImageSide.Left)
         {
+            leftImage.gameObject.SetActive(true);
             dialogueText.transform.parent.GetComponent<Image>().sprite = dialogueBackground[0];
             nameTextL.text = curSDialogue.name;
             nameTextR.text = "";
@@ -85,6 +90,7 @@ public class dialogueManagerScript : MonoBehaviour
         }
         else if (curSDialogue.imageSide == ImageSide.Right)
         {
+            rightImage.gameObject.SetActive(true);
             dialogueText.transform.parent.GetComponent<Image>().sprite = dialogueBackground[1];
             nameTextR.text = curSDialogue.name;
             nameTextL.text = "";
@@ -108,6 +114,7 @@ public class dialogueManagerScript : MonoBehaviour
     {
         gameController.FlagTrigger(curWDialogue.ID);
         Destroy(currentDialogue);
+        gameController.timeManager.resetTime();
     }
 
     WholeDialogue FindWholeDialogue(int ID)

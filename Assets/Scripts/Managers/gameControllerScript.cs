@@ -175,9 +175,6 @@ public class WholeDialogue
     public int ID;
 
     public SingleDialogue[] dialogue;
-
-    public Sprite leftImage;
-    public Sprite rightimage;
 }
 [System.Serializable]
 public class SingleDialogue
@@ -399,6 +396,9 @@ public class gameControllerScript : MonoBehaviour
                     case 11013:
                         dialogueManager.CreateDialogue(22004);
                         break;
+                    case 11100:
+                        dialogueManager.CreateDialogue(22005);
+                        break;
                     default:
                         break;
                 }
@@ -453,7 +453,7 @@ public class gameControllerScript : MonoBehaviour
                     waveWhenLoaded = 11000;
                     break;
                 case 23999: //testing
-                    waveWhenLoaded = 11122;
+                    waveWhenLoaded = 11132;
                     break;
                 default:
                     break;

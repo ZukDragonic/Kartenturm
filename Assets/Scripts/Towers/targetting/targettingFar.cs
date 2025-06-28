@@ -16,8 +16,7 @@ public class targettingFar : targettingBase
         float furthestDistance = -1;
         float farest = -1;
 
-        int enemyListCount = script.enemyInRange.Count + 1;
-        for (int i = 0; i < enemyListCount; i++)
+        while (script.enemyInRange.Contains(null))
         {
             script.enemyInRange.Remove(null);
         }

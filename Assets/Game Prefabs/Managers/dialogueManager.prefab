@@ -262,6 +262,15 @@ MonoBehaviour:
       imageSide: 0
     leftImage: {fileID: 0}
     rightimage: {fileID: 0}
+  - ID: 22005
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub blub
+      image: {fileID: 1802552816, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
+      imageSide: 1
+    leftImage: {fileID: 0}
+    rightimage: {fileID: 0}
   dialoguePrefab: {fileID: 4689816308881287988, guid: 2483f476f2534ae4f80a458007679cd5, type: 3}
   dialogueBackground:
   - {fileID: -637517291, guid: dc2461ac66182824a819deb86f91572a, type: 3}
