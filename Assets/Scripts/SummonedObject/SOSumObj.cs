@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SumObj", menuName = "Summoned Object")]
@@ -14,5 +13,5 @@ public class SOSumObj : ScriptableObject
     public int hitRadius;
 
     public Sprite image;
-    public AnimatorController anim;
+    public RuntimeAnimatorController anim;
 }
