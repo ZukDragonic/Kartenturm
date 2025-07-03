@@ -63,8 +63,6 @@ MonoBehaviour:
       text: No, fuck you!
       image: {fileID: 0}
       imageSide: 0
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   - ID: 22001
     dialogue:
     - name: God
@@ -103,8 +101,6 @@ MonoBehaviour:
       text: Try placing down a tower!
       image: {fileID: 0}
       imageSide: 0
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   - ID: 22002
     dialogue:
     - name: God
@@ -178,8 +174,6 @@ MonoBehaviour:
       text: That'll be all! Try it out if you have the necessary cards.
       image: {fileID: 0}
       imageSide: 0
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   - ID: 22003
     dialogue:
     - name: God
@@ -228,8 +222,6 @@ MonoBehaviour:
       text: Be sure to buy as much as you can afford!
       image: {fileID: 0}
       imageSide: 0
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   - ID: 22004
     dialogue:
     - name: God
@@ -260,8 +252,6 @@ MonoBehaviour:
         as one might say.
       image: {fileID: 0}
       imageSide: 0
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   - ID: 22005
     dialogue:
     - name: Slime King
@@ -269,9 +259,7 @@ MonoBehaviour:
       text: Blub blub
       image: {fileID: 1802552816, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
       imageSide: 1
-    leftImage: {fileID: 0}
-    rightimage: {fileID: 0}
   dialoguePrefab: {fileID: 4689816308881287988, guid: 2483f476f2534ae4f80a458007679cd5, type: 3}
   dialogueBackground:
-  - {fileID: -637517291, guid: dc2461ac66182824a819deb86f91572a, type: 3}
-  - {fileID: 238393423, guid: dc2461ac66182824a819deb86f91572a, type: 3}
+  - {fileID: 431627265, guid: 8bf43f6737c3695499fe9714bd1b1a0f, type: 3}
+  - {fileID: -1413108987, guid: 8bf43f6737c3695499fe9714bd1b1a0f, type: 3}

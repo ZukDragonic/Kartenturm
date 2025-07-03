@@ -33,13 +33,13 @@ public class dialogueManagerScript : MonoBehaviour
         sentences = new Queue<SingleDialogue>();
 
         currentDialogue = Instantiate(dialoguePrefab, gameController.allCanvas[3].transform);
-        nameTextL = currentDialogue.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        nameTextR = currentDialogue.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
-        dialogueText = currentDialogue.transform.GetChild(1).GetChild(2).GetComponent<TextMeshProUGUI>();
+        nameTextL = currentDialogue.transform.Find("Background").Find("Name L").gameObject.GetComponent<TextMeshProUGUI>();
+        nameTextR = currentDialogue.transform.Find("Background").Find("Name R").gameObject.GetComponent<TextMeshProUGUI>();
+        dialogueText = currentDialogue.transform.Find("Background").Find("Dialogue").gameObject.GetComponent<TextMeshProUGUI>();
 
-        leftImage = currentDialogue.transform.GetChild(2).GetChild(0).GetComponent<Image>();
+        leftImage = currentDialogue.transform.Find("Images").Find("Left Image").gameObject.GetComponent<Image>();
         leftImage.gameObject.SetActive(false);
-        rightImage = currentDialogue.transform.GetChild(2).GetChild(1).GetComponent<Image>();
+        rightImage = currentDialogue.transform.Find("Images").Find("Right Image").gameObject.GetComponent<Image>();
         rightImage.gameObject.SetActive(false);
 
 
@@ -87,6 +87,10 @@ public class dialogueManagerScript : MonoBehaviour
             nameTextR.text = "";
             leftImage.sprite = curSDialogue.image;
             rightImage.sprite = null;
+            if (curSDialogue.image == null)
+            {
+                leftImage.gameObject.SetActive(false);
+            }
         }
         else if (curSDialogue.imageSide == ImageSide.Right)
         {
@@ -96,6 +100,10 @@ public class dialogueManagerScript : MonoBehaviour
             nameTextL.text = "";
             rightImage.sprite = curSDialogue.image;
             leftImage.sprite = null;
+            if (curSDialogue.image == null)
+            {
+                rightImage.gameObject.SetActive(false);
+            }
         }
         StartCoroutine(TypeSentece(curSDialogue.text));
     }

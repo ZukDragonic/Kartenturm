@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc2461ac66182824a819deb86f91572a
+guid: 8bf43f6737c3695499fe9714bd1b1a0f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -120,9 +120,9 @@ TextureImporter:
       name: In_Game_Menu_3_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 272
-        width: 600
+        x: 39
+        y: 422
+        width: 1176
         height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf504b35aefe4b42b7969858c018632
-      internalID: 238393423
+      spriteID: 467a244d0101eb84e82c81267759c5b2
+      internalID: -1413108987
       vertices: []
       indices: 
       edges: []
@@ -141,9 +141,9 @@ TextureImporter:
       name: In_Game_Menu_3_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 16
-        width: 600
+        x: 39
+        y: 166
+        width: 1176
         height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5163a9438217ff34cafad1da0258afd8
-      internalID: -637517291
+      spriteID: 463258500bd6f8143967d66ea93e14e9
+      internalID: 431627265
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      In_Game_Menu_3_0: 238393423
-      In_Game_Menu_3_1: -637517291
+      In_Game_Menu_3_0: -1413108987
+      In_Game_Menu_3_1: 431627265
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

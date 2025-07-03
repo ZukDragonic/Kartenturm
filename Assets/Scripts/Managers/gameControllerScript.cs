@@ -347,19 +347,19 @@ public class gameControllerScript : MonoBehaviour
                         FlagTrigger(21002);
                         //tell waveManager to spawn an endWave menu
                         break;
-                    case 11132:
+                    case 11132: //world 1-4 clear
                         FlagTrigger(21003);
                         //tell waveManager to spawn an endWave menu
                         break;
-                    case 11142:
+                    case 11142: //world 1-5 clear
                         FlagTrigger(21004);
                         //tell waveManager to spawn an endWave menu
                         break;
-                    case 11162:
+                    case 11160: //world 1-6 clear
                         FlagTrigger(21005);
                         //tell waveManager to spawn an endWave menu
                         break;
-                    case 11187:
+                    case 11181: //world 1-7 clear
                         FlagTrigger(21006);
                         //tell waveManager to spawn an endWave menu
                         break;
@@ -447,7 +447,7 @@ public class gameControllerScript : MonoBehaviour
                     waveWhenLoaded = 11142;
                     break;
                 case 23018: //world 1-7
-                    waveWhenLoaded = 11162;
+                    waveWhenLoaded = 11160;
                     break;
                 case 23100: //free play
                     waveWhenLoaded = 11000;
