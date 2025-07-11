@@ -12,7 +12,6 @@ public class targettingClose : targettingBase
     public override void UpdateCheck(baseTowerScript script)
     {
         script.currentTarget = null;
-        int furthestCheckpoint = -1;
         float furthestDistance = -1;
         float closest = -1;
 
@@ -25,8 +24,7 @@ public class targettingClose : targettingBase
         {
             SOEnemyDisplay first = script.enemyInRange[0].GetComponent<SOEnemyDisplay>();
 
-            furthestCheckpoint = first.checkpointNum;
-            furthestDistance = first.distanceToCheckpoint;
+            furthestDistance = first.totalRemainingDistance;
             closest = Vector3.Distance(script.transform.position, first.gameObject.transform.position);
             script.currentTarget = first.gameObject;
         }
@@ -44,23 +42,12 @@ public class targettingClose : targettingBase
             }
             else if (comparedDistance == closest)
             {
-                int comparedCpNum = enemyScript.checkpointNum;
-                //if enemy is on further checkpoint, update
-                if (comparedCpNum > furthestCheckpoint)
+                float currentDistance = enemyScript.totalRemainingDistance;
+                //if enemy is further from end, update
+                if (currentDistance < furthestDistance)
                 {
-                    furthestCheckpoint = comparedCpNum;
-                    furthestDistance = enemyScript.distanceToCheckpoint;
+                    furthestDistance = currentDistance;
                     script.currentTarget = enemy;
-                }
-                else if (comparedCpNum == furthestCheckpoint)
-                {
-                    float currentDistance = enemyScript.distanceToCheckpoint;
-                    //if enemy is further from checkpoint, update
-                    if (currentDistance < furthestDistance)
-                    {
-                        furthestDistance = currentDistance;
-                        script.currentTarget = enemy;
-                    }
                 }
             }
         }

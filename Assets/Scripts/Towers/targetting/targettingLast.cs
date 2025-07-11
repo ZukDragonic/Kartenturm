@@ -12,7 +12,6 @@ public class targettingLast : targettingBase
     public override void UpdateCheck(baseTowerScript script)
     {
         script.currentTarget = null;
-        int furthestCheckpoint = -1;
         float furthestDistance = -1;
 
         int enemyListCount = script.enemyInRange.Count + 1;
@@ -25,7 +24,6 @@ public class targettingLast : targettingBase
         {
             SOEnemyDisplay first = script.enemyInRange[0].GetComponent<SOEnemyDisplay>();
 
-            furthestCheckpoint = first.checkpointNum;
             furthestDistance = first.distanceToCheckpoint;
             script.currentTarget = first.gameObject;
         }
@@ -35,22 +33,13 @@ public class targettingLast : targettingBase
             SOEnemyDisplay enemyScript = enemy.GetComponent<SOEnemyDisplay>();
 
             int comparedCpNum = enemyScript.checkpointNum;
-            //if enemy is on further checkpoint, update
-            if (comparedCpNum < furthestCheckpoint)
+
+            float currentDistance = enemyScript.totalRemainingDistance;
+            //if enemy is further from end, update
+            if (currentDistance > furthestDistance)
             {
-                furthestCheckpoint = comparedCpNum;
-                furthestDistance = enemyScript.distanceToCheckpoint;
+                furthestDistance = currentDistance;
                 script.currentTarget = enemy;
-            }
-            else if (comparedCpNum == furthestCheckpoint)
-            {
-                float currentDistance = enemyScript.distanceToCheckpoint;
-                //if enemy is further from checkpoint, update
-                if (currentDistance > furthestDistance)
-                {
-                    furthestDistance = currentDistance;
-                    script.currentTarget = enemy;
-                }
             }
         }
     }

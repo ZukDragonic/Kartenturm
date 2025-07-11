@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.AI;
+
+//change checkpointList to a list of vector3 instead of GameObject
 
 public class SOEnemyDisplay : sumObj_Base
 {
@@ -23,6 +24,7 @@ public class SOEnemyDisplay : sumObj_Base
     public float hitRadius;
 
     public float distanceToCheckpoint;
+    public float totalRemainingDistance;
     public int checkpointNum = 0;
     public Vector3 checkpointPos;
     public List<GameObject> checkpointList;
@@ -106,6 +108,14 @@ public class SOEnemyDisplay : sumObj_Base
             }
             checkpointNum += 1;
         }
+
+        float tempTRD = distanceToCheckpoint;
+        for (int i = checkpointNum + 1;i < checkpointList.Count - 1; i++)
+        {
+            tempTRD += (Vector3.Distance(checkpointList[i].transform.position, checkpointList[i + 1].transform.position));
+        }
+        totalRemainingDistance = tempTRD;
+
     }
 
     IEnumerator AttackCycle()

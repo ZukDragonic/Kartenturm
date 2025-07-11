@@ -232,6 +232,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: sceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[16].ID
+      value: 23100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[17].ID
+      value: 23999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[18].ID
+      value: 23999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[19].ID
+      value: 23999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[16].sceneName
+      value: Build Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[17].sceneName
+      value: Test Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[18].sceneName
+      value: Test Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767104897368455551, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
+      propertyPath: allScenes.Array.data[19].sceneName
+      value: Test Scene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89fe0ff0c7043d14195628e14b286213, type: 3}
 --- !u!4 &622226361 stripped
@@ -274,9 +310,9 @@ RectTransform:
   m_Father: {fileID: 1426203618}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15.359985, y: -15.360107}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -624.64, y: 344.6399}
   m_SizeDelta: {x: 30.71997, y: 30.720001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628224948

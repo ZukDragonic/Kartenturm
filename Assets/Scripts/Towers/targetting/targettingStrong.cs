@@ -26,7 +26,6 @@ public class targettingStrong : targettingBase
             SOEnemyDisplay first = script.enemyInRange[0].GetComponent<SOEnemyDisplay>();
 
             furthestCheckpoint = first.checkpointNum;
-            furthestDistance = first.distanceToCheckpoint;
             highestHp = first.health;
             script.currentTarget = first.gameObject;
         }
@@ -44,23 +43,12 @@ public class targettingStrong : targettingBase
             }
             else if (comparedHp == highestHp)
             {
-                int comparedCpNum = enemyScript.checkpointNum;
-                //if enemy is on further checkpoint, update
-                if (comparedCpNum > furthestCheckpoint)
+                float currentDistance = enemyScript.totalRemainingDistance;
+                //if enemy is further from end, update
+                if (currentDistance < furthestDistance)
                 {
-                    furthestCheckpoint = comparedCpNum;
-                    furthestDistance = enemyScript.distanceToCheckpoint;
+                    furthestDistance = currentDistance;
                     script.currentTarget = enemy;
-                }
-                else if (comparedCpNum == furthestCheckpoint)
-                {
-                    float currentDistance = enemyScript.distanceToCheckpoint;
-                    //if enemy is further from checkpoint, update
-                    if (currentDistance < furthestDistance)
-                    {
-                        furthestDistance = currentDistance;
-                        script.currentTarget = enemy;
-                    }
                 }
             }
         }
