@@ -170,6 +170,11 @@ public class Wave
     public EnemyAndDelay[] spawnOrder;
 }
 [System.Serializable]
+public class Route
+{
+    public List<GameObject> checkpointList;
+}
+[System.Serializable]
 public class WholeDialogue
 {
     public int ID;
@@ -453,7 +458,7 @@ public class gameControllerScript : MonoBehaviour
                     waveWhenLoaded = 11000;
                     break;
                 case 23999: //testing
-                    waveWhenLoaded = 11132;
+                    waveWhenLoaded = 11112;
                     break;
                 default:
                     break;

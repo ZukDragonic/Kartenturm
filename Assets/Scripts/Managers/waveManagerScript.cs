@@ -16,7 +16,7 @@ public class waveManagerScript : MonoBehaviour
     public GameObject enemyPrefab;
 
     private GameObject checkpointParent;
-    public List<GameObject> checkpointList;
+    public List<Route> routeList;
     //all maps must be 25x18
 
     public void StartAction()
@@ -28,10 +28,17 @@ public class waveManagerScript : MonoBehaviour
         checkpointParent = GameObject.Find("Checkpoint Parent");
         if (checkpointParent != null)
         {
-            checkpointList = new List<GameObject>();
+
+            routeList = new List<Route>();
             for (int i = 0; i < checkpointParent.transform.childCount; i++)
             {
-                checkpointList.Add(checkpointParent.transform.GetChild(i).gameObject);
+                routeList.Add(new Route());
+                routeList[i].checkpointList = new List<GameObject>();
+                Transform currentRoute = checkpointParent.transform.GetChild(i);
+                for (int k = 0; k < currentRoute.childCount;k++)
+                {
+                    routeList[i].checkpointList.Add(currentRoute.GetChild(k).gameObject);
+                }
             }
         }
     }
@@ -89,6 +96,10 @@ public class waveManagerScript : MonoBehaviour
         }
         enemyAlive = 0;
         isWaveSpawning = true;
+
+        int routeTracker = 0;
+        int routeCount = routeList.Count;
+
         for (int i = 0; i < wave.spawnOrder.Length; i++)
         {
             for (int k = 0; k < wave.spawnOrder[i].repeat; k++)
@@ -100,10 +111,15 @@ public class waveManagerScript : MonoBehaviour
                     currentFrame += gameController.timeManager.currentTime;
                     yield return null;
                 }
-                GameObject current = Instantiate(enemyPrefab, new Vector3(checkpointList[0].transform.position.x - 0.1f,
-                    checkpointList[0].transform.position.y - 0.1f, 0), Quaternion.identity);
+
+                List<GameObject> spawnedCheckpoint = routeList[routeTracker % routeCount].checkpointList;
+                routeTracker += 1;
+
+                GameObject current = Instantiate(enemyPrefab, new Vector3(spawnedCheckpoint[0].transform.position.x - 0.1f,
+                    spawnedCheckpoint[0].transform.position.y - 0.1f, 0), Quaternion.identity);
                 SOEnemyDisplay eScript = current.GetComponent<SOEnemyDisplay>();
                 eScript.enemy = findEnemy(wave.spawnOrder[i].enemyID);
+                eScript.checkpointList = spawnedCheckpoint;
                 enemyAlive += 1;
                 gameController.resourceManager.addEnemy(eScript);
             }

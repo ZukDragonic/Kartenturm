@@ -59,7 +59,7 @@ public class SOEnemyDisplay : sumObj_Base
         effects = SOCE_Parent.CreateInstance(enemy.effects);
         GetComponent<CircleCollider2D>().radius = hitRadius / 100;
 
-        checkpointList = gameController.waveManager.checkpointList;
+        //checkpointList is set in waveManagerScript
         checkpointPos = checkpointList[checkpointNum].transform.position;
 
         sliderDisplay.updateDisplay(health, enemy.health);
