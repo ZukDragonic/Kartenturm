@@ -402,6 +402,9 @@ public class gameControllerScript : MonoBehaviour
                         dialogueManager.CreateDialogue(22004);
                         break;
                     case 11100:
+                        dialogueManager.CreateDialogue(22001);
+                        break;
+                    case 11103:
                         dialogueManager.CreateDialogue(22005);
                         break;
                     default:
