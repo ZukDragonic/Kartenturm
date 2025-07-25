@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class waveManagerScript : MonoBehaviour
 {
     public gameControllerScript gameController;
@@ -12,6 +11,13 @@ public class waveManagerScript : MonoBehaviour
     public Wave currentWave;
     public int enemyAlive;
     private bool isWaveSpawning;
+
+    private List<int> freeplayEnemySpawnList;
+    private int freeplaySpawnTotal;
+    private int freeplaySpawnMaxRep;
+    private Wave currentFreeplayWave;
+    public string freeplaySeed;
+    private System.Random setSeed; 
 
     public GameObject enemyPrefab;
 
@@ -41,6 +47,10 @@ public class waveManagerScript : MonoBehaviour
                 }
             }
         }
+
+        freeplayEnemySpawnList = null;
+        freeplaySpawnTotal = 0;
+        freeplaySpawnMaxRep = 0;
     }
 
     public void spawnWave(int ID)
@@ -52,6 +62,46 @@ public class waveManagerScript : MonoBehaviour
             return;
         }
         StartCoroutine(waveManager(currentWave));
+    }
+
+    public void spawnFreePlayWave(int ID)
+    {
+        //if freeplayEnemySpawnList has no enemies in it, the spawnable enemies haven't been initialized
+        //Therefore, initialize every variable
+        if (freeplayEnemySpawnList == null)
+        {
+            foreach (EnemyAndDelay enemy in currentWave.spawnOrder)
+            {
+                freeplaySpawnTotal += enemy.repeat * findEnemy(enemy.enemyID).spawnValue;
+            }
+
+            freeplayEnemySpawnList = new List<int>();
+            Wave tempWave = findWave(ID);
+
+            //adds in spawnable enemies
+            foreach (EnemyAndDelay enemy in tempWave.spawnOrder)
+            {
+                freeplayEnemySpawnList.Add(enemy.enemyID);
+            }
+
+            setSeed = new System.Random(freeplaySeed.GetHashCode());
+        }
+        currentFreeplayWave = new Wave();
+        currentFreeplayWave.endGold = 0;
+        currentFreeplayWave.waveNum = currentWave.waveNum + 1;
+
+        while (freeplaySpawnTotal > 0)
+        {
+            int spawnedEnemyIndex = setSeed.Next(0, freeplayEnemySpawnList.Count);
+            SOEnemy foundEnemy = findEnemy(freeplayEnemySpawnList[spawnedEnemyIndex]);
+            if (foundEnemy.spawnValue > freeplaySpawnTotal)
+            {
+
+            }
+
+            //currentFreeplayWave.spawnOrder
+        }
+
     }
 
     public void enemyDied()

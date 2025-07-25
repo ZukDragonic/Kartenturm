@@ -1193,11 +1193,46 @@ MonoBehaviour:
     - enemyID: 60017
       delay: 28
       repeat: 10
+  - ID: 11182
+    endGold: 0
+    waveNum: 0
+    spawnOrder:
+    - enemyID: 60014
+      delay: 0
+      repeat: 1
+    - enemyID: 60014
+      delay: 0
+      repeat: 19
+    - enemyID: 60012
+      delay: 20
+      repeat: 20
+    - enemyID: 60013
+      delay: 12
+      repeat: 20
+    - enemyID: 60010
+      delay: 8
+      repeat: 15
+    - enemyID: 60009
+      delay: 15
+      repeat: 15
+    - enemyID: 60011
+      delay: 22
+      repeat: 15
+    - enemyID: 60015
+      delay: 22
+      repeat: 10
+    - enemyID: 60016
+      delay: 14
+      repeat: 10
+    - enemyID: 60017
+      delay: 28
+      repeat: 10
   currentWave:
     ID: 0
     endGold: 0
     waveNum: 0
     spawnOrder: []
   enemyAlive: 0
+  freeplaySeed: 
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
-  checkpointList: []
+  routeList: []

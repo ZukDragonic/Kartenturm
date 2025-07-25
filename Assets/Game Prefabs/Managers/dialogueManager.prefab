@@ -279,6 +279,132 @@ MonoBehaviour:
       text: Blub blub! BLUB BLUB BLUB!!!!
       image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
       imageSide: 1
+  - ID: 22006
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub... blub blub... >~<
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub.......... QwQ
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+  - ID: 22007
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: BLUB BLUB BLUB BLUB!!! >:(
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: BLUUUUUBBBBBBBB!!! >:C
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub... :c
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+  - ID: 22007
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: BLUB BLUB BLUB BLUB!!! >:(
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: BLUUUUUBBBBBBBB!!! >:C
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub... :c
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+  - ID: 22008
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blub...  -.-
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Blu-blu-blub blub blub... -_-
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: .................................................................................
+        Blub
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+  - ID: 22009
+    dialogue:
+    - name: Slime King
+      textColor: {r: 0.5471698, g: 0.48263252, b: 0.002580996, a: 1}
+      text: Bluuuuuuuuurggggggggggghhhh!!!!!!!
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0.8396226, g: 0.5565458, b: 0.19406372, a: 1}
+      text: Bluuuuubbbb blub BLUB BLUB!!! >:[
+      image: {fileID: 21300000, guid: f183fe8114ef26b40b528f73501c686c, type: 3}
+      imageSide: 1
+    - name: You
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: ...
+      image: {fileID: 21300000, guid: d4eb5dfd13cf6b44eb9db12225e49466, type: 3}
+      imageSide: 0
+    - name: Slime King
+      textColor: {r: 0.6603774, g: 0.15828611, b: 0, a: 1}
+      text: You invaded my kingdom... You must pay recompense for your actions!
+      image: {fileID: 318651560, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
+      imageSide: 1
   dialoguePrefab: {fileID: 4689816308881287988, guid: 2483f476f2534ae4f80a458007679cd5, type: 3}
   dialogueBackground:
   - {fileID: 431627265, guid: 8bf43f6737c3695499fe9714bd1b1a0f, type: 3}

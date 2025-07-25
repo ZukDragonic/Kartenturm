@@ -390,22 +390,52 @@ public class gameControllerScript : MonoBehaviour
                 {
                     //spawns at the end of the current wave ID
                     case 11000:
+                        //general tutorial dialogue
                         dialogueManager.CreateDialogue(22001);
                         break;
                     case 11002:
+                        //artifact tutorial
                         dialogueManager.CreateDialogue(22002);
                         break;
                     case 11005:
+                        //shop tutorial
                         dialogueManager.CreateDialogue(22003);
                         break;
                     case 11013:
+                        //enemy ability tutorial
                         dialogueManager.CreateDialogue(22004);
                         break;
                     case 11100:
+                        //general tutorial
                         dialogueManager.CreateDialogue(22001);
                         break;
-                    case 11103:
+                    case 11105:
+                        //artifact tutorial
+                        dialogueManager.CreateDialogue(22002);
+                        break;
+                    case 11110:
+                        //shop tutorial
+                        dialogueManager.CreateDialogue(22003);
+                        break;
+                    case 11121:
+                        //slime king dialogue at 1-3 wave 8 end
                         dialogueManager.CreateDialogue(22005);
+                        break;
+                    case 11155:
+                        //slime king dialogue at 1-5 wave 13 end
+                        dialogueManager.CreateDialogue(22006);
+                        break;
+                    case 11159:
+                        //slime king dialogue at 1-5 wave 17 end
+                        dialogueManager.CreateDialogue(22007);
+                        break;
+                    case 11172:
+                        //slime king dialogue at 1-7 wave 12 end
+                        dialogueManager.CreateDialogue(22008);
+                        break;
+                    case 11180:
+                        //slime king dialogue at 1-7 wave 20 end
+                        dialogueManager.CreateDialogue(22009);
                         break;
                     default:
                         break;

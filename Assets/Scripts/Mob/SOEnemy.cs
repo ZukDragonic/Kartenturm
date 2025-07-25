@@ -16,6 +16,7 @@ public class SOEnemy : ScriptableObject
     public float speed;
     public float health;
     public int damageToHP;
+    public int spawnValue;
 
     public float hitRadius;
 
