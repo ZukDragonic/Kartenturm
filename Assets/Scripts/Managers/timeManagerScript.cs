@@ -64,6 +64,7 @@ public class timeManagerScript : MonoBehaviour
 
     public void ChangeFps(int Fps)
     {
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Fps;
         currentFps = Fps;
         secondsPerFrame = 1 / Fps;
