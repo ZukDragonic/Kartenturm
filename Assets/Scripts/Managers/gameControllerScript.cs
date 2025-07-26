@@ -311,7 +311,14 @@ public class gameControllerScript : MonoBehaviour
         stateMaskDict = maskDict.toDictionary();
 
         StartCoroutine(startAfterLoad());
+    }
 
+    void Update()
+    {
+        /*PointerEventData eventData = new PointerEventData(EventSystem.current);
+        mainInput_Ray.hit = eventData.pointerCurrentRaycast.gameObject;
+        Debug.DrawRay(eventData.pointerCurrentRaycast.screenPosition, Vector3.forward, Color.black, 3f);
+        Debug.Log(mainInput_Ray.hit);*/
         mainInput_Ray.ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         mainInput_Ray.hittingSomething = Physics2D.Raycast(mainInput_Ray.ray.origin, mainInput_Ray.ray.direction, 1000, stateMaskDict[state]);
         if (mainInput_Ray.hittingSomething)
@@ -322,14 +329,6 @@ public class gameControllerScript : MonoBehaviour
         {
             mainInput_Ray.hit = null;
         }
-    }
-
-    void Update()
-    {
-        /*PointerEventData eventData = new PointerEventData(EventSystem.current);
-        mainInput_Ray.hit = eventData.pointerCurrentRaycast.gameObject;
-        Debug.DrawRay(eventData.pointerCurrentRaycast.screenPosition, Vector3.forward, Color.black, 3f);
-        Debug.Log(mainInput_Ray.hit);*/
     }
 
     public void FlagTrigger(int ID)

@@ -138,6 +138,7 @@ public class waveManagerScript : MonoBehaviour
     IEnumerator waveManager(Wave wave)
     {
         yield return null;
+
         gameController.resourceManager.updateWave(currentWave.waveNum);
         //wait for gameState is wait if not autostart
         //wait for prev gamestate to not be betweenwave if autostart
