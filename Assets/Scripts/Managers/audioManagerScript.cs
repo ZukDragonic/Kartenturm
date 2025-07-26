@@ -25,6 +25,13 @@ public class audioManagerScript : MonoBehaviour
     public void PlaySound(int ID)
     {
         Sound current = Array.Find(sounds, sound => sound.ID == ID);
+
+        if (current.isPlaying)
+        {
+            return;
+        }
+        current.isPlaying = true;
+
         if (current == null)
         {
             Debug.Log("Fuck off and enter an an actual audio ID.");
@@ -58,6 +65,7 @@ public class audioManagerScript : MonoBehaviour
         }
 
         source.Play();
+        current.isPlaying = false;
     }
 
     AudioSource CheckEmptySource(AudioSource[] sourceList)

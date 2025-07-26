@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class waveManagerScript : MonoBehaviour
 {
     public gameControllerScript gameController;
@@ -25,9 +26,14 @@ public class waveManagerScript : MonoBehaviour
     public List<Route> routeList;
     //all maps must be 25x18
 
+    public GameObject gameLossPrefab;
+    public GameObject gameWinPrefab;
+
     public void StartAction()
     {
         gameController = gameControllerScript.instance;
+
+        gameController.FlagTrigger(19001);
 
         StopAllCoroutines();
 
@@ -175,6 +181,16 @@ public class waveManagerScript : MonoBehaviour
             }
         }
         isWaveSpawning = false;
+    }
+
+    public void GameLostMenu()
+    {
+        Instantiate(gameLossPrefab, gameController.allCanvas[3].transform);
+    }
+
+    public void GameWinMenu()
+    {
+        Instantiate(gameWinPrefab, gameController.allCanvas[3].transform);
     }
 
     public SOEnemy findEnemy(int ID)
