@@ -56,7 +56,8 @@ public class resourceManagerScript : MonoBehaviour
         healthDisplay.updateDisplay(health);
         if (health <= 0)
         {
-            gameControllerScript.instance.FlagTrigger(30003);
+            health = 0;
+            gameControllerScript.instance.FlagTrigger(19000);
         }
     }
 

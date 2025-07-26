@@ -1201,3 +1201,5 @@ MonoBehaviour:
   enemyAlive: 0
   enemyPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
   checkpointList: []
+  gameLossPrefab: {fileID: 4708969264233502213, guid: 28b6da61c5832fc418a41924ade14cef, type: 3}
+  gameWinPrefab: {fileID: 4708969264233502213, guid: a032409b855442647a1eb8f8b1d6161e, type: 3}

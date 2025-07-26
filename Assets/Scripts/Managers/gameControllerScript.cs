@@ -228,7 +228,9 @@ public class EnemyAttack
 public class Sound
 {
     public int ID;
-    
+
+    public bool isPlaying;
+
     public AudioClip[] clips;
     public int maxInstances;
     [Range(0f,1f)]
@@ -337,31 +339,31 @@ public class gameControllerScript : MonoBehaviour
                     //stops spawning whenever a wave is a "final" wave
                     case 11105: //world 1-1 clear
                         FlagTrigger(21000);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         return;
                     case 11112: //world 1-2 clear
                         FlagTrigger(21001);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     case 11122: //world 1-3 clear
                         FlagTrigger(21002);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     case 11132: //world 1-4 clear
                         FlagTrigger(21003);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     case 11142: //world 1-5 clear
                         FlagTrigger(21004);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     case 11160: //world 1-6 clear
                         FlagTrigger(21005);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     case 11181: //world 1-7 clear
                         FlagTrigger(21006);
-                        //tell waveManager to spawn an endWave menu
+                        FlagTrigger(19002);
                         break;
                     default:
                         break;
@@ -478,11 +480,23 @@ public class gameControllerScript : MonoBehaviour
         //each event an ID would trigger, use for really important events
         switch (ID)
         {
-            case 20004:
-                //insert game win shit
-                break;
-            case 20003:
+            case 19000:
+                //prevent game loss from double losing
+                if (flagDict[ID])
+                {
+                    return;
+                }
                 //insert game loss shit
+                flagDict[ID] = true;
+                waveManager.GameLostMenu();
+                break;
+            case 19001:
+                //insert game restart shit
+                flagDict[19000] = false;
+                break;
+            case 19002:
+                //insert game win shit
+                waveManager.GameWinMenu();
                 break;
             default:
                 break;

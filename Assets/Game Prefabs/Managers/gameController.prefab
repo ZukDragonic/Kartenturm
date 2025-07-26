@@ -82,18 +82,21 @@ MonoBehaviour:
   allCanvas: []
   eventDict:
     dictItems:
+    - ID: 19000
+      check: 0
+      name: GameLoss
+    - ID: 19001
+      check: 0
+      name: GameRestart
+    - ID: 19002
+      check: 0
+      name: GameWin
     - ID: 20001
       check: 0
       name: Auto Start
     - ID: 20002
       check: 0
       name: Tutorial
-    - ID: 20003
-      check: 0
-      name: GameLoss
-    - ID: 20004
-      check: 0
-      name: GameWin
     - ID: 21000
       check: 0
       name: 11Level
