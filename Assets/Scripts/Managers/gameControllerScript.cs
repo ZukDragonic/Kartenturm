@@ -684,5 +684,7 @@ public class gameControllerScript : MonoBehaviour
         waveManager.StartAction();
 
         timeManager.ChangeFps(60);
+
+        Camera.main.gameObject.GetComponent<aspectRatioCamera>().StartAction();
     }
 }

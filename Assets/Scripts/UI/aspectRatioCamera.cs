@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class aspectRatioCamera : MonoBehaviour
 {
@@ -8,10 +9,17 @@ public class aspectRatioCamera : MonoBehaviour
 
     private Vector2 res;
 
-    void Start()
+    //used to ensure all UI elements anchors appropriately to the new screen size
+    private List<CanvasScaler> scalerList = new List<CanvasScaler>();
+
+    public void StartAction()
     {
+        scalerList = new List<CanvasScaler>();
+        foreach (GameObject canvas in gameControllerScript.instance.allCanvas)
+        {
+            scalerList.Add(canvas.GetComponent<CanvasScaler>());
+        }
         Adjust();
-        res = new Vector2(Screen.width, Screen.height);
     }
 
     void Update()
@@ -40,6 +48,11 @@ public class aspectRatioCamera : MonoBehaviour
             rect.height = scaleHeight;
             rect.x = 0;
             rect.y = (1.0f - scaleHeight) / 2.0f;
+
+            foreach (CanvasScaler scaler in scalerList)
+            {
+                scaler.matchWidthOrHeight = 0;
+            }
         }
         else
         {
@@ -50,6 +63,11 @@ public class aspectRatioCamera : MonoBehaviour
             rect.height = 1.0f;
             rect.x = (1.0f - scaleWidth) / 2.0f;
             rect.y = 0;
+
+            foreach (CanvasScaler scaler in scalerList)
+            {
+                scaler.matchWidthOrHeight = 1;
+            }
         }
         camera.rect = rect;
     }
