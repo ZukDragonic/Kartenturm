@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498156217811025738}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4408194135892189636}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &436247232415272559
 CircleCollider2D:
@@ -42,6 +42,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -72,13 +91,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2576603434444906187}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4408194135892189636}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &6562833853550790321
 CircleCollider2D:
@@ -90,6 +109,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -120,13 +158,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9041243731465249753}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4408194135892189636}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &7454622415709338827
 CircleCollider2D:
@@ -138,6 +176,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -149,6 +206,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1189117547836510922, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
@@ -213,6 +271,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6079099805674998982, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 6733935536830681516}
+    - targetCorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4904886877793751422}
+    - targetCorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9052993228848490445}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4121160897819890467, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5491216346989615044}
   m_SourcePrefab: {fileID: 100100000, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
 --- !u!1 &2721076032841075567 stripped
 GameObject:
@@ -231,10 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042b90d3411fdb64aaa5482e44ff2969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effects: {fileID: 0}
+  damage: 0
   baseCard: {fileID: 0}
   stackedCards: []
   placeHolderCard: {fileID: 11400000, guid: d6f8fbe09d1abfb4baeb35735e02b0e7, type: 2}
-  currentEffect: {fileID: 0}
   isSelected: 0
   towerMenuPrefabL: {fileID: 4901132420117035387, guid: 0422e43c0f266ed429040d9d8e9943bd, type: 3}
   towerMenuPrefabR: {fileID: 2712563400052095682, guid: b1ff6e97dcdf0ef499429ecfd420f142, type: 3}
@@ -244,11 +318,11 @@ MonoBehaviour:
   allTargetting: []
   targetChange: 0
   range: 0
-  attackValue: 0
-  projectilePierce: 0
+  pierce: 0
   shotsPerAttack: 0
   secondsPerAttack: 0
   multiplier: 0
+  totalDamage: 0
   baseProjectile: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
 --- !u!4 &4408194135892189636 stripped
 Transform:

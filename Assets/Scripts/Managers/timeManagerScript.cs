@@ -28,6 +28,7 @@ public class timeManagerScript : MonoBehaviour
             gameControllerScript.instance.UpdateGameState(GameState.Wave);
             return;
         }
+
         currentTime++;
         prevTime = currentTime;
         timeButton.nextImage();
@@ -39,7 +40,12 @@ public class timeManagerScript : MonoBehaviour
 
     public void resetTime()
     {
-        currentTime = prevTime;
+        int tempPrevTime = prevTime % 3;
+        if (tempPrevTime == 0)
+        {
+            tempPrevTime = 3;
+        }
+        currentTime = tempPrevTime;
     }
     public void pauseTime()
     {

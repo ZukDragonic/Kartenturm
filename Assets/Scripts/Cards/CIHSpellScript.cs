@@ -32,7 +32,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (gameController.state == GameState.Wave || gameController.state == GameState.BetweenWave)
         {
             currentSpotObject = Instantiate(ogSpotPrefab, Vector3.zero, Quaternion.identity, gameController.allCanvas[2].transform);
-            currentSpotObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, -50, 0);
+            currentSpotObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, -20, 0);
             gameController.UpdateGameState(GameState.Placing);
         }
     }
@@ -57,6 +57,8 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             hit = GameHit;
             if (hit == null || UIHit == null)
             {
+                cosmetic.resetCard();
+                isOverPlaceable = false;
                 return;
             }
             if (UIHit.tag != "Card" &&
@@ -68,6 +70,7 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             else
             {
+                //lacking gold or is placed in og spot
                 cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 cosmetic.cosmeticSize(1f);
                 isOverPlaceable = false;
@@ -84,8 +87,20 @@ public class CIHSpellScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
                     isOverPlaceable = true;
-                    //cosmetic purposes
+                }
+                else
+                {
+                    isOverPlaceable = false;
+                }
+
+                //cosmetic purposes
+                if (isOverPlaceable)
+                {
                     cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                }
+                else
+                {
+                    cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 }
             }
             else

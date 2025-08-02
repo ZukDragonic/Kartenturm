@@ -311,6 +311,7 @@ public class gameControllerScript : MonoBehaviour
         stateMaskDict = maskDict.toDictionary();
 
         StartCoroutine(startAfterLoad());
+        FlagTrigger(20002);
     }
 
     void Update()
@@ -411,11 +412,11 @@ public class gameControllerScript : MonoBehaviour
                         //general tutorial
                         dialogueManager.CreateDialogue(22001);
                         break;
-                    case 11105:
+                    case 11102:
                         //artifact tutorial
                         dialogueManager.CreateDialogue(22002);
                         break;
-                    case 11110:
+                    case 11104:
                         //shop tutorial
                         dialogueManager.CreateDialogue(22003);
                         break;
@@ -459,13 +460,14 @@ public class gameControllerScript : MonoBehaviour
         {
             //sceneManager stuff
             int waveWhenLoaded = 0;
+            if (ID >= 23002 && ID < 23012)
+            {
+                UpdateGameState(GameState.MainMenu);
+            }
             switch (ID)
             {
                 case 23001:
                     UpdateGameState(GameState.Loading);
-                    break;
-                case 23002:
-                    UpdateGameState(GameState.MainMenu);
                     break;
                 case 23012: //world 1-1
                     waveWhenLoaded = 11100;
@@ -493,7 +495,7 @@ public class gameControllerScript : MonoBehaviour
                     waveWhenLoaded = 11000;
                     break;
                 case 23999: //testing
-                    waveWhenLoaded = 11112;
+                    waveWhenLoaded = 11100;
                     break;
                 default:
                     break;
@@ -670,8 +672,11 @@ public class gameControllerScript : MonoBehaviour
         yield return null;
 
         StartAction();
+    }
 
-        FlagTrigger(20002);
+    public void DelayedStartAction()
+    {
+        StartCoroutine(startAfterLoad());
     }
 
     public void StartAction()

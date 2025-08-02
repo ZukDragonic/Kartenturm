@@ -98,14 +98,25 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                     if (gameController.resourceManager.playerGold >= card.actionGold)
                     {
                         isOverPlaceable = true;
-                        //cosmetic purposes
-                        cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
                     }
                     else
                     {
                         isOverPlaceable = false;
-                        cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                     }
+                }
+                else
+                {
+                    isOverPlaceable = false;
+                }
+
+                //cosmetic purposes
+                if (isOverPlaceable)
+                {
+                    cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                }
+                else
+                {
+                    cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 }
             }
             else
@@ -124,8 +135,20 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
                     isOverPlaceable = true;
-                    //cosmetic purposes
+                }
+                else
+                {
+                    isOverPlaceable = false;
+                }
+
+                //cosmetic purposes
+                if (isOverPlaceable)
+                {
                     cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0, 0.5f));
+                }
+                else
+                {
+                    cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 }
             }
             else
@@ -157,12 +180,8 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 //change for limited placement, ctrl + f all doc
                 /*hit.GetComponent<placeableAreaScript>().isPlaceable = false;
                 hit.GetComponent<CircleCollider2D>().enabled = false;*/
-                if (showTower != null)
-                {
-                    isTowerShown = false;
-                    Destroy(showTower);
-                    showTower = null;
-                }
+                
+                ResetEverything();
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.TowerMenu)
@@ -170,27 +189,24 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 //when it is  over a card slot
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
                 gameController.resourceManager.changeGold(card.actionGold * -1);
+                ResetEverything();
                 Destroy(gameObject);
             }
             if (gameController.state == GameState.ShopMenu)
             {
                 //when it is  over a card slot
                 hit.GetComponent<slotUGUI>().cardHasDropped(card);
+                ResetEverything();
                 Destroy(gameObject);
             }
         }
-        if (showTower != null)
-        {
-            isTowerShown = false;
-            Destroy(showTower);
-            showTower = null;
-        }
+
         if (gameController.state == GameState.Placing)
         {
             gameController.UpdateGameState(GameState.Previous);
         }
-        cosmetic.resetCard();
-        isOverPlaceable = false;
+
+        ResetEverything();
     }
 
     void ResetEverything()

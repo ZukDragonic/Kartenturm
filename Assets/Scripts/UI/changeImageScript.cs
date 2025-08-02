@@ -69,6 +69,10 @@ public class changeImageScript : MonoBehaviour
                 switch (varChecked)
                 {
                     case "Time":
+                        if (gameControllerScript.instance.timeManager.prevTime <= 0)
+                        {
+                            return 0;
+                        }
                         return 2 * (gameControllerScript.instance.timeManager.prevTime - 1);
                     default:
                         break;
