@@ -195,6 +195,7 @@ public class baseTowerScript : sumObj_Base
             transform.GetChild(i).localScale = Vector3.one;
         }
 
+        //calc artifacts first
         foreach (SOCard slot in stackedCards)
         {
             if (slot as SOCArtifact != null)
@@ -203,7 +204,9 @@ public class baseTowerScript : sumObj_Base
                 effects = SOCE_Parent.MergeInstances(effects, artifactSlot.addedEffects);
             }
         }
+        //applies artifacts effect
         effects.OnSummonEffect(this);
+        //calc tower bonus
         foreach (SOCard slot in stackedCards)
         {
             if (slot as SOCTower != null)

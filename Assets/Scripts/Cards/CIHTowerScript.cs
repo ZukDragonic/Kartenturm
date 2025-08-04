@@ -19,6 +19,7 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private Ray wPRay;
 
     private GameObject hit;
+    private towerMenuDisplay towerMenuHit;
 
     public GameObject baseTower;
     public GameObject showTowerPrefab;
@@ -90,13 +91,18 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         {
             if (eventData.pointerCurrentRaycast.gameObject.tag == "Slot")
             {
-                //then checks if it is in a UI slot
+                //then checks if it is in a placeable UI slot
                 hit = eventData.pointerCurrentRaycast.gameObject;
 
                 if (hit.GetComponent<placeableAreaScript>().isPlaceable)
                 {
                     if (gameController.resourceManager.playerGold >= card.actionGold)
                     {
+                        if (towerMenuHit == null)
+                        {
+                            towerMenuHit =  hit.transform.parent.parent.GetComponent<towerMenuDisplay>();
+                            towerMenuHit.OverSlotBonusDisplay(card);
+                        }
                         isOverPlaceable = true;
                     }
                     else
@@ -116,11 +122,21 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 }
                 else
                 {
+                    if (towerMenuHit != null)
+                    {
+                        towerMenuHit.OverSlotBonusDisplay(null);
+                        towerMenuHit = null;
+                    }
                     cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 }
             }
             else
             {
+                if (towerMenuHit != null)
+                {
+                    towerMenuHit.OverSlotBonusDisplay(null);
+                    towerMenuHit = null;
+                }
                 ResetEverything();
                 return;
             }

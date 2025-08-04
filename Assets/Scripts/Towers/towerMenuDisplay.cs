@@ -15,12 +15,18 @@ public class towerMenuDisplay : MonoBehaviour
     public TextMeshProUGUI secondsPerAttack;
     public TextMeshProUGUI totalDamage;
 
+    public GameObject[] bonusDisplayObjectArray;
+    public TextMeshProUGUI[] bonusDisplayTextArray;
+
+
     public Transform effectDisplay;
     public GameObject textPrefab;
 
     public TextMeshProUGUI targetting;
 
     public GameObject targettingChild;
+
+    public SOCard check;
 
     void Start()
     {
@@ -170,6 +176,50 @@ public class towerMenuDisplay : MonoBehaviour
             bonusDisplay = "";
         }
         return bonusDisplay;
+    }
+
+    public void OverSlotBonusDisplay(SOCard card)
+    {
+        if (card == null)
+        {
+            foreach (GameObject display in bonusDisplayObjectArray)
+            {
+                display.SetActive(false);
+            }
+        }
+
+        float currentStatBonus = 0;
+
+        if (card as SOCTower != null)
+        {
+            SOCTower socTowerCard = card as SOCTower;
+
+            currentStatBonus = (int)(socTowerCard.damage / 2 * parentTower.multiplier);
+            if (currentStatBonus > 0)
+            {
+                bonusDisplayObjectArray[0].SetActive(true);
+                bonusDisplayTextArray[0].text = BonusDisplay(currentStatBonus);
+
+            }
+            currentStatBonus = (int)(socTowerCard.range / 2 * parentTower.multiplier);
+            if (currentStatBonus > 0)
+            {
+                bonusDisplayObjectArray[1].SetActive(true);
+                bonusDisplayTextArray[1].text = BonusDisplay(currentStatBonus);
+            }
+            currentStatBonus = (socTowerCard.pierce / 2 * parentTower.multiplier);
+            if (currentStatBonus > 0)
+            {
+                bonusDisplayObjectArray[2].SetActive(true);
+                bonusDisplayTextArray[2].text = BonusDisplay(currentStatBonus);
+            }
+        }
+        else if (card as SOCArtifact != null)
+        {
+            SOCArtifact socArtifactCard = card as SOCArtifact;
+
+
+        }
     }
 
     IEnumerator targettingChanged()
