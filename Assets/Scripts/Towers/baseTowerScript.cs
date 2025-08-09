@@ -225,10 +225,7 @@ public class baseTowerScript : sumObj_Base
         allTargetting = baseCard.allTargetting;
         currentTargetting = allTargetting[0];
 
-        onSummonStatPlaceholder.baseCard = baseCard;
-        onSummonStatPlaceholder.stackedCards = stackedCards;
-        onSummonStatPlaceholder.effects = effects;
-        onSummonStatPlaceholder.changeStats();
+        onSummonStatPlaceholder.InitializeCards(baseCard, stackedCards);
     }
 
     //old method for checking onSummon stat

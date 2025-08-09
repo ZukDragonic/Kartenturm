@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8073255121236666797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4740517174869828825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -836,11 +836,11 @@ MonoBehaviour:
   pierce: {fileID: 3414272384955008193}
   secondsPerAttack: {fileID: 7990438569972759697}
   totalDamage: {fileID: 4807676668929172549}
-  bonusDisplayObjectArray:
-  - {fileID: 3830313329577049097}
-  - {fileID: 5411727938915758540}
-  - {fileID: 7118697104030716057}
-  - {fileID: 519245826844057762}
+  bonusDisplayAnimArray:
+  - {fileID: 2148895165005700178}
+  - {fileID: 3268429305693498387}
+  - {fileID: 8452324071172962178}
+  - {fileID: 3408861994914181858}
   bonusDisplayTextArray:
   - {fileID: 3583451609341548377}
   - {fileID: 3278217498846874462}
@@ -850,6 +850,7 @@ MonoBehaviour:
   textPrefab: {fileID: 926927587928384371, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
   targetting: {fileID: 4606347170515421934}
   targettingChild: {fileID: 2615119873816645778}
+  check: {fileID: 0}
 --- !u!95 &7470592596489416941
 Animator:
   serializedVersion: 5
@@ -1170,7 +1171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6841822940760155799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &947546008452623634
 RectTransform:
   m_ObjectHideFlags: 0

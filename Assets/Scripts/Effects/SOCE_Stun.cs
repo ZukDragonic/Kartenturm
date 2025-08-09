@@ -33,6 +33,7 @@ public class SOCE_Stun : SOC_Effect
     {
         if (OGValue == 0)
         {
+            script.onSummonStatPlaceholder.InitializeCards(script.baseCard, script.stackedCards);
             OGValue = script.onSummonStatPlaceholder.secondsPerAttack;
             script.secondsPerAttack = 65536;
         }

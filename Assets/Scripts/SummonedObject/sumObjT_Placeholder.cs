@@ -20,23 +20,19 @@ public class sumObjT_Placeholder : sumObj_Base
 
     public GameObject baseProjectile;
 
-
-    /*void Start()
+    public void InitializeCards(SOCTower bCard, List<SOCard> stacks)
     {
-        range = baseCard.range;
-        damage = baseCard.damage;
-        pierce = baseCard.pierce;
-        shotsPerAttack = baseCard.shotsPerAttack;
-        secondsPerAttack = baseCard.secondsPerAttack;
-        effects = SOCE_Parent.CreateInstance(baseCard.effects);
-        multiplier = baseCard.multiplier;
-
-        stackedCards.Add(placeHolderCard);
-        stackedCards.Add(placeHolderCard);
-        stackedCards.Add(placeHolderCard);
-
+        baseCard = bCard;
+        stackedCards =  new List<SOCard>(stacks);
+        effects = null;
         changeStats();
-    }*/
+    }
+
+    public void AddStack(SOCard newStack)
+    {
+        stackedCards.Add(newStack);
+        changeStats();
+    }
 
     public void changeStats()
     {

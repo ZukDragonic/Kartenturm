@@ -132,11 +132,6 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             else
             {
-                if (towerMenuHit != null)
-                {
-                    towerMenuHit.OverSlotBonusDisplay(null);
-                    towerMenuHit = null;
-                }
                 ResetEverything();
                 return;
             }
@@ -227,6 +222,11 @@ public class CIHTowerScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     void ResetEverything()
     {
+        if (towerMenuHit != null)
+        {
+            towerMenuHit.OverSlotBonusDisplay(null);
+            towerMenuHit = null;
+        }
         hit = null;
         cosmetic.resetCard();
         isOverPlaceable = false;

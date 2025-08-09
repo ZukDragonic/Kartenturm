@@ -15,7 +15,7 @@ public class towerMenuDisplay : MonoBehaviour
     public TextMeshProUGUI secondsPerAttack;
     public TextMeshProUGUI totalDamage;
 
-    public GameObject[] bonusDisplayObjectArray;
+    public Animator[] bonusDisplayAnimArray;
     public TextMeshProUGUI[] bonusDisplayTextArray;
 
 
@@ -182,43 +182,79 @@ public class towerMenuDisplay : MonoBehaviour
     {
         if (card == null)
         {
-            foreach (GameObject display in bonusDisplayObjectArray)
-            {
-                display.SetActive(false);
+            foreach (Animator display in bonusDisplayAnimArray)
+            {   
+                if (display.GetCurrentAnimatorStateInfo(0).IsName("BonusOpen"))
+                {
+                    display.Play("BonusClose");
+                }
             }
         }
 
         float currentStatBonus = 0;
 
+        //shows the stat that would be added for a tower card
         if (card as SOCTower != null)
         {
             SOCTower socTowerCard = card as SOCTower;
 
             currentStatBonus = (int)(socTowerCard.damage / 2 * parentTower.multiplier);
-            if (currentStatBonus > 0)
+            if (currentStatBonus != 0)
             {
-                bonusDisplayObjectArray[0].SetActive(true);
+                bonusDisplayAnimArray[0].Play("BonusOpen");
                 bonusDisplayTextArray[0].text = BonusDisplay(currentStatBonus);
-
             }
+
             currentStatBonus = (int)(socTowerCard.range / 2 * parentTower.multiplier);
-            if (currentStatBonus > 0)
+            if (currentStatBonus != 0)
             {
-                bonusDisplayObjectArray[1].SetActive(true);
+                bonusDisplayAnimArray[1].Play("BonusOpen");
                 bonusDisplayTextArray[1].text = BonusDisplay(currentStatBonus);
             }
+
             currentStatBonus = (socTowerCard.pierce / 2 * parentTower.multiplier);
-            if (currentStatBonus > 0)
+            if (currentStatBonus != 0)
             {
-                bonusDisplayObjectArray[2].SetActive(true);
+                bonusDisplayAnimArray[2].Play("BonusOpen");
                 bonusDisplayTextArray[2].text = BonusDisplay(currentStatBonus);
             }
         }
+        //shows the stat that would be added for an artifact
         else if (card as SOCArtifact != null)
         {
             SOCArtifact socArtifactCard = card as SOCArtifact;
+            sumObjT_Placeholder statPlaceholder = parentTower.onSummonStatPlaceholder;
 
+            statPlaceholder.InitializeCards(parentTower.baseCard, parentTower.stackedCards);
+            statPlaceholder.AddStack(socArtifactCard);
 
+            currentStatBonus = statPlaceholder.damage - parentTower.damage;
+            if (currentStatBonus != 0)
+            {
+                bonusDisplayAnimArray[0].Play("BonusOpen");
+                bonusDisplayTextArray[0].text = BonusDisplay(currentStatBonus);
+            }
+
+            currentStatBonus = statPlaceholder.range - parentTower.range;
+            if (currentStatBonus != 0)
+            {
+                bonusDisplayAnimArray[1].Play("BonusOpen");
+                bonusDisplayTextArray[1].text = BonusDisplay(currentStatBonus);
+            }
+
+            currentStatBonus = statPlaceholder.pierce - parentTower.pierce;
+            if (currentStatBonus != 0)
+            {
+                bonusDisplayAnimArray[2].Play("BonusOpen");
+                bonusDisplayTextArray[2].text = BonusDisplay(currentStatBonus);
+            }
+
+            currentStatBonus = statPlaceholder.secondsPerAttack - parentTower.secondsPerAttack;
+            if (currentStatBonus != 0)
+            {
+                bonusDisplayAnimArray[3].Play("BonusOpen");
+                bonusDisplayTextArray[3].text = BonusDisplay(currentStatBonus);
+            }
         }
     }
 

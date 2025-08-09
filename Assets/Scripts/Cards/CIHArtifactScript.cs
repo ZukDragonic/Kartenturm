@@ -13,6 +13,7 @@ public class CIHArtifactScript : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private bool isOverPlaceable;
 
     private GameObject hit;
+    private towerMenuDisplay towerMenuHit;
 
     void Start()
     {
@@ -57,6 +58,11 @@ public class CIHArtifactScript : MonoBehaviour, IBeginDragHandler, IDragHandler,
                 {
                     if (gameController.resourceManager.playerGold >= card.actionGold)
                     {
+                        if (towerMenuHit == null)
+                        {
+                            towerMenuHit = hit.transform.parent.parent.GetComponent<towerMenuDisplay>();
+                            towerMenuHit.OverSlotBonusDisplay(card);
+                        }
                         isOverPlaceable = true;
                     }
                     else
@@ -76,6 +82,11 @@ public class CIHArtifactScript : MonoBehaviour, IBeginDragHandler, IDragHandler,
                 }
                 else
                 {
+                    if (towerMenuHit != null)
+                    {
+                        towerMenuHit.OverSlotBonusDisplay(null);
+                        towerMenuHit = null;
+                    }
                     cosmetic.cosmeticColor(new Color(1.0f, 0.1f, 0.1f, 0.5f));
                 }
             }
@@ -146,6 +157,11 @@ public class CIHArtifactScript : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
     void ResetEverything()
     {
+        if (towerMenuHit != null)
+        {
+            towerMenuHit.OverSlotBonusDisplay(null);
+            towerMenuHit = null;
+        }
         cosmetic.resetCard();
         isOverPlaceable = false;
         hit = null;
