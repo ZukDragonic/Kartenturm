@@ -17,6 +17,10 @@ public class SOC_Effect : ScriptableObject
         {
             ApplyOPEffect(script as sumObj_Projectile);
         }
+        else if (script as sumObjT_Placeholder != null)
+        {
+            ApplyPHEffect(script as sumObjT_Placeholder);
+        }
         else if (script as baseTowerScript != null)
         {
             ApplyTEffect(script as baseTowerScript);
@@ -31,6 +35,10 @@ public class SOC_Effect : ScriptableObject
         }
     }
     public virtual void ApplyEEffect(SOEnemyDisplay script)
+    {
+        Debug.Log("DNE");
+    }
+    public virtual void ApplyPHEffect(sumObjT_Placeholder script)
     {
         Debug.Log("DNE");
     }

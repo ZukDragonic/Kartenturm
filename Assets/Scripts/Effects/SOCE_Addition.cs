@@ -36,6 +36,33 @@ public class SOCE_Addition : SOC_Effect
                 break;
         }
     }
+    public override void ApplyPHEffect(sumObjT_Placeholder script)
+    {
+        if (Random.Range(0, odds) != 0)
+        {
+            return;
+        }
+        switch (stat)
+        {
+            case StatType.Damage:
+                script.damage += addition;
+                break;
+            case StatType.Pierce:
+                script.pierce += addition;
+                break;
+            case StatType.SPA:
+                script.secondsPerAttack += addition;
+                break;
+            case StatType.Range:
+                script.range += addition;
+                break;
+            case StatType.Growth:
+                script.multiplier += addition;
+                break;
+            default:
+                break;
+        }
+    }
     public override void ApplyOSEffect(sumObj_Standalone script)
     {
         if (Random.Range(0, odds) != 0)

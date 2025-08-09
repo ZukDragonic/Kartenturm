@@ -33,7 +33,7 @@ public class SOCE_Stun : SOC_Effect
     {
         if (OGValue == 0)
         {
-            OGValue = script.CheckSummonStat(StatType.SPA);
+            OGValue = script.onSummonStatPlaceholder.secondsPerAttack;
             script.secondsPerAttack = 65536;
         }
 

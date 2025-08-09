@@ -134,6 +134,62 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.234375
+--- !u!1 &4768609741423262702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4671585676753513962}
+  - component: {fileID: 3671252527032898702}
+  m_Layer: 0
+  m_Name: Tower Placeholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4671585676753513962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768609741423262702}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.74436533, y: 0.10456346, z: 87.6531}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4408194135892189636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3671252527032898702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768609741423262702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd25cb9b2471504b946c93cf6eb6903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects: {fileID: 0}
+  damage: 0
+  baseCard: {fileID: 0}
+  stackedCards: []
+  placeHolderCard: {fileID: 0}
+  targetChange: 0
+  range: 0
+  pierce: 0
+  shotsPerAttack: 0
+  secondsPerAttack: 0
+  multiplier: 0
+  baseProjectile: {fileID: 0}
 --- !u!1 &9041243731465249753
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +338,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9052993228848490445}
+    - targetCorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4671585676753513962}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4121160897819890467, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}
       insertIndex: -1
@@ -324,6 +383,7 @@ MonoBehaviour:
   multiplier: 0
   totalDamage: 0
   baseProjectile: {fileID: 8992502921939762055, guid: 41ba8af679edef847b53b4ddafb91923, type: 3}
+  onSummonStatPlaceholder: {fileID: 3671252527032898702}
 --- !u!4 &4408194135892189636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2440800409406339464, guid: 99d27d5fa5c224e4f846c155df81dab2, type: 3}

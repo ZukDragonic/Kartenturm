@@ -42,7 +42,7 @@ public class baseTowerScript : sumObj_Base
 
     private float attackTimer;
 
-
+    public sumObjT_Placeholder onSummonStatPlaceholder;
     void Start()
     {
         cosmetic = GetComponentInChildren<tCosmeticScript>();
@@ -219,9 +219,20 @@ public class baseTowerScript : sumObj_Base
         }
         cosmetic.rangeDisplayUpdate(true, range);
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
+
+        cosmetic.showTower(baseCard);
+
+        allTargetting = baseCard.allTargetting;
+        currentTargetting = allTargetting[0];
+
+        onSummonStatPlaceholder.baseCard = baseCard;
+        onSummonStatPlaceholder.stackedCards = stackedCards;
+        onSummonStatPlaceholder.effects = effects;
+        onSummonStatPlaceholder.changeStats();
     }
 
-    public float CheckSummonStat(StatType checkedStat)
+    //old method for checking onSummon stat
+    /*public float CheckSummonStat(StatType checkedStat)
     {
         float returnedStat;
 
@@ -268,7 +279,7 @@ public class baseTowerScript : sumObj_Base
         transform.GetChild(0).GetComponent<CircleCollider2D>().radius = range / 10 / transform.localScale.x / 3.125f;
 
         return returnedStat;
-    }
+    }*/
 
     public void changeTargetting(int change)
     {
