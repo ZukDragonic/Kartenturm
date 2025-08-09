@@ -28,6 +28,7 @@ public class SOCE_Summon : SOC_Effect
             SOEnemyDisplay summonedScript = current.GetComponent<SOEnemyDisplay>();
             summonedScript.enemy = summonedEnemy;
             summonedScript.checkpointNum = script.checkpointNum;
+            summonedScript.checkpointList = script.checkpointList;
             gameControllerScript.instance.resourceManager.addEnemy(summonedScript);
             gameControllerScript.instance.waveManager.enemyAlive += 1;
         }
