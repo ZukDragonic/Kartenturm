@@ -342,6 +342,7 @@ public class gameControllerScript : MonoBehaviour
             {
                 switch (ID)
                 {
+                    //19002 is victory spawn
                     //stops spawning whenever a wave is a "final" wave
                     case 11105: //world 1-1 clear
                         FlagTrigger(21000);
@@ -464,42 +465,57 @@ public class gameControllerScript : MonoBehaviour
             {
                 UpdateGameState(GameState.MainMenu);
             }
-            switch (ID)
+            //check for freeplay
+            if (FlagInfo(19003))
             {
-                case 23001:
-                    UpdateGameState(GameState.Loading);
-                    break;
-                case 23012: //world 1-1
-                    waveWhenLoaded = 11100;
-                    break;
-                case 23013: //world 1-2
-                    Debug.Log(1);
-                    waveWhenLoaded = 11105;
-                    break;
-                case 23014: //world 1-3
-                    waveWhenLoaded = 11112;
-                    break;
-                case 23015: //world 1-4
-                    waveWhenLoaded = 11122;
-                    break;
-                case 23016: //world 1-5
-                    waveWhenLoaded = 11132;
-                    break;
-                case 23017: //world 1-6
+                if (ID > 23011 && ID <= 23018)
+                {
                     waveWhenLoaded = 11142;
-                    break;
-                case 23018: //world 1-7
-                    waveWhenLoaded = 11160;
-                    break;
-                case 23100: //free play
-                    waveWhenLoaded = 11000;
-                    break;
-                case 23999: //testing
-                    waveWhenLoaded = 11105;
-                    break;
-                default:
-                    break;
+                    //uncomment when that wave is done
+                    //waveWhenLoaded = 11160;
+                }
             }
+            else
+            {
+                //story mode
+                switch (ID)
+                {
+                    case 23001:
+                        UpdateGameState(GameState.Loading);
+                        break;
+                    case 23012: //world 1-1
+                        waveWhenLoaded = 11100;
+                        break;
+                    case 23013: //world 1-2
+                        Debug.Log(1);
+                        waveWhenLoaded = 11105;
+                        break;
+                    case 23014: //world 1-3
+                        waveWhenLoaded = 11112;
+                        break;
+                    case 23015: //world 1-4
+                        waveWhenLoaded = 11122;
+                        break;
+                    case 23016: //world 1-5
+                        waveWhenLoaded = 11132;
+                        break;
+                    case 23017: //world 1-6
+                        waveWhenLoaded = 11142;
+                        break;
+                    case 23018: //world 1-7
+                        waveWhenLoaded = 11160;
+                        break;
+                    case 23100: //free play
+                        waveWhenLoaded = 11000;
+                        break;
+                    case 23999: //testing
+                        waveWhenLoaded = 11105;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
             StartAction();
             if (waveWhenLoaded != 0) //if waveWhenLoaded is not zero, then a wave should be spawned;
             {
@@ -545,6 +561,14 @@ public class gameControllerScript : MonoBehaviour
 
     public bool FlagInfo(int ID)
     {
+        if (!flagDict.ContainsKey(ID))
+        {
+            return false;
+        }
+        if (ID >= 23000 && ID < 24000)
+        {
+            return (flagDict[21000 + ID - 23012]);
+        }
         return (flagDict[ID]);
     }
 

@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3889129580808565010, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
+      propertyPath: IDCalled
+      value: 19000
+      objectReference: {fileID: 0}
     - target: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
       propertyPath: m_Name
       value: Level Button Variant
@@ -106,6 +110,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1666090201}
+    - targetCorrespondingSourceObject: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7994854222876486860}
   m_SourcePrefab: {fileID: 100100000, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
 --- !u!1 &3298505064138231296 stripped
 GameObject:
@@ -128,6 +135,22 @@ MonoBehaviour:
   voidCalled: LoadNewScene
   IDCalled: 23000
   IDCheckedForActive: 0
+--- !u!114 &7994854222876486860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298505064138231296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78277619f4e00ca4ca4327f8bb0cedf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  managerCalled: 1
+  voidCalled: FlagTrigger
+  IDCalled: 19000
+  IDCheckedForActive: 21000
 --- !u!224 &5401299971640430543 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2821045404132881100, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
