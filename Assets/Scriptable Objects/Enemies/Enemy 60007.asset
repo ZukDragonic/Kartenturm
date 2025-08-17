@@ -19,8 +19,9 @@ MonoBehaviour:
   image: {fileID: 2083860891, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
   animClip: {fileID: 7400000, guid: 6386287bc15636e4f8919f3a7b88ffe6, type: 2}
   speed: 30
-  health: 100
+  health: 40
   damageToHP: 1
+  spawnValue: 0
   hitRadius: 10
   goldDrop: 5
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}

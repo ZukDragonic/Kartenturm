@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177393799260208743}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8177393799260208737
 MonoBehaviour:
@@ -1210,256 +1210,298 @@ MonoBehaviour:
     endGold: 150
     waveNum: 2
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
     - enemyID: 60008
-      delay: 6
-      repeat: 10
+      delay: 4
+      repeat: 30
+    - enemyID: 60001
+      delay: 2
+      repeat: 20
+    - enemyID: 60007
+      delay: 1.5
+      repeat: 20
   - ID: 11163
     endGold: 200
     waveNum: 3
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
     - enemyID: 60007
       delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+      repeat: 25
+    - enemyID: 60009
+      delay: 3
+      repeat: 1
+    - enemyID: 60007
+      delay: 2
+      repeat: 25
+    - enemyID: 60009
+      delay: 3
+      repeat: 1
   - ID: 11164
     endGold: 400
     waveNum: 4
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
+    - enemyID: 60011
+      delay: 0
+      repeat: 1
     - enemyID: 60008
-      delay: 6
-      repeat: 10
+      delay: 4
+      repeat: 25
   - ID: 11165
-    endGold: 250
+    endGold: 400
     waveNum: 5
     spawnOrder:
     - enemyID: 60001
+      delay: 1
+      repeat: 60
+    - enemyID: 60010
+      delay: 0
+      repeat: 1
+    - enemyID: 60010
       delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+      repeat: 6
   - ID: 11166
-    endGold: 400
+    endGold: 500
     waveNum: 6
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
     - enemyID: 60008
-      delay: 6
-      repeat: 10
+      delay: 5
+      repeat: 64
+    - enemyID: 60013
+      delay: 10
+      repeat: 1
   - ID: 11167
-    endGold: 200
+    endGold: 500
     waveNum: 7
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
+    - enemyID: 60014
+      delay: 0
+      repeat: 3
+    - enemyID: 60014
+      delay: 12
+      repeat: 2
+    - enemyID: 60012
       delay: 6
-      repeat: 10
+      repeat: 8
+    - enemyID: 60007
+      delay: 1.5
+      repeat: 100
   - ID: 11168
     endGold: 700
     waveNum: 8
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60017
+      delay: 0
+      repeat: 1
   - ID: 11169
-    endGold: 250
+    endGold: 500
     waveNum: 9
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60015
+      delay: 1
+      repeat: 0
+    - enemyID: 60016
+      delay: 5
+      repeat: 15
+    - enemyID: 60015
+      delay: 1
+      repeat: 25
   - ID: 11170
-    endGold: 300
+    endGold: 500
     waveNum: 10
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60011
+      delay: 0
+      repeat: 1
+    - enemyID: 60011
+      delay: 18
+      repeat: 3
+    - enemyID: 60010
+      delay: 12
+      repeat: 11
+    - enemyID: 60009
+      delay: 4
+      repeat: 20
   - ID: 11171
-    endGold: 400
+    endGold: 700
     waveNum: 11
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
+    - enemyID: 60013
+      delay: 0
+      repeat: 1
+    - enemyID: 60012
+      delay: 18
+      repeat: 12
+    - enemyID: 60013
+      delay: 21
+      repeat: 6
+    - enemyID: 60014
       delay: 6
-      repeat: 10
+      repeat: 20
   - ID: 11172
-    endGold: 200
+    endGold: 800
     waveNum: 12
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60015
+      delay: 0
+      repeat: 1
+    - enemyID: 60015
+      delay: 8
+      repeat: 4
+    - enemyID: 60016
+      delay: 4
+      repeat: 9
+    - enemyID: 60017
+      delay: 52
+      repeat: 1
+    - enemyID: 60017
+      delay: 22
+      repeat: 1
   - ID: 11173
-    endGold: 900
+    endGold: 1000
     waveNum: 13
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
+    - enemyID: 60011
+      delay: 0
+      repeat: 1
+    - enemyID: 60011
+      delay: 21
+      repeat: 4
+    - enemyID: 60013
       delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+      repeat: 25
   - ID: 11174
     endGold: 400
     waveNum: 14
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
+    - enemyID: 60015
+      delay: 0
+      repeat: 1
+    - enemyID: 60015
+      delay: 15
+      repeat: 7
+    - enemyID: 60010
       delay: 6
-      repeat: 10
+      repeat: 16
+    - enemyID: 60015
+      delay: 15
+      repeat: 8
+    - enemyID: 60010
+      delay: 6
+      repeat: 16
   - ID: 11175
     endGold: 400
     waveNum: 15
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
+    - enemyID: 60009
       delay: 6
-      repeat: 10
+      repeat: 21
+    - enemyID: 60014
+      delay: 20
+      repeat: 12
+    - enemyID: 60009
+      delay: 6
+      repeat: 21
+    - enemyID: 60012
+      delay: 14
+      repeat: 12
+    - enemyID: 60009
+      delay: 6
+      repeat: 21
   - ID: 11176
     endGold: 400
     waveNum: 16
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60017
+      delay: 0
+      repeat: 1
+    - enemyID: 60017
+      delay: 21
+      repeat: 9
+    - enemyID: 60013
+      delay: 7
+      repeat: 100
   - ID: 11177
     endGold: 700
     waveNum: 17
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60011
+      delay: 0
+      repeat: 1
+    - enemyID: 60017
+      delay: 21
+      repeat: 9
+    - enemyID: 60013
+      delay: 7
+      repeat: 50
+    - enemyID: 60017
+      delay: 21
+      repeat: 15
+    - enemyID: 60013
+      delay: 7
+      repeat: 50
   - ID: 11178
     endGold: 700
     waveNum: 18
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60015
+      delay: 0
+      repeat: 1
+    - enemyID: 60015
+      delay: 16
+      repeat: 15
+    - enemyID: 60012
+      delay: 8
+      repeat: 32
+    - enemyID: 60015
+      delay: 16
+      repeat: 16
+    - enemyID: 60009
+      delay: 10
+      repeat: 32
   - ID: 11179
     endGold: 800
     waveNum: 19
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60016
+      delay: 0
+      repeat: 1
+    - enemyID: 60016
+      delay: 12
+      repeat: 15
+    - enemyID: 60010
+      delay: 5
+      repeat: 32
+    - enemyID: 60016
+      delay: 12
+      repeat: 16
+    - enemyID: 60013
+      delay: 7
+      repeat: 32
   - ID: 11180
     endGold: 900
     waveNum: 20
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60011
+      delay: 0
+      repeat: 1
+    - enemyID: 60011
+      delay: 18
+      repeat: 15
+    - enemyID: 60014
+      delay: 16
+      repeat: 32
+    - enemyID: 60011
+      delay: 18
+      repeat: 16
+    - enemyID: 60017
+      delay: 28
+      repeat: 32
   - ID: 11181
     endGold: 1110
     waveNum: 21
     spawnOrder:
-    - enemyID: 60001
-      delay: 3
-      repeat: 10
+    - enemyID: 60018
+      delay: 0
+      repeat: 1
     - enemyID: 60007
       delay: 2
       repeat: 10

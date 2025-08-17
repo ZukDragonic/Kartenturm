@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy 60016 WIP
+  m_Name: Enemy 60017
   m_EditorClassIdentifier: 
-  ID: 60016
-  Enemyname: Big Slime (Red)
-  description: He wonders how his wife gave birth to a green slime, but it doesn't
-    matter. All is forgiven in the face of love.
+  ID: 60017
+  Enemyname: Big Slime (Green)
+  description: Had a one night fling that one time. He wonders what happened to her.
   image: {fileID: 1077783034, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
-  animClip: {fileID: 7400000, guid: de21f09cc9dc3294fba3f1b088908082, type: 2}
-  speed: 30
-  health: 3000
+  animClip: {fileID: 7400000, guid: 9726011d5096cd744ae814d23612863e, type: 2}
+  speed: 5
+  health: 5000
   damageToHP: 2
+  spawnValue: 0
   hitRadius: 10
   goldDrop: 50
-  effects: {fileID: 11400000, guid: a3b922476da639a45af298943d841c1d, type: 2}
+  effects: {fileID: 11400000, guid: 60480fb3dddeb1946ad7133713dbdfe8, type: 2}
   attacks: []

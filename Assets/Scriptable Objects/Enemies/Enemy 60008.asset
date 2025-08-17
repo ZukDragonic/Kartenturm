@@ -17,9 +17,10 @@ MonoBehaviour:
   description: She is shy but wants to be a singer.
   image: {fileID: -796100560, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
   animClip: {fileID: 7400000, guid: ea956b590422b314faade2f5d2b19567, type: 2}
-  speed: 10
-  health: 500
+  speed: 5
+  health: 250
   damageToHP: 1
+  spawnValue: 0
   hitRadius: 10
   goldDrop: 5
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}

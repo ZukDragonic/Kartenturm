@@ -18,9 +18,10 @@ MonoBehaviour:
     all. He worries about his receding hairline.
   image: {fileID: -244296023, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
   animClip: {fileID: 7400000, guid: 00f59ec7686aac3438f11b3f0589893e, type: 2}
-  speed: 20
+  speed: 5
   health: 10000
   damageToHP: 65536
+  spawnValue: 0
   hitRadius: 10
   goldDrop: 50
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}

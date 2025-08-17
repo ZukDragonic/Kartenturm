@@ -149,7 +149,7 @@ public class NewStateMaskDic
     public Dictionary<GameState, LayerMask> toDictionary()
     {
         Dictionary<GameState, LayerMask> newDict = new Dictionary<GameState, LayerMask>();
-        
+
         foreach (StateMask item in dictItems)
         {
             LayerMask newMask = LayerMask.GetMask(item.masks);
@@ -238,7 +238,7 @@ public class Sound
 
     public AudioClip[] clips;
     public int maxInstances;
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     public float baseVolume;
     [Range(0.1f, 3f)]
     public float pitch;
@@ -270,7 +270,7 @@ public class EffectAndReq
 public class gameControllerScript : MonoBehaviour
 {
     public static gameControllerScript instance;
-    
+
     public resourceManagerScript resourceManager;
     public deckManagerScript deckManager;
     public waveManagerScript waveManager;
@@ -351,34 +351,48 @@ public class gameControllerScript : MonoBehaviour
                     case 11112: //world 1-2 clear
                         FlagTrigger(21001);
                         FlagTrigger(19002);
-                        break;
+                        return;
                     case 11122: //world 1-3 clear
                         FlagTrigger(21002);
                         FlagTrigger(19002);
-                        break;
+                        return;
                     case 11132: //world 1-4 clear
                         FlagTrigger(21003);
                         FlagTrigger(19002);
-                        break;
+                        return;
                     case 11142: //world 1-5 clear
                         FlagTrigger(21004);
                         FlagTrigger(19002);
-                        break;
+                        return;
                     case 11160: //world 1-6 clear
                         FlagTrigger(21005);
                         FlagTrigger(19002);
-                        break;
+                        return;
                     case 11181: //world 1-7 clear
                         FlagTrigger(21006);
                         FlagTrigger(19002);
-                        break;
+                        if (FlagInfo(19003))
+                        {
+                            flagDict[19005] = true;
+                            break;
+                        }
+                        else
+                        {
+                            return;
+                        }
                     default:
                         break;
                 }
             }
 
-
-            waveManager.spawnWave(ID + 1);
+            if (FlagInfo(19005))
+            {
+                waveManager.spawnFreePlayWave(ID);
+            }
+            else
+            {
+                waveManager.spawnWave(ID + 1);
+            }
             deckManager.drawCard(1);
             if (waveManager.findWave(ID + 1).waveNum % deckManager.shopWave == 0)
             {
@@ -446,11 +460,13 @@ public class gameControllerScript : MonoBehaviour
                 }
             }
         }
+
         //flippable flags
         if (ID >= 20000 && ID < 21000)
         {
             flagDict[ID] = !flagDict[ID];
         }
+
         //single flip flags
         if (ID >= 21000 && ID < 22000)
         {
@@ -473,6 +489,10 @@ public class gameControllerScript : MonoBehaviour
                     waveWhenLoaded = 11142;
                     //uncomment when that wave is done
                     //waveWhenLoaded = 11160;
+                }
+                else if (true)
+                {
+
                 }
             }
             else
@@ -515,7 +535,7 @@ public class gameControllerScript : MonoBehaviour
                         break;
                 }
             }
-            
+
             StartAction();
             if (waveWhenLoaded != 0) //if waveWhenLoaded is not zero, then a wave should be spawned;
             {
@@ -525,38 +545,43 @@ public class gameControllerScript : MonoBehaviour
                 deckManager.shuffleDeck();
                 waveManager.currentWave = null;
                 resourceManager.resetResources();
+                flagDict[19005] = false;
                 FlagTrigger(waveWhenLoaded);
             }
-           switch (ID)
+            switch (ID)
             {
                 default:
                     break;
             }
-        } 
-        //each event an ID would trigger, use for really important events
-        switch (ID)
-        {
-            case 19000:
-                //prevent game loss from double losing
-                if (flagDict[ID])
-                {
-                    return;
-                }
-                //insert game loss shit
-                flagDict[ID] = true;
-                waveManager.GameLostMenu();
-                break;
-            case 19001:
-                //insert game restart shit
-                flagDict[19000] = false;
-                break;
-            case 19002:
-                //insert game win shit
-                waveManager.GameWinMenu();
-                break;
-            default:
-                break;
         }
+        if (ID >= 19000 && ID < 20000)
+        {
+            //each event an ID would trigger, use for really important events
+            switch (ID)
+            {
+                case 19000:
+                    //prevent game loss from double losing
+                    if (flagDict[ID])
+                    {
+                        return;
+                    }
+                    //insert game loss shit
+                    flagDict[ID] = true;
+                    waveManager.GameLostMenu();
+                    break;
+                case 19001:
+                    //insert game restart shit
+                    flagDict[19000] = false;
+                    break;
+                case 19002:
+                    //insert game win shit
+                    waveManager.GameWinMenu();
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
     public bool FlagInfo(int ID)
