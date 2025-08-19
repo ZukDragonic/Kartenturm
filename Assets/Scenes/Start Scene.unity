@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Menu Test
       objectReference: {fileID: 0}
+    - target: {fileID: 8787855949378593915, guid: b0cb535bdba895648b5b2ecd9fe0ae79, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

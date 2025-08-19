@@ -84,9 +84,9 @@ MonoBehaviour:
     sceneName: Level1 6
   - ID: 23018
     sceneName: Level1 7
-  - ID: 23999
-    sceneName: Test Scene
   - ID: 23100
     sceneName: Build Scene
+  - ID: 23999
+    sceneName: Test Scene
   restartScene: 0
   levelSelectorPrefab: {fileID: 6646189283898238327, guid: 3eceb7073e31573489d90b7e5301e5c5, type: 3}
