@@ -133,7 +133,10 @@ public class baseTowerScript : sumObj_Base
     {
         if (collision.tag == "Enemy")
         {
-            enemyInRange.Add(collision.gameObject);
+            if (collision.GetComponent<SOEnemyDisplay>().enemy.targettable)
+            {
+                enemyInRange.Add(collision.gameObject);
+            }
         }
     }
 
@@ -141,7 +144,10 @@ public class baseTowerScript : sumObj_Base
     {
         if (collision.tag == "Enemy")
         {
-            enemyInRange.Remove(collision.gameObject);
+            if (enemyInRange.Contains(collision.gameObject))
+            {
+                enemyInRange.Remove(collision.gameObject);
+            }
         }
     }
 

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
+  m_Name: Enemy 60018
+  m_EditorClassIdentifier: 
+  ID: 60018
+  Enemyname: King Slime
+  description: The mightest of them all. The ruler of all slimes. The shiniest of
+    all. He worries about his receding hairline.
+  image: {fileID: -244296023, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
+  animClip: {fileID: 7400000, guid: 00f59ec7686aac3438f11b3f0589893e, type: 2}
+  speed: 5
+  health: 50000
+  damageToHP: 65536
+  spawnValue: 0
+  hitRadius: 10
+  goldDrop: 0
+  effects: {fileID: 11400000, guid: 9997ada098b681a46b9bb9abb558811b, type: 2}
+  attacks:
+  - target: {fileID: 11400000, guid: f499c5c2849acf34ab9261f889ee94ed, type: 2}
+    appliedEffect:
+    - {fileID: 11400000, guid: dcfd57a3d9cb2604eadcda06e8043005, type: 2}
+    - {fileID: 11400000, guid: 62d1fec742816dc44a79cae6c3c08499, type: 2}
+    endEffect: []
+    startLag: 0.67
+    anim: {fileID: 7400000, guid: f4fdef4167d2e38439fb79f62163a82c, type: 2}
+    endLag: 2
+    moveDuringAttack: 0
+    timeTillNextAttack: 27
+  targettable: 1

@@ -16,6 +16,6 @@ MonoBehaviour:
   summonedPrefab: {fileID: 7252188331371112599, guid: a1e9f47e649ca414db5aa295deb750e9, type: 3}
   summonedObject: {fileID: 11400000, guid: 49bce27a8dd212a4fabb91fe5c3237f3, type: 2}
   summonedTower: {fileID: 0}
-  summonedEnemy: {fileID: 0}
+  summonedEnemy: []
   sumNum: 1
   keepSlot: 0

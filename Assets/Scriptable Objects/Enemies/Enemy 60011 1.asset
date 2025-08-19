@@ -18,8 +18,9 @@ MonoBehaviour:
   image: {fileID: -1509146818, guid: 09e46a74c1ea33640b127507087f1fe3, type: 3}
   animClip: {fileID: 7400000, guid: f6b3bb8288a59e34f909a46c21374a36, type: 2}
   speed: 0
-  health: 4.2949673e+9
+  health: 4.294967e+9
   damageToHP: 0
+  spawnValue: 0
   hitRadius: 0
   goldDrop: 0
   effects: {fileID: 11400000, guid: 4bd75403eda6dd64c8e86670c24286e0, type: 2}
@@ -35,3 +36,4 @@ MonoBehaviour:
     endLag: 0
     moveDuringAttack: 0
     timeTillNextAttack: 4.2949673e+9
+  targettable: 0

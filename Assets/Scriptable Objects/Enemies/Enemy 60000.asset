@@ -16,9 +16,13 @@ MonoBehaviour:
   Enemyname: Error
   description: Error, Error
   image: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
+  animClip: {fileID: 0}
   speed: 1
   health: 404666
   damageToHP: 0
+  spawnValue: 0
   hitRadius: 0.2
   goldDrop: 0
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
+  attacks: []
+  targettable: 1

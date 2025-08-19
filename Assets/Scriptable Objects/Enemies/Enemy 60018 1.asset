@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea58c111bf988746b7e847d4f644692, type: 3}
-  m_Name: Enemy 60018 WIP
+  m_Name: Enemy 60018 1
   m_EditorClassIdentifier: 
   ID: 60018
   Enemyname: King Slime
@@ -18,11 +18,22 @@ MonoBehaviour:
     all. He worries about his receding hairline.
   image: {fileID: -244296023, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
   animClip: {fileID: 7400000, guid: 00f59ec7686aac3438f11b3f0589893e, type: 2}
-  speed: 5
-  health: 10000
+  speed: 0
+  health: 4.294967e+9
   damageToHP: 65536
   spawnValue: 0
-  hitRadius: 10
-  goldDrop: 50
+  hitRadius: 0
+  goldDrop: 0
   effects: {fileID: 11400000, guid: 4f8d52da8ade6bc439cea46b411f85ab, type: 2}
-  attacks: []
+  attacks:
+  - target: {fileID: 0}
+    appliedEffect: []
+    endEffect:
+    - {fileID: 11400000, guid: eec5db2a7e1a9a2429f30912ba53cc0a, type: 2}
+    - {fileID: 11400000, guid: fa8bc48fc47b2fa458923bb8781b3b1b, type: 2}
+    startLag: 1.34
+    anim: {fileID: 7400000, guid: 99d525da43bca5a4b9af60eea33abe92, type: 2}
+    endLag: 0
+    moveDuringAttack: 0
+    timeTillNextAttack: 0
+  targettable: 1

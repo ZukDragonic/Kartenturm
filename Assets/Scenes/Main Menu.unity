@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691900219113765135, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_text
-      value: 'Freeplay
+      value: 'Deck
 
         WIP'
       objectReference: {fileID: 0}
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
       propertyPath: m_Name
-      value: Deck
+      value: Encyclopedia
       objectReference: {fileID: 0}
     - target: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
       propertyPath: m_IsActive
@@ -1939,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4617804306239419139, guid: 61d67c2b100c9354886425bd47ce9b66, type: 3}
       propertyPath: m_Name
-      value: Freeplay
+      value: Deck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2274,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691900219113765135, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_text
-      value: 'Deck
+      value: 'Encyclopedia
 
         WIP'
       objectReference: {fileID: 0}

@@ -20,6 +20,7 @@ MonoBehaviour:
   speed: 0
   health: 4.2949673e+9
   damageToHP: 0
+  spawnValue: 0
   hitRadius: 0
   goldDrop: 0
   effects: {fileID: 11400000, guid: 4bd75403eda6dd64c8e86670c24286e0, type: 2}
@@ -35,3 +36,4 @@ MonoBehaviour:
     endLag: 0
     moveDuringAttack: 0
     timeTillNextAttack: 4.2949673e+9
+  targettable: 0

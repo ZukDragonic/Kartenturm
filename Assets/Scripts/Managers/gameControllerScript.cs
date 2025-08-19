@@ -223,9 +223,9 @@ public class EnemyAttack
     public SOC_Effect[] appliedEffect;
     public SOC_Effect[] endEffect; //the effect that reverses the previous effect
 
-    public float startLag;
+    public float startLag; //how long it takes for the effect to take place
     public AnimationClip anim;
-    public float endLag;
+    public float endLag; //how they should stop moving for
     public bool moveDuringAttack;
     public float timeTillNextAttack;
 }
@@ -529,7 +529,7 @@ public class gameControllerScript : MonoBehaviour
                         waveWhenLoaded = 11000;
                         break;
                     case 23999: //testing
-                        waveWhenLoaded = 11105;
+                        waveWhenLoaded = 11160;
                         break;
                     default:
                         break;

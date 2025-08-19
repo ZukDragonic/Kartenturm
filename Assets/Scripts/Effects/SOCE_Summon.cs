@@ -13,7 +13,7 @@ public class SOCE_Summon : SOC_Effect
     //specifically for tower
     public SOCTower summonedTower;
     //specifically for enemy
-    public SOEnemy summonedEnemy;
+    public List<SOEnemy> summonedEnemy;
 
     public int sumNum;
 
@@ -26,7 +26,14 @@ public class SOCE_Summon : SOC_Effect
             sumPos -= (script.transform.position - script.checkpointPos).normalized * i;
             GameObject current = Instantiate(summonedPrefab, sumPos, Quaternion.identity, script.transform.parent);
             SOEnemyDisplay summonedScript = current.GetComponent<SOEnemyDisplay>();
-            summonedScript.enemy = summonedEnemy;
+            if (summonedEnemy.Count > 1)
+            {
+                summonedScript.enemy = summonedEnemy[Random.Range(0, summonedEnemy.Count)];
+            }
+            else
+            {
+                summonedScript.enemy = summonedEnemy[0];
+            }
             summonedScript.checkpointNum = script.checkpointNum;
             summonedScript.checkpointList = script.checkpointList;
             gameControllerScript.instance.resourceManager.addEnemy(summonedScript);

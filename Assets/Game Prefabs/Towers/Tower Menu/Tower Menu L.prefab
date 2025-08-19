@@ -679,7 +679,7 @@ MonoBehaviour:
   - {fileID: 3278217498846874462}
   - {fileID: 4065567790338296978}
   - {fileID: 7230940042826398315}
-  effectDisplay: {fileID: 0}
+  effectDisplay: {fileID: 1679197752114726453}
   textPrefab: {fileID: 926927587928384371, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
   targetting: {fileID: 4606347170515421934}
   targettingChild: {fileID: 2615119873816645778}
@@ -3457,6 +3457,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d39a6393d52c2144484099ff2829b346, type: 3}
+--- !u!224 &1679197752114726453 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8020584154442529628, guid: d39a6393d52c2144484099ff2829b346, type: 3}
+  m_PrefabInstance: {fileID: 8647865378699132265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2129702589403948297 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7317604505219258464, guid: d39a6393d52c2144484099ff2829b346, type: 3}

@@ -24,4 +24,6 @@ public class SOEnemy : ScriptableObject
 
     public SOCE_Parent effects;
     public EnemyAttack[] attacks;
+
+    public bool targettable;
 }

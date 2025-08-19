@@ -26,3 +26,4 @@ MonoBehaviour:
   goldDrop: 10
   effects: {fileID: 11400000, guid: 9b76c6843b7014549967bc4cb6622ad0, type: 2}
   attacks: []
+  targettable: 1

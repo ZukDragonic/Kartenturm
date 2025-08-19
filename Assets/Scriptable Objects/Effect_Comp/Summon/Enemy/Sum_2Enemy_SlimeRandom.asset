@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6212c2c270a24884abaca99b5e69ced2, type: 3}
+  m_Name: Sum_2Enemy_SlimeRandom
+  m_EditorClassIdentifier: 
+  effectDescription: 
+  summonedPrefab: {fileID: 4343075055623811010, guid: 2dde9b1fad8b3f742bb20a5a2c1a689c, type: 3}
+  summonedObject: {fileID: 0}
+  summonedTower: {fileID: 0}
+  summonedEnemy:
+  - {fileID: 11400000, guid: 4e5d4a84be437684dbf025a34499b47e, type: 2}
+  - {fileID: 11400000, guid: b08e7da5cea9dc54e95f53b390cb4567, type: 2}
+  - {fileID: 11400000, guid: 0ca0c0c4ab8c7184fb9fdd5f54c51cd0, type: 2}
+  - {fileID: 11400000, guid: af6773bce3c7cd846877517a8af1085a, type: 2}
+  - {fileID: 11400000, guid: c51f069926a1a97449a52fd5156a9838, type: 2}
+  - {fileID: 11400000, guid: ec8934d4941227f4ba62270496265c15, type: 2}
+  - {fileID: 11400000, guid: 0252a87b349308b42b569ca4ceddc2bf, type: 2}
+  - {fileID: 11400000, guid: 3f3d5b9a6bb457946ba08b34dd709f69, type: 2}
+  - {fileID: 11400000, guid: 41de8dbbd9ac029449ecf069c2ba88ae, type: 2}
+  sumNum: 2
+  keepSlot: 0
