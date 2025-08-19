@@ -1502,16 +1502,67 @@ MonoBehaviour:
     - enemyID: 60018
       delay: 0
       repeat: 1
-    - enemyID: 60007
-      delay: 2
-      repeat: 10
-    - enemyID: 60008
-      delay: 6
-      repeat: 10
+    - enemyID: 60009
+      delay: 12
+      repeat: 8
+    - enemyID: 60010
+      delay: 10
+      repeat: 8
+    - enemyID: 60011
+      delay: 15
+      repeat: 8
+    - enemyID: 60012
+      delay: 10
+      repeat: 8
+    - enemyID: 60013
+      delay: 21
+      repeat: 8
+    - enemyID: 60014
+      delay: 30
+      repeat: 8
+    - enemyID: 60015
+      delay: 24
+      repeat: 4
+    - enemyID: 60016
+      delay: 20
+      repeat: 6
+    - enemyID: 60017
+      delay: 32
+      repeat: 2
   - ID: 11182
     endGold: 0
     waveNum: 0
-    spawnOrder: []
+    spawnOrder:
+    - enemyID: 60018
+      delay: 60
+      repeat: 1
+    - enemyID: 60009
+      delay: 15
+      repeat: 1
+    - enemyID: 60010
+      delay: 12
+      repeat: 1
+    - enemyID: 60011
+      delay: 20
+      repeat: 1
+    - enemyID: 60012
+      delay: 14
+      repeat: 1
+    - enemyID: 60013
+      delay: 4
+      repeat: 1
+    - enemyID: 60014
+      delay: 20
+      repeat: 1
+    - enemyID: 60015
+      delay: 8
+      repeat: 1
+    - enemyID: 60016
+      delay: 6
+      repeat: 1
+    - enemyID: 60017
+      delay: 16
+      repeat: 1
   currentWave:
     ID: 0
     endGold: 0

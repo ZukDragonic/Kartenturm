@@ -571,18 +571,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56831005}
     m_Modifications:
-    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
-      propertyPath: eventDict.dictItems.Array.data[6].check
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
-      propertyPath: eventDict.dictItems.Array.data[7].check
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
-      propertyPath: eventDict.dictItems.Array.data[8].check
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1262187504832694779, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
