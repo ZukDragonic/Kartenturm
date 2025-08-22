@@ -1503,31 +1503,31 @@ MonoBehaviour:
       delay: 0
       repeat: 1
     - enemyID: 60009
-      delay: 12
+      delay: 6
       repeat: 8
     - enemyID: 60010
-      delay: 10
+      delay: 5
       repeat: 8
     - enemyID: 60011
-      delay: 15
+      delay: 8
       repeat: 8
     - enemyID: 60012
-      delay: 10
+      delay: 5
       repeat: 8
     - enemyID: 60013
-      delay: 21
+      delay: 12
       repeat: 8
     - enemyID: 60014
-      delay: 30
+      delay: 18
       repeat: 8
     - enemyID: 60015
-      delay: 24
+      delay: 12
       repeat: 4
     - enemyID: 60016
-      delay: 20
+      delay: 12
       repeat: 6
     - enemyID: 60017
-      delay: 32
+      delay: 16
       repeat: 2
   - ID: 11182
     endGold: 0

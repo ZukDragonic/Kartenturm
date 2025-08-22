@@ -368,10 +368,10 @@ public class gameControllerScript : MonoBehaviour
                         FlagTrigger(21005);
                         FlagTrigger(19002);
                         return;
-                    case 11181: //world 1-7 clear
+                    case 11181: //world 1-7 clear OR boss wave clear
                         FlagTrigger(21006);
                         FlagTrigger(19002);
-                        if (FlagInfo(19003))
+                        if (FlagInfo(19004))
                         {
                             flagDict[19005] = true;
                             break;
@@ -481,14 +481,14 @@ public class gameControllerScript : MonoBehaviour
             {
                 UpdateGameState(GameState.MainMenu);
             }
-            //check for freeplay
-            if (FlagInfo(19003))
+            //spawns a specific wave if freeplay
+            if (FlagInfo(19004))
             {
-                if (ID > 23011 && ID <= 23018)
+                Debug.Log(1);
+                if (ID > 23011 && ID <= 23018 || ID == 23999)
                 {
-                    waveWhenLoaded = 11142;
-                    //uncomment when that wave is done
-                    //waveWhenLoaded = 11160;
+                    Debug.Log(2);
+                    waveWhenLoaded = 11179;
                 }
                 else if (true)
                 {

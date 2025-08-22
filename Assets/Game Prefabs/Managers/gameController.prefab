@@ -93,7 +93,13 @@ MonoBehaviour:
       name: GameWin
     - ID: 19003
       check: 0
+      name: Story
+    - ID: 19004
+      check: 0
       name: Freeplay
+    - ID: 19005
+      check: 0
+      name: Freeplay Active
     - ID: 20001
       check: 0
       name: Auto Start

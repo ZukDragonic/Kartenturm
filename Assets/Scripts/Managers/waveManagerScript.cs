@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class waveManagerScript : MonoBehaviour
@@ -13,7 +14,7 @@ public class waveManagerScript : MonoBehaviour
     public int enemyAlive;
     private bool isWaveSpawning;
 
-    private List<int> freeplayEnemySpawnList;
+    private Wave freeplayEnemySpawnList;
     private int freeplaySpawnTotal;
     private int freeplaySpawnMaxRep;
     private Wave currentFreeplayWave;
@@ -72,42 +73,63 @@ public class waveManagerScript : MonoBehaviour
 
     public void spawnFreePlayWave(int ID)
     {
+        freeplaySpawnTotal = 0;
+        foreach (EnemyAndDelay enemy in currentWave.spawnOrder)
+        {
+            freeplaySpawnTotal += enemy.repeat * findEnemy(enemy.enemyID).spawnValue;
+        }
+        freeplaySpawnTotal = Mathf.FloorToInt(freeplaySpawnTotal * 1.1f);
+
+        //sets the wave of the spawner
         //if freeplayEnemySpawnList has no enemies in it, the spawnable enemies haven't been initialized
-        //Therefore, initialize every variable
+        //Therefore, the list where enemy can spawn in
         if (freeplayEnemySpawnList == null)
         {
-            foreach (EnemyAndDelay enemy in currentWave.spawnOrder)
-            {
-                freeplaySpawnTotal += enemy.repeat * findEnemy(enemy.enemyID).spawnValue;
-            }
+            //sets seed
+            setSeed = new System.Random(freeplaySeed.GetHashCode());
+            //sets spawnable template
+            freeplayEnemySpawnList = findWave(ID);
 
-            freeplayEnemySpawnList = new List<int>();
-            Wave tempWave = findWave(ID);
+            List<EnemyAndDelay> tempSpawnList = new List<EnemyAndDelay>();
 
             //adds in spawnable enemies
-            foreach (EnemyAndDelay enemy in tempWave.spawnOrder)
+            foreach (EnemyAndDelay enemy in findWave(ID).spawnOrder)
             {
-                freeplayEnemySpawnList.Add(enemy.enemyID);
+                tempSpawnList.Add(enemy);
             }
 
-            setSeed = new System.Random(freeplaySeed.GetHashCode());
+            freeplayEnemySpawnList.spawnOrder = tempSpawnList.ToArray();
         }
+        freeplayEnemySpawnList.waveNum = currentWave.waveNum + 1;
+
         currentFreeplayWave = new Wave();
         currentFreeplayWave.endGold = 0;
-        currentFreeplayWave.waveNum = currentWave.waveNum + 1;
+        currentFreeplayWave.waveNum = freeplayEnemySpawnList.waveNum;
+        List<EnemyAndDelay> tempCurrentSpawnList = new List<EnemyAndDelay>();
 
         while (freeplaySpawnTotal > 0)
         {
-            int spawnedEnemyIndex = setSeed.Next(0, freeplayEnemySpawnList.Count);
-            SOEnemy foundEnemy = findEnemy(freeplayEnemySpawnList[spawnedEnemyIndex]);
-            if (foundEnemy.spawnValue > freeplaySpawnTotal)
+            int spawnedEnemyIndex = setSeed.Next(0, freeplayEnemySpawnList.spawnOrder.Length);
+            int spawnRepeat = setSeed.Next(0, freeplaySpawnMaxRep);
+
+            EnemyAndDelay foundEnemy = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex];
+
+            int spawnPower = findEnemy(foundEnemy.enemyID).spawnValue * spawnRepeat;
+            if (spawnPower < freeplaySpawnTotal)
             {
-
+                tempCurrentSpawnList.Add(foundEnemy);
+                freeplaySpawnTotal -= spawnPower;
             }
-
-            //currentFreeplayWave.spawnOrder
+            else
+            {
+                int enemySpawnRepeat = Mathf.FloorToInt((float)freeplaySpawnTotal / (float)findEnemy(foundEnemy.enemyID).spawnValue + 1);
+                freeplaySpawnTotal = 0;
+            }
         }
 
+        currentFreeplayWave.spawnOrder = tempCurrentSpawnList.ToArray();
+
+        StartCoroutine(waveManager(currentFreeplayWave));
     }
 
     public void enemyDied()
@@ -163,6 +185,12 @@ public class waveManagerScript : MonoBehaviour
             {
                 float relativeDelay = wave.spawnOrder[i].delay * Application.targetFrameRate;
                 int currentFrame = 0;
+
+                //makes the first enemy spawned 0 second
+                if (i == 0 && k == 0)
+                {
+                    currentFrame = (int)relativeDelay;
+                }
                 while (currentFrame < relativeDelay)
                 {
                     currentFrame += gameController.timeManager.currentTime;
