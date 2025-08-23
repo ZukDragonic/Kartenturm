@@ -304,10 +304,10 @@ public class gameControllerScript : MonoBehaviour
         {
             instance = this;
         }
+        findManagers();
 
         LoadData();
 
-        findManagers();
         mainInput_Ray = new MainInput_Ray();
         mainInput_Ray.hit = gameObject;
 
