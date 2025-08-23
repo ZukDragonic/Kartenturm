@@ -387,18 +387,34 @@ public class gameControllerScript : MonoBehaviour
 
             if (FlagInfo(19005))
             {
-                waveManager.spawnFreePlayWave(ID);
+                //variable gets set to false when no freeplay waves are found
+                bool didWaveSpawn = true;
+                //determines which set of enemies freeplay should draw from
+                switch (ID)
+                {
+                    case 11181:
+                        waveManager.spawnFreePlayWave(11182);
+                        break;
+                    default:
+                        didWaveSpawn = false;
+                        break;
+                }
+
+                if (!didWaveSpawn)
+                {
+                    waveManager.spawnFreePlayWave(ID);
+                }
             }
             else
             {
                 waveManager.spawnWave(ID + 1);
             }
             deckManager.drawCard(1);
-            if (waveManager.findWave(ID + 1).waveNum % deckManager.shopWave == 0)
+            if ((resourceManager.waveNum + 1) % deckManager.shopWave == 0)
             {
                 deckManager.openShop();
             }
-            if (waveManager.findWave(ID + 1).waveNum == 1)
+            if (resourceManager.waveNum + 1 == 1)
             {
                 deckManager.drawCard(3);
             }
@@ -487,8 +503,7 @@ public class gameControllerScript : MonoBehaviour
                 Debug.Log(1);
                 if (ID > 23011 && ID <= 23018 || ID == 23999)
                 {
-                    Debug.Log(2);
-                    waveWhenLoaded = 11179;
+                    waveWhenLoaded = 11180; //should be world 1-7 wave aka 11160
                 }
                 else if (true)
                 {

@@ -19,7 +19,7 @@ public class waveManagerScript : MonoBehaviour
     private int freeplaySpawnMaxRep;
     private Wave currentFreeplayWave;
     public string freeplaySeed;
-    private System.Random setSeed; 
+    private System.Random setSeed;
 
     public GameObject enemyPrefab;
 
@@ -48,13 +48,14 @@ public class waveManagerScript : MonoBehaviour
                 routeList.Add(new Route());
                 routeList[i].checkpointList = new List<GameObject>();
                 Transform currentRoute = checkpointParent.transform.GetChild(i);
-                for (int k = 0; k < currentRoute.childCount;k++)
+                for (int k = 0; k < currentRoute.childCount; k++)
                 {
                     routeList[i].checkpointList.Add(currentRoute.GetChild(k).gameObject);
                 }
             }
         }
 
+        currentFreeplayWave = null;
         freeplayEnemySpawnList = null;
         freeplaySpawnTotal = 0;
         freeplaySpawnMaxRep = 0;
@@ -79,12 +80,15 @@ public class waveManagerScript : MonoBehaviour
             freeplaySpawnTotal += enemy.repeat * findEnemy(enemy.enemyID).spawnValue;
         }
         freeplaySpawnTotal = Mathf.FloorToInt(freeplaySpawnTotal * 1.1f);
+        freeplaySpawnMaxRep = Mathf.FloorToInt(freeplaySpawnTotal / 100);
+
 
         //sets the wave of the spawner
         //if freeplayEnemySpawnList has no enemies in it, the spawnable enemies haven't been initialized
         //Therefore, the list where enemy can spawn in
         if (freeplayEnemySpawnList == null)
         {
+            Debug.Log(3);
             //sets seed
             setSeed = new System.Random(freeplaySeed.GetHashCode());
             //sets spawnable template
@@ -105,14 +109,18 @@ public class waveManagerScript : MonoBehaviour
         currentFreeplayWave = new Wave();
         currentFreeplayWave.endGold = 0;
         currentFreeplayWave.waveNum = freeplayEnemySpawnList.waveNum;
-        List<EnemyAndDelay> tempCurrentSpawnList = new List<EnemyAndDelay>();
+        currentFreeplayWave.ID = freeplayEnemySpawnList.ID;
 
+        List<EnemyAndDelay> tempCurrentSpawnList = new List<EnemyAndDelay>();
         while (freeplaySpawnTotal > 0)
         {
             int spawnedEnemyIndex = setSeed.Next(0, freeplayEnemySpawnList.spawnOrder.Length);
-            int spawnRepeat = setSeed.Next(0, freeplaySpawnMaxRep);
+            int spawnRepeat = setSeed.Next(1, freeplaySpawnMaxRep);
 
-            EnemyAndDelay foundEnemy = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex];
+            EnemyAndDelay foundEnemy = new EnemyAndDelay();
+            foundEnemy.enemyID = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex].enemyID;
+            foundEnemy.delay = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex].delay;
+            foundEnemy.repeat = spawnRepeat;
 
             int spawnPower = findEnemy(foundEnemy.enemyID).spawnValue * spawnRepeat;
             if (spawnPower < freeplaySpawnTotal)
@@ -126,10 +134,10 @@ public class waveManagerScript : MonoBehaviour
                 freeplaySpawnTotal = 0;
             }
         }
-
         currentFreeplayWave.spawnOrder = tempCurrentSpawnList.ToArray();
 
-        StartCoroutine(waveManager(currentFreeplayWave));
+        currentWave = currentFreeplayWave;
+        StartCoroutine(waveManager(currentWave));
     }
 
     public void enemyDied()
@@ -206,6 +214,7 @@ public class waveManagerScript : MonoBehaviour
                 eScript.enemy = findEnemy(wave.spawnOrder[i].enemyID);
                 eScript.checkpointList = spawnedCheckpoint;
                 enemyAlive += 1;
+
                 gameController.resourceManager.addEnemy(eScript);
             }
         }

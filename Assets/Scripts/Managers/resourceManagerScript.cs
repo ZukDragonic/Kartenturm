@@ -29,6 +29,7 @@ public class resourceManagerScript : MonoBehaviour
             aliveTower = new List<baseTowerScript>();
             resetResources();
         }
+        waveNum = 0;
     }
 
     public void resetResources()
@@ -84,6 +85,13 @@ public class resourceManagerScript : MonoBehaviour
     }
     public void removeEnemy(SOEnemyDisplay enemy)
     {
+        StartCoroutine(removeEnemyLater(enemy));
+    }
+
+    IEnumerator removeEnemyLater(SOEnemyDisplay enemy)
+    {
+        yield return null;
+
         if (aliveEnemy.Contains(enemy))
         {
             aliveEnemy.Remove(enemy);

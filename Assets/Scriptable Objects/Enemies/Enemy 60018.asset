@@ -21,7 +21,7 @@ MonoBehaviour:
   speed: 5
   health: 50000
   damageToHP: 65536
-  spawnValue: 0
+  spawnValue: 100
   hitRadius: 10
   goldDrop: 0
   effects: {fileID: 11400000, guid: 9997ada098b681a46b9bb9abb558811b, type: 2}

@@ -36,4 +36,4 @@ MonoBehaviour:
     endLag: 0
     moveDuringAttack: 0
     timeTillNextAttack: 0
-  targettable: 1
+  targettable: 0
