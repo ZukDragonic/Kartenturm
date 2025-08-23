@@ -7,6 +7,7 @@ public class resourceManagerScript : MonoBehaviour
 {
     public numberDisplayScript goldDisplay;
     public int playerGold;
+    public int premiumGold;
     public numberDisplayScript healthDisplay;
     public int health;
     public TextMeshProUGUI waveDisplay;

@@ -290,11 +290,13 @@ public class gameControllerScript : MonoBehaviour
     [SerializeField]
     NewFlagDic eventDict;
     //for keeping track of important events
-    Dictionary<int, bool> flagDict;
+    public Dictionary<int, bool> flagDict;
 
     public GameState state;
     public GameState prevState;
     public bool isCardDragged;
+
+    public playerData latestData;
 
     void Start()
     {
@@ -303,7 +305,8 @@ public class gameControllerScript : MonoBehaviour
             instance = this;
         }
 
-        flagDict = eventDict.toDictionary();
+        LoadData();
+
         findManagers();
         mainInput_Ray = new MainInput_Ray();
         mainInput_Ray.hit = gameObject;
@@ -590,6 +593,7 @@ public class gameControllerScript : MonoBehaviour
                     break;
                 case 19002:
                     //insert game win shit
+                    SaveData();
                     waveManager.GameWinMenu();
                     break;
                 default:
@@ -755,5 +759,25 @@ public class gameControllerScript : MonoBehaviour
         timeManager.ChangeFps(60);
 
         Camera.main.gameObject.GetComponent<aspectRatioCamera>().StartAction();
+    }
+
+    public void SaveData()
+    {
+        saveManagerScript.SavePlayer(this);
+    }
+
+    public void LoadData()
+    {
+        latestData = saveManagerScript.LoadPlayer();
+
+        if (latestData == null)
+        {
+            flagDict = eventDict.toDictionary();
+        }
+        else
+        {
+            flagDict = latestData.flagDict;
+            resourceManager.premiumGold = latestData.premiumGold;
+        }
     }
 }
