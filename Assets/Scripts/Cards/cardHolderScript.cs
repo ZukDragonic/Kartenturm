@@ -10,11 +10,25 @@ public class cardHolderScript : MonoBehaviour
     private Vector3 referenceVector3;
 
     private bool isCardDucked;
+    private bool isCardMinimized;
+
+    public float maximizeTime;
+    private float minimizeTimer;
+    private IEnumerator minimizeCoroutine;
+
     void Start()
     {
         gameController = gameControllerScript.instance;
         cardInHandCount = 0;
         referenceVector3 = transform.position;
+        StartCoroutine(DoItLater());
+    }
+
+    IEnumerator DoItLater()
+    {
+        yield return null;
+        gameController.timelineManager.PlayAnim(13001);
+        resetCardPosition();
     }
     void Update()
     {
@@ -22,33 +36,77 @@ public class cardHolderScript : MonoBehaviour
         {
             return;
         }
-        
-        if (!gameController.isCardDragged)
+
+        if (gameController.isCardHovered)
+        {
+            minimizeTimer = 0;
+            if (isCardMinimized)
+            {
+                isCardMinimized = false;
+                //makes cards bigger
+                gameController.timelineManager.PlayAnim(13002);
+            }
+
+            if (!gameController.isCardDragged)
+            {
+                if (isCardDucked)
+                {
+                    gameController.timelineManager.PlayAnim(13001);
+                    isCardDucked = false;
+                }
+                resetCardPosition();
+            }
+            else //if a card is being dragged
+            {
+                if (isCardDucked)
+                {
+                    return;
+                }
+                gameController.timelineManager.PlayAnim(13000);
+                isCardDucked = true;
+                resetCardPosition();
+            }
+        }
+        else
         {
             if (isCardDucked)
             {
                 gameController.timelineManager.PlayAnim(13001);
                 isCardDucked = false;
+                resetCardPosition();
             }
-            resetCardPosition();
-        }
-        else //if a card is being dragged
-        {
-            if (isCardDucked)
+            else
             {
-                return;
+                if (!isCardMinimized)
+                {
+                    if (minimizeCoroutine == null)
+                    {
+                        minimizeCoroutine = MinimizeCards();
+                        StartCoroutine(minimizeCoroutine);
+                    }
+                }
             }
-            gameController.timelineManager.PlayAnim(13000);
-            isCardDucked = true;
-            resetCardPosition();
         }
     }
 
+    IEnumerator MinimizeCards()
+    {
+        while (minimizeTimer <= maximizeTime)
+        {
+            minimizeTimer += Time.deltaTime;
+            yield return null;
+        }
+        minimizeCoroutine = null;
+        isCardMinimized = true;
+        gameController.timelineManager.PlayAnim(13003);
+    }
+
+    /* //remove in future build?
     IEnumerator waitForTimeline(float time)
     {
         yield return new WaitForSeconds(time);
         isCardDucked = false;
-    }
+    }*/
 
     void resetCardPosition()
     {
@@ -106,7 +164,7 @@ public class cardHolderScript : MonoBehaviour
                             lPos = new Vector3((Mathf.FloorToInt(i / 2) + 1) * -80,
                                 (Mathf.FloorToInt(i / 2) + 1) * -10 * (Mathf.FloorToInt(i / 2) * 0.3f), 0);
                             lRot = Quaternion.Euler(new Vector3(0, 0, (Mathf.FloorToInt(i / 2) + 1) * 5));
-                            
+
                             currentChild.localPosition = lPos;
                             currentChild.localRotation = lRot;
                         }

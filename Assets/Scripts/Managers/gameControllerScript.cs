@@ -295,6 +295,7 @@ public class gameControllerScript : MonoBehaviour
     public GameState state;
     public GameState prevState;
     public bool isCardDragged;
+    public bool isCardHovered;
 
     public playerData latestData;
 

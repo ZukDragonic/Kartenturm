@@ -35,6 +35,7 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         gameControllerScript.instance.isCardDragged = false;
+        gameControllerScript.instance.isCardHovered = false;
         transform.SetParent(ogParent);
         transform.localRotation = ogRotation;
         transform.localPosition = ogPos;
@@ -46,6 +47,7 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             return;
         }
+        gameControllerScript.instance.isCardHovered = false;
         transform.localPosition = ogPos;
         transform.localRotation = ogRotation;
         transform.SetSiblingIndex(ogSiblingIndex);
@@ -57,6 +59,7 @@ public class cardInHandScript : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             return;
         }
+        gameControllerScript.instance.isCardHovered = true;
         ogPos = transform.localPosition;
         ogRotation = transform.localRotation;
         ogParent = transform.parent;
