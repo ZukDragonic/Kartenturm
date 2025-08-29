@@ -25,9 +25,13 @@ public class SOC_Effect : ScriptableObject
         {
             ApplyTEffect(script as baseTowerScript);
         }
-        else if (script as SOEnemyDisplay)
+        else if (script as SOEnemyDisplay != null)
         {
             ApplyEEffect(script as SOEnemyDisplay);
+        }
+        else if (script as sumObj_Minion != null)
+        {
+            ApplyOMEffect(script as sumObj_Minion);
         }
         else
         {
@@ -36,26 +40,37 @@ public class SOC_Effect : ScriptableObject
     }
     public virtual void ApplyEEffect(SOEnemyDisplay script)
     {
+        //enemy effect
         Debug.Log("DNE");
     }
     public virtual void ApplyPHEffect(sumObjT_Placeholder script)
     {
+        //placeholder calculator effect
         Debug.Log("DNE");
     }
     public virtual void ApplyTEffect(baseTowerScript script)
     {
+        //object tower effect
+        Debug.Log("DNE");
+    }
+    public virtual void ApplyOMEffect(sumObj_Minion script)
+    {
+        //object summon effect
         Debug.Log("DNE");
     }
     public virtual void ApplyOSEffect(sumObj_Standalone script)
     {
+        //object standalone effect
         Debug.Log("DNE");
     }
     public virtual void ApplyOPEffect(sumObj_Projectile script)
     {
+        //object projcetile effect
         Debug.Log("DNE");
     }
     public virtual void ApplyBEffect()
     {
+        //bsae effect
         Debug.Log("DNE");
     }
 

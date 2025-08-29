@@ -17,5 +17,6 @@ MonoBehaviour:
   pierce: 20
   effect: {fileID: 11400000, guid: 85ee0f7f092723947a6eeb9b8693254c, type: 2}
   hitRadius: 1
+  speed: 0
   image: {fileID: -1509146818, guid: 09e46a74c1ea33640b127507087f1fe3, type: 3}
-  anim: {fileID: 9100000, guid: 2e18cd9e562363b4baa34d902634bf2d, type: 2}
+  animClip: {fileID: 7400000, guid: f6b3bb8288a59e34f909a46c21374a36, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower 0006
   m_EditorClassIdentifier: 
   ID: 40006
-  shopGold: 250
+  shopGold: 1250
   actionGold: 200
   archetype: 
   cardName: Priest

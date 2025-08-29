@@ -16,7 +16,7 @@ MonoBehaviour:
   shopGold: 8000
   actionGold: 10000
   archetype: 
-  cardName: Golden Knight
+  cardName: Hero
   description: His armor and sword is forged of pure gold. Why else would it be so
     expensive?
   image: {fileID: 21300000, guid: cd779b27a03e26740b6ba726d98fb0eb, type: 3}

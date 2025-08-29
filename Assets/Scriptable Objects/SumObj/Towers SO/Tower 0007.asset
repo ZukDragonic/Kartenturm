@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 40007
   shopGold: 750
-  actionGold: 500
+  actionGold: 1200
   archetype: 
   cardName: Farmer
   description: A humble farmer.

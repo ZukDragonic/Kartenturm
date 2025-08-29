@@ -11,11 +11,15 @@ public class SOC_Requirement : ScriptableObject
     {
         if (script as sumObj_Projectile != null)
         {
-            return ApplyOSRequirement(script as sumObj_Standalone);
+            return ApplyOPRequirement(script as sumObj_Projectile);
+        }
+        else if(script as sumObj_Minion != null)
+        {
+            return ApplyOMRequirement(script as sumObj_Minion);
         }
         else if (script as sumObj_Standalone != null)
         {
-            return ApplyOPRequirement(script as sumObj_Projectile);
+            return ApplyOSRequirement(script as sumObj_Standalone);
         }
         else if (script as baseTowerScript != null)
         {
@@ -37,6 +41,12 @@ public class SOC_Requirement : ScriptableObject
         return requirement;
     }
     public virtual bool ApplyTRequirement(baseTowerScript script)
+    {
+        requirement = true;
+        requirement = CheckFlipped();
+        return requirement;
+    }
+    public virtual bool ApplyOMRequirement(sumObj_Minion script)
     {
         requirement = true;
         requirement = CheckFlipped();

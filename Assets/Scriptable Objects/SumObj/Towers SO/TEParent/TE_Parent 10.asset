@@ -15,6 +15,7 @@ MonoBehaviour:
   passive: []
   destroy: []
   summon: []
+  hit: []
   waveStart: []
   waveEnd: []
   pPassive:

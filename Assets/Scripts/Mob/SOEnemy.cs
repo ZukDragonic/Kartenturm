@@ -14,7 +14,7 @@ public class SOEnemy : ScriptableObject
     public AnimationClip animClip;
 
     public float speed;
-    public float health;
+    public int health;
     public int damageToHP;
     public int spawnValue;
 

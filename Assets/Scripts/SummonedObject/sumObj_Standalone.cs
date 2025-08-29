@@ -14,21 +14,30 @@ public class sumObj_Standalone : sumObj_Base
 
     public CircleCollider2D hitbox;
     public SpriteRenderer image;
+
     public Animator anim;
+    private AnimatorOverrideController aoc;
 
     public int pierce;
 
-    public sumObj_Base hitObject;
+    public SOEnemyDisplay hitObject;
     void Start()
     {
         hitbox.radius = (float)baseSumObj.hitRadius / 5f;
         image.sprite = baseSumObj.image;
         damage = baseSumObj.damage;
         pierce = baseSumObj.pierce;
-        if (baseSumObj.anim != null)
+        if (baseSumObj.animClip != null)
         {
-            anim.runtimeAnimatorController = baseSumObj.anim;
+            aoc = new AnimatorOverrideController(anim.runtimeAnimatorController);
+            aoc["SumObjAnim_Base"] = baseSumObj.animClip;
+            anim.runtimeAnimatorController = aoc;
+
             anim.speed = gameControllerScript.instance.timeManager.currentTime;
+        }
+        else
+        {
+            anim.enabled = false;
         }
         effects = SOCE_Parent.CreateInstance(baseSumObj.effect);
 
@@ -56,7 +65,7 @@ public class sumObj_Standalone : sumObj_Base
             hitObject = collision.gameObject.GetComponent<SOEnemyDisplay>();
             effects.OnOHitEffect(this as sumObj_Base);
             SOEnemyDisplay script = collision.gameObject.GetComponent<SOEnemyDisplay>();
-            (hitObject as SOEnemyDisplay).enemyHit(this);
+            hitObject.enemyHit(this);
 
             pierce -= 1;
             if (pierce <= 0)

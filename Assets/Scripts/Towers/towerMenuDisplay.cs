@@ -157,7 +157,8 @@ public class towerMenuDisplay : MonoBehaviour
         TextMeshProUGUI spawnTextComp = spawnedText.GetComponent<TextMeshProUGUI>();
         spawnTextComp.text = description;
         spawnTextComp.enableAutoSizing = true;
-        spawnTextComp.rectTransform.sizeDelta = new Vector2(190, 50);
+        spawnTextComp.fontSizeMin = 6;
+        spawnTextComp.rectTransform.sizeDelta = new Vector2(190, 75);
     }
 
     string BonusDisplay(float bonusInt)

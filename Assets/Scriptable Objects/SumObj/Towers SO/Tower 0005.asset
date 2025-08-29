@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tower 0005
   m_EditorClassIdentifier: 
   ID: 40005
-  shopGold: 200
-  actionGold: 300
+  shopGold: 800
+  actionGold: 600
   archetype: 
   cardName: Knight
   description: A man of honor. Sadly, he lost his sword and is using a dagger.

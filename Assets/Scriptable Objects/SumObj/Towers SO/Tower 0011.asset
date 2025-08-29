@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
+  m_Name: Tower 0011
+  m_EditorClassIdentifier: 
+  ID: 40011
+  shopGold: 2100
+  actionGold: 1200
+  archetype: 
+  cardName: Paladin
+  description: '"Faith in the brotherhood! Faith in the fatherhood! FAITH IN YOURSELF!"
+    - That one book he read as a child. Power increases with each paladin placed.'
+  image: {fileID: 21300000, guid: 2034ee6746bfc4d478eb10568d8a06ea, type: 3}
+  shotsPerAttack: 1
+  damage: 15
+  secondsPerAttack: 0.8
+  range: 30
+  multiplier: 1
+  projectileImage: {fileID: 21300000, guid: 55afafff741a9de42b407295faed7838, type: 3}
+  pierce: 10
+  effects: {fileID: 11400000, guid: 160a833ac0079704096cea07f7741e15, type: 2}
+  slotNum: 3
+  targetting: 0
+  allTargetting:
+  - {fileID: 11400000, guid: 789fb77a865567b4cad664fa9e0fef6d, type: 2}
+  - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
+  - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
+  - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
+  selectRadius: 2

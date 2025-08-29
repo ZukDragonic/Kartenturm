@@ -17,7 +17,7 @@ public class SOEnemyDisplay : sumObj_Base
     private AnimatorOverrideController aoc;
 
     public float speed;
-    public float health;
+    public int health;
     public int hitDamage; //the damage the enemy takes when hit by tower. purely here for effect modification
     public sumObj_Base hitProjectile;
 
@@ -28,8 +28,6 @@ public class SOEnemyDisplay : sumObj_Base
     public int checkpointNum = 0;
     public Vector3 checkpointPos;
     public List<GameObject> checkpointList;
-
-    public bool reachedEnd;
 
     private float attackTimer;
     private List<baseTowerScript> affectedTowers;
@@ -99,10 +97,9 @@ public class SOEnemyDisplay : sumObj_Base
             {
                 checkpointPos = checkpointList[checkpointNum].transform.position;
             }
-            //if each end, do stuff
+            //if reach end, do stuff
             else
             {
-                reachedEnd = true;
                 gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
                 gameController.resourceManager.removeEnemy(this);
             }

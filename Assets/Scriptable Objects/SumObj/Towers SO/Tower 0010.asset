@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 40010
   shopGold: 750
-  actionGold: 500
+  actionGold: 800
   archetype: 
   cardName: Rocker
   description: The brother of Sisphyus. He loves throwing rocks.
