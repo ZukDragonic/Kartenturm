@@ -36,6 +36,7 @@ public class sumObj_Minion : sumObj_Base
 
         damage = baseSumObj.damage;
         pierce = damage;
+        speed = baseSumObj.speed;
 
         if (baseSumObj.animClip != null)
         {

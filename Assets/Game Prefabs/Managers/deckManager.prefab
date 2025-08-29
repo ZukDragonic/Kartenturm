@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74b47795baa518747bdefed5235cf019, type: 2}
   - {fileID: 11400000, guid: 49499e68e9ffe5441b0f439e3c5edc39, type: 2}
   - {fileID: 11400000, guid: a5a184c19135659429867818243f5dc4, type: 2}
+  - {fileID: 11400000, guid: 0bd359c8c9419ff4ea352abf8917aa8b, type: 2}
   allArtifacts:
   - {fileID: 11400000, guid: 3337cdfd8be1a3845adcc975ef172931, type: 2}
   - {fileID: 11400000, guid: 20fa4876b1927eb4292538f5ae3920c3, type: 2}

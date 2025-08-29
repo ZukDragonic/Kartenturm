@@ -50,7 +50,7 @@ public class SOCE_SummonMinion : SOC_Effect
         int startingCheckpoint = routeSelected.checkpointList.Count - 1;
         if (copyEnemyOnSpawn)
         {
-            startingCheckpoint = script.hitEnemy.checkpointNum;
+            startingCheckpoint = script.hitEnemy.checkpointNum - 2;
             current.transform.position = script.hitEnemy.transform.position;
 
             summonedScript.baseSumObj = SOSumObj.ConvertEnemyToMinion(script.hitEnemy.enemy, summonedScript.baseSumObj);
@@ -96,7 +96,7 @@ public class SOCE_SummonMinion : SOC_Effect
         int startingCheckpoint = routeSelected.checkpointList.Count - 1;
         if (copyEnemyOnSpawn)
         {
-            startingCheckpoint = script.hitObject.checkpointNum;
+            startingCheckpoint = script.hitObject.checkpointNum - 2;
             current.transform.position = script.hitObject.transform.position;
 
             summonedScript.baseSumObj = SOSumObj.ConvertEnemyToMinion(script.hitObject.enemy, summonedScript.baseSumObj);
@@ -106,7 +106,6 @@ public class SOCE_SummonMinion : SOC_Effect
             current.transform.position = routeSelected.checkpointList[startingCheckpoint].transform.position;
         }
 
-        current.transform.position = routeSelected.checkpointList[startingCheckpoint].transform.position;
         summonedScript.checkpointNum = startingCheckpoint;
     }
     public override void ApplyOPEffect(sumObj_Projectile script)
@@ -124,7 +123,7 @@ public class SOCE_SummonMinion : SOC_Effect
         int startingCheckpoint = routeSelected.checkpointList.Count - 1;
         if (copyEnemyOnSpawn)
         {
-            startingCheckpoint = script.hitEnemy.checkpointNum;
+            startingCheckpoint = script.hitEnemy.checkpointNum - 2;
             current.transform.position = script.hitEnemy.transform.position;
 
             summonedScript.baseSumObj = SOSumObj.ConvertEnemyToMinion(script.hitEnemy.enemy, summonedScript.baseSumObj);
@@ -134,7 +133,6 @@ public class SOCE_SummonMinion : SOC_Effect
             current.transform.position = routeSelected.checkpointList[startingCheckpoint].transform.position;
         }
 
-        current.transform.position = routeSelected.checkpointList[startingCheckpoint].transform.position;
         summonedScript.checkpointNum = startingCheckpoint;
     }
     public override void ApplyBEffect()

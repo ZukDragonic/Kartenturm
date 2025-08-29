@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passive: []
   destroy: []
-  summon: []
+  summon:
+  - effect: {fileID: 11400000, guid: 84b193384d205074ba63959d54459361, type: 2}
+    req: []
   hit: []
   waveStart: []
   waveEnd: []
