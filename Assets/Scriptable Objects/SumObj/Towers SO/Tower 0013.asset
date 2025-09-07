@@ -20,13 +20,13 @@ MonoBehaviour:
   description: Money is good. Employer is money. Employer is good.
   image: {fileID: 21300000, guid: 0716c448b0d11144d943c5fa0490b62c, type: 3}
   shotsPerAttack: 1
-  damage: 80
-  secondsPerAttack: 4
-  range: 30
+  damage: 500
+  secondsPerAttack: 15
+  range: 45
   multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 8a1fc9b2ef84cba43980f07f3713003f, type: 3}
-  pierce: 8
-  effects: {fileID: 11400000, guid: 8a78e18a500f6684fb4d7af82d0c1320, type: 2}
+  projectileImage: {fileID: 21300000, guid: ff2300fe7a64edc46921ee3a5dfe2d4b, type: 3}
+  pierce: 1
+  effects: {fileID: 11400000, guid: 63290b1292b1162408aa3115b6a22716, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:

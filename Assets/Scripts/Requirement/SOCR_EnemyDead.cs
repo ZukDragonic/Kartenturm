@@ -12,7 +12,7 @@ public class SOCR_EnemyDead : SOC_Requirement
 
         if (enemyHealth > script.damage)
         {
-            return false;
+            requirement = false;
         }
 
         requirement = CheckFlipped();
@@ -26,7 +26,7 @@ public class SOCR_EnemyDead : SOC_Requirement
 
         if (enemyHealth > script.damage)
         {
-            return false;
+            requirement = false;
         }
 
         requirement = CheckFlipped();
@@ -40,7 +40,7 @@ public class SOCR_EnemyDead : SOC_Requirement
 
         if (enemyHealth > script.damage)
         {
-            return false;
+            requirement = false;
         }
 
         requirement = CheckFlipped();

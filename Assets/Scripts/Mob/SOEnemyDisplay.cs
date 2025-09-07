@@ -204,7 +204,10 @@ public class SOEnemyDisplay : sumObj_Base
         hitProjectile = hitObject;
 
         effects.OnHitEffect(this);
-
+        if (hitDamage > health)
+        {
+            hitDamage = health;
+        }
         health -= hitDamage;
 
         if (hitObject as sumObj_Projectile != null)

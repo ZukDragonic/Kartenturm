@@ -26,7 +26,7 @@ MonoBehaviour:
   secondsPerAttack: 3
   range: 60
   multiplier: 1
-  projectileImage: {fileID: 21300000, guid: 8a1fc9b2ef84cba43980f07f3713003f, type: 3}
+  projectileImage: {fileID: 21300000, guid: f5871ecd98b084b4e8199636942c588b, type: 3}
   pierce: 1
   effects: {fileID: 11400000, guid: 63290b1292b1162408aa3115b6a22716, type: 2}
   slotNum: 3
