@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SOC_Requirement : ScriptableObject
 {
+    [TextArea(3, 2)]
+    public string requirementDescription;
     [HideInInspector]
     public bool requirement;
     public bool isFlipped;
@@ -13,7 +15,7 @@ public class SOC_Requirement : ScriptableObject
         {
             return ApplyOPRequirement(script as sumObj_Projectile);
         }
-        else if(script as sumObj_Minion != null)
+        else if (script as sumObj_Minion != null)
         {
             return ApplyOMRequirement(script as sumObj_Minion);
         }
@@ -81,5 +83,14 @@ public class SOC_Requirement : ScriptableObject
         {
             return requirement;
         }
+    }
+
+    public string RequirementDescription()
+    {
+        if (requirementDescription == "")
+        {
+            return null;
+        }
+        return requirementDescription;
     }
 }

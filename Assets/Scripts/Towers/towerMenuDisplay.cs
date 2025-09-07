@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static UnityEngine.Rendering.DebugUI;
+using System;
 
 public class towerMenuDisplay : MonoBehaviour
 {
@@ -71,49 +71,62 @@ public class towerMenuDisplay : MonoBehaviour
 
         foreach (EffectAndReq EnR in parentTower.effects.passive)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.Passive);
+            CreateEffectDisplay(EnR, EffectType.Passive);
         }
         foreach (EffectAndReq EnR in parentTower.effects.destroy)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.Destroy);
+            CreateEffectDisplay(EnR, EffectType.Destroy);
         }
         foreach (EffectAndReq EnR in parentTower.effects.summon)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.Summon);
+            CreateEffectDisplay(EnR, EffectType.Summon);
         }
         foreach (EffectAndReq EnR in parentTower.effects.hit)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.Hit);
+            CreateEffectDisplay(EnR, EffectType.Hit);
         }
         foreach (EffectAndReq EnR in parentTower.effects.waveStart)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.WaveStart);
+            CreateEffectDisplay(EnR, EffectType.WaveStart);
         }
         foreach (EffectAndReq EnR in parentTower.effects.waveEnd)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.WaveEnd);
+            CreateEffectDisplay(EnR, EffectType.WaveEnd);
         }
         foreach (EffectAndReq EnR in parentTower.effects.pPassive)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.PPassive);
+            CreateEffectDisplay(EnR, EffectType.PPassive);
         }
         foreach (EffectAndReq EnR in parentTower.effects.pDestroy)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.PDestroy);
+            CreateEffectDisplay(EnR, EffectType.PDestroy);
         }
         foreach (EffectAndReq EnR in parentTower.effects.pHit)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.PHit);
+            CreateEffectDisplay(EnR, EffectType.PHit);
         }
         foreach (EffectAndReq EnR in parentTower.effects.pSummon)
         {
-            CreateEffectDisplay(EnR.effect, EffectType.PSummon);
+            CreateEffectDisplay(EnR, EffectType.PSummon);
         }
     }
 
-    void CreateEffectDisplay(SOC_Effect effect, EffectType effectType)
+    void CreateEffectDisplay(EffectAndReq EnR, EffectType effectType)
     {
-        string description = effect.EffectDescription();
+        string description = EnR.effect.EffectDescription();
+        string requirementDesc = "";
+        foreach(SOC_Requirement req in EnR.req)
+        {
+            if (Array.IndexOf(EnR.req, req) == 0)
+            {
+                requirementDesc += "if";
+            }
+            else if (Array.IndexOf(EnR.req, req) != EnR.req.Length)
+            {
+                requirementDesc += "and";
+            }
+            requirementDesc += req.RequirementDescription();
+        }
         if (description == null || description == "")
         {
             return;
@@ -121,34 +134,34 @@ public class towerMenuDisplay : MonoBehaviour
         switch (effectType)
         {
             case EffectType.Passive:
-                description = "Always: " + description;
+                description = "Always: " + description + requirementDesc;
                 break;
             case EffectType.Destroy:
-                description = "On Expire: " + description;
+                description = "On Expire: " + description + requirementDesc;
                 break;
             case EffectType.Summon:
-                description = "On Summon: " + description;
+                description = "On Summon: " + description + requirementDesc;
                 break;
             case EffectType.Hit:
-                description = "On Hit: " + description;
+                description = "On Hit: " + description + requirementDesc;
                 break;
             case EffectType.WaveStart:
-                description = "On Wave Start: " + description;
+                description = "On Wave Start: " + description + requirementDesc;
                 break;
             case EffectType.WaveEnd:
-                description = "On Wave End: " + description;
+                description = "On Wave End: " + description + requirementDesc;
                 break;
             case EffectType.PPassive:
-                description = "Spawned Objects Always: " + description;
+                description = "Spawned Objects Always: " + description + requirementDesc;
                 break;
             case EffectType.PDestroy:
-                description = "On Spawned Objects Expire: " + description;
+                description = "On Spawned Objects Expire: " + description + requirementDesc;
                 break;
             case EffectType.PHit:
-                description = "On Spawned Objects Hit: " + description;
+                description = "On Spawned Objects Hit: " + description + requirementDesc;
                 break;
             case EffectType.PSummon:
-                description = "On Spawned Objects Summon: " + description;
+                description = "On Spawned Objects Summon: " + description + requirementDesc;
                 break;
             default:
                 break;
