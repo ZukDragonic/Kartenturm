@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a204dda21aeba42b95635373545965, type: 3}
   m_Name: Multiply_SPA_1.5
   m_EditorClassIdentifier: 
+  effectDescription: Increase SPA by 50%
   stat: 2
   multiplier: 1.5
   odds: 1

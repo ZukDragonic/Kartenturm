@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9250ae04aba29444b40e30f35dc75c0, type: 3}
   m_Name: Unique_Teleport
   m_EditorClassIdentifier: 
+  effectDescription: Teleports to target
   localPos: {x: 0, y: 0, z: 0}

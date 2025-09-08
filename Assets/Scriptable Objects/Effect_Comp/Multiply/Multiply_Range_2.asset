@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a204dda21aeba42b95635373545965, type: 3}
   m_Name: Multiply_Range_2
   m_EditorClassIdentifier: 
+  effectDescription: Increase range by 100%
   stat: 3
   multiplier: 2
   odds: 1

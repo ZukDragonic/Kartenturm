@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8029d6dfc0c433988eb42c1febd33f, type: 3}
   m_Name: EnemyHP_Min_100
   m_EditorClassIdentifier: 
+  requirementDescription: enemy is max health
   requirement: 0
   isFlipped: 0
-  isMoreThan: 1
   targetInt: 100

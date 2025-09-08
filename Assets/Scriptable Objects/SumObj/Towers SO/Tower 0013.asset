@@ -26,7 +26,7 @@ MonoBehaviour:
   multiplier: 1
   projectileImage: {fileID: 21300000, guid: ff2300fe7a64edc46921ee3a5dfe2d4b, type: 3}
   pierce: 1
-  effects: {fileID: 11400000, guid: 63290b1292b1162408aa3115b6a22716, type: 2}
+  effects: {fileID: 11400000, guid: 3f2d18107486d428a978b106345b3cca, type: 2}
   slotNum: 3
   targetting: 0
   allTargetting:
@@ -34,4 +34,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
   - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
   - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
-  selectRadius: 2
+  selectRadius: 1

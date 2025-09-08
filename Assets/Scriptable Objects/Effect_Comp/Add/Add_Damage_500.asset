@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3485ea7d954cef498b59b94b4adc93b, type: 3}
   m_Name: Add_Damage_500
   m_EditorClassIdentifier: 
+  effectDescription: Increase damage by 500
   stat: 0
   addition: 500
   odds: 1

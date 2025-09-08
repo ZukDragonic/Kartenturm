@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3485ea7d954cef498b59b94b4adc93b, type: 3}
   m_Name: Add_Pierce_3
   m_EditorClassIdentifier: 
+  effectDescription: Increase pierce by 3
   stat: 1
   addition: 3
   odds: 1

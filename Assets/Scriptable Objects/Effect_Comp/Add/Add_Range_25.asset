@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3485ea7d954cef498b59b94b4adc93b, type: 3}
   m_Name: Add_Range_25
   m_EditorClassIdentifier: 
+  effectDescription: Increase range by 25
   stat: 3
   addition: 25
   odds: 1

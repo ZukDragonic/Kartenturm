@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72effde0189237b4380f1d37d49fa4b4, type: 3}
   m_Name: IsEnemyDead
   m_EditorClassIdentifier: 
+  requirementDescription: enemy is dead
   requirement: 0
   isFlipped: 0

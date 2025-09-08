@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a204dda21aeba42b95635373545965, type: 3}
   m_Name: Multiply_Damage_3
   m_EditorClassIdentifier: 
+  effectDescription: Increase damage by 200%
   stat: 0
   multiplier: 3
   odds: 1
