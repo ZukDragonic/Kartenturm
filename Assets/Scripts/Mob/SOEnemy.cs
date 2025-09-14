@@ -10,6 +10,7 @@ public class SOEnemy : ScriptableObject
     public string Enemyname;
     [TextArea(5, 3)]
     public string description;
+    public string undiscoveredDes;
     public Sprite image;
     public AnimationClip animClip;
 

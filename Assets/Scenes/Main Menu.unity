@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerCalled: 9
   voidCalled: LoadNewScene
-  IDCalled: 0
+  IDCalled: 23019
   IDCheckedForActive: 0
 --- !u!1 &612377307
 GameObject:

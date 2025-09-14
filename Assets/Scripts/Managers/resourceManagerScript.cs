@@ -7,7 +7,6 @@ public class resourceManagerScript : MonoBehaviour
 {
     public numberDisplayScript goldDisplay;
     public int playerGold;
-    public int premiumGold;
     public numberDisplayScript healthDisplay;
     public int health;
     public TextMeshProUGUI waveDisplay;
@@ -16,6 +15,14 @@ public class resourceManagerScript : MonoBehaviour
 
     public List<baseTowerScript> aliveTower;
     public List<SOEnemyDisplay> aliveEnemy;
+
+    private GameObject encyclopedia;
+
+    //data that is saved
+    public int premiumGold;
+    public List<SOEnemy> seenEnemies;
+    public List<SOCard> seenCards;
+
 
     public void StartAction()
     {

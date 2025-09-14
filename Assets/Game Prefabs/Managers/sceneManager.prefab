@@ -84,6 +84,10 @@ MonoBehaviour:
     sceneName: Level1 6
   - ID: 23018
     sceneName: Level1 7
+  - ID: 23019
+    sceneName: Encyclopedia Enemy
+  - ID: 23020
+    sceneName: Encyclopedia Card
   - ID: 23100
     sceneName: Build Scene
   - ID: 23999

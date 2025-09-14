@@ -62,6 +62,15 @@ public enum StatType
     Growth
 }
 [System.Serializable]
+public enum SumObjType
+{
+    Cards,
+    Towers,
+    Spells,
+    Artifacts,
+    Enemies
+}
+[System.Serializable]
 public enum EffectType
 {
     Passive,
@@ -507,7 +516,7 @@ public class gameControllerScript : MonoBehaviour
                 Debug.Log(1);
                 if (ID > 23011 && ID <= 23018 || ID == 23999)
                 {
-                    waveWhenLoaded = 11180; //should be world 1-7 wave aka 11160
+                    waveWhenLoaded = 11160; //should be world 1-7 wave aka 11160
                 }
                 else if (true)
                 {
@@ -549,6 +558,18 @@ public class gameControllerScript : MonoBehaviour
                         break;
                     case 23999: //testing
                         waveWhenLoaded = 11160;
+                        break;
+                    default:
+                        break;
+                }
+                //everything else
+                switch(ID)
+                {
+                    case 23019:
+                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateEnemyEncyclopedia();
+                        break;
+                    case 23020:
+                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateCardEncyclopedia();
                         break;
                     default:
                         break;
