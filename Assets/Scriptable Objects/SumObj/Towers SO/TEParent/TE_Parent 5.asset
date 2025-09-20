@@ -25,7 +25,7 @@ MonoBehaviour:
     req: []
   pDestroy: []
   pHit:
-  - effect: {fileID: 11400000, guid: ec346696318d62a41a6f52175a8e2cc6, type: 2}
+  - effect: {fileID: 11400000, guid: 300d64595ae2d41afb65b4a1ee0786e2, type: 2}
     req: []
   pSummon:
   - effect: {fileID: 11400000, guid: 1812a31b23e246841a0311a7f4e11c2e, type: 2}

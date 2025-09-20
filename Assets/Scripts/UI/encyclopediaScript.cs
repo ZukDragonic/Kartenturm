@@ -12,7 +12,6 @@ public class encyclopediaScript : MonoBehaviour
     public GameObject displayArea;
 
     public Sprite undiscoveredImage;
-    public Scrollbar scrollbar;
 
     public void CreateEnemyEncyclopedia()
     {
