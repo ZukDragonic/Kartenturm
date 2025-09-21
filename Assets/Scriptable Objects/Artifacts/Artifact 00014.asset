@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa0731b7238d3e4abba253834f608b7, type: 3}
   m_Name: Artifact 00014
   m_EditorClassIdentifier: 
-  ID: 60002
+  ID: 60014
   shopGold: 3000
   actionGold: 500
   archetype: 
   cardName: Sugar Rush
   description: Too much sugar makes you hyperactive but also weak
+  undiscoveredDes: 
   image: {fileID: 21300000, guid: d737aecaabcfff04695ad6b1b82845f3, type: 3}
   addedEffects: {fileID: 11400000, guid: fbc5c52fe9ebcfe47a6e99d2894932bb, type: 2}

@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4443871834620997491
 MonoBehaviour:
@@ -49,7 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c1472b79f474292a0bdcc533201052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eEntryPrefab: {fileID: 3839670217480144317, guid: d45bfb41d0fdf43e09a29ebe5bf753d3, type: 3}
+  entryPrefab: {fileID: 3839670217480144317, guid: d45bfb41d0fdf43e09a29ebe5bf753d3, type: 3}
+  cEntryPrefab: {fileID: 503774081316779123, guid: 982a94c0e37be4686a558da23827cf47, type: 3}
+  cImagePrefab: {fileID: 4159164858549809996, guid: 7c6120e5164e347da8975c758a559144, type: 3}
   displayArea: {fileID: 4819666681899307703}
   undiscoveredImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &2487516343147183465
@@ -234,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8020584154442529628, guid: d39a6393d52c2144484099ff2829b346, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8020584154442529628, guid: d39a6393d52c2144484099ff2829b346, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -307,12 +309,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 640
-    m_Right: 640
+    m_Left: 0
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 1280
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

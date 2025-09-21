@@ -14,7 +14,6 @@ public class snapScrollScript : MonoBehaviour
     public HorizontalLayoutGroup hLayoutGroup;
 
     private bool canSnap;
-    private bool isSnapping;
 
     private int ogSnapForce;
     public int snapForce;
@@ -44,8 +43,8 @@ public class snapScrollScript : MonoBehaviour
     void Update()
     {
         //total space divided by reference gets the # of content and current #
-        int currentItem = Mathf.RoundToInt(contentWindow.localPosition.x / (elementReference.rect.width + hLayoutGroup.spacing));
         //change x to y if vertical
+        int currentItem = Mathf.RoundToInt(contentWindow.localPosition.x / (elementReference.rect.width + hLayoutGroup.spacing));
 
         prevPos = currentPos;
         currentPos = scrollRect.horizontalNormalizedPosition;
@@ -53,7 +52,7 @@ public class snapScrollScript : MonoBehaviour
 
         //change x to y if vertical
         //should be scrollRect.velocity.magnitude but it don't work
-        if (positionDiff == 0 && canSnap)
+        if (positionDiff <= 0.001f && canSnap)
         {
             snapForce = ogSnapForce;
             contentWindow.localPosition = new Vector3(

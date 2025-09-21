@@ -16,8 +16,6 @@ public class resourceManagerScript : MonoBehaviour
     public List<baseTowerScript> aliveTower;
     public List<SOEnemyDisplay> aliveEnemy;
 
-    private GameObject encyclopedia;
-
     //data that is saved
     public int premiumGold;
     public List<int> seenEnemies;
