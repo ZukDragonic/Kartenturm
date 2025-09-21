@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardBase", menuName = "Card/Base")]
+[CreateAssetMenu(fileName = "CardBase", menuName = "Card/Base"), System.Serializable]
 public class SOCard : ScriptableObject
 {
     public int ID;

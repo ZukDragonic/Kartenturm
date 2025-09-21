@@ -20,8 +20,8 @@ public class resourceManagerScript : MonoBehaviour
 
     //data that is saved
     public int premiumGold;
-    public List<SOEnemy> seenEnemies;
-    public List<SOCard> seenCards;
+    public List<int> seenEnemies;
+    public List<int> unlockedCards;
 
 
     public void StartAction()
@@ -81,6 +81,10 @@ public class resourceManagerScript : MonoBehaviour
     }
     public void addEnemy(SOEnemyDisplay enemy)
     {
+        if(!seenEnemies.Contains(enemy.enemy.ID))
+        {
+            seenEnemies.Add(enemy.enemy.ID);
+        }
         aliveEnemy.Add(enemy);
     }
     public void removeTower(baseTowerScript tower)

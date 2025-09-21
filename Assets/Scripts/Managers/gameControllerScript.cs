@@ -351,6 +351,8 @@ public class gameControllerScript : MonoBehaviour
         //second number should be 1 number before max wave
         if (ID >= 11000 && ID < 12000)
         {
+            //saves data whenever a wave starts
+            SaveData();
             if (waveManager.currentWave != null)
             {
                 switch (ID)
@@ -800,6 +802,8 @@ public class gameControllerScript : MonoBehaviour
         {
             flagDict = latestData.flagDict;
             resourceManager.premiumGold = latestData.premiumGold;
+            resourceManager.seenEnemies = latestData.seenEnemies;
+            resourceManager.unlockedCards = latestData.unlockedCards;
         }
     }
 }

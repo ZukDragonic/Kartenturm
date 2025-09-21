@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Encyclopedia Enemy.unity
     guid: f79a148bcbb644ecfa1d69a4f37b6954
+  - enabled: 1
+    path: Assets/Scenes/Encyclopedia Cards.unity
+    guid: 20ad5811473274f8191a9215aea473b4
   m_configObjects: {}

@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerCalled: 9
   voidCalled: LoadNewScene
-  IDCalled: 23004
+  IDCalled: 23002
   IDCheckedForActive: 0
 --- !u!114 &1062833049
 MonoBehaviour:

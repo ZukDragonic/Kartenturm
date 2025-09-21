@@ -16,6 +16,9 @@ public class snapScrollScript : MonoBehaviour
     private bool canSnap;
     private bool isSnapping;
 
+    private int ogSnapForce;
+    public int snapForce;
+
     //velocity fix since velocity doesnt seem to work
     private float currentPos;
     private float prevPos;
@@ -23,7 +26,19 @@ public class snapScrollScript : MonoBehaviour
 
     void Start()
     {
-        scrollRect.horizontalScrollbar.value = 0;
+        //change scrollbar into a button where it shows the current item
+        ogSnapForce = snapForce;
+        //fixes problem where scroll spawns in middle
+        StartCoroutine(DoLater());
+    }
+
+    IEnumerator DoLater()
+    {
+        yield return null;
+        contentWindow.localPosition = new Vector3(
+    0.5f * (contentWindow.rect.width),
+    contentWindow.localPosition.y,
+    contentWindow.localPosition.z);
     }
 
     void Update()
@@ -36,25 +51,25 @@ public class snapScrollScript : MonoBehaviour
         currentPos = scrollRect.horizontalNormalizedPosition;
         positionDiff = currentPos - prevPos;
 
-        Debug.Log(positionDiff);
-
         //change x to y if vertical
         //should be scrollRect.velocity.magnitude but it don't work
         if (positionDiff == 0 && canSnap)
         {
+            snapForce = ogSnapForce;
             contentWindow.localPosition = new Vector3(
-                Mathf.MoveTowards(contentWindow.localPosition.x, currentItem * (elementReference.rect.width + hLayoutGroup.spacing), 1f),
+                Mathf.MoveTowards(contentWindow.localPosition.x, currentItem * (elementReference.rect.width + hLayoutGroup.spacing), snapForce),
                contentWindow.localPosition.y,
                contentWindow.localPosition.z);
             prevPos = currentPos;
             positionDiff = 0;
-            if(contentWindow.localPosition.x ==  ((currentItem * (elementReference.rect.width + hLayoutGroup.spacing))))
+            if (contentWindow.localPosition.x == ((currentItem * (elementReference.rect.width + hLayoutGroup.spacing))))
             {
                 canSnap = false;
             }
         }
         if (positionDiff != 0)
         {
+            snapForce = 0;
             canSnap = true;
         }
     }

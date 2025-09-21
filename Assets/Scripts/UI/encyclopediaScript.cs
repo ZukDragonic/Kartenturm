@@ -15,13 +15,13 @@ public class encyclopediaScript : MonoBehaviour
 
     public void CreateEnemyEncyclopedia()
     {
-        SOEnemy[] seenEnemies = gameControllerScript.instance.resourceManager.seenEnemies.ToArray();
+        int[] seenEnemies = gameControllerScript.instance.resourceManager.seenEnemies.ToArray();
         SOEnemy[] allEnemies = gameControllerScript.instance.waveManager.allEnemies;
         int encyclopediaLength = allEnemies.Length;
         for (int i = 0; i < encyclopediaLength; i++)
         {
             GameObject current = Instantiate(eEntryPrefab, displayArea.transform);
-            if (seenEnemies.Contains(allEnemies[i]))
+            if (seenEnemies.Contains(allEnemies[i].ID))
             {
                 current.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = allEnemies[i].description;
                 current.transform.GetChild(1).GetComponent<Image>().sprite = allEnemies[i].image;
@@ -32,17 +32,19 @@ public class encyclopediaScript : MonoBehaviour
                 current.transform.GetChild(1).GetComponent<Image>().sprite = undiscoveredImage;
             }
         }
+
+        snapScrollScript currentSnap = transform.GetChild(0).GetComponent<snapScrollScript>();
     }
 
     public void CreateCardEncyclopedia()
     {
-        SOCard[] seenCards = gameControllerScript.instance.resourceManager.seenCards.ToArray();
+        /*int[] seenCards = gameControllerScript.instance.resourceManager.unlockedCards.ToArray();
         int encyclopediaLength = seenCards.Length;
         for (int i = 0; i < encyclopediaLength;i++)
         {
             GameObject current = Instantiate(eEntryPrefab, displayArea.transform);
             current.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = seenCards[i].description;
             current.transform.GetChild(1).GetComponent<Image>().sprite = seenCards[i].image;
-        }
+        }*/
     }
 }

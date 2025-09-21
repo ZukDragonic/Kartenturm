@@ -9,10 +9,15 @@ public class playerData
 
     public int premiumGold;
 
+    public List<int> seenEnemies;
+    public List<int> unlockedCards;
+
     public playerData(gameControllerScript gameManager)
     {
         flagDict = gameManager.flagDict;
 
         premiumGold = gameManager.resourceManager.premiumGold;
+        seenEnemies = gameManager.resourceManager.seenEnemies;
+        unlockedCards = gameManager.resourceManager.unlockedCards;
     }
 }

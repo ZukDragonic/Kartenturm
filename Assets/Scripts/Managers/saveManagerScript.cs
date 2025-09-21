@@ -27,6 +27,7 @@ public static class saveManagerScript
             FileStream stream = new FileStream(path, FileMode.Open);
 
             playerData data = formatter.Deserialize(stream) as playerData;
+            Debug.Log("Save file found in " + path);
             stream.Close();
 
             return data;
