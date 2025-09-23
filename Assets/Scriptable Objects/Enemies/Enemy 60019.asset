@@ -17,6 +17,7 @@ MonoBehaviour:
   description: After 100 push ups, 100 sit ups ,100 squats, and a 10 kilometer run
     every single day, he finally achieved the perfect body. Unfortunately, he lost
     all his hair.
+  undiscoveredDes: First encountered after defeating ?
   image: {fileID: 318651560, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
   animClip: {fileID: 7400000, guid: 980ec05958988474080f39cf622c6c84, type: 2}
   speed: 3

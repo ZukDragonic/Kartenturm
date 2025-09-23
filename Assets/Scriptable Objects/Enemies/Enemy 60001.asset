@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60001
   Enemyname: Slime (Blue)
   description: He's not a bad slime, he promise.
+  undiscoveredDes: First encountered in World 1-1
   image: {fileID: -1067958260, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
   animClip: {fileID: 7400000, guid: 806caf7a8df3a9641927c65ba059a16d, type: 2}
   speed: 15

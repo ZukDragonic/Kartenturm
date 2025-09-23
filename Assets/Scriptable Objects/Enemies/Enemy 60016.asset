@@ -16,6 +16,7 @@ MonoBehaviour:
   Enemyname: Big Slime (Red)
   description: He wonders how his wife gave birth to a green slime, but it doesn't
     matter. All is forgiven in the face of love.
+  undiscoveredDes: First encountered in World 1-5
   image: {fileID: 1077783034, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
   animClip: {fileID: 7400000, guid: de21f09cc9dc3294fba3f1b088908082, type: 2}
   speed: 30

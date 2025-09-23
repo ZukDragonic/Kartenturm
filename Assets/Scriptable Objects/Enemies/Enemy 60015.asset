@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60015
   Enemyname: Big Slime (Blue)
   description: She worries her husband might find out about her dirty little secret.
+  undiscoveredDes: First encountered in World 1-4
   image: {fileID: -1689301070, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
   animClip: {fileID: 7400000, guid: 6c8222b88540c6a479289dece99fc6dd, type: 2}
   speed: 15

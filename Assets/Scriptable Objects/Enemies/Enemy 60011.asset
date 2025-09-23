@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60011
   Enemyname: Magma Slime (Green)
   description: He got ditched by his wife and now he has an explosive temper.
+  undiscoveredDes: First encountered in World 1-5
   image: {fileID: 76819129, guid: 69ba6274802b72f439edd6201f7673af, type: 3}
   animClip: {fileID: 7400000, guid: 49ad7092ece33cc4faaa69157e8d2731, type: 2}
   speed: 15

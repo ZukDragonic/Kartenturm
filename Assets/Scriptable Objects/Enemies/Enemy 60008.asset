@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60008
   Enemyname: Slime (Green)
   description: She is shy but wants to be a singer.
+  undiscoveredDes: First encountered in World 1-1
   image: {fileID: -796100560, guid: 781bf9a1c1b5205439021779efecea87, type: 3}
   animClip: {fileID: 7400000, guid: ea956b590422b314faade2f5d2b19567, type: 2}
   speed: 5

@@ -16,6 +16,7 @@ MonoBehaviour:
   Enemyname: King Slime
   description: The mightest of them all. The ruler of all slimes. The shiniest of
     all. He worries about his receding hairline.
+  undiscoveredDes: First encountered in World 1-7
   image: {fileID: -244296023, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
   animClip: {fileID: 7400000, guid: 00f59ec7686aac3438f11b3f0589893e, type: 2}
   speed: 5

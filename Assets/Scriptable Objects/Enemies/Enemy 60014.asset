@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60014
   Enemyname: Rock Slime (Green)
   description: Respect his privacy. He just wants to be left alone.
+  undiscoveredDes: First encountered in World 1-3
   image: {fileID: 1305289994, guid: 1fb055c9099773747ab81a2c6c5df3e6, type: 3}
   animClip: {fileID: 7400000, guid: d7eb464797fcfe241a09766e72a3f5cf, type: 2}
   speed: 5

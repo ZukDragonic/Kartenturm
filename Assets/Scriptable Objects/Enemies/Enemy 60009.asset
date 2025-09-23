@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 60009
   Enemyname: Magma Slime (Blue)
   description: Rumors say she has two doppelgangers somewhere out there.
+  undiscoveredDes: First encountered in World 1-5
   image: {fileID: -988221162, guid: 69ba6274802b72f439edd6201f7673af, type: 3}
   animClip: {fileID: 7400000, guid: ca4696b67c336004ba3ff2a158ed5d7b, type: 2}
   speed: 20

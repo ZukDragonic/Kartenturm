@@ -16,6 +16,7 @@ MonoBehaviour:
   Enemyname: Rock Slime (Red)
   description: He claims he would be faster If only he weren't wearing such a heavy
     rock.
+  undiscoveredDes: First encountered in World 1-5
   image: {fileID: -1188424611, guid: 1fb055c9099773747ab81a2c6c5df3e6, type: 3}
   animClip: {fileID: 7400000, guid: 9026cc598df65fd4ba16902c937e66ae, type: 2}
   speed: 50
