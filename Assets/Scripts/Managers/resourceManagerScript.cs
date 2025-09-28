@@ -85,6 +85,15 @@ public class resourceManagerScript : MonoBehaviour
         }
         aliveEnemy.Add(enemy);
     }
+    public void discoverCard(SOCard card)
+    {
+        //currently the add mechanism is held by deck manager.
+        //once shop adds, change the manager to shopManager
+        if (!unlockedCards.Contains(card.ID))
+        {
+            unlockedCards.Add(card.ID);
+        }
+    }
     public void removeTower(baseTowerScript tower)
     {
         if (aliveTower.Contains(tower))

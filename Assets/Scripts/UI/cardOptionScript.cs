@@ -3,45 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class cardOptionScript : MonoBehaviour, IPointerDownHandler, IPointerExitHandler, IPointerEnterHandler
+public class cardOptionScript : MonoBehaviour, IPointerDownHandler
 {
     private CCosmeticScript cosmetic;
     public cardPickerScript parent;
+    private SOCard card;
 
-    public bool placeCardInDeck;
-    public bool deleteCardFromDeck;
+
+    private bool isSelected;
 
     void Start()
     {
         cosmetic = GetComponent<CCosmeticScript>();
+        card = gameObject.GetComponent<SOCardDisplayScript>().card;
+
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        SOCard selectedCard = gameObject.GetComponent<SOCardDisplayScript>().card;
-        if (placeCardInDeck)
+        if (isSelected)
         {
-            gameControllerScript.instance.deckManager.shuffleCardInDeck(selectedCard);
+            parent.selectedCard.Remove(card);
+            if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
+            {
+                component.enabled = false;
+                GetComponent<UIMouseOverScript>().enabled = false;
+                GetComponent<CCosmeticScript>().cosmeticColor(new Color(0.8f, 0.8f, 0.8f, 0.4f));
+            }
         }
         else
         {
-            gameControllerScript.instance.deckManager.AddCardToHand(selectedCard);
+            parent.selectedCard.Add(card);
+            if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
+            {
+                component.enabled = true;
+                GetComponent<UIMouseOverScript>().enabled = true;
+            }
         }
-
-        if (deleteCardFromDeck)
-        {
-            gameControllerScript.instance.deckManager.drawDeck.Remove(selectedCard);
-        }
-        Destroy(parent.gameObject);
-    }
-
-    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
-    {
-        cosmetic.resetCard();
-    }
-
-    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
-    {
-        cosmetic.cosmeticColor(new Color(1.0f, 1.0f, 0.5f, 1.0f));
     }
 }

@@ -17,8 +17,6 @@ public class encyclopediaCardScript : MonoBehaviour, IPointerDownHandler
     {
         GameObject current = Instantiate(cardDescriptionPrefab, gameControllerScript.instance.allCanvas[1].transform);
 
-        Debug.Log(Camera.main.ScreenToViewportPoint(gameObject.transform.position).x);
-
         if(Camera.main.ScreenToViewportPoint(gameObject.transform.position).x < 0.5f)
         {
             current.transform.localPosition *= -1;

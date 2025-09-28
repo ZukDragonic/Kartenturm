@@ -18,7 +18,8 @@ MonoBehaviour:
   archetype: 
   cardName: Search
   description: Select a card from deck and add it to hand
+  undiscoveredDes: 
   image: {fileID: 21300000, guid: 9fe423290e5442840859de1a8d9367f2, type: 3}
   allEffects:
-  - {fileID: 11400000, guid: e0e9d483bbffa074b85e27b5a2276b05, type: 2}
+  - {fileID: 11400000, guid: 4afedcb8d1e0d4bdbb6e217bff8d60c7, type: 2}
   allRequirement: []

@@ -99,7 +99,7 @@ public class deckManagerScript : MonoBehaviour
         }
 
         GameObject current = Instantiate(cardPickerPrefab, gameController.allCanvas[2].transform);
-        current.GetComponent<cardPickerScript>().DisplayPickableCard(drawDeck.ToArray(), -1, false, true);
+        current.GetComponent<cardPickerScript>().DisplayPickableCard(drawDeck.ToArray(), -1, false);
     }
 
     public void drawCard(int drawNum)
@@ -136,5 +136,6 @@ public class deckManagerScript : MonoBehaviour
         current.GetComponent<SOCardDisplayScript>().card = card;
         //add a onDraw effect here in the future maybe
         gameController.resourceManager.UpdateDeckCount(drawDeck.Count);
+        gameController.resourceManager.discoverCard(card); //remove once shop is added
     }
 }

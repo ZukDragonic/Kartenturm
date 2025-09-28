@@ -7,6 +7,14 @@ public class cardPickerScript : MonoBehaviour
     public gameControllerScript gameController;
     public SOCard[] allCardList;
     public GameObject cardOptionPrefab;
+    public GameObject displayArea;
+
+    [HideInInspector]
+    public bool placeInDeck;
+    [HideInInspector]
+    public bool deleteCardFromDeck;
+
+    public List<SOCard> selectedCard;
     void Start()
     {
         gameController = gameControllerScript.instance;
@@ -26,7 +34,7 @@ public class cardPickerScript : MonoBehaviour
         }
     }
 
-    public void DisplayPickableCard(SOCard[] cardPool, int optionsNum, bool placeInDeck, bool deleteCardFromDeck)
+    public void DisplayPickableCard(SOCard[] cardPool, int optionsNum, bool isRandom)
     {
         allCardList = cardPool;
 
@@ -37,31 +45,40 @@ public class cardPickerScript : MonoBehaviour
             optionsNum = cardPool.Length;
         }
 
-        if (!deleteCardFromDeck)
+        for (int i = 0; i < optionsNum; i++)
         {
-            //if it doesn't remove card from deck, it is random
-            for (int i = 0; i < optionsNum; i++)
+            GameObject currentOption = Instantiate(cardOptionPrefab, displayArea.transform);
+            cardOptionScript currentOptionScript = currentOption.GetComponent<cardOptionScript>();
+            currentOptionScript.parent = this;
+            if(isRandom) //if it's random, select from every card from the game
             {
-                GameObject currentOption = Instantiate(cardOptionPrefab, gameObject.transform);
-                cardOptionScript currentOptionScript = currentOption.GetComponent<cardOptionScript>();
-                currentOptionScript.parent = this;
-                currentOptionScript.placeCardInDeck = placeInDeck;
-                currentOptionScript.deleteCardFromDeck = deleteCardFromDeck;
                 currentOption.GetComponent<SOCardDisplayScript>().card = cardPool[Random.Range(0, cardPool.Length)];
             }
-        }
-        else
-        {
-            //if it removes card from deck, then it displays the top cards
-            for (int i = 0; i < optionsNum; i++)
+            else //if it's not random, show from the top
+
             {
-                GameObject currentOption = Instantiate(cardOptionPrefab, gameObject.transform);
-                cardOptionScript currentOptionScript = currentOption.GetComponent<cardOptionScript>();
-                currentOptionScript.parent = this;
-                currentOptionScript.placeCardInDeck = placeInDeck;
-                currentOptionScript.deleteCardFromDeck = deleteCardFromDeck;
                 currentOption.GetComponent<SOCardDisplayScript>().card = cardPool[i];
             }
         }
+    }
+
+    public void ConfirmPickedCards()
+    {
+        if (deleteCardFromDeck)
+        {
+
+        }
+        if (placeInDeck)
+        {
+
+        }
+        else
+        {
+            foreach(SOCard card in selectedCard)
+            {
+                gameController.deckManager.AddCardToHand(card);
+            }
+        }
+        Destroy(gameObject);
     }
 }
