@@ -99,7 +99,22 @@ public class deckManagerScript : MonoBehaviour
         }
 
         GameObject current = Instantiate(cardPickerPrefab, gameController.allCanvas[2].transform);
-        current.GetComponent<cardPickerScript>().DisplayPickableCard(drawDeck.ToArray(), -1, false);
+        cardPickerScript cScript = current.GetComponent<cardPickerScript>();
+        cScript.DisplayPickableCard(drawDeck.ToArray(), -1, cardsSearched, false);
+        cScript.deleteCardFromDeck = true;
+    }
+
+    public void RemoveCard(SOCard card)
+    {
+        if(drawDeck.Contains(card))
+        {
+            drawDeck.Remove(card);
+            gameController.resourceManager.UpdateDeckCount(drawDeck.Count);
+        }
+        else
+        {
+            Debug.Log("Card does not exist.");
+        }
     }
 
     public void drawCard(int drawNum)

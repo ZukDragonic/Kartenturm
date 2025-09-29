@@ -13,14 +13,21 @@ public class cardPickerScript : MonoBehaviour
     public bool placeInDeck;
     [HideInInspector]
     public bool deleteCardFromDeck;
-
+    [HideInInspector]
+    public int selectLimit;
+    [HideInInspector]
     public List<SOCard> selectedCard;
+
     void Start()
     {
         gameController = gameControllerScript.instance;
-        allCardList = gameController.deckManager.allCards;
         gameObject.transform.SetParent(gameController.allCanvas[3].transform);
 
+        if(allCardList.Length > 0)
+        {
+            return;
+        }
+        allCardList = gameController.deckManager.allCards;
         if (gameObject.transform.GetComponentsInChildren<cardOptionScript>() != null)
         {
             foreach (cardOptionScript cardOption in gameObject.transform.GetComponentsInChildren<cardOptionScript>())
@@ -34,10 +41,10 @@ public class cardPickerScript : MonoBehaviour
         }
     }
 
-    public void DisplayPickableCard(SOCard[] cardPool, int optionsNum, bool isRandom)
+    public void DisplayPickableCard(SOCard[] cardPool, int optionsNum, int maxSelection, bool isRandom)
     {
         allCardList = cardPool;
-
+        selectLimit = maxSelection;
         gameController = gameControllerScript.instance;
 
         if (optionsNum <= 0)
@@ -64,13 +71,23 @@ public class cardPickerScript : MonoBehaviour
 
     public void ConfirmPickedCards()
     {
+        if(selectedCard.Count < selectLimit)
+        {
+            return;
+        }
         if (deleteCardFromDeck)
         {
-
+            foreach (SOCard card in selectedCard)
+            {
+                gameController.deckManager.RemoveCard(card);
+            }
         }
         if (placeInDeck)
         {
-
+            foreach (SOCard card in selectedCard)
+            {
+                gameController.deckManager.shuffleCardInDeck(card);
+            }
         }
         else
         {

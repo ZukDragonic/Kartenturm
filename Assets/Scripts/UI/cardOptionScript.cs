@@ -21,23 +21,30 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
+        if(parent.selectedCard.Count >= parent.selectLimit && !isSelected)
+        {
+            return;
+        }
         if (isSelected)
         {
+            isSelected = false;
             parent.selectedCard.Remove(card);
+            if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
+            {
+                component.enabled = true;
+                GetComponent<UIMouseOverScript>().enabled = true;
+            }
+        }
+        else
+        {
+            isSelected = true;
+            parent.selectedCard.Add(card);
+
             if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
             {
                 component.enabled = false;
                 GetComponent<UIMouseOverScript>().enabled = false;
                 GetComponent<CCosmeticScript>().cosmeticColor(new Color(0.8f, 0.8f, 0.8f, 0.4f));
-            }
-        }
-        else
-        {
-            parent.selectedCard.Add(card);
-            if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
-            {
-                component.enabled = true;
-                GetComponent<UIMouseOverScript>().enabled = true;
             }
         }
     }

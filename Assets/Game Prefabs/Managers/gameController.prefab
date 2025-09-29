@@ -66,6 +66,7 @@ MonoBehaviour:
     - state: 2
       masks:
       - Placeable
+      - EnemyPath
     - state: 3
       masks:
       - Mouse
@@ -130,3 +131,8 @@ MonoBehaviour:
   state: 7
   prevState: 7
   isCardDragged: 0
+  isCardHovered: 0
+  latestData:
+    premiumGold: 0
+    seenEnemies: 
+    unlockedCards: 

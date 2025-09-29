@@ -9,7 +9,7 @@ public class SOCE_AddFromDeck : SOC_Effect
     public GameObject deckObject;
     public override void ApplyBEffect()
     {
-        gameControllerScript.instance.deckManager.SearchCard(gameControllerScript.instance.deckManager.drawDeck.Count);
+        gameControllerScript.instance.deckManager.SearchCard(AddNum);
         //Instantiate(deckObject, gameControllerScript.instance.allCanvas[1].transform);
     }
 }

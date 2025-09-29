@@ -82,13 +82,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b481faa2412f804191f3dda9896d088, type: 2}
   - {fileID: 11400000, guid: 81a70b77cc362ef47b3e41133971e6d9, type: 2}
   - {fileID: 11400000, guid: fb324f07267046a4bbb41720082dd135, type: 2}
+  - {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
   allCards: []
   startDeck:
   - {fileID: 11400000, guid: f44cb72d7d225944abf13e3f0b11a7f9, type: 2}
   - {fileID: 11400000, guid: 686bda0f03838db45aaae3ca328036f0, type: 2}
-  - {fileID: 11400000, guid: 686bda0f03838db45aaae3ca328036f0, type: 2}
   - {fileID: 11400000, guid: 83e96927d67f36e49bb71132bc982391, type: 2}
   - {fileID: 11400000, guid: 81a70b77cc362ef47b3e41133971e6d9, type: 2}
+  - {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
   - {fileID: 11400000, guid: 1772f9ee7a570da469c5a4364dc17d83, type: 2}
   - {fileID: 11400000, guid: 6f24407238868e34fa31a74547c8a5e2, type: 2}
   - {fileID: 11400000, guid: 004f9afb34b4fa04ab4549fe841c5788, type: 2}

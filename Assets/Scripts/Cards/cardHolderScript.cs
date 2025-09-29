@@ -87,6 +87,10 @@ public class cardHolderScript : MonoBehaviour
                 }
             }
         }
+        if(cardInHandCount != transform.childCount)
+        {
+            resetCardPosition();
+        }
     }
 
     IEnumerator MinimizeCards()
