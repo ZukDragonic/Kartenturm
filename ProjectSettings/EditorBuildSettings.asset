@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Encyclopedia Card.unity
     guid: 20ad5811473274f8191a9215aea473b4
+  - enabled: 1
+    path: Assets/Scenes/Deck Builder.unity
+    guid: a08ba3195a2e64eab9842f8ce13e6b9e
   m_configObjects: {}

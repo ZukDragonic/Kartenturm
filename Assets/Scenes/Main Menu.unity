@@ -136,9 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691900219113765135, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_text
-      value: 'Deck
-
-        WIP'
+      value: Deck
       objectReference: {fileID: 0}
     - target: {fileID: 4297486137128013252, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
       propertyPath: m_Pivot.x
@@ -2153,7 +2151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerCalled: 9
   voidCalled: LoadNewScene
-  IDCalled: 0
+  IDCalled: 23003
   IDCheckedForActive: 0
 --- !u!1 &1662650714
 GameObject:

@@ -26,7 +26,7 @@ public static class saveManagerScript
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            playerData data = formatter.Deserialize(stream) as playerData;
+            playerData data = CheckForVersion(formatter.Deserialize(stream) as playerData);
             Debug.Log("Save file found in " + path);
             stream.Close();
 
@@ -37,5 +37,19 @@ public static class saveManagerScript
             Debug.Log("Save file not found in " + path);
             return null;
         }
+    }
+
+    static playerData CheckForVersion(playerData savedData)
+    {
+        switch(savedData.saveVersion)
+        {
+            case 0:
+                savedData.startDeck = new List<SOCard>();
+                savedData.gameDeck = new List<SOCard>();
+                break;        
+            default:
+                break;
+        }
+        return savedData;
     }
 }

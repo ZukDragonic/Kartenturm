@@ -508,10 +508,6 @@ public class gameControllerScript : MonoBehaviour
         {
             //sceneManager stuff
             int waveWhenLoaded = 0;
-            if (ID >= 23002 && ID < 23012)
-            {
-                UpdateGameState(GameState.MainMenu);
-            }
             //spawns a specific wave if freeplay
             if (FlagInfo(19004))
             {
@@ -527,9 +523,18 @@ public class gameControllerScript : MonoBehaviour
             }
             else
             {
-                //story mode
+                //story mode + main menu
                 switch (ID)
                 {
+                    case 23003:
+                        GameObject.Find("Deck Builder").GetComponent<deckBuilderScript>().DisplayDeckBuilder();
+                        break;
+                    case 23019:
+                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateEnemyEncyclopedia();
+                        break;
+                    case 23020:
+                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateCardEncyclopedia();
+                        break;
                     case 23001:
                         UpdateGameState(GameState.Loading);
                         break;
@@ -565,17 +570,6 @@ public class gameControllerScript : MonoBehaviour
                         break;
                 }
                 //everything else
-                switch(ID)
-                {
-                    case 23019:
-                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateEnemyEncyclopedia();
-                        break;
-                    case 23020:
-                        GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateCardEncyclopedia();
-                        break;
-                    default:
-                        break;
-                }
             }
 
             StartAction();
@@ -804,6 +798,8 @@ public class gameControllerScript : MonoBehaviour
             resourceManager.premiumGold = latestData.premiumGold;
             resourceManager.seenEnemies = latestData.seenEnemies;
             resourceManager.unlockedCards = latestData.unlockedCards;
+            deckManager.gameDeck = latestData.gameDeck;
+            deckManager.startDeck = latestData.startDeck;
         }
     }
 }

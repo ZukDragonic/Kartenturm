@@ -571,14 +571,6 @@ PrefabInstance:
       propertyPath: eventDict.dictItems.Array.data[4].check
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
-      propertyPath: maskDict.dictItems.Array.data[2].masks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262187504832694778, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
-      propertyPath: maskDict.dictItems.Array.data[2].masks.Array.data[1]
-      value: EnemyPath
-      objectReference: {fileID: 0}
     - target: {fileID: 1262187504832694779, guid: 192ccb74a26df9a4ea1614fe1485ba9c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1964,50 +1956,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[8]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
-    - target: {fileID: 3811964570327488366, guid: 6f5b50a9790adb84f957c74222bd7405, type: 3}
-      propertyPath: startDeck.Array.data[9]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -11,7 +11,8 @@ public class deckManagerScript : MonoBehaviour
     public SOCSpell[] allSpells;
     [HideInInspector]
     public SOCard[] allCards;
-    public SOCard[] startDeck;
+    public List<SOCard> gameDeck; //the deck that is randomized in shop, picker, etc
+    public List<SOCard> startDeck; //the starting deck
     [HideInInspector]
     public List<SOCard> drawDeck;
    
