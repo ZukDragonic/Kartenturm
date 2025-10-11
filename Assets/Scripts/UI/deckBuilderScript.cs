@@ -7,6 +7,7 @@ public class deckBuilderScript : MonoBehaviour
     public gameControllerScript gameController;
     public GameObject deckCardPrefab;
     public GameObject displayArea;
+    public GameObject deckDisplayArea;
     public int selectLimit;
 
     [HideInInspector]
@@ -17,8 +18,6 @@ public class deckBuilderScript : MonoBehaviour
     void Start()
     {
         gameController = gameControllerScript.instance;
-        gameObject.transform.SetParent(gameController.allCanvas[3].transform);
-
         if (allCardList.Length > 0)
         {
             return;
@@ -46,34 +45,51 @@ public class deckBuilderScript : MonoBehaviour
         {
             GameObject currentOption = Instantiate(deckCardPrefab, displayArea.transform);
             deckCardDisplayScript currentOptionScript = currentOption.GetComponent<deckCardDisplayScript>();
-            if(gameController.deckManager.gameDeck.Contains(currentOptionScript.card))
+            SOCardDisplayScript currentOptionDisplayScript = currentOption.GetComponent<SOCardDisplayScript>();
+            currentOptionDisplayScript.displayCard(cardPool[i]);
+            currentOptionScript.card = cardPool[i];
+            if (gameController.deckManager.gameDeck.Contains(currentOptionScript.card))
+                /*&& currentOptionScript.card != gameController.deckManager.nullCardReference)*/
             {
+                int indexInDeck = gameController.deckManager.gameDeck.IndexOf(cardPool[i]);
+                deckDisplayArea.transform.GetChild(indexInDeck).GetComponent<SOCardDisplayScript>().displayCard(cardPool[i]);
                 currentOptionScript.ChangeCosmetic(false);
                 currentOptionScript.isSelected = true;
             }
             currentOptionScript.parent = this;
-            currentOption.GetComponent<SOCardDisplayScript>().card = cardPool[i];
         }
     }
 
     public void CardSelected(bool isSelected, SOCard card)
     {
+        int indexInDeck = 0;
         if (isSelected)
         {
-            if(selectedCard.Count < 10)
+            for(int i = 0; i < gameController.deckManager.gameDeck.Count; i++)
             {
-                gameController.deckManager.startDeck.Add(card);
+                if(gameController.deckManager.gameDeck[i] == gameController.deckManager.nullCardReference)
+                {
+                    indexInDeck = i;
+                    break;
+                }
             }
-            gameController.deckManager.gameDeck.Add(card);
+            if(indexInDeck < 10)
+            {
+                gameController.deckManager.startDeck[indexInDeck] = card;
+            }
+            gameController.deckManager.gameDeck[indexInDeck] = card;
+            deckDisplayArea.transform.GetChild(indexInDeck).GetComponent<SOCardDisplayScript>().displayCard(card);
             selectedCard.Add(card);
         }
         else
         {
-            if (selectedCard.Count < 10)
+            indexInDeck = gameController.deckManager.gameDeck.IndexOf(card);
+            if (indexInDeck < 10)
             {
-                gameController.deckManager.startDeck.Remove(card);
+                gameController.deckManager.startDeck[indexInDeck] = gameController.deckManager.nullCardReference;
             }
-            gameController.deckManager.gameDeck.Remove(card);
+            gameController.deckManager.gameDeck[indexInDeck] = gameController.deckManager.nullCardReference;
+            deckDisplayArea.transform.GetChild(indexInDeck).GetComponent<SOCardDisplayScript>().displayCard(gameController.deckManager.nullCardReference);
             selectedCard.Remove(card);
         }
     }

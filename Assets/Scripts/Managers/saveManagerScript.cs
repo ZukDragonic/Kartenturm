@@ -20,14 +20,12 @@ public static class saveManagerScript
     public static playerData LoadPlayer()
     {
         string path = Application.persistentDataPath + "/player.adfk";
-        
         if (File.Exists(path))
         {
+            Debug.Log("Save file found in " + path);
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
-
             playerData data = CheckForVersion(formatter.Deserialize(stream) as playerData);
-            Debug.Log("Save file found in " + path);
             stream.Close();
 
             return data;
@@ -44,8 +42,8 @@ public static class saveManagerScript
         switch(savedData.saveVersion)
         {
             case 0:
-                savedData.startDeck = new List<SOCard>();
-                savedData.gameDeck = new List<SOCard>();
+                savedData.startDeck = new List<int>();
+                savedData.gameDeck = new List<int>();
                 break;        
             default:
                 break;

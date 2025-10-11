@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7403111425101219517}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7403111425101219507
 MonoBehaviour:
@@ -50,5 +50,9 @@ MonoBehaviour:
   health: 10
   waveDisplay: {fileID: 0}
   waveNum: 0
-  allTower: []
-  allEnemy: []
+  deckDisplay: {fileID: 0}
+  aliveTower: []
+  aliveEnemy: []
+  premiumGold: 0
+  seenEnemies: 
+  unlockedCards: 409c0000419c0000429c0000439c0000449c0000459c0000469c0000479c0000489c0000499c00004a9c00004b9c00004c9c000050c3000051c3000052c3000053c3000054c3000060ea000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea0000

@@ -6,18 +6,10 @@ using UnityEngine.EventSystems;
 public class deckCardDisplayScript : MonoBehaviour, IPointerDownHandler
 {
     public deckBuilderScript parent;
-    private CCosmeticScript cosmetic;
     public SOCard card;
 
 
     public bool isSelected;
-
-    void Start()
-    {
-        cosmetic = GetComponent<CCosmeticScript>();
-        card = gameObject.GetComponent<SOCardDisplayScript>().card;
-
-    }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {

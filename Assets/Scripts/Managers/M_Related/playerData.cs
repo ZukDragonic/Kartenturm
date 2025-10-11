@@ -14,8 +14,8 @@ public class playerData
     public List<int> seenEnemies;
     public List<int> unlockedCards;
 
-    public List<SOCard> gameDeck;
-    public List<SOCard> startDeck;
+    public List<int> gameDeck;
+    public List<int> startDeck;
 
     public playerData(gameControllerScript gameManager)
     {
@@ -24,7 +24,15 @@ public class playerData
         premiumGold = gameManager.resourceManager.premiumGold;
         seenEnemies = gameManager.resourceManager.seenEnemies;
         unlockedCards = gameManager.resourceManager.unlockedCards;
-        gameDeck = gameManager.deckManager.gameDeck;
-        startDeck = gameManager.deckManager.startDeck;
+        gameDeck = new List<int>();
+        startDeck = new List<int>();
+        foreach(SOCard card in gameManager.deckManager.gameDeck)
+        {
+            gameDeck.Add(card.ID);
+        }
+        foreach (SOCard card in gameManager.deckManager.startDeck)
+        {
+            startDeck.Add(card.ID);
+        }
     }
 }

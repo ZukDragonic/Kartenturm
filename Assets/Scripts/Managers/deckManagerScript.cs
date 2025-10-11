@@ -9,6 +9,7 @@ public class deckManagerScript : MonoBehaviour
     public SOCTower[] allTowers;
     public SOCArtifact[] allArtifacts;
     public SOCSpell[] allSpells;
+    public SOCard nullCardReference;
     [HideInInspector]
     public SOCard[] allCards;
     public List<SOCard> gameDeck; //the deck that is randomized in shop, picker, etc

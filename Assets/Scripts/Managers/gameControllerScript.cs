@@ -572,7 +572,7 @@ public class gameControllerScript : MonoBehaviour
                 //everything else
             }
 
-            StartAction();
+            findCanvas();
             if (waveWhenLoaded != 0) //if waveWhenLoaded is not zero, then a wave should be spawned;
             {
                 UpdateGameState(GameState.BetweenWave);
@@ -767,8 +767,6 @@ public class gameControllerScript : MonoBehaviour
 
     public void StartAction()
     {
-        findCanvas();
-
         deckManager.StartAction();
         timeManager.StartAction();
         resourceManager.StartAction();
@@ -798,8 +796,41 @@ public class gameControllerScript : MonoBehaviour
             resourceManager.premiumGold = latestData.premiumGold;
             resourceManager.seenEnemies = latestData.seenEnemies;
             resourceManager.unlockedCards = latestData.unlockedCards;
-            deckManager.gameDeck = latestData.gameDeck;
-            deckManager.startDeck = latestData.startDeck;
+            deckManager.StartAction();
+            deckManager.gameDeck = new List<SOCard>();
+            deckManager.startDeck = new List<SOCard>();
+            for (int i = 0; i < latestData.gameDeck.Count;i++)
+            {
+                if (latestData.gameDeck[i] == 0)
+                {
+                    deckManager.gameDeck.Add(deckManager.nullCardReference);
+                    continue;
+                }
+                for (int k = 0; k < deckManager.allCards.Length;k++)
+                {
+                    if (deckManager.allCards[k].ID == latestData.gameDeck[i])
+                    {
+                        deckManager.gameDeck.Add(deckManager.allCards[k]);
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < latestData.startDeck.Count; i++)
+            {
+                if (latestData.startDeck[i] == 0)
+                {
+                    deckManager.startDeck.Add(deckManager.nullCardReference);
+                    continue;
+                }
+                for (int k = 0; k < deckManager.allCards.Length; k++)
+                {
+                    if (deckManager.allCards[k].ID == latestData.startDeck[i])
+                    {
+                        deckManager.startDeck.Add(deckManager.allCards[k]);
+                        break;
+                    }
+                }
+            }
         }
     }
 }
