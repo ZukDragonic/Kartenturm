@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using Unity.Mathematics;
-using System.Linq.Expressions;
 
 public class SOCardDisplayScript : MonoBehaviour
 {
@@ -44,6 +41,12 @@ public class SOCardDisplayScript : MonoBehaviour
         {
             cardName.text = "";
             actionGold.text = "";
+            descriptionGeneral.text = "";
+            damageDisplay.text = "";
+            rangeValueDisplay.text = "";
+            pierceValueDisplay.text = "";
+            spaValueDisplay.text = "";
+            descriptionTower.text = "";
             cardImage.sprite = allCardSprite[1];
             displayedImage.gameObject.SetActive(false);
             return;
