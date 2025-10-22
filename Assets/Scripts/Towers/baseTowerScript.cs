@@ -186,6 +186,16 @@ public class baseTowerScript : sumObj_Base
         openedTowerMenu = null;
         cosmetic.rangeDisplayUpdate(false, range);
     }
+    public void DestroySelf()
+    {
+        gameController.resourceManager.removeTower(this);
+        gameController.resourceManager.changeGold((int)(baseCard.actionGold * 0.5f));
+        foreach (SOCard card in stackedCards)
+        {
+            gameController.resourceManager.changeGold((int)(card.actionGold * 0.5f));
+        }
+        Destroy(gameObject);
+    }
 
     public void changeStats()
     {

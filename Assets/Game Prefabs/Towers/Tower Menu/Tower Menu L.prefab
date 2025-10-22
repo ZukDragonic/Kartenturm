@@ -3046,13 +3046,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2056835017695850294, guid: ef5515874fda12144b0a5303b8c5b6e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7221161125115263734}
   m_SourcePrefab: {fileID: 100100000, guid: ef5515874fda12144b0a5303b8c5b6e4, type: 3}
+--- !u!114 &2256495691750145818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4836524685396818282, guid: ef5515874fda12144b0a5303b8c5b6e4, type: 3}
+  m_PrefabInstance: {fileID: 6651367446572385904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667206952430020934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc8b1d61a37d364ba1e2e1d58245cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2879733838172317833 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8915079803307405049, guid: ef5515874fda12144b0a5303b8c5b6e4, type: 3}
   m_PrefabInstance: {fileID: 6651367446572385904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4667206952430020934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2056835017695850294, guid: ef5515874fda12144b0a5303b8c5b6e4, type: 3}
+  m_PrefabInstance: {fileID: 6651367446572385904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7221161125115263734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667206952430020934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f31d9dda2f6cb48a113275329b9850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 2256495691750145818}
+  voidCalled: destroyTower
 --- !u!1001 &7320315032319228153
 PrefabInstance:
   m_ObjectHideFlags: 0
