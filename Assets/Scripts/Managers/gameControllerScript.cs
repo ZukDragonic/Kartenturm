@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -258,7 +259,7 @@ public class Sound
     public SoundType type;
 }
 [System.Serializable]
-public class EffectAndReq
+public class EffectAndReq : MonoBehaviour
 {
     public SOC_Effect effect;
 

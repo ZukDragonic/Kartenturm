@@ -102,21 +102,21 @@ public class SOCE_RemoveEffect : SOC_Effect
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.passive =  RemoveItemFromArray(script.effects.passive, EnR);
+                script.effects.passive = RemoveItemFromArray(script.effects.passive, EnR);
             }
         }
         foreach (EffectAndReq EnR in script.effects.destroy)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.destroy =  RemoveItemFromArray(script.effects.destroy, EnR);
+                script.effects.destroy = RemoveItemFromArray(script.effects.destroy, EnR);
             }
         }
         foreach (EffectAndReq EnR in script.effects.summon)
         {
             if (CheckSameEffect(EnR.effect))
             {
-                script.effects.summon =  RemoveItemFromArray(script.effects.summon, EnR);
+                script.effects.summon = RemoveItemFromArray(script.effects.summon, EnR);
             }
         }
         foreach (EffectAndReq EnR in script.effects.hit)
