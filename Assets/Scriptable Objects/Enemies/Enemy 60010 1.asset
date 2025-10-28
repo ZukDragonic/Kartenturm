@@ -15,10 +15,11 @@ MonoBehaviour:
   ID: 600091
   Enemyname: Explosion
   description: 
+  undiscoveredDes: 
   image: {fileID: -1509146818, guid: 09e46a74c1ea33640b127507087f1fe3, type: 3}
   animClip: {fileID: 7400000, guid: f6b3bb8288a59e34f909a46c21374a36, type: 2}
   speed: 0
-  health: 4.2949673e+9
+  health: 404666
   damageToHP: 0
   spawnValue: 0
   hitRadius: 0

@@ -33,9 +33,12 @@ public class SOEnemyDisplay : sumObj_Base
     private List<baseTowerScript> affectedTowers;
     public baseTowerScript currentAffectedTower;
 
+    private bool isDead;
+
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
         gameController = gameControllerScript.instance;
         sliderDisplay = transform.GetChild(0).GetComponent<sliderDisplayScript>();
         sR.sprite = enemy.image;
@@ -56,6 +59,11 @@ public class SOEnemyDisplay : sumObj_Base
         hitRadius = enemy.hitRadius;
         effects = SOCE_Parent.CreateInstance(enemy.effects);
         GetComponent<CircleCollider2D>().radius = hitRadius / 100;
+
+        if(checkpointNum > checkpointList.Count)
+        {
+            checkpointNum = checkpointList.Count - 1;
+        }
 
         //checkpointList is set in waveManagerScript
         checkpointPos = checkpointList[checkpointNum].transform.position;
@@ -100,7 +108,11 @@ public class SOEnemyDisplay : sumObj_Base
             //if reach end, do stuff
             else
             {
-                gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
+                if(!isDead)
+                {
+                    gameController.resourceManager.changeHealth(enemy.damageToHP * -1);
+                }
+                isDead = true;
                 gameController.resourceManager.removeEnemy(this);
             }
             checkpointNum += 1;
@@ -200,6 +212,10 @@ public class SOEnemyDisplay : sumObj_Base
 
     public void enemyHit(sumObj_Base hitObject)
     {
+        if(!enemy.targettable)
+        {
+            return;
+        }
         hitDamage = hitObject.damage;
         hitProjectile = hitObject;
 

@@ -343,6 +343,7 @@ public class gameControllerScript : MonoBehaviour
         {
             mainInput_Ray.hit = null;
         }
+        print(FlagInfo(19004));
     }
 
     public void FlagTrigger(int ID)
@@ -389,6 +390,7 @@ public class gameControllerScript : MonoBehaviour
                         if (FlagInfo(19004))
                         {
                             flagDict[19005] = true;
+                            //might need to put something else here idk?
                             break;
                         }
                         else
@@ -399,7 +401,6 @@ public class gameControllerScript : MonoBehaviour
                         break;
                 }
             }
-
             if (FlagInfo(19005))
             {
                 //variable gets set to false when no freeplay waves are found
@@ -407,7 +408,7 @@ public class gameControllerScript : MonoBehaviour
                 //determines which set of enemies freeplay should draw from
                 switch (ID)
                 {
-                    case 11181:
+                    case 11181: //if the passed flag isn't one of the final waves, it means game is in post game/free play
                         waveManager.spawnFreePlayWave(11182);
                         break;
                     default:
@@ -511,12 +512,12 @@ public class gameControllerScript : MonoBehaviour
             //spawns a specific wave if freeplay
             if (FlagInfo(19004))
             {
-                Debug.Log(1);
                 if (ID > 23011 && ID <= 23018 || ID == 23999)
                 {
-                    waveWhenLoaded = 11160; //should be world 1-7 wave aka 11160
+                    waveWhenLoaded = 11179; //should be world 1-7 wave aka 11160
+                    flagDict[19004] = true;
                 }
-                else if (true)
+                else if (true) //for when I eventually add more worlds and freeplay
                 {
 
                 }
@@ -579,9 +580,9 @@ public class gameControllerScript : MonoBehaviour
                 StartAction();
                 timeManager.resetTime();
                 deckManager.shuffleDeck();
+                flagDict[19005] = false;
                 waveManager.currentWave = null;
                 resourceManager.resetResources();
-                flagDict[19005] = false;
                 FlagTrigger(waveWhenLoaded);
             }
             switch (ID)
@@ -613,6 +614,12 @@ public class gameControllerScript : MonoBehaviour
                     //insert game win shit
                     SaveData();
                     waveManager.GameWinMenu();
+                    break;
+                case 19003: //dictates whether it is freeplay or not
+                    flagDict[19004] = false;
+                    break;
+                case 19004:
+                    flagDict[19004] = true;
                     break;
                 default:
                     break;

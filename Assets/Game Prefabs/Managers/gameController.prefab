@@ -97,10 +97,10 @@ MonoBehaviour:
       name: Story
     - ID: 19004
       check: 0
-      name: Freeplay
+      name: Freeplay Active
     - ID: 19005
       check: 0
-      name: Freeplay Active
+      name: Freeplay Start
     - ID: 20001
       check: 0
       name: Auto Start
@@ -133,6 +133,9 @@ MonoBehaviour:
   isCardDragged: 0
   isCardHovered: 0
   latestData:
+    saveVersion: 0
     premiumGold: 0
     seenEnemies: 
     unlockedCards: 
+    gameDeck: 
+    startDeck: 

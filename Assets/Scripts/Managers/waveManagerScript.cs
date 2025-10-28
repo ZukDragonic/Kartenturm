@@ -17,6 +17,7 @@ public class waveManagerScript : MonoBehaviour
     private Wave freeplayEnemySpawnList;
     private int freeplaySpawnTotal;
     private int freeplaySpawnMaxRep;
+    private int freeplaySpawnDelay;
     private Wave currentFreeplayWave;
     public string freeplaySeed;
     private System.Random setSeed;
@@ -81,6 +82,7 @@ public class waveManagerScript : MonoBehaviour
         }
         freeplaySpawnTotal = Mathf.FloorToInt(freeplaySpawnTotal * 1.1f);
         freeplaySpawnMaxRep = Mathf.FloorToInt(freeplaySpawnTotal / 100);
+        freeplaySpawnDelay = Mathf.FloorToInt(1 / Mathf.Sqrt(freeplaySpawnTotal));
 
 
         //sets the wave of the spawner
@@ -119,7 +121,7 @@ public class waveManagerScript : MonoBehaviour
 
             EnemyAndDelay foundEnemy = new EnemyAndDelay();
             foundEnemy.enemyID = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex].enemyID;
-            foundEnemy.delay = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex].delay;
+            foundEnemy.delay = freeplayEnemySpawnList.spawnOrder[spawnedEnemyIndex].delay * freeplaySpawnDelay;
             foundEnemy.repeat = spawnRepeat;
 
             int spawnPower = findEnemy(foundEnemy.enemyID).spawnValue * spawnRepeat;
