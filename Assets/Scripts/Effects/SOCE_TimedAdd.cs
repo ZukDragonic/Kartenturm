@@ -129,7 +129,6 @@ public class SOCE_TimedAdd : SOC_Effect
                 default:
                     break;
             }
-            return;
         }
 
         relativeDuration = duration;
