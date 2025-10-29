@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDescription: 
   effectType: 0
-  addedEffect: {fileID: 0}
+  addedEffect: {fileID: 11400000, guid: aae76d0332a384a98bb254702637faae, type: 2}
   appliedToHit: 0

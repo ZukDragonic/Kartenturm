@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c68e2223788ce4468868593e66ce4dc, type: 3}
   m_Name: Tower 0014
   m_EditorClassIdentifier: 
-  ID: 40013
-  shopGold: 1950
-  actionGold: 1000
+  ID: 40014
+  shopGold: 750
+  actionGold: 1500
   archetype: 
   cardName: Winemaker
   description: Just an ordinary winemaker with a side gig.
@@ -26,13 +26,10 @@ MonoBehaviour:
   range: 0
   multiplier: 1
   projectileImage: {fileID: 21300000, guid: ff2300fe7a64edc46921ee3a5dfe2d4b, type: 3}
-  pierce: 1
-  effects: {fileID: 11400000, guid: 3f2d18107486d428a978b106345b3cca, type: 2}
+  pierce: 0
+  effects: {fileID: 11400000, guid: 3728a1ea03b8c41e598445d11b38770d, type: 2}
   slotNum: 3
   targetting: 4
   allTargetting:
-  - {fileID: 11400000, guid: 789fb77a865567b4cad664fa9e0fef6d, type: 2}
-  - {fileID: 11400000, guid: 3a8e63801f0f05040a9745b3ac9b8da6, type: 2}
-  - {fileID: 11400000, guid: 8d9d66c6b47366c43bf13e7c1b6b912b, type: 2}
-  - {fileID: 11400000, guid: 3591e37260dd2ae469bc1d8b0dc00950, type: 2}
+  - {fileID: 11400000, guid: a5cef2e7bc1f92d45a5aed0739ab30ab, type: 2}
   selectRadius: 1

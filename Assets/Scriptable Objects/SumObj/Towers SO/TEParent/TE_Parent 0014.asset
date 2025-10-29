@@ -15,11 +15,12 @@ MonoBehaviour:
   passive: []
   destroy: []
   summon: []
+  hit: []
   waveStart: []
   waveEnd:
   - effect: {fileID: 11400000, guid: b1370ba6f3335394480920540bb0a03a, type: 2}
     req: []
-  - effect: {fileID: 11400000, guid: e65f5e5aff3b70340906e82130cdeaef, type: 2}
+  - effect: {fileID: 11400000, guid: c2c5e1f1116a74218b7474a972ed5e9f, type: 2}
     req: []
   pPassive: []
   pDestroy: []
