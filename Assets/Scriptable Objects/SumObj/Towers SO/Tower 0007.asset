@@ -17,7 +17,9 @@ MonoBehaviour:
   actionGold: 1200
   archetype: 
   cardName: Farmer
-  description: A humble farmer.
+  description: The winemaker Lukas was once his boss, but now, he's but a humble
+    farmer.
+  undiscoveredDes: 
   image: {fileID: 21300000, guid: a9b85783b4e390f4f904e82d96ad6f87, type: 3}
   shotsPerAttack: 0
   damage: 50

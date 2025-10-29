@@ -259,7 +259,7 @@ public class Sound
     public SoundType type;
 }
 [System.Serializable]
-public class EffectAndReq : MonoBehaviour
+public class EffectAndReq
 {
     public SOC_Effect effect;
 
@@ -344,7 +344,6 @@ public class gameControllerScript : MonoBehaviour
         {
             mainInput_Ray.hit = null;
         }
-        print(FlagInfo(19004));
     }
 
     public void FlagTrigger(int ID)

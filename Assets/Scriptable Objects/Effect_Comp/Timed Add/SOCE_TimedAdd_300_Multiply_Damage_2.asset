@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c29baa41a2847e4b8869faffc7c26db, type: 3}
-  m_Name: RemoveEffect_Multiply_Damage_2
+  m_Script: {fileID: 11500000, guid: 61518ad8ba2244e5bb7c67e6cb7f4701, type: 3}
+  m_Name: SOCE_TimedAdd_300_Multiply_Damage_2
   m_EditorClassIdentifier: 
   effectDescription: 
-  checkedEffect: {fileID: 11400000, guid: d75abeba9ead2be49b20a6cf16b3b9bb, type: 2}
-  appliedToHit: 0
+  duration: 300
+  effectType: 9
+  addedEffect: {fileID: 11400000, guid: d75abeba9ead2be49b20a6cf16b3b9bb, type: 2}

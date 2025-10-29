@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f2d2183c09228346a81c9ca940d4c0e, type: 3}
-  m_Name: AddEffect_RemoveEffect_Multiply_Damage_2_WEnd
+  m_Name: AddEffect_TAMD2_Passive
   m_EditorClassIdentifier: 
   effectDescription: 
   effectType: 0
-  addedEffect: {fileID: 11400000, guid: d75abeba9ead2be49b20a6cf16b3b9bb, type: 2}
+  addedEffect: {fileID: 0}
   appliedToHit: 0

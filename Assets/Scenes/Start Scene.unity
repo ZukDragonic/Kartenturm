@@ -1618,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: unlockedCards.Array.size
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: timeChanges.Array.data[1]
@@ -1635,6 +1635,10 @@ PrefabInstance:
     - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: unlockedCards.Array.data[35]
       value: 40013
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403111425101219507, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
+      propertyPath: unlockedCards.Array.data[36]
+      value: 50005
       objectReference: {fileID: 0}
     - target: {fileID: 7403111425101219517, guid: 6579dcc309bf3c34cb22e971731f4e34, type: 3}
       propertyPath: m_Name

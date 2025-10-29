@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5a184c19135659429867818243f5dc4, type: 2}
   - {fileID: 11400000, guid: 0bd359c8c9419ff4ea352abf8917aa8b, type: 2}
   - {fileID: 11400000, guid: fbfa5e3070dc86549a646492ae19390c, type: 2}
+  - {fileID: 11400000, guid: 62967a02b4e7b478db60abd6af050d6f, type: 2}
   allArtifacts:
   - {fileID: 11400000, guid: 3337cdfd8be1a3845adcc975ef172931, type: 2}
   - {fileID: 11400000, guid: 20fa4876b1927eb4292538f5ae3920c3, type: 2}
@@ -84,6 +85,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81a70b77cc362ef47b3e41133971e6d9, type: 2}
   - {fileID: 11400000, guid: fb324f07267046a4bbb41720082dd135, type: 2}
   - {fileID: 11400000, guid: 7c2b18c8e7b0f3d42b8214ce448208d2, type: 2}
+  - {fileID: 11400000, guid: 188fd216111c448d5a863ecd058b0511, type: 2}
+  - {fileID: 11400000, guid: 9452859d287f4402c944a8b48756dc6a, type: 2}
+  - {fileID: 11400000, guid: 1cd1aab47924b4ecfa9874746e91f55b, type: 2}
+  - {fileID: 11400000, guid: 05547bdb0de9849f88efb83e170f6a8d, type: 2}
   nullCardReference: {fileID: 11400000, guid: d6f8fbe09d1abfb4baeb35735e02b0e7, type: 2}
   allCards: []
   gameDeck:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0300efc558c8906439deb4b4224a0876, type: 3}
   m_Name: Spell 0008
   m_EditorClassIdentifier: 
-  ID: 50004
+  ID: 50008
   shopGold: 1000
   actionGold: 0
   archetype: 
@@ -20,7 +20,7 @@ MonoBehaviour:
   description: Destroys a tower in exchange for its full gold price returning to
     bank
   undiscoveredDes: 
-  image: {fileID: 21300000, guid: 9fe423290e5442840859de1a8d9367f2, type: 3}
+  image: {fileID: 21300000, guid: dce78b4c22e6740f3aa09ba376fe89ff, type: 3}
   allEffects:
   - {fileID: 11400000, guid: 4afedcb8d1e0d4bdbb6e217bff8d60c7, type: 2}
   allRequirement: []

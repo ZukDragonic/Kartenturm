@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardEffectTimeadd", menuName = "Card/Effect/TimedAdd")]
 public class SOCE_TimedAdd : SOC_Effect
 {
-    public float duration;
+    public float duration = 0;
     public EffectType effectType;
     public SOC_Effect addedEffect;
     private EffectAndReq[] addedLocation;
@@ -14,13 +14,18 @@ public class SOCE_TimedAdd : SOC_Effect
 
     private int frameCount = 0;
     private float relativeDuration = 0;
-
-    private float OGValue = 0;
+    private bool takenEffect;
 
     public override void ApplyEEffect(SOEnemyDisplay script)
     {
-        if (OGValue == 0)
+        if(gameControllerScript.instance.timeManager.currentTime == 0)
         {
+            return;
+        }
+        if (frameCount == 0)
+        {
+            Debug.Log(2);
+            takenEffect = false;
             sumObj_Base checkedScript = script;
             switch (effectType)
             {
@@ -72,17 +77,27 @@ public class SOCE_TimedAdd : SOC_Effect
 
         relativeDuration = duration;
 
-        if (frameCount >= relativeDuration * Application.targetFrameRate)
+        if(!takenEffect)
         {
-            RemoveItemFromArray(addedLocation, referenceEnR);
+            if (frameCount >= relativeDuration * Application.targetFrameRate)
+            {
+                RemoveItemFromArray(addedLocation, referenceEnR);
+            }
+            takenEffect = true;
         }
 
         frameCount += gameControllerScript.instance.timeManager.currentTime;
     }
     public override void ApplyTEffect(baseTowerScript script)
     {
-        if (OGValue == 0)
+        if (gameControllerScript.instance.timeManager.currentTime == 0)
         {
+            return;
+        }
+        if (frameCount == 0)
+        {
+            Debug.Log("1");
+            takenEffect = false;
             sumObj_Base checkedScript = script;
             switch (effectType)
             {
@@ -113,6 +128,7 @@ public class SOCE_TimedAdd : SOC_Effect
                 case EffectType.PPassive:
                     addedLocation = checkedScript.effects.pPassive;
                     checkedScript.effects.pPassive = AddItemToArray(checkedScript.effects.pPassive, addedEffect);
+                    Debug.Log("1");
                     break;
                 case EffectType.PDestroy:
                     addedLocation = checkedScript.effects.pDestroy;
@@ -133,20 +149,16 @@ public class SOCE_TimedAdd : SOC_Effect
 
         relativeDuration = duration;
 
-        if (frameCount >= relativeDuration * Application.targetFrameRate)
+        if (!takenEffect)
         {
-            RemoveItemFromArray(addedLocation, referenceEnR);
+            if (frameCount >= relativeDuration * Application.targetFrameRate)
+            {
+                RemoveItemFromArray(addedLocation, referenceEnR);
+            }
+            takenEffect = true;
         }
 
         frameCount += gameControllerScript.instance.timeManager.currentTime;
-    }
-    public override void ApplyOSEffect(sumObj_Standalone script)
-    {
-
-    }
-    public override void ApplyOPEffect(sumObj_Projectile script)
-    {
-
     }
     EffectAndReq[] AddItemToArray(EffectAndReq[] CheckedEnR, SOC_Effect AddedEffect)
     {
