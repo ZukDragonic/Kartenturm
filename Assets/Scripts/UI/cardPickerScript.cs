@@ -10,13 +10,15 @@ public class cardPickerScript : MonoBehaviour
     public GameObject displayArea;
 
     [HideInInspector]
-    public bool placeInDeck;
+    public Location originalLocation;
     [HideInInspector]
-    public bool deleteCardFromDeck;
+    public Location endLocation;
+    [HideInInspector]
+    public bool deleteOGCard; //might have to make this an Enum to allow it to pick from deck as well
     [HideInInspector]
     public int selectLimit;
     [HideInInspector]
-    public List<SOCard> selectedCard;
+    public List<cardOptionScript> selectedCard;
 
     void Start()
     {
@@ -75,26 +77,49 @@ public class cardPickerScript : MonoBehaviour
         {
             return;
         }
-        if (deleteCardFromDeck)
+        if (deleteOGCard)
         {
-            foreach (SOCard card in selectedCard)
+            switch (originalLocation)
             {
-                gameController.deckManager.RemoveCard(card);
+                case Location.Deck:
+                    foreach (cardOptionScript option in selectedCard)
+                    {
+                        gameController.deckManager.RemoveCard(option.card);
+                    }
+                    break;
+                case Location.Field:
+                    foreach (cardOptionScript option in selectedCard)
+                    {
+                        int childIndex = option.transform.GetSiblingIndex();
+                        gameController.resourceManager.removeTower(gameController.resourceManager.aliveTower[childIndex]);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
-        if (placeInDeck)
+        switch (endLocation)
         {
-            foreach (SOCard card in selectedCard)
-            {
-                gameController.deckManager.shuffleCardInDeck(card);
-            }
-        }
-        else
-        {
-            foreach(SOCard card in selectedCard)
-            {
-                gameController.deckManager.AddCardToHand(card);
-            }
+            case Location.Deck:
+                foreach (cardOptionScript option in selectedCard)
+                {
+                    gameController.deckManager.shuffleCardInDeck(option.card);
+                }
+                break;
+            case Location.Hand:
+                foreach (cardOptionScript option in selectedCard)
+                {
+                    gameController.deckManager.AddCardToHand(option.card);
+                }
+                break;
+            case Location.Gold:
+                foreach (cardOptionScript option in selectedCard)
+                {
+                    gameController.resourceManager.changeGold(option.card.actionGold);
+                }
+                break;
+            default:
+                break;
         }
         Destroy(gameObject);
     }

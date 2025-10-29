@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Spell 0008
   m_EditorClassIdentifier: 
   ID: 50008
-  shopGold: 1000
+  shopGold: 2000
   actionGold: 0
   archetype: 
   cardName: Sacrifice
-  description: Destroys a tower in exchange for its full gold price returning to
-    bank
+  description: Destroy a tower and return its gold cost to the bank
   undiscoveredDes: 
   image: {fileID: 21300000, guid: dce78b4c22e6740f3aa09ba376fe89ff, type: 3}
   allEffects:
-  - {fileID: 11400000, guid: 4afedcb8d1e0d4bdbb6e217bff8d60c7, type: 2}
+  - {fileID: 11400000, guid: 87789a2cde5a544598b524890c0cf179, type: 2}
   allRequirement: []

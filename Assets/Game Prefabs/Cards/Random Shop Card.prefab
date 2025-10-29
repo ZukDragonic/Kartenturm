@@ -35,7 +35,6 @@ RectTransform:
   - {fileID: 8766059063352272451}
   - {fileID: 2287890818871927201}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -96,7 +95,7 @@ MonoBehaviour:
   multiplier: 1
   pricePrefab: {fileID: 6160404016732082824}
   isRandom: 1
-  cardPickerPrefab: {fileID: 8230065348857617876, guid: e38df738f6cf0364c8cbe2ad99e0a8b8, type: 3}
+  cardPickerPrefab: {fileID: 3536739986812261170, guid: e38df738f6cf0364c8cbe2ad99e0a8b8, type: 3}
 --- !u!114 &169123427783578950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +113,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5557216678558849465}
     m_Modifications:
     - target: {fileID: 926927587928384371, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
@@ -225,6 +225,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
 --- !u!224 &2287890818871927201 stripped
 RectTransform:
@@ -236,6 +239,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5557216678558849465}
     m_Modifications:
     - target: {fileID: 926927587928384371, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
@@ -339,6 +343,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b27430dd6573458a411c8b9dc245a, type: 3}
 --- !u!114 &6160404016732082824 stripped
 MonoBehaviour:

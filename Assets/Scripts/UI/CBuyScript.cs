@@ -48,6 +48,7 @@ public class CBuyScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 GameObject current = Instantiate(cardPickerPrefab, gameController.allCanvas[2].transform);
                 current.GetComponent<cardPickerScript>().DisplayPickableCard(gameController.deckManager.allCards, 3, 1, true);
+                current.GetComponent<cardPickerScript>().endLocation = Location.Deck;
                 Destroy(gameObject);
             }
         }

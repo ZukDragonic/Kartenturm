@@ -48,6 +48,7 @@ public class deckBuilderScript : MonoBehaviour
             SOCardDisplayScript currentOptionDisplayScript = currentOption.GetComponent<SOCardDisplayScript>();
             currentOptionDisplayScript.displayCard(cardPool[i]);
             currentOptionScript.card = cardPool[i];
+            //if the deck contains card, display it on left side deckbuilder
             if (gameController.deckManager.gameDeck.Contains(currentOptionScript.card))
                 /*&& currentOptionScript.card != gameController.deckManager.nullCardReference)*/
             {
@@ -55,6 +56,7 @@ public class deckBuilderScript : MonoBehaviour
                 deckDisplayArea.transform.GetChild(indexInDeck).GetComponent<SOCardDisplayScript>().displayCard(cardPool[i]);
                 currentOptionScript.ChangeCosmetic(true);
                 currentOptionScript.isSelected = true;
+                selectedCard.Add(cardPool[i]);
             }
             currentOptionScript.parent = this;
         }

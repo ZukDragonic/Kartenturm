@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2647d443ef8ef4ecb96915577221917f, type: 3}
   m_Name: Health_AccountStat
   m_EditorClassIdentifier: 
-  effectDescription: 
+  effectDescription: Gives 1 health per 100 damage.
   health: 0
   accountStat: 1

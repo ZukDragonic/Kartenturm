@@ -93,6 +93,14 @@ public enum ProjectileTargetOptions
 }
 
 [System.Serializable]
+public enum Location
+{
+    Deck,
+    Field,
+    Hand,
+    Gold
+}
+[System.Serializable]
 public class Flag
 {
     public int ID;
@@ -277,6 +285,7 @@ public class EffectAndReq
         return tempBool;
     }
 }
+
 public class gameControllerScript : MonoBehaviour
 {
     public static gameControllerScript instance;

@@ -7,7 +7,7 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler
 {
     private CCosmeticScript cosmetic;
     public cardPickerScript parent;
-    private SOCard card;
+    public SOCard card;
 
 
     private bool isSelected;
@@ -28,7 +28,7 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler
         if (isSelected)
         {
             isSelected = false;
-            parent.selectedCard.Remove(card);
+            parent.selectedCard.Remove(this);
             if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
             {
                 component.enabled = true;
@@ -38,7 +38,7 @@ public class cardOptionScript : MonoBehaviour, IPointerDownHandler
         else
         {
             isSelected = true;
-            parent.selectedCard.Add(card);
+            parent.selectedCard.Add(this);
 
             if (TryGetComponent<UIMouseDownScript>(out UIMouseDownScript component))
             {

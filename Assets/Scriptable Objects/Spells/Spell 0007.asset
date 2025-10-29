@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Spell 0007
   m_EditorClassIdentifier: 
   ID: 50007
-  shopGold: 1000
-  actionGold: 800
+  shopGold: 10000
+  actionGold: 5000
   archetype: 
   cardName: Golden Coin
   description: Summons the merchant
   undiscoveredDes: 
   image: {fileID: 21300000, guid: 79a9d1a75bb1f41da824bb50689c08a5, type: 3}
   allEffects:
-  - {fileID: 11400000, guid: 4afedcb8d1e0d4bdbb6e217bff8d60c7, type: 2}
+  - {fileID: 11400000, guid: b7deb82afbde0477285510e2eba98508, type: 2}
   allRequirement: []

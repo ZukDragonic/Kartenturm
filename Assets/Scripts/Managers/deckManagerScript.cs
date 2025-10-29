@@ -92,7 +92,7 @@ public class deckManagerScript : MonoBehaviour
         gameController.timeManager.pauseTime();
     }
 
-    public void SearchCard(int cardsSearched)
+    public void SearchCard(int cardsSearched, Location og, Location end)
     {
         if (gameController.allCanvas[1].transform.childCount > 0)
         {
@@ -102,8 +102,25 @@ public class deckManagerScript : MonoBehaviour
 
         GameObject current = Instantiate(cardPickerPrefab, gameController.allCanvas[2].transform);
         cardPickerScript cScript = current.GetComponent<cardPickerScript>();
-        cScript.DisplayPickableCard(drawDeck.ToArray(), -1, cardsSearched, false);
-        cScript.deleteCardFromDeck = true;
+        List<SOCard> tempCards = new List<SOCard>();
+        switch (og)
+        {
+            case Location.Deck:
+                tempCards = drawDeck.ToList();
+                break;
+            case Location.Field:
+                foreach (baseTowerScript tower in gameController.resourceManager.aliveTower)
+                {
+                    tempCards.Add(tower.baseCard);
+                }
+                break;
+            default:
+                break;
+        }
+        cScript.DisplayPickableCard(tempCards.ToArray(), -1, cardsSearched, false);
+        cScript.deleteOGCard = true;
+        cScript.originalLocation = og;
+        cScript.endLocation = end;
     }
 
     public void RemoveCard(SOCard card)

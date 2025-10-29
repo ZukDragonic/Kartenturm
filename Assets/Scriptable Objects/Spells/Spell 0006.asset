@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Spell 0006
   m_EditorClassIdentifier: 
   ID: 50006
-  shopGold: 1000
-  actionGold: 800
+  shopGold: 1500
+  actionGold: 2000
   archetype: 
   cardName: Return
   description: Return a tower from field to hand
   undiscoveredDes: 
   image: {fileID: 21300000, guid: 6d98f894c1aa9458bbd0c83541badca3, type: 3}
   allEffects:
-  - {fileID: 11400000, guid: 4afedcb8d1e0d4bdbb6e217bff8d60c7, type: 2}
+  - {fileID: 11400000, guid: 6f5586f83e72549408d8fbbacf89747f, type: 2}
   allRequirement: []

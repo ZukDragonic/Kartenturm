@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0e178bbd12ce4e7f8002934de3716dd, type: 3}
-  m_Name: Unique_AddFromDeck
+  m_Name: AddFromTo_DeckHand
   m_EditorClassIdentifier: 
   effectDescription: 
   AddNum: 1
   deckObject: {fileID: 0}
+  startLocation: 0
+  endLocation: 2
