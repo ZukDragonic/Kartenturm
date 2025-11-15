@@ -16,7 +16,7 @@ MonoBehaviour:
   Enemyname: Big Slime (Green)
   description: Had a one night fling that one time. He wonders what happened to her.
   undiscoveredDes: First encountered in World 1-5
-  image: {fileID: 1077783034, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
+  image: {fileID: -1475055573, guid: 3c746ee205cdb4f47be0ee527a0d2ea6, type: 3}
   animClip: {fileID: 7400000, guid: 9726011d5096cd744ae814d23612863e, type: 2}
   speed: 5
   health: 5000

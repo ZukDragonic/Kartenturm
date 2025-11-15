@@ -53,7 +53,7 @@ MonoBehaviour:
   cEntryPrefab: {fileID: 503774081316779123, guid: 982a94c0e37be4686a558da23827cf47, type: 3}
   cImagePrefab: {fileID: 4159164858549809996, guid: 7c6120e5164e347da8975c758a559144, type: 3}
   displayArea: {fileID: 4819666681899307703}
-  undiscoveredImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  undiscoveredImage: {fileID: 21300000, guid: 8bb585cd4fc4643ddb3b156d82777fc8, type: 3}
 --- !u!1001 &2487516343147183465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,4 +375,4 @@ MonoBehaviour:
   contentWindow: {fileID: 5605776627811763765}
   elementReference: {fileID: 4105793842174411722, guid: d45bfb41d0fdf43e09a29ebe5bf753d3, type: 3}
   hLayoutGroup: {fileID: 3006861952852963717}
-  snapForce: 30
+  snapForce: 10

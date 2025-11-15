@@ -42,28 +42,32 @@ public class snapScrollScript : MonoBehaviour
 
     void Update()
     {
-        //total space divided by reference gets the # of content and current #
+        //Current x location divided by reference gets the # of content and current #
         //change x to y if vertical
         int currentItem = Mathf.RoundToInt(contentWindow.localPosition.x / (elementReference.rect.width + hLayoutGroup.spacing));
 
         prevPos = currentPos;
-        currentPos = scrollRect.horizontalNormalizedPosition;
+        currentPos = contentWindow.localPosition.x;
         positionDiff = currentPos - prevPos;
-
         //change x to y if vertical
         //should be scrollRect.velocity.magnitude but it don't work
         if (positionDiff <= 0.001f && canSnap)
         {
             snapForce = ogSnapForce;
             contentWindow.localPosition = new Vector3(
+                //moves x location to target location
                 Mathf.MoveTowards(contentWindow.localPosition.x, currentItem * (elementReference.rect.width + hLayoutGroup.spacing), snapForce),
                contentWindow.localPosition.y,
                contentWindow.localPosition.z);
             prevPos = currentPos;
             positionDiff = 0;
-            if (contentWindow.localPosition.x == ((currentItem * (elementReference.rect.width + hLayoutGroup.spacing))))
+            if (Mathf.Abs(contentWindow.localPosition.x - ((currentItem * (elementReference.rect.width + hLayoutGroup.spacing)))) < 0.1f)
             {
+                contentWindow.localPosition = new Vector3(currentItem * (elementReference.rect.width + hLayoutGroup.spacing),
+               contentWindow.localPosition.y,
+               contentWindow.localPosition.z);
                 canSnap = false;
+
             }
         }
         if (positionDiff != 0)

@@ -128,8 +128,8 @@ MonoBehaviour:
     - ID: 21006
       check: 0
       name: 17Level
-  state: 7
-  prevState: 7
+  state: 8
+  prevState: 8
   isCardDragged: 0
   isCardHovered: 0
   latestData:
