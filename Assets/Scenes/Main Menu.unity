@@ -1165,7 +1165,7 @@ MonoBehaviour:
   managerCalled: 9
   voidCalled: LoadNewScene
   IDCalled: 23019
-  IDCheckedForActive: 0
+  IDCheckedForActive: 19006
 --- !u!1 &612377307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   managerCalled: 9
   voidCalled: LoadNewScene
   IDCalled: 23020
-  IDCheckedForActive: 0
+  IDCheckedForActive: 19006
 --- !u!1001 &1972975489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2383,7 +2383,7 @@ MonoBehaviour:
   managerCalled: 9
   voidCalled: LoadNewScene
   IDCalled: 23004
-  IDCheckedForActive: 0
+  IDCheckedForActive: 19006
 --- !u!1 &2004011634
 GameObject:
   m_ObjectHideFlags: 0

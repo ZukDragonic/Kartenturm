@@ -536,8 +536,19 @@ public class gameControllerScript : MonoBehaviour
                 //story mode + main menu
                 switch (ID)
                 {
+                    case 23002:
+                        if (!FlagInfo(19006))
+                        {
+                            dialogueManager.CreateDialogue(22010);
+                        }
+                        break;
                     case 23003:
                         GameObject.Find("Deck Builder").GetComponent<deckBuilderScript>().DisplayDeckBuilder();
+                        if(!FlagInfo(19006))
+                        {
+                            dialogueManager.CreateDialogue(22011);
+                            flagDict[19006] = true;
+                        }
                         break;
                     case 23019:
                         GameObject.Find("Encyclopedia Parent").GetComponent<encyclopediaScript>().CreateEnemyEncyclopedia();
@@ -629,6 +640,41 @@ public class gameControllerScript : MonoBehaviour
                     break;
                 case 19004:
                     flagDict[19004] = true;
+                    break;
+                case 19007:
+                    int i = 0;
+                    int startInd = 0;
+                    int gameInd = 0;
+                    while (deckManager.startDeck[startInd] != deckManager.nullCardReference)
+                    {
+                        startInd++;
+                        gameInd++;
+                    }
+                    while (deckManager.gameDeck[gameInd] != deckManager.nullCardReference)
+                    {
+                        gameInd++;
+                    }
+                    //Checks the 40th card because all cards are placeholder so count is always 40
+                    while (deckManager.gameDeck[39] == deckManager.nullCardReference)
+                    {
+                        Debug.Log(deckManager.allCards[i].ID);
+                        if (resourceManager.unlockedCards.Contains(deckManager.allCards[i].ID))
+                        {
+                            if (!deckManager.gameDeck.Contains(deckManager.allCards[i]))
+                            {
+                                SOCard added = deckManager.allCards[i];
+                                if (deckManager.startDeck[9] == deckManager.nullCardReference)
+                                {
+                                    
+                                    deckManager.startDeck[startInd] = added;
+                                    startInd++;
+                                }
+                                deckManager.gameDeck[gameInd] = added;
+                                gameInd++;
+                            }
+                        }
+                        i++;
+                    }
                     break;
                 default:
                     break;

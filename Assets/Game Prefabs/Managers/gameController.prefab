@@ -101,6 +101,12 @@ MonoBehaviour:
     - ID: 19005
       check: 0
       name: Freeplay Start
+    - ID: 19006
+      check: 0
+      name: Start Tutorial
+    - ID: 19007
+      check: 0
+      name: Deck Full
     - ID: 20001
       check: 0
       name: Auto Start

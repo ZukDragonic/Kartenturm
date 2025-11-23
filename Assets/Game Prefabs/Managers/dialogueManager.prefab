@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7157304328841453087}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7157304328841453057
 MonoBehaviour:
@@ -404,6 +404,73 @@ MonoBehaviour:
       textColor: {r: 0.6603774, g: 0.15828611, b: 0, a: 1}
       text: You invaded my kingdom... You must pay recompense for your actions!
       image: {fileID: 318651560, guid: 7b3ebf97d80b49e4d94a2ca87deb3915, type: 3}
+      imageSide: 1
+  - ID: 22010
+    dialogue:
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Welcome, chosen one.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Your goal is to fight off the corruption invading the kingdom.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: 'To start with explaining what you see:'
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Story is where the main campaign takes place.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Deck is where you pick and choose the heroes you take to battle in the
+        form of cards.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Enemy is where you view information about the enemies you have encountered.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Cards is where you see the heroes, artifacts, and spells you have unlocked.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: To start things off, lets head over to Deck.
+      image: {fileID: 0}
+      imageSide: 1
+  - ID: 22011
+    dialogue:
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Here, you select the cards you want to bring to battle.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: The first ten cards you put in will be part of your starter deck, cards
+        you get at the start of the battle.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: The other cards will appear in shops as you play.
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: Now, select as many cards as you want. Be warned, if you don't select
+        enough, I will put in random cards for you.
+      image: {fileID: 0}
       imageSide: 1
   dialoguePrefab: {fileID: 4689816308881287988, guid: 2483f476f2534ae4f80a458007679cd5, type: 3}
   dialogueBackground:

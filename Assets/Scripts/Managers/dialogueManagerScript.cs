@@ -27,6 +27,12 @@ public class dialogueManagerScript : MonoBehaviour
 
     public void CreateDialogue(int ID)
     {
+        StartCoroutine(DoLater(ID));
+    }
+
+    IEnumerator DoLater(int ID)
+    {
+        yield return null;
         gameController = gameControllerScript.instance;
         gameController.timeManager.pauseTime();
 
