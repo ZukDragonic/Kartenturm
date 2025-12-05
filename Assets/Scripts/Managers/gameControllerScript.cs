@@ -325,6 +325,7 @@ public class gameControllerScript : MonoBehaviour
             instance = this;
         }
         findManagers();
+        findCanvas();
 
         LoadData();
 
@@ -642,38 +643,40 @@ public class gameControllerScript : MonoBehaviour
                     flagDict[19004] = true;
                     break;
                 case 19007:
-                    int i = 0;
-                    int startInd = 0;
-                    int gameInd = 0;
-                    while (deckManager.startDeck[startInd] != deckManager.nullCardReference)
+                    if(deckManager.gameDeck[39] == deckManager.nullCardReference)
                     {
-                        startInd++;
-                        gameInd++;
-                    }
-                    while (deckManager.gameDeck[gameInd] != deckManager.nullCardReference)
-                    {
-                        gameInd++;
-                    }
-                    //Checks the 40th card because all cards are placeholder so count is always 40
-                    while (deckManager.gameDeck[39] == deckManager.nullCardReference)
-                    {
-                        Debug.Log(deckManager.allCards[i].ID);
-                        if (resourceManager.unlockedCards.Contains(deckManager.allCards[i].ID))
+                        int i = 0;
+                        int startInd = 0;
+                        int gameInd = 0;
+                        while (deckManager.startDeck[startInd] != deckManager.nullCardReference)
                         {
-                            if (!deckManager.gameDeck.Contains(deckManager.allCards[i]))
-                            {
-                                SOCard added = deckManager.allCards[i];
-                                if (deckManager.startDeck[9] == deckManager.nullCardReference)
-                                {
-                                    
-                                    deckManager.startDeck[startInd] = added;
-                                    startInd++;
-                                }
-                                deckManager.gameDeck[gameInd] = added;
-                                gameInd++;
-                            }
+                            startInd++;
+                            gameInd++;
                         }
-                        i++;
+                        while (deckManager.gameDeck[gameInd] != deckManager.nullCardReference)
+                        {
+                            gameInd++;
+                        }
+                        //Checks the 40th card because all cards are placeholder so count is always 40
+                        while (deckManager.gameDeck[39] == deckManager.nullCardReference)
+                        {
+                            if (resourceManager.unlockedCards.Contains(deckManager.allCards[i].ID))
+                            {
+                                if (!deckManager.gameDeck.Contains(deckManager.allCards[i]))
+                                {
+                                    SOCard added = deckManager.allCards[i];
+                                    if (deckManager.startDeck[9] == deckManager.nullCardReference)
+                                    {
+
+                                        deckManager.startDeck[startInd] = added;
+                                        startInd++;
+                                    }
+                                    deckManager.gameDeck[gameInd] = added;
+                                    gameInd++;
+                                }
+                            }
+                            i++;
+                        }
                     }
                     break;
                 default:

@@ -463,6 +463,12 @@ MonoBehaviour:
       imageSide: 1
     - name: God
       textColor: {r: 0, g: 0, b: 0, a: 1}
+      text: I recommend having 6 yellow cards (towers), 2 blue cards (spells), and
+        2 red cards (artifacts).
+      image: {fileID: 0}
+      imageSide: 1
+    - name: God
+      textColor: {r: 0, g: 0, b: 0, a: 1}
       text: The other cards will appear in shops as you play.
       image: {fileID: 0}
       imageSide: 1
